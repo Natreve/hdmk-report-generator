@@ -1,5 +1,5 @@
-import pdfMake from "pdfmake/build/pdfmake";
-import pdfFonts from "pdfmake/build/vfs_fonts";
+import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
+import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
 const compressPDF = async (filename, file) => {
   try {
@@ -84,8 +84,8 @@ const generatePDF = async (id, printOnly) => {
       const { inspection, inspector, layout } = data;
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
-      pdfMake.vfs = pdfFonts.pdfMake.vfs;
-      pdfMake.fonts = {
+      vfs = pdfMake.vfs;
+      fonts = {
         Montserrat: {
           bold: `${window.location.href}/fonts/Montserrat-SemiBold.ttf`,
           normal: `${window.location.href}/fonts/Montserrat-Regular.ttf`,
@@ -323,6 +323,13 @@ const generatePDF = async (id, printOnly) => {
                       if (images) {
                         Object.keys(images).forEach((key) => {
                           if (images[key].summary) {
+                            if (typeof images[key].downloadURL === "object") {
+                              dd.images[images[key].name] =
+                                images[key].downloadURL.hd;
+                            } else {
+                              dd.images[images[key].name] =
+                                images[key].downloadURL;
+                            }
                             selectedImages.push(images[key]);
                           }
                         });
@@ -455,10 +462,11 @@ const generatePDF = async (id, printOnly) => {
         createSummaryPage();
         createSectionsPage();
       }
-      const doc = pdfMake.createPdf(dd);
-      doc.getBlob((blob) => {
-        resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
-      });
+      const doc = createPdf(dd);
+      doc.download();
+      // doc.getBlob((blob) => {
+      //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
+      // });
     } catch (error) {
       reject(error);
     }
