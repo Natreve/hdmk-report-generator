@@ -463,10 +463,10 @@ const generatePDF = async (id, printOnly) => {
         createSectionsPage();
       }
       const doc = createPdf(dd);
-      doc.download();
-      // doc.getBlob((blob) => {
-      //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
-      // });
+
+      doc.getBlob((blob) => {
+        resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
+      });
     } catch (error) {
       reject(error);
     }
