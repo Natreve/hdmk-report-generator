@@ -1,6 +1,9 @@
 import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
 import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
+import inspection from "./inspection";
+import inspector from "./inspector";
+import layout from "./layout";
 const compressPDF = async (filename, file) => {
   try {
     //authenicate
@@ -75,13 +78,11 @@ const compressPDF = async (filename, file) => {
     throw Error(error);
   }
 };
-const generatePDF = async (id, printOnly) => {
+const generatePDF = async (printOnly) => {
   return new Promise(async (resolve, reject) => {
     try {
-      const endpoint = `${process.env.API}${id}`;
-      const { data } = await axios.get(endpoint);
       const { data: limitations } = await axios("/limitations.txt");
-      const { inspection, inspector, layout } = data;
+      
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
       vfs = pdfMake.vfs;
@@ -91,7 +92,6 @@ const generatePDF = async (id, printOnly) => {
           normal: `${window.location.href}/fonts/Montserrat-Regular.ttf`,
         },
       };
-
       const dd = {
         pageSize: "LETTER",
         pageMargins: [20, 100, 20, 40],
@@ -148,7 +148,6 @@ const generatePDF = async (id, printOnly) => {
             `${window.location.href}/images/cover.png`,
         },
       };
-
       const createConditionsPage = () => {
         if (!inspection.house) return {};
         const { conditions } = inspection.house;
@@ -306,10 +305,8 @@ const generatePDF = async (id, printOnly) => {
         if (!inspection.house) return {};
         const { house } = inspection;
         const sections = [];
-
         layout.sections.forEach(({ name: section, items }) => {
           const selectedItems = [];
-
           if (house[section]) {
             items.forEach(({ name: item, fields }) => {
               const selectedFields = [];
@@ -319,7 +316,6 @@ const generatePDF = async (id, printOnly) => {
                     if (house[section][item][field]?.summary) {
                       const { summary, images } = house[section][item][field];
                       const selectedImages = [];
-
                       if (images) {
                         Object.keys(images).forEach((key) => {
                           if (images[key].summary) {
@@ -351,7 +347,6 @@ const generatePDF = async (id, printOnly) => {
           }
         });
         if (sections.length < 1) return;
-
         dd.content.push({
           text: `REPORT SUMMARY`,
           pageBreak: "before",
@@ -360,10 +355,8 @@ const generatePDF = async (id, printOnly) => {
         });
         sections.forEach(({ name: section, items }) => {
           dd.content.push({ text: section, style: ["header"] });
-
           items.forEach(({ name: item, fields }) => {
             dd.content.push({ text: item, style: ["subHeader"] });
-
             // let columns = [];
             fields.forEach(({ name: field, value, images }) => {
               let columns = [];
@@ -373,7 +366,6 @@ const generatePDF = async (id, printOnly) => {
                   { text: value, margin: [10, 5, 0, 5] },
                 ],
               });
-
               images.forEach((image, index) => {
                 columns.push({
                   image: image.name,
@@ -394,7 +386,6 @@ const generatePDF = async (id, printOnly) => {
       const createSectionsPage = () => {
         if (!inspection.house) return {};
         const { house } = inspection;
-
         layout.sections.forEach(({ name: section, items }) => {
           if (!house[section]) return;
           dd.content.push({
@@ -406,12 +397,10 @@ const generatePDF = async (id, printOnly) => {
           items.forEach(({ name: item, fields }) => {
             if (!house[section][item]) return;
             dd.content.push({ text: item, style: ["header"] }); //Item
-
             fields.forEach((field) => {
               let columns = [];
               if (!house[section][item][field]) return;
               const { value, images } = house[section][item][field];
-
               dd.content.push({
                 stack: [
                   { text: field, style: ["subHeader"], margin: [10, 5, 0, 5] },
@@ -428,7 +417,6 @@ const generatePDF = async (id, printOnly) => {
                   }
                   return images[key];
                 });
-
                 imagesArry.forEach((image, index) => {
                   columns.push({
                     image: image.name,
@@ -451,7 +439,6 @@ const generatePDF = async (id, printOnly) => {
           });
         });
       };
-
       createConditionsPage();
       createLimitationsPage();
       if (printOnly === "summary") {
