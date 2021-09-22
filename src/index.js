@@ -377,7 +377,7 @@ const generatePDF = async (printOnly) => {
                 stack: [
                   { text: field, margin: [10, 5, 0, 5] },
                   {
-                    text: value ? value.replace(/\n/g, "\n • ") : value,
+                    text: value,
                     margin: [10, 5, 0, 5],
                   },
                 ],
@@ -421,7 +421,7 @@ const generatePDF = async (printOnly) => {
                 stack: [
                   { text: field, style: ["subHeader"], margin: [10, 5, 0, 5] },
                   {
-                    text: value ? value.replace(/\n/g, "\n • ") : value,
+                    text: value,
                     margin: [10, 5, 0, 5],
                   },
                 ],
