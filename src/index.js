@@ -82,14 +82,14 @@ const generatePDF = async (printOnly) => {
   return new Promise(async (resolve, reject) => {
     try {
       const { data: limitations } = await axios("/limitations.txt");
-      
+
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
       vfs = pdfMake.vfs;
       fonts = {
         Montserrat: {
           bold: `${window.location.href}/fonts/Montserrat-SemiBold.ttf`,
-          normal: `${window.location.href}/fonts/Montserrat-Regular.ttf`,
+          normal: `${window.location.href}/fonts/Montserrat-Light.ttf`,
         },
       };
       const dd = {
@@ -101,6 +101,8 @@ const generatePDF = async (printOnly) => {
             {
               text: `${inspector.fname} ${inspector.lname}\n${inspector.licence_number}\n${inspector.phone} \n${inspector.email}`,
               alignment: "right",
+              fontSize: 12,
+              bold: true,
             },
           ],
           margin: [20, 20],
@@ -117,8 +119,13 @@ const generatePDF = async (printOnly) => {
             columns: [
               {
                 text: `${client.name}\n${street}\n${city} ${state} ${zipcode}`,
+                bold: true,
               },
-              { text: `\n\n${inspection.date.started}`, alignment: "right" },
+              {
+                text: `\n\n${inspection.date.started}`,
+                alignment: "right",
+                bold: true,
+              },
             ],
           },
           { image: "cover", width: 570, margin: [0, 20] },
@@ -133,8 +140,8 @@ const generatePDF = async (printOnly) => {
           },
         ],
         styles: {
-          title: { fontSize: 30, bold: true, margin: [0, 5] },
-          header: { fontSize: 18, bold: true, margin: [0, 5] },
+          title: { fontSize: 36, bold: true, margin: [0, 5] },
+          header: { fontSize: 24, bold: true, margin: [0, 5] },
           subHeader: { fontSize: 14, bold: true, margin: [0, 5] },
           limitation: { fontSize: 7 },
         },
@@ -164,6 +171,7 @@ const generatePDF = async (printOnly) => {
         });
         dd.content.push({
           layout: "noBorders",
+          margin: [10, 0],
           table: {
             widths: "*",
             body: [
@@ -196,6 +204,7 @@ const generatePDF = async (printOnly) => {
         dd.content.push({ text: "PAYMENT INFORMATION:", style: ["header"] });
         dd.content.push({
           layout: "noBorders",
+          margin: [10, 0],
           table: {
             widths: "*",
             body: [
@@ -213,6 +222,7 @@ const generatePDF = async (printOnly) => {
             if (!conditions.climate[field]) return;
             dd.content.push({
               layout: "noBorders",
+              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -234,6 +244,7 @@ const generatePDF = async (printOnly) => {
             if (!conditions.building[field]) return;
             dd.content.push({
               layout: "noBorders",
+              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -255,6 +266,7 @@ const generatePDF = async (printOnly) => {
             if (!conditions.utility[field]) return;
             dd.content.push({
               layout: "noBorders",
+              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -276,6 +288,7 @@ const generatePDF = async (printOnly) => {
             if (!conditions.other[field]) return;
             dd.content.push({
               layout: "noBorders",
+              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -363,7 +376,10 @@ const generatePDF = async (printOnly) => {
               dd.content.push({
                 stack: [
                   { text: field, margin: [10, 5, 0, 5] },
-                  { text: value, margin: [10, 5, 0, 5] },
+                  {
+                    text: value ? value.replace(/\n/g, "\n • ") : value,
+                    margin: [10, 5, 0, 5],
+                  },
                 ],
               });
               images.forEach((image, index) => {
@@ -404,7 +420,10 @@ const generatePDF = async (printOnly) => {
               dd.content.push({
                 stack: [
                   { text: field, style: ["subHeader"], margin: [10, 5, 0, 5] },
-                  { text: value, margin: [10, 5, 0, 5] },
+                  {
+                    text: value ? value.replace(/\n/g, "\n • ") : value,
+                    margin: [10, 5, 0, 5],
+                  },
                 ],
               });
               if (images) {
