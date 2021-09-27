@@ -1,9 +1,6 @@
 import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
 import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
-import inspection from "./inspection";
-import inspector from "./inspector";
-import layout from "./layout";
 const compressPDF = async (filename, file) => {
   try {
     //authenicate
@@ -78,13 +75,16 @@ const compressPDF = async (filename, file) => {
     throw Error(error);
   }
 };
-const generatePDF = async (printOnly) => {
+const generatePDF = async (id, printOnly) => {
   return new Promise(async (resolve, reject) => {
     try {
+      const endpoint = `${process.env.API}${id}`;
+      const { data } = await axios.get(endpoint);
       const { data: limitations } = await axios("/limitations.txt");
-
+      const { inspection, inspector, layout } = data;
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
+
       vfs = pdfMake.vfs;
       fonts = {
         Montserrat: {
@@ -94,7 +94,7 @@ const generatePDF = async (printOnly) => {
       };
       const dd = {
         pageSize: "LETTER",
-        pageMargins: [20, 100, 20, 40],
+        pageMargins: [40, 100, 40, 40],
         header: {
           columns: [
             { image: "logo", width: 150 },
@@ -105,16 +105,17 @@ const generatePDF = async (printOnly) => {
               bold: true,
             },
           ],
-          margin: [20, 20],
+          margin: [40, 20],
         },
         footer: function (currentPage, pageCount) {
           return {
             text: `Page ${currentPage} of ${pageCount}`,
             alignment: "center",
-            margin: [0, 20, 0, 5],
+            margin: [0, 0, 0, 50],
           };
         },
         content: [
+          { image: "cover", width: 530, margin: [0, 20] },
           {
             columns: [
               {
@@ -128,7 +129,6 @@ const generatePDF = async (printOnly) => {
               },
             ],
           },
-          { image: "cover", width: 570, margin: [0, 20] },
           {
             toc: {
               title: {
@@ -171,31 +171,31 @@ const generatePDF = async (printOnly) => {
         });
         dd.content.push({
           layout: "noBorders",
-          margin: [10, 0],
+          margin: [20, 0],
           table: {
             widths: "*",
             body: [
               [
                 { text: "DATE OF INSPECTION:", style: ["subHeader"] },
-                { text: inspection.date.started, margin: [0, 5] },
+                { text: inspection.date.started, margin: [0, 3] },
               ],
               [
                 { text: "START TIME:", style: ["subHeader"] },
-                { text: inspection.time.started, margin: [0, 5] },
+                { text: inspection.time.started, margin: [0, 3] },
               ],
               [
                 { text: "END TIME:", style: ["subHeader"] },
-                { text: inspection.time.ended, margin: [0, 5] },
+                { text: inspection.time.ended, margin: [0, 3] },
               ],
               [
                 { text: "CLIENT NAME:", style: ["subHeader"] },
-                { text: client.name, margin: [0, 5] },
+                { text: client.name, margin: [0, 3] },
               ],
               [
                 { text: "CITY & STATE:", style: ["subHeader"] },
                 {
                   text: `${city}, ${state} ${zipcode}`,
-                  margin: [0, 5],
+                  margin: [0, 3],
                 },
               ],
             ],
@@ -210,7 +210,7 @@ const generatePDF = async (printOnly) => {
             body: [
               [
                 { text: "TOTAL FEE:", style: ["subHeader"] },
-                { text: `$${inspection.fee}`, margin: [0, 5] },
+                { text: `$${inspection.fee}`, margin: [0, 3] },
               ],
               //   ["SIGNATURE:", { image: signature, width: 100 }],
             ],
@@ -230,7 +230,7 @@ const generatePDF = async (printOnly) => {
                     { text: field, style: ["subHeader"] },
                     {
                       text: conditions.climate[field]?.value || "",
-                      margin: [0, 5],
+                      margin: [0, 3],
                     },
                   ],
                 ],
@@ -252,7 +252,7 @@ const generatePDF = async (printOnly) => {
                     { text: field, style: ["subHeader"] },
                     {
                       text: conditions.building[field]?.value || "",
-                      margin: [0, 5],
+                      margin: [0, 3],
                     },
                   ],
                 ],
@@ -274,7 +274,7 @@ const generatePDF = async (printOnly) => {
                     { text: field, style: ["subHeader"] },
                     {
                       text: conditions.utility[field]?.value || "",
-                      margin: [0, 5],
+                      margin: [0, 3],
                     },
                   ],
                 ],
@@ -296,7 +296,7 @@ const generatePDF = async (printOnly) => {
                     { text: field, style: ["subHeader"] },
                     {
                       text: conditions.other[field]?.value || "",
-                      margin: [0, 5],
+                      margin: [0, 3],
                     },
                   ],
                 ],
@@ -369,16 +369,20 @@ const generatePDF = async (printOnly) => {
         sections.forEach(({ name: section, items }) => {
           dd.content.push({ text: section, style: ["header"] });
           items.forEach(({ name: item, fields }) => {
-            dd.content.push({ text: item, style: ["subHeader"] });
+            dd.content.push({
+              text: item,
+              style: ["subHeader"],
+              margin: [10, 0],
+            });
             // let columns = [];
             fields.forEach(({ name: field, value, images }) => {
               let columns = [];
               dd.content.push({
                 stack: [
-                  { text: field, margin: [10, 5, 0, 5] },
+                  { text: field, margin: [20, 5, 0, 5] },
                   {
                     text: value,
-                    margin: [10, 5, 0, 5],
+                    margin: [20, 5, 0, 5],
                   },
                 ],
               });
@@ -387,6 +391,7 @@ const generatePDF = async (printOnly) => {
                   image: image.name,
                   width: 150,
                   height: 150,
+                  margin: [10, 0],
                 });
                 if (!images[index + 1])
                   return dd.content.push({ columns: columns, columnGap: 8 });
@@ -441,6 +446,7 @@ const generatePDF = async (printOnly) => {
                     image: image.name,
                     width: 150,
                     height: 150,
+                    margin: [10, 4],
                   });
                   if (!imagesArry[index + 1])
                     return dd.content.push({ columns: columns, columnGap: 8 });
@@ -469,7 +475,7 @@ const generatePDF = async (printOnly) => {
         createSectionsPage();
       }
       const doc = createPdf(dd);
-
+      // resolve(doc.download());
       doc.getBlob((blob) => {
         resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
       });
