@@ -67,7 +67,7 @@ const compressPDF = async (filename, file) => {
     const url = URL.createObjectURL(response.data);
     const link = document.createElement("a");
     link.href = url;
-    link.setAttribute("download", filename);
+    link.setAttribute("download", `${filename}.pdf`);
     document.body.appendChild(link);
     link.click();
     return true;
@@ -333,13 +333,18 @@ const generatePDF = async (id, printOnly) => {
                         Object.keys(images).forEach((key) => {
                           if (images[key].summary) {
                             if (typeof images[key].downloadURL === "object") {
-                              dd.images[images[key].name] =
-                                images[key].downloadURL.hd;
+                              if (images[key].downloadURL.hd) {
+                                dd.images[images[key].name] =
+                                  images[key].downloadURL.hd;
+                                selectedImages.push(images[key]);
+                              }
                             } else {
-                              dd.images[images[key].name] =
-                                images[key].downloadURL;
+                              if (images[key].downloadURL) {
+                                dd.images[images[key].name] =
+                                  images[key].downloadURL;
+                                selectedImages.push(images[key]);
+                              }
                             }
-                            selectedImages.push(images[key]);
                           }
                         });
                       }
@@ -432,14 +437,21 @@ const generatePDF = async (id, printOnly) => {
                 ],
               });
               if (images) {
-                let imagesArry = Object.keys(images).map((key) => {
+                let imagesArry = [];
+                Object.keys(images).forEach((key) => {
                   if (!dd.images[images[key].name]) {
                     if (typeof images[key].downloadURL === "object") {
-                      dd.images[images[key].name] = images[key].downloadURL.hd;
-                    } else
+                      if (images[key].downloadURL.hd) {
+                        dd.images[images[key].name] =
+                          images[key].downloadURL.hd;
+                        imagesArry.push(images[key]);
+                      }
+                    } else if (images[key].downloadURL) {
                       dd.images[images[key].name] = images[key].downloadURL;
+                      imagesArry.push(images[key]);
+                    }
                   }
-                  return images[key];
+                  // return images[key];
                 });
                 imagesArry.forEach((image, index) => {
                   columns.push({
