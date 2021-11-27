@@ -1,8 +1,10 @@
 import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
 import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
+
 const compressPDF = async (filename, file) => {
   try {
+    progressBarData(10, 0);
     //authenicate
     let response = await axios({
       method: "post",
@@ -10,8 +12,15 @@ const compressPDF = async (filename, file) => {
       headers: {},
       data: { public_key: process.env.PUBLICKEY },
     });
-
     const { token } = response.data;
+
+    progressBarData(10, 0);
+
+    document.querySelector(".pdf-download-loading").classList.add("start");
+    document.querySelector("body").classList.add("pdf-ganrate-start");
+    document.querySelector(".floating").classList.add("pdf-start");
+    document.querySelector(".pdf-dwonload-message").innerHTML =
+      "Your PDF is being compressed and will be downloaded shortly.";
 
     //start compress
     response = await axios({
@@ -21,7 +30,7 @@ const compressPDF = async (filename, file) => {
         Authorization: `Bearer ${token}`,
       },
     });
-
+    progressBarData(10, 0);
     const { server, task } = response.data;
     let data = new FormData();
     data.append("file", file, "report.pdf");
@@ -35,6 +44,8 @@ const compressPDF = async (filename, file) => {
       },
       data,
     });
+
+    progressBarData(25, 0);
 
     const { server_filename } = response.data;
     //process file
@@ -55,7 +66,7 @@ const compressPDF = async (filename, file) => {
         ],
       },
     });
-
+    progressBarData(5, 0);
     response = await axios({
       method: "get",
       url: `https://${server}/v1/download/${task}`,
@@ -64,23 +75,38 @@ const compressPDF = async (filename, file) => {
       },
       responseType: "blob",
     });
+
     const url = URL.createObjectURL(response.data);
     const link = document.createElement("a");
     link.href = url;
     link.setAttribute("download", `${filename}.pdf`);
     document.body.appendChild(link);
     link.click();
+
+    document.querySelector(".pdf-download-loading").classList.remove("start");
+    document.querySelector("body").classList.remove("pdf-ganrate-start");
+    document.querySelector(".floating").classList.remove("pdf-start");
+    progressBarData(0, 1);
+
     return true;
   } catch (error) {
     throw Error(error);
   }
 };
+
 const generatePDF = async (id, printOnly) => {
+  progressBarData(10, 0);
   return new Promise(async (resolve, reject) => {
     try {
+      var url =
+        window.location.protocol +
+        "//" +
+        window.location.host +
+        window.location.pathname;
+
       const endpoint = `${process.env.API}${id}`;
       const { data } = await axios.get(endpoint);
-      const { data: limitations } = await axios("/limitations.txt");
+      const { data: limitations } = await axios("./public/limitations.txt");
       const { inspection, inspector, layout } = data;
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
@@ -88,10 +114,17 @@ const generatePDF = async (id, printOnly) => {
       vfs = pdfMake.vfs;
       fonts = {
         Montserrat: {
-          bold: `${window.location.href}/fonts/Montserrat-SemiBold.ttf`,
-          normal: `${window.location.href}/fonts/Montserrat-Light.ttf`,
+          bold: url + "public/fonts/Montserrat-SemiBold.ttf",
+          normal: url + "public/fonts/Montserrat-SemiBold.ttf",
         },
       };
+
+      if (typeof inspection.house.cover.downloadURL === "object") {
+        var coverImage = inspection.house.cover.downloadURL.hd;
+      } else {
+        var coverImage = inspection.house.cover.downloadURL;
+      }
+
       const dd = {
         pageSize: "LETTER",
         pageMargins: [40, 100, 40, 40],
@@ -101,8 +134,6 @@ const generatePDF = async (id, printOnly) => {
             {
               text: `${inspector.fname} ${inspector.lname}\n${inspector.licence_number}\n${inspector.phone} \n${inspector.email}`,
               alignment: "right",
-              fontSize: 12,
-              bold: true,
             },
           ],
           margin: [40, 20],
@@ -115,20 +146,15 @@ const generatePDF = async (id, printOnly) => {
           };
         },
         content: [
-          { image: "cover", width: 530, margin: [0, 20] },
           {
             columns: [
               {
                 text: `${client.name}\n${street}\n${city} ${state} ${zipcode}`,
-                bold: true,
               },
-              {
-                text: `\n\n${inspection.date.started}`,
-                alignment: "right",
-                bold: true,
-              },
+              { text: `\n\n${inspection.date.started}`, alignment: "right" },
             ],
           },
+          { image: "cover", width: 530, margin: [0, 20] },
           {
             toc: {
               title: {
@@ -140,8 +166,8 @@ const generatePDF = async (id, printOnly) => {
           },
         ],
         styles: {
-          title: { fontSize: 36, bold: true, margin: [0, 5] },
-          header: { fontSize: 24, bold: true, margin: [0, 5] },
+          title: { fontSize: 30, bold: true, margin: [0, 5] },
+          header: { fontSize: 18, bold: true, margin: [0, 5] },
           subHeader: { fontSize: 14, bold: true, margin: [0, 5] },
           limitation: { fontSize: 7 },
         },
@@ -149,12 +175,12 @@ const generatePDF = async (id, printOnly) => {
           font: "Montserrat",
         },
         images: {
-          logo: `${window.location.href}/images/HDMK.png`,
-          cover:
-            inspection?.house?.cover?.downloadURL ||
-            `${window.location.href}/images/cover.png`,
+          logo: url + "public/images/HDMK.png",
+          // cover:url + "public/images/cover.png",
+          cover: coverImage || url + "public/images/cover.png",
         },
       };
+
       const createConditionsPage = () => {
         if (!inspection.house) return {};
         const { conditions } = inspection.house;
@@ -204,7 +230,6 @@ const generatePDF = async (id, printOnly) => {
         dd.content.push({ text: "PAYMENT INFORMATION:", style: ["header"] });
         dd.content.push({
           layout: "noBorders",
-          margin: [10, 0],
           table: {
             widths: "*",
             body: [
@@ -222,7 +247,6 @@ const generatePDF = async (id, printOnly) => {
             if (!conditions.climate[field]) return;
             dd.content.push({
               layout: "noBorders",
-              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -244,7 +268,6 @@ const generatePDF = async (id, printOnly) => {
             if (!conditions.building[field]) return;
             dd.content.push({
               layout: "noBorders",
-              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -266,7 +289,6 @@ const generatePDF = async (id, printOnly) => {
             if (!conditions.utility[field]) return;
             dd.content.push({
               layout: "noBorders",
-              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -288,7 +310,6 @@ const generatePDF = async (id, printOnly) => {
             if (!conditions.other[field]) return;
             dd.content.push({
               layout: "noBorders",
-              margin: [10, 0],
               table: {
                 widths: "*",
                 body: [
@@ -318,8 +339,10 @@ const generatePDF = async (id, printOnly) => {
         if (!inspection.house) return {};
         const { house } = inspection;
         const sections = [];
+
         layout.sections.forEach(({ name: section, items }) => {
           const selectedItems = [];
+
           if (house[section]) {
             items.forEach(({ name: item, fields }) => {
               const selectedFields = [];
@@ -329,6 +352,7 @@ const generatePDF = async (id, printOnly) => {
                     if (house[section][item][field]?.summary) {
                       const { summary, images } = house[section][item][field];
                       const selectedImages = [];
+
                       if (images) {
                         Object.keys(images).forEach((key) => {
                           if (images[key].summary) {
@@ -365,6 +389,7 @@ const generatePDF = async (id, printOnly) => {
           }
         });
         if (sections.length < 1) return;
+
         dd.content.push({
           text: `REPORT SUMMARY`,
           pageBreak: "before",
@@ -373,24 +398,24 @@ const generatePDF = async (id, printOnly) => {
         });
         sections.forEach(({ name: section, items }) => {
           dd.content.push({ text: section, style: ["header"] });
+
           items.forEach(({ name: item, fields }) => {
             dd.content.push({
               text: item,
               style: ["subHeader"],
               margin: [10, 0],
             });
+
             // let columns = [];
             fields.forEach(({ name: field, value, images }) => {
               let columns = [];
               dd.content.push({
                 stack: [
                   { text: field, margin: [20, 5, 0, 5] },
-                  {
-                    text: value,
-                    margin: [20, 5, 0, 5],
-                  },
+                  { text: value, margin: [20, 5, 0, 5] },
                 ],
               });
+
               images.forEach((image, index) => {
                 columns.push({
                   image: image.name,
@@ -412,6 +437,7 @@ const generatePDF = async (id, printOnly) => {
       const createSectionsPage = () => {
         if (!inspection.house) return {};
         const { house } = inspection;
+
         layout.sections.forEach(({ name: section, items }) => {
           if (!house[section]) return;
           dd.content.push({
@@ -423,17 +449,16 @@ const generatePDF = async (id, printOnly) => {
           items.forEach(({ name: item, fields }) => {
             if (!house[section][item]) return;
             dd.content.push({ text: item, style: ["header"] }); //Item
+
             fields.forEach((field) => {
               let columns = [];
               if (!house[section][item][field]) return;
               const { value, images } = house[section][item][field];
+
               dd.content.push({
                 stack: [
                   { text: field, style: ["subHeader"], margin: [10, 5, 0, 5] },
-                  {
-                    text: value,
-                    margin: [10, 5, 0, 5],
-                  },
+                  { text: value, margin: [10, 5, 0, 5] },
                 ],
               });
               if (images) {
@@ -453,6 +478,7 @@ const generatePDF = async (id, printOnly) => {
                   }
                   // return images[key];
                 });
+
                 imagesArry.forEach((image, index) => {
                   columns.push({
                     image: image.name,
@@ -476,6 +502,7 @@ const generatePDF = async (id, printOnly) => {
           });
         });
       };
+
       createConditionsPage();
       createLimitationsPage();
       if (printOnly === "summary") {
@@ -486,28 +513,81 @@ const generatePDF = async (id, printOnly) => {
         createSummaryPage();
         createSectionsPage();
       }
+
+      progressBarData(10, 0);
       const doc = createPdf(dd);
+      progressBarData(10, 0);
+      // console.log(doc);
       // resolve(doc.download());
       doc.getBlob((blob) => {
         resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
       });
+      // console.log('ssa');
+      // progressBarData('20');
+
+      // console.log('0');
+      // progressBarData('0',1);
+      // doc.download();
+
+      // document.querySelector(".pdf-download-loading").classList.remove("start");
+      // document.querySelector("body").classList.remove("pdf-ganrate-start");
+      // document.querySelector(".floating").classList.remove("pdf-start");
     } catch (error) {
       reject(error);
     }
   });
 };
 
-const onCreateReport = async () => {
-  const id = document.querySelector('input[name="id"').value;
-  const printOnly = document.querySelector(
-    'input[name="printOnly"]:checked'
-  ).value;
-  document.querySelector("#create-report").setAttribute("disabled", true);
-  document.querySelector("#create-report").innerHTML = "Generating PDF";
+//full inspection report
+
+const onCreateFullInspectionReport = async () => {
+  progressBarData(0, 1);
+  const id = document.getElementById("full-report-pdf").getAttribute("data");
+  const printOnly = "full";
+
+  document.querySelector(".pdf-download-loading").classList.add("start");
+  document.querySelector("body").classList.add("pdf-ganrate-start");
+  document.querySelector(".floating").classList.add("pdf-start");
+  document.querySelector(".pdf-dwonload-message").innerHTML =
+    "Your PDF is being created. This process may take up to 2 minutes. Next we will compress your PDF. Please don’t click the button multiple times.";
+  document.querySelector(".wrapper input").checked = false;
   await generatePDF(id, printOnly);
-  document.querySelector("#create-report").removeAttribute("disabled");
-  document.querySelector("#create-report").innerHTML = "Create Report";
 };
-document
-  .querySelector("#create-report")
-  .addEventListener("click", onCreateReport);
+
+//summery report
+
+const onCreateSummaryInspectionReport = async () => {
+  progressBarData(0, 1);
+  const id = document.getElementById("summary-report-pdf").getAttribute("data");
+  const printOnly = "summary";
+  document.querySelector(".pdf-download-loading").classList.add("start");
+  document.querySelector("body").classList.add("pdf-ganrate-start");
+  document.querySelector(".floating").classList.add("pdf-start");
+  document.querySelector(".pdf-dwonload-message").innerHTML =
+    "Your PDF is being created. This process may take up to 2 minutes. Next we will compress your PDF. Please don’t click the button multiple times.";
+  document.querySelector(".wrapper input").checked = false;
+  await generatePDF(id, printOnly);
+};
+
+var fullReport = document.querySelector("#full-report-pdf");
+if (fullReport) {
+  fullReport.addEventListener("click", onCreateFullInspectionReport);
+}
+
+var summaryReport = document.querySelector("#summary-report-pdf");
+if (summaryReport) {
+  summaryReport.addEventListener("click", onCreateSummaryInspectionReport);
+}
+
+function progressBarData(value, clear = 0) {
+  setTimeout(function () {
+    if (clear) {
+      $("#report-progress-bar").val(value);
+    } else {
+      let oldValue = $("#report-progress-bar").val();
+      let newValue = oldValue + value;
+      console.log(newValue);
+      $("#report-progress-bar").val(newValue);
+    }
+  }, 200);
+}
