@@ -114,8 +114,8 @@ const generatePDF = async (id, printOnly) => {
       vfs = pdfMake.vfs;
       fonts = {
         Montserrat: {
-          bold: url + "public/fonts/Montserrat-SemiBold.ttf",
-          normal: url + "public/fonts/Montserrat-SemiBold.ttf",
+          bold: `${url}/public/fonts/Montserrat-SemiBold.ttf`,
+          normal: `${url}/public/fonts/Montserrat-Light.ttf`,
         },
       };
 
@@ -175,9 +175,8 @@ const generatePDF = async (id, printOnly) => {
           font: "Montserrat",
         },
         images: {
-          logo: url + "public/images/HDMK.png",
-          // cover:url + "public/images/cover.png",
-          cover: coverImage || url + "public/images/cover.png",
+          logo: `${url}/public/images/HDMK.png`,
+          cover: coverImage || `${url}/public/images/cover.png`,
         },
       };
 
@@ -513,12 +512,10 @@ const generatePDF = async (id, printOnly) => {
         createSummaryPage();
         createSectionsPage();
       }
-
       progressBarData(10, 0);
       const doc = createPdf(dd);
       progressBarData(10, 0);
-      // console.log(doc);
-      // resolve(doc.download());
+
       doc.getBlob((blob) => {
         resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
       });
