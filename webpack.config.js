@@ -1,3 +1,4 @@
+// import { resolve, join } from "path";
 const path = require("path");
 const Dotenv = require("dotenv-webpack");
 module.exports = {
@@ -7,8 +8,24 @@ module.exports = {
     path: path.resolve(__dirname, "public/js"),
   },
   devServer: {
-    contentBase: path.join(__dirname, "public"),
-    port: 5000,
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
+    port: 8000,
   },
   plugins: [new Dotenv()],
+  resolve: {
+    fallback: {
+      path: require.resolve("path-browserify"),
+      crypto: require.resolve("crypto-browserify"),
+      stream: require.resolve("stream-browserify"),
+      http: require.resolve("stream-http"),
+      fs: false,
+    },
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
 };
