@@ -99,7 +99,7 @@ const generatePDF = async (id, printOnly) => {
       const { sectionSummary, conditionsSummary } = data;
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
-
+      console.log(inspector);
       const startDate = DateTime.fromJSDate(
         new Date(inspection.date.started)
       ).toLocaleString(DateTime.DATE_SHORT);
@@ -184,6 +184,7 @@ const generatePDF = async (id, printOnly) => {
         images: {
           logo: `${url}/images/HDMK.png`,
           cover: inspection.cover,
+          signature: inspector.signature,
         },
       };
 
@@ -239,7 +240,7 @@ const generatePDF = async (id, printOnly) => {
               { text: "TOTAL FEE:", style: ["subHeader"] },
               { text: `$${inspection.fee}`, margin: [0, 3] },
             ],
-            //   ["SIGNATURE:", { image: signature, width: 100 }],
+            ["SIGNATURE:", { image: "signature", width: 100 }],
           ],
         },
       });
