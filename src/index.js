@@ -295,14 +295,16 @@ const generatePDF = async (id, printOnly) => {
                 { text: comment.text, margin: [20, 5, 0, 5] },
               ],
             });
-            comment.images.forEach((image, index) => {
-              columns.push({
-                image: image.name,
-                width: 150,
-                height: 150,
-                margin: [10, 0],
-              });
-              if (!comment.images[index + 1])
+            comment.media.forEach((media, index) => {
+              if (media.type === "image/jpeg" && media.uploaded) {
+                columns.push({
+                  image: media.name,
+                  width: 150,
+                  height: 150,
+                  margin: [10, 0],
+                });
+              }
+              if (!comment.media[index + 1])
                 return dd.content.push({ columns: columns, columnGap: 8 });
               if (!(columns.length % 3)) {
                 dd.content.push({ columns: columns, columnGap: 8 });
@@ -345,26 +347,28 @@ const generatePDF = async (id, printOnly) => {
                 { text: comment.text, margin: [10, 5, 0, 5] },
               ],
             });
-            comment.images.forEach((image, index) => {
-              if (image) {
-                dd.images[image.name] = image.url;
-                columns.push({
-                  image: image.name,
-                  width: 150,
-                  height: 150,
-                  margin: [10, 4],
-                });
-                if (!comment.images[index + 1]) {
-                  return dd.content.push({ columns: columns, columnGap: 8 });
-                }
-
-                if (!(columns.length % 3)) {
-                  dd.content.push({
-                    columns: columns,
-                    columnGap: 8,
-                    margin: [0, 4],
+            comment.media.forEach((media, index) => {
+              if (media) {
+                if (media.type === "image/jpeg" && media.uploaded) {
+                  dd.images[media.name] = media.url;
+                  columns.push({
+                    image: media.name,
+                    width: 150,
+                    height: 150,
+                    margin: [10, 4],
                   });
-                  columns = [];
+                  if (!comment.media[index + 1]) {
+                    return dd.content.push({ columns: columns, columnGap: 8 });
+                  }
+
+                  if (!(columns.length % 3)) {
+                    dd.content.push({
+                      columns: columns,
+                      columnGap: 8,
+                      margin: [0, 4],
+                    });
+                    columns = [];
+                  }
                 }
               }
             });
