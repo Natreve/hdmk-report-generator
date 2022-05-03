@@ -9,6 +9,7 @@ Add a `.env` file to the root directory with the following keys
 ```
 PUBLICKEY=<THE_ILOVEPDF_PUBLICKEY>
 API=<THE_API_ENDPOINT>
+ACCESS_TOKEN=<THE_API_ACCESS_TOKEN>
 ```
 
 ### In the root folder, Run
