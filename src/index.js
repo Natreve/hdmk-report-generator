@@ -1,8 +1,10 @@
-import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
-import { pdfMake } from "pdfmake/build/vfs_fonts";
+// import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
+// import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
 import sharp from "sharp"
 import { DateTime } from "luxon";
+import * as fs from "fs"
+import PdfPrinter from "pdfmake";
 const compressPDF = async (filename, file) => {
   try {
     //authenicate
@@ -119,13 +121,14 @@ const generatePDF = async (id, printOnly) => {
         new Date(inspection.date.ended)
       ).toLocaleString(DateTime.TIME_SIMPLE);
 
-      vfs = pdfMake.vfs;
-      fonts = {
+      // vfs = pdfMake.vfs;
+      let fonts = {
         Montserrat: {
           bold: `${url}/fonts/Montserrat-SemiBold.ttf`,
           normal: `${url}/fonts/Montserrat-Light.ttf`,
         },
       };
+      let printer = new PdfPrinter(fonts)
       //Get logo, default cover and cover image
       let logo = optimizeImage(`${url}/images/HDMK.png`, 200, 53)
       let cover = optimizeImage(inspection.cover, 530, 500)
@@ -434,13 +437,15 @@ const generatePDF = async (id, printOnly) => {
       //   });
       // });
 
-      const doc = createPdf(dd);
+      // const doc = createPdf(dd);
 
       // doc.getBlob((blob) => {
       //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
       // });
 
-      doc.download();
+      // doc.download();
+      const doc = printer.createPdfKitDocument(dd)
+      doc.pipe(fs.createWriteStream(`${street} ${city} ${state} ${zipcode}.pdf`))
       resolve(data);
     } catch (error) {
       reject(error);
