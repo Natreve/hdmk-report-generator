@@ -378,9 +378,9 @@ const generatePDF = async (id, printOnly) => {
 
       const doc = createPdf(dd);
 
-      doc.getBlob((blob) => {
-        resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
-      });
+      // doc.getBlob((blob) => {
+      //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
+      // });
 
       // doc.download();
       resolve(data);

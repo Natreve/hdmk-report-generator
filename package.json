@@ -2,16 +2,20 @@
   "name": "hdmk-report-generator",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.21.1",
     "brfs": "^2.0.2",
     "browserify": "^17.0.0",
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "handlebars": "^4.7.7",
+    "handlebars-async-helpers": "^1.0.3",
     "luxon": "^2.3.0",
     "pdfmake": "^0.2.0",
-    "puppeteer": "^13.7.0"
+    "puppeteer": "^13.7.0",
+    "sharp": "^0.30.4"
   },
   "devDependencies": {
     "dotenv-webpack": "^7.0.3",
