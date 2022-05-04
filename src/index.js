@@ -1,6 +1,7 @@
 import { vfs, fonts, createPdf } from "pdfmake/build/pdfmake";
 import { pdfMake } from "pdfmake/build/vfs_fonts";
 import axios from "axios";
+import sharp from "sharp"
 import { DateTime } from "luxon";
 const compressPDF = async (filename, file) => {
   try {
@@ -76,6 +77,11 @@ const compressPDF = async (filename, file) => {
     throw Error(error);
   }
 };
+const optimizeImage = async (url, width, height) => {
+  let { data: input } = await axios({ url, responseType: "arraybuffer" })
+  let output = await sharp(input).resize(width, height).jpeg().toBuffer()
+  return `data:image/jpeg;base64,${output.toString('base64')}`
+}
 const generatePDF = async (id, printOnly) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -120,13 +126,15 @@ const generatePDF = async (id, printOnly) => {
           normal: `${url}/fonts/Montserrat-Light.ttf`,
         },
       };
-
+      //Get logo, default cover and cover image
+      let logo = optimizeImage(`${url}/images/HDMK.png`, 200, 53)
+      let cover = optimizeImage(inspection.cover, 530, 500)
       const dd = {
         pageSize: "LETTER",
         pageMargins: [40, 100, 40, 40],
         header: {
           columns: [
-            { image: "logo", width: 150 },
+            { image: "logo", width: 200 },
             {
               text: `${inspector.fname} ${inspector.lname}\n${inspector.licence_number}\n${inspector.phone} \n${inspector.email}`,
               alignment: "right",
@@ -181,11 +189,7 @@ const generatePDF = async (id, printOnly) => {
         defaultStyle: {
           font: "Montserrat",
         },
-        images: {
-          logo: `${url}/images/HDMK.png`,
-          cover: inspection.cover,
-          // signature: inspector.signature,
-        },
+        images: { logo, cover },
       };
 
       dd.content.push({
@@ -326,16 +330,20 @@ const generatePDF = async (id, printOnly) => {
         });
       });
       //RENDER SECTIONS
-      sections.forEach((section) => {
+      for (const key in sections) {
+        let section = sections[key]
+
         dd.content.push({
           text: section.name,
           pageBreak: "before",
           tocItem: true,
           style: ["title"],
         });
-        section.items.forEach((item) => {
+        for (const key in section.items) {
+          let item = section.items[key]
           dd.content.push({ text: item.name, style: ["header"] });
-          item.comments.forEach((comment) => {
+          for (const key in item.comments) {
+            let comment = item.comments[key]
             let columns = [];
             dd.content.push({
               stack: [
@@ -347,34 +355,84 @@ const generatePDF = async (id, printOnly) => {
                 { text: comment.text, margin: [10, 5, 0, 5] },
               ],
             });
-            comment.media.forEach((media, index) => {
-              if (media) {
-                if (media.type === "image/jpeg" && media.uploaded) {
-                  dd.images[media.name] = media.url;
-                  columns.push({
-                    image: media.name,
-                    width: 150,
-                    height: 150,
-                    margin: [10, 4],
-                  });
-                  if (!comment.media[index + 1]) {
-                    return dd.content.push({ columns: columns, columnGap: 8 });
-                  }
+            for (const key in comment.media) {
+              let media = comment.media[key] || {}
 
-                  if (!(columns.length % 3)) {
-                    dd.content.push({
-                      columns: columns,
-                      columnGap: 8,
-                      margin: [0, 4],
-                    });
-                    columns = [];
-                  }
+              if (media?.type === "image/jpeg" && media?.uploaded) {
+                let image = await optimizeImage(media.url, 150, 150)
+                dd.images[media.name] = image
+                columns.push({
+                  image: media.name,
+                  width: 150,
+                  height: 150,
+                  margin: [10, 4],
+                });
+                if (!comment.media[index + 1]) {
+                  return dd.content.push({ columns: columns, columnGap: 8 });
+                }
+
+                if (!(columns.length % 3)) {
+                  dd.content.push({
+                    columns: columns,
+                    columnGap: 8,
+                    margin: [0, 4],
+                  });
+                  columns = [];
                 }
               }
-            });
-          });
-        });
-      });
+            }
+          }
+        }
+      }
+      // sections.forEach((section) => {
+      //   dd.content.push({
+      //     text: section.name,
+      //     pageBreak: "before",
+      //     tocItem: true,
+      //     style: ["title"],
+      //   });
+      //   section.items.forEach((item) => {
+      //     dd.content.push({ text: item.name, style: ["header"] });
+      //     item.comments.forEach((comment) => {
+      //       let columns = [];
+      //       dd.content.push({
+      //         stack: [
+      //           {
+      //             text: comment.name,
+      //             style: ["subHeader"],
+      //             margin: [10, 5, 0, 5],
+      //           },
+      //           { text: comment.text, margin: [10, 5, 0, 5] },
+      //         ],
+      //       });
+      //       comment.media.forEach((media, index) => {
+      //         if (media) {
+      //           if (media.type === "image/jpeg" && media.uploaded) {
+      //             dd.images[media.name] = media.url;
+      //             columns.push({
+      //               image: media.name,
+      //               width: 150,
+      //               height: 150,
+      //               margin: [10, 4],
+      //             });
+      //             if (!comment.media[index + 1]) {
+      //               return dd.content.push({ columns: columns, columnGap: 8 });
+      //             }
+
+      //             if (!(columns.length % 3)) {
+      //               dd.content.push({
+      //                 columns: columns,
+      //                 columnGap: 8,
+      //                 margin: [0, 4],
+      //               });
+      //               columns = [];
+      //             }
+      //           }
+      //         }
+      //       });
+      //     });
+      //   });
+      // });
 
       const doc = createPdf(dd);
 
@@ -382,7 +440,7 @@ const generatePDF = async (id, printOnly) => {
       //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
       // });
 
-      // doc.download();
+      doc.download();
       resolve(data);
     } catch (error) {
       reject(error);
