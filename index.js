@@ -21,23 +21,16 @@ const optimizeImage = async (url, width, height) => {
   let output = await sharp(input).resize(width, height).jpeg().toBuffer()
   return `data:image/jpeg;base64,${output.toString('base64')}`
 }
+
 const generatePDF = async (id, printOnly) => {
   return new Promise(async (resolve, reject) => {
     try {
-     
 
-      var config = {
-        method: "get",
-        url: `${process.env.ZAPI}/${id}`,
-        headers: {
-          Authorization: `Bearer ${process.env.ACCESS_TOKEN}`,
-        },
-      };
+      let record = JSON.parse(fs.readFileSync("./record_16185.json"))
+      let limitations = fs.readFileSync("./public/limitations.txt", { encoding: "utf8" })
 
-      const { data } = await axios(config);
-      const { data: limitations } = await axios("./limitations.txt");
-      const { inspection, inspector, sections, conditions } = data;
-      const { sectionSummary, conditionsSummary } = data;
+      const { inspection, inspector, sections, conditions } = record;
+      const { sectionSummary, conditionsSummary } = record;
       const { client, address } = inspection;
       const { street, city, state, zipcode } = address;
 
@@ -54,16 +47,16 @@ const generatePDF = async (id, printOnly) => {
         new Date(inspection.date.ended)
       ).toLocaleString(DateTime.TIME_SIMPLE);
 
-      // vfs = pdfMake.vfs;
+
       let fonts = {
         Montserrat: {
-          bold: `public/fonts/Montserrat-SemiBold.ttf`,
-          normal: `public/fonts/Montserrat-Light.ttf`,
+          bold: `./public/fonts/Montserrat-SemiBold.ttf`,
+          normal: `./public/fonts/Montserrat-Light.ttf`,
         },
       };
       let printer = new PdfPrinter(fonts)
       //Get logo, default cover and cover image
-      let logo = optimizeImage(`public/images/HDMK.png`, 200, 53)
+      let logo = optimizeImage(`https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/public%2FHDMK.png?alt=media`, 200, 53)
       let cover = optimizeImage(inspection.cover, 530, 500)
       const dd = {
         pageSize: "LETTER",
@@ -211,6 +204,7 @@ const generatePDF = async (id, printOnly) => {
         tocItem: true,
         style: ["title"],
       });
+      
       dd.content.push({ text: limitations, style: ["limitation"] });
       //RENDER SUMMARY
       dd.content.push({
@@ -303,7 +297,7 @@ const generatePDF = async (id, printOnly) => {
                   height: 150,
                   margin: [10, 4],
                 });
-                if (!comment.media[index + 1]) {
+                if (!comment.media[key + 1]) {
                   return dd.content.push({ columns: columns, columnGap: 8 });
                 }
 
@@ -320,68 +314,18 @@ const generatePDF = async (id, printOnly) => {
           }
         }
       }
-      // sections.forEach((section) => {
-      //   dd.content.push({
-      //     text: section.name,
-      //     pageBreak: "before",
-      //     tocItem: true,
-      //     style: ["title"],
-      //   });
-      //   section.items.forEach((item) => {
-      //     dd.content.push({ text: item.name, style: ["header"] });
-      //     item.comments.forEach((comment) => {
-      //       let columns = [];
-      //       dd.content.push({
-      //         stack: [
-      //           {
-      //             text: comment.name,
-      //             style: ["subHeader"],
-      //             margin: [10, 5, 0, 5],
-      //           },
-      //           { text: comment.text, margin: [10, 5, 0, 5] },
-      //         ],
-      //       });
-      //       comment.media.forEach((media, index) => {
-      //         if (media) {
-      //           if (media.type === "image/jpeg" && media.uploaded) {
-      //             dd.images[media.name] = media.url;
-      //             columns.push({
-      //               image: media.name,
-      //               width: 150,
-      //               height: 150,
-      //               margin: [10, 4],
-      //             });
-      //             if (!comment.media[index + 1]) {
-      //               return dd.content.push({ columns: columns, columnGap: 8 });
-      //             }
 
-      //             if (!(columns.length % 3)) {
-      //               dd.content.push({
-      //                 columns: columns,
-      //                 columnGap: 8,
-      //                 margin: [0, 4],
-      //               });
-      //               columns = [];
-      //             }
-      //           }
-      //         }
-      //       });
-      //     });
-      //   });
-      // });
-
-      // const doc = createPdf(dd);
-
-      // doc.getBlob((blob) => {
-      //   resolve(compressPDF(`${street} ${city} ${state} ${zipcode}`, blob));
-      // });
-
-      // doc.download();
       const doc = printer.createPdfKitDocument(dd)
-      doc.pipe(fs.createWriteStream(`${street} ${city} ${state} ${zipcode}.pdf`))
-      resolve(data);
+  
+      doc.pipe(fs.createWriteStream(`document.pdf`))
+      
+      // doc.pipe(fs.createWriteStream(`${street} ${city} ${state} ${zipcode}.pdf`))
+      doc.end()
+      resolve(record);
     } catch (error) {
+      console.log(error);
       reject(error);
     }
   });
 };
+generatePDF()
