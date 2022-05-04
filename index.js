@@ -56,8 +56,9 @@ const generatePDF = async (id, printOnly) => {
       };
       let printer = new PdfPrinter(fonts)
       //Get logo, default cover and cover image
-      let logo = optimizeImage(`https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/public%2FHDMK.png?alt=media`, 200, 53)
-      let cover = optimizeImage(inspection.cover, 530, 500)
+      let logo = `https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/public%2FHDMK.png?alt=media`
+      let cover = await optimizeImage(inspection.cover, 530, 500)
+
       const dd = {
         pageSize: "LETTER",
         pageMargins: [40, 100, 40, 40],
@@ -121,204 +122,204 @@ const generatePDF = async (id, printOnly) => {
         images: { logo, cover },
       };
 
-      dd.content.push({
-        text: `INSPECTION CONDITIONS`,
-        pageBreak: "before",
-        tocItem: true,
-        style: ["title"],
-      });
-      dd.content.push({
-        text: `CLIENT & SITE INFORMATION`,
-        style: ["header"],
-      });
-      dd.content.push({
-        layout: "noBorders",
-        margin: [20, 0],
-        table: {
-          widths: "*",
-          body: [
-            [
-              { text: "DATE OF INSPECTION:", style: ["subHeader"] },
-              { text: startDate, margin: [0, 3] },
-            ],
-            [
-              { text: "START TIME:", style: ["subHeader"] },
-              { text: startTime, margin: [0, 3] },
-            ],
-            [
-              { text: "END TIME:", style: ["subHeader"] },
-              { text: endTime, margin: [0, 3] },
-            ],
-            [
-              { text: "CLIENT NAME:", style: ["subHeader"] },
-              { text: client.name, margin: [0, 3] },
-            ],
-            [
-              { text: "CITY & STATE:", style: ["subHeader"] },
-              {
-                text: `${city}, ${state} ${zipcode}`,
-                margin: [0, 3],
-              },
-            ],
-          ],
-        },
-      });
-      dd.content.push({ text: "PAYMENT INFORMATION:", style: ["header"] });
-      dd.content.push({
-        layout: "noBorders",
-        table: {
-          widths: "*",
-          body: [
-            [
-              { text: "TOTAL FEE:", style: ["subHeader"] },
-              { text: `$${inspection.fee}`, margin: [0, 3] },
-            ],
-            // ["SIGNATURE:", { image: "signature", width: 100 }],
-          ],
-        },
-      });
-      //Render conditions
-      conditions.forEach((condition) => {
-        dd.content.push({ text: condition.name, style: ["header"] });
-        condition.comments.forEach((comment) => {
-          dd.content.push({
-            layout: "noBorders",
-            table: {
-              widths: "*",
-              body: [
-                [
-                  { text: comment.name, style: ["subHeader"] },
-                  {
-                    text: comment.text,
-                    margin: [0, 3],
-                  },
-                ],
-              ],
-            },
-          });
-        });
-      });
-      dd.content.push({
-        text: "REPORT LIMITATIONS:",
-        pageBreak: "before",
-        tocItem: true,
-        style: ["title"],
-      });
-      
-      dd.content.push({ text: limitations, style: ["limitation"] });
-      //RENDER SUMMARY
-      dd.content.push({
-        text: `REPORT SUMMARY`,
-        pageBreak: "before",
-        tocItem: true,
-        style: ["title"],
-      });
-      sectionSummary.forEach((section) => {
-        dd.content.push({ text: section.name, style: ["header"] });
-        section.items.forEach((item) => {
-          dd.content.push({
-            text: item.name,
-            style: ["subHeader"],
-            margin: [10, 0],
-          });
-          item.comments.forEach((comment) => {
-            let columns = [];
-            dd.content.push({
-              stack: [
-                { text: comment.name, margin: [20, 5, 0, 5] },
-                { text: comment.text, margin: [20, 5, 0, 5] },
-              ],
-            });
-            comment.media.forEach((media, index) => {
-              if (media.type === "image/jpeg" && media.uploaded) {
-                columns.push({
-                  image: media.name,
-                  width: 150,
-                  height: 150,
-                  margin: [10, 0],
-                });
-              }
-              if (!comment.media[index + 1])
-                return dd.content.push({ columns: columns, columnGap: 8 });
-              if (!(columns.length % 3)) {
-                dd.content.push({ columns: columns, columnGap: 8 });
-                columns = [];
-              }
-            });
-          });
-        });
-      });
-      conditionsSummary.forEach((condition) => {
-        dd.content.push({ text: condition.name, style: ["header"] });
-        condition.comments.forEach((comment) => {
-          dd.content.push({
-            stack: [
-              { text: comment.name, margin: [20, 5, 0, 5] },
-              { text: comment.text, margin: [20, 5, 0, 5] },
-            ],
-          });
-        });
-      });
-      //RENDER SECTIONS
-      for (const key in sections) {
-        let section = sections[key]
+      // dd.content.push({
+      //   text: `INSPECTION CONDITIONS`,
+      //   pageBreak: "before",
+      //   tocItem: true,
+      //   style: ["title"],
+      // });
+      // dd.content.push({
+      //   text: `CLIENT & SITE INFORMATION`,
+      //   style: ["header"],
+      // });
+      // dd.content.push({
+      //   layout: "noBorders",
+      //   margin: [20, 0],
+      //   table: {
+      //     widths: "*",
+      //     body: [
+      //       [
+      //         { text: "DATE OF INSPECTION:", style: ["subHeader"] },
+      //         { text: startDate, margin: [0, 3] },
+      //       ],
+      //       [
+      //         { text: "START TIME:", style: ["subHeader"] },
+      //         { text: startTime, margin: [0, 3] },
+      //       ],
+      //       [
+      //         { text: "END TIME:", style: ["subHeader"] },
+      //         { text: endTime, margin: [0, 3] },
+      //       ],
+      //       [
+      //         { text: "CLIENT NAME:", style: ["subHeader"] },
+      //         { text: client.name, margin: [0, 3] },
+      //       ],
+      //       [
+      //         { text: "CITY & STATE:", style: ["subHeader"] },
+      //         {
+      //           text: `${city}, ${state} ${zipcode}`,
+      //           margin: [0, 3],
+      //         },
+      //       ],
+      //     ],
+      //   },
+      // });
+      // dd.content.push({ text: "PAYMENT INFORMATION:", style: ["header"] });
+      // dd.content.push({
+      //   layout: "noBorders",
+      //   table: {
+      //     widths: "*",
+      //     body: [
+      //       [
+      //         { text: "TOTAL FEE:", style: ["subHeader"] },
+      //         { text: `$${inspection.fee}`, margin: [0, 3] },
+      //       ],
+      //       // ["SIGNATURE:", { image: "signature", width: 100 }],
+      //     ],
+      //   },
+      // });
+      // //Render conditions
+      // conditions.forEach((condition) => {
+      //   dd.content.push({ text: condition.name, style: ["header"] });
+      //   condition.comments.forEach((comment) => {
+      //     dd.content.push({
+      //       layout: "noBorders",
+      //       table: {
+      //         widths: "*",
+      //         body: [
+      //           [
+      //             { text: comment.name, style: ["subHeader"] },
+      //             {
+      //               text: comment.text,
+      //               margin: [0, 3],
+      //             },
+      //           ],
+      //         ],
+      //       },
+      //     });
+      //   });
+      // });
+      // dd.content.push({
+      //   text: "REPORT LIMITATIONS:",
+      //   pageBreak: "before",
+      //   tocItem: true,
+      //   style: ["title"],
+      // });
 
-        dd.content.push({
-          text: section.name,
-          pageBreak: "before",
-          tocItem: true,
-          style: ["title"],
-        });
-        for (const key in section.items) {
-          let item = section.items[key]
-          dd.content.push({ text: item.name, style: ["header"] });
-          for (const key in item.comments) {
-            let comment = item.comments[key]
-            let columns = [];
-            dd.content.push({
-              stack: [
-                {
-                  text: comment.name,
-                  style: ["subHeader"],
-                  margin: [10, 5, 0, 5],
-                },
-                { text: comment.text, margin: [10, 5, 0, 5] },
-              ],
-            });
-            for (const key in comment.media) {
-              let media = comment.media[key] || {}
+      // dd.content.push({ text: limitations, style: ["limitation"] });
+      // //RENDER SUMMARY
+      // dd.content.push({
+      //   text: `REPORT SUMMARY`,
+      //   pageBreak: "before",
+      //   tocItem: true,
+      //   style: ["title"],
+      // });
+      // sectionSummary.forEach((section) => {
+      //   dd.content.push({ text: section.name, style: ["header"] });
+      //   section.items.forEach((item) => {
+      //     dd.content.push({
+      //       text: item.name,
+      //       style: ["subHeader"],
+      //       margin: [10, 0],
+      //     });
+      //     item.comments.forEach((comment) => {
+      //       let columns = [];
+      //       dd.content.push({
+      //         stack: [
+      //           { text: comment.name, margin: [20, 5, 0, 5] },
+      //           { text: comment.text, margin: [20, 5, 0, 5] },
+      //         ],
+      //       });
+      //       comment.media.forEach((media, index) => {
+      //         if (media.type === "image/jpeg" && media.uploaded) {
+      //           columns.push({
+      //             image: media.name,
+      //             width: 150,
+      //             height: 150,
+      //             margin: [10, 0],
+      //           });
+      //         }
+      //         if (!comment.media[index + 1])
+      //           return dd.content.push({ columns: columns, columnGap: 8 });
+      //         if (!(columns.length % 3)) {
+      //           dd.content.push({ columns: columns, columnGap: 8 });
+      //           columns = [];
+      //         }
+      //       });
+      //     });
+      //   });
+      // });
+      // conditionsSummary.forEach((condition) => {
+      //   dd.content.push({ text: condition.name, style: ["header"] });
+      //   condition.comments.forEach((comment) => {
+      //     dd.content.push({
+      //       stack: [
+      //         { text: comment.name, margin: [20, 5, 0, 5] },
+      //         { text: comment.text, margin: [20, 5, 0, 5] },
+      //       ],
+      //     });
+      //   });
+      // });
+      // //RENDER SECTIONS
+      // for (const key in sections) {
+      //   let section = sections[key]
 
-              if (media?.type === "image/jpeg" && media?.uploaded) {
-                let image = await optimizeImage(media.url, 150, 150)
-                dd.images[media.name] = image
-                columns.push({
-                  image: media.name,
-                  width: 150,
-                  height: 150,
-                  margin: [10, 4],
-                });
-                if (!comment.media[key + 1]) {
-                  return dd.content.push({ columns: columns, columnGap: 8 });
-                }
+      //   dd.content.push({
+      //     text: section.name,
+      //     pageBreak: "before",
+      //     tocItem: true,
+      //     style: ["title"],
+      //   });
+      //   for (const key in section.items) {
+      //     let item = section.items[key]
+      //     dd.content.push({ text: item.name, style: ["header"] });
+      //     for (const key in item.comments) {
+      //       let comment = item.comments[key]
+      //       let columns = [];
+      //       dd.content.push({
+      //         stack: [
+      //           {
+      //             text: comment.name,
+      //             style: ["subHeader"],
+      //             margin: [10, 5, 0, 5],
+      //           },
+      //           { text: comment.text, margin: [10, 5, 0, 5] },
+      //         ],
+      //       });
+      //       for (const key in comment.media) {
+      //         let media = comment.media[key] || {}
 
-                if (!(columns.length % 3)) {
-                  dd.content.push({
-                    columns: columns,
-                    columnGap: 8,
-                    margin: [0, 4],
-                  });
-                  columns = [];
-                }
-              }
-            }
-          }
-        }
-      }
+      //         if (media?.type === "image/jpeg" && media?.uploaded) {
+      //           let image = await optimizeImage(media.url, 150, 150)
+      //           dd.images[media.name] = image
+      //           columns.push({
+      //             image: media.name,
+      //             width: 150,
+      //             height: 150,
+      //             margin: [10, 4],
+      //           });
+      //           if (!comment.media[key + 1]) {
+      //             return dd.content.push({ columns: columns, columnGap: 8 });
+      //           }
 
-      const doc = printer.createPdfKitDocument(dd)
-  
-      doc.pipe(fs.createWriteStream(`document.pdf`))
-      
+      //           if (!(columns.length % 3)) {
+      //             dd.content.push({
+      //               columns: columns,
+      //               columnGap: 8,
+      //               margin: [0, 4],
+      //             });
+      //             columns = [];
+      //           }
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
+
+      const doc = printer.createPdfKitDocument(dd, {})
+
+      doc.pipe(fs.createWriteStream(`./document.pdf`));
+
       // doc.pipe(fs.createWriteStream(`${street} ${city} ${state} ${zipcode}.pdf`))
       doc.end()
       resolve(record);
