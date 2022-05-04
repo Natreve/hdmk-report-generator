@@ -1,0 +1,258 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <style>
+        /* Box sizing rules */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* Remove default margin */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        figure,
+        blockquote,
+        dl,
+        dd {
+            margin: 0;
+        }
+
+        /* Remove list styles on ul, ol elements with a list
+      role, which suggests default styling will be removed */
+        ul[role='list'],
+        ol[role='list'] {
+            list-style: none;
+        }
+
+        /* Set core root defaults */
+        html:focus-within {
+            scroll-behavior: smooth;
+        }
+
+        /* Set core body defaults
+      */
+        body {
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+            line-height:
+                1.5;
+        }
+
+        /* A elements that don't have a class get default styles */
+        a:not([class]) {
+            text-decoration-skip-ink: auto;
+        }
+
+        /* Make images easier
+      to work with */
+        img,
+        picture {
+            max-width: 100%;
+            display: block;
+        }
+
+        /*
+      Inherit fonts for inputs and buttons */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* Remove all animations, transitions and smooth scroll
+      for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+            {
+                {
+                 !-- header {
+                    position: fixed;
+                }
+
+                --
+            }
+        }
+
+
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+            grid-gap: 1rem;
+        }
+
+        .cover {
+            position: relative;
+            overflow: hidden;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cover img {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .image {
+            position: relative;
+            overflow: hidden;
+            width: 150px;
+            height: 150px;
+        }
+
+        .image img {
+            position: absolute;
+            width: auto;
+            height: 100%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    {{!-- <header>
+        <img src="https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/public%2FHDMK.png?alt=media"
+            alt="logo" />
+        <article>
+            {{#with inspector}}
+            <h4>{{fname}} {{lname}}</h4>
+            <p>{{licence_number}}</p>
+            <p>{{phone}}</p>
+            <p>{{email}}</p>
+            {{/with}}
+        </article>
+    </header> --}}
+    {{image inspection.cover 600 400}}
+    <section>
+        {{!-- <div class="cover">
+            {{#if inspection.cover}}
+            <img src="{{inspection.cover}}" alt="cover">
+            {{else}}
+            <img src="https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/public%2Fcover.jpg?alt=media"
+                alt="cover">
+            {{/if}}
+        </div> --}}
+        {{!-- <article>
+            {{#with inspection}}
+            <h4>{{client.name}}</h4>
+            <p>{{address.street}}</p>
+            <p>{{address.city}} {{address.state}} {{address.zipcode}}</p>
+            {{/with}}
+            {{#date inspection.date.started}}{{/date}}
+        </article> --}}
+
+    </section>
+
+    {{!-- <section>
+        <h1>inspection conditions</h1>
+        <article>
+            <h2>client & site information</h2>
+            {{#with inspection}}
+            <table>
+                <tr>
+                    <td>date of inspection:</td>
+                    <td>{{#date date.started}}{{/date}}</td>
+                </tr>
+                <tr>
+                    <td>start time:</td>
+                    <td>{{#time date.started}}{{/time}}</td>
+                </tr>
+                <tr>
+                    <td>end time:</td>
+                    <td>{{#time date.ended}}{{/time}}</td>
+                </tr>
+                <tr>
+                    <td>city & state:</td>
+                    <td>{{address.city}} {{address.state}}</td>
+                </tr>
+            </table>
+            {{/with}}
+        </article>
+        <article>
+            <h2>payment information</h2>
+            <table>
+                <tr>
+                    <td>total fee:</td>
+                    <td>${{inspection.fee}}</td>
+                </tr>
+            </table>
+        </article>
+        {{#each conditions}}
+        <article>
+            <h2>{{this.name}}</h2>
+            {{#each this.comments}}
+            <table>
+                <tr>
+                    <td>{{this.name}}</td>
+                    <td>{{this.text}}</td>
+                </tr>
+            </table>
+            {{/each}}
+        </article>
+        {{/each}}
+    </section>
+    <section>
+        <h1>report limitations</h1>
+
+    </section>
+    <section>
+        <h1>report summary</h1>
+        {{#each sectionSummary}}
+        <article>
+            <h2>{{this.name}}</h2>
+            {{#each this.items}}
+            <h3>{{this.name}}</h3>
+            {{#each this.comments}}
+            <h4>{{this.name}}</h4>
+            <p>{{this.text}}</p>
+            {{#gallery this.media}}{{/gallery}}
+            {{/each}}
+            {{/each}}
+        </article>
+        {{/each}}
+    </section>
+    {{#each sections}}
+    <section>
+        <h1>{{this.name}}</h1>
+        {{#each this.items}}
+        <h2>{{this.name}}</h2>
+        {{#each this.comments}}
+        <h3>{{this.name}}</h3>
+        <p>{{this.text}}</p>
+        {{#gallery this.media}}{{/gallery}}
+        {{/each}}
+        {{/each}}
+    </section>
+    {{/each}} --}}
+</body>
+
+</html>
