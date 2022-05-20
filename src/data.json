@@ -1,0 +1,3315 @@
+{
+    "inspector": {
+        "signature": "https://api.hdmk.net/images/inspector_signatures/Jordans.png",
+        "role": "inspector",
+        "headshot": "https://api.hdmk.net//images/inspector/headshot/1624312211Jordan_Small_02.jpg",
+        "email": "JSmall@HDMK.net",
+        "phone": "(985) 200-2106",
+        "fname": "Jordan",
+        "licence_number": "LHI# 11206",
+        "spreadsheet": "https://docs.google.com/spreadsheets/d/1BjAU9n7PIf_LDn8I9F7i-tBHn0-QSUbNisoV8sMPORs/edit#gid=0",
+        "uid": "1191",
+        "fullBodyPhoto": "https://api.hdmk.net//images/inspector/full_body_photo/1624312211Jordan_Small_01.jpg",
+        "lname": "Small",
+        "profilePhoto": "https://api.hdmk.net/images/1612959091DSC_5584_(1)_(1).jpg"
+    },
+    "inspection": {
+        "started": "2022-05-16T13:37:14.629Z",
+        "uid": "1191",
+        "id": "18873",
+        "payment": "Not_Paid",
+        "status": "completed",
+        "cover": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fcover?alt=media",
+        "fee": "350",
+        "address": {
+            "state": "LA",
+            "city": "Mandeville",
+            "zipcode": "70471",
+            "street": "512 Red Oak"
+        },
+        "client": {
+            "contact": {
+                "phone": "(217)-450-7558",
+                "email": "kimmiesue2@gmail.com"
+            },
+            "name": "Kimberlee And Sean Burke"
+        },
+        "date": {
+            "ended": "2022-05-16T23:58:00.000Z",
+            "started": "2022-05-16T17:00:00.000Z"
+        },
+        "agent": {
+            "name": "Stephanie Mascaro",
+            "contact": {
+                "email": "stephanie@stephaniemascaro.com",
+                "phone": "(985)-664-0060"
+            }
+        }
+    },
+    "sections": [
+        {
+            "name": "EXTERIOR - FOUNDATION - BASEMENT",
+            "items": [
+                {
+                    "name": "STRUCTURE",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "As far as visible during the inspection areas of the structure include:\nTypical wood framing",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "WALLS",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "Brick veneer\nWood siding",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the exterior walls:\nCracks noted.  Some cracking is to be expected in all exterior surfaces as the property settles with age. Recommend monitoring for any future changes.\nRecommend caulking/sealing all wall penetrations and any intersections between building materials",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc02f3b5447624cf38fc53c0af0c5debe?alt=media",
+                                    "name": "c02f3b5447624cf38fc53c0af0c5debe",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "lid": "0de32d142e44da05",
+                                    "uid": "1191",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "lid": "0de32d142e44da05",
+                                    "name": "33a388f67a6e480294fbdf3df9512dcb",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F33a388f67a6e480294fbdf3df9512dcb?alt=media",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "id": "18873"
+                                },
+                                {
+                                    "id": "18873",
+                                    "lid": "0de32d142e44da05",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe6a4ba00c34b485a8350676d1dd818c6?alt=media",
+                                    "name": "e6a4ba00c34b485a8350676d1dd818c6",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                },
+                                {
+                                    "name": "7440864dca1f4f1c971914025269f632",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "lid": "0de32d142e44da05",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7440864dca1f4f1c971914025269f632?alt=media",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F26c997854b6d49948cb5be8635b53bc1?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "26c997854b6d49948cb5be8635b53bc1",
+                                    "lid": "0de32d142e44da05"
+                                },
+                                {
+                                    "name": "9dac9beb778c4889b26d19439eb60eca",
+                                    "uploaded": 1,
+                                    "lid": "0de32d142e44da05",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F9dac9beb778c4889b26d19439eb60eca?alt=media",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc5e53c1789974370b6f0bdf3b8dd6cb0?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "0de32d142e44da05",
+                                    "name": "c5e53c1789974370b6f0bdf3b8dd6cb0",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe59e0f6a891540d6bf3e38d3b84b5269?alt=media",
+                                    "uploaded": 1,
+                                    "lid": "0de32d142e44da05",
+                                    "name": "e59e0f6a891540d6bf3e38d3b84b5269",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "id": "18873"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "0de32d142e44da05",
+                                    "name": "c85c32d81ce344efac8c936f9dee5af9",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc85c32d81ce344efac8c936f9dee5af9?alt=media",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fde997290feb04d6cb9daae390a781fe7?alt=media",
+                                    "lid": "0de32d142e44da05",
+                                    "name": "de997290feb04d6cb9daae390a781fe7",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc3b3cb784fff40499af283b0699039c5?alt=media",
+                                    "uid": "1191",
+                                    "lid": "0de32d142e44da05",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "name": "c3b3cb784fff40499af283b0699039c5"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "name": "e6962f945b6c42439676ac013859fa38",
+                                    "id": "18873",
+                                    "lid": "0de32d142e44da05",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe6962f945b6c42439676ac013859fa38?alt=media"
+                                },
+                                {
+                                    "lid": "0de32d142e44da05",
+                                    "name": "9939206674de4173b39dcc88813e6f79",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F9939206674de4173b39dcc88813e6f79?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "0de32d142e44da05",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Feeff60c88ec342cba7092231c9bbb620?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "eeff60c88ec342cba7092231c9bbb620",
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "TRIM",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "Wood",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff7c84074826a4e4390b03507efdf543e?alt=media",
+                                    "name": "f7c84074826a4e4390b03507efdf543e"
+                                },
+                                {
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fa00306d45e5246cdad17e249bf815bf5?alt=media",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "name": "a00306d45e5246cdad17e249bf815bf5",
+                                    "lid": "a736fac4ac1ac9cd"
+                                },
+                                {
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc4daee115e8b4adaa8b4027f918d5d06?alt=media",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "name": "c4daee115e8b4adaa8b4027f918d5d06"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F3f4dcf1f066a496890acf091829aef07?alt=media",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "name": "3f4dcf1f066a496890acf091829aef07"
+                                },
+                                {
+                                    "name": "9731fee528e44048a004b0ffade0111c",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F9731fee528e44048a004b0ffade0111c?alt=media",
+                                    "uid": "1191",
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "name": "b85e3943bbb04fd2a5b3888a58587c27",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb85e3943bbb04fd2a5b3888a58587c27?alt=media"
+                                },
+                                {
+                                    "name": "78247fbc0c014651a5b69a99678e6705",
+                                    "lid": "a736fac4ac1ac9cd",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F78247fbc0c014651a5b69a99678e6705?alt=media",
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FOUNDATION",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Concrete Slab on grade.",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Slab is not fully visible.\nThe following concerns were noted at the slab:\nTypical cracks in slab noted.  Some cracking is to be expected as the property settles with age.Recommend monitoring for any future changes.\nTypical corner cracking noted.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "GROUNDS",
+            "items": [
+                {
+                    "name": "DRIVEWAY",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Concrete",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the driveway:\nCracks noted.  Some cracking is to be expected as the property settles with age. Recommend monitoring for any future changes.\nSurface raised/settled, Repair as needed. ",
+                            "media": [
+                                {
+                                    "name": "80c425b5e5c148fc923e85aaed967120",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F80c425b5e5c148fc923e85aaed967120?alt=media",
+                                    "lid": "38cec1b6d9a071a0",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "SIDEWALKS",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Concrete",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "lid": "b736a9824b378b75",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff336f9b9c3314e10ab76eb40e76eee3a?alt=media",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "name": "f336f9b9c3314e10ab76eb40e76eee3a",
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "LANDSCAPING",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the landscaping:\nTrim plants away from structure regularly to help prevent damage and pest intrusion.\nLarge tree(s) located on the property.  They may present problems (now or in the future) with site drainage, roof/structure damage, plumbing, and/or foundation conditions. Recommend monitoring the situation for problems and consult with an expert as needed.\nTrees are touching/overhanging the roof.  Damage is possible. Trim plants and trees away from structure regularly to help prevent damage and pest intrusion.",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2a686f870a9647cfb7daa0ad5a9a48ae?alt=media",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "2a686f870a9647cfb7daa0ad5a9a48ae",
+                                    "lid": "532a7c3895bd3f38"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F447c7a8edf6a4040bfd4a237b9f3e738?alt=media",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "name": "447c7a8edf6a4040bfd4a237b9f3e738",
+                                    "lid": "532a7c3895bd3f38"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6e27afe8fef54b58a1add1a5c284a4f4?alt=media",
+                                    "lid": "532a7c3895bd3f38",
+                                    "name": "6e27afe8fef54b58a1add1a5c284a4f4",
+                                    "uid": "1191",
+                                    "id": "18873"
+                                },
+                                {
+                                    "name": "560be58c58f94eb594f6272e06bca6eb",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F560be58c58f94eb594f6272e06bca6eb?alt=media",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "532a7c3895bd3f38"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "GRADING",
+                    "comments": [
+                        {
+                            "name": "SITE",
+                            "text": "Grade at foundation appears serviceable\nThe following concerns were noted with grading:\nLower soil below siding.  Grade should be 6 inches below any wood materials",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "lid": "d3337490ad3adc03",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2de85ca6b8c84836a92ee114bb5eb511?alt=media",
+                                    "name": "2de85ca6b8c84836a92ee114bb5eb511",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "284d8625441549669a071a88197cb380",
+                                    "uploaded": 1,
+                                    "lid": "d3337490ad3adc03",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F284d8625441549669a071a88197cb380?alt=media",
+                                    "uid": "1191",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F5cc6855ed1f74d7593c7e88e3ecba84a?alt=media",
+                                    "uid": "1191",
+                                    "name": "5cc6855ed1f74d7593c7e88e3ecba84a",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "lid": "d3337490ad3adc03"
+                                },
+                                {
+                                    "lid": "d3337490ad3adc03",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "b1aa995c92bb4327b8398384f93659bd",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb1aa995c92bb4327b8398384f93659bd?alt=media",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "PORCHES",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Concrete",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the porch:\nCracks noted.  Some cracking is to be expected as the property settles with age. Recommend monitoring for any future changes.",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "lid": "3af57fb1a200dd95",
+                                    "name": "60a40c1ffb00447581732eaafe7017bf",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F60a40c1ffb00447581732eaafe7017bf?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "PATIO",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Concrete",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the patio:\nCracks noted.  Some cracking is to be expected as the property settles with age. Recommend monitoring for any future changes.",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "3ba8839ff00645d095d2fca05bec10d6",
+                                    "lid": "58e4a43ee3b6c95c",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F3ba8839ff00645d095d2fca05bec10d6?alt=media",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "PATIO/PORCH COVER",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Front Porch and Rear Patio:\nSame as structure, open design",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FENCES & GATES",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Wood",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Normal signs of weathering and aging noted. Regular maintenance recommended. \nThe following concerns were noted at the fence:\nPrevious repairs noted. Verify reason with seller and monitor for on-going or future problems.\nMoisture damage noted, recommend repair as needed. \nGate(s) require repairs or adjustment to function properly.",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F96f237775162495da6bc95b9311bfdac?alt=media",
+                                    "uploaded": 1,
+                                    "name": "96f237775162495da6bc95b9311bfdac",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "lid": "978f3a233009537d"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F436259c506e54ed3b574fecaa88d3276?alt=media",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "436259c506e54ed3b574fecaa88d3276",
+                                    "lid": "978f3a233009537d",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "name": "fecc6d17cb85448f814a1da73189d1c1",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ffecc6d17cb85448f814a1da73189d1c1?alt=media",
+                                    "lid": "978f3a233009537d",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "lid": "978f3a233009537d",
+                                    "name": "2151c5c73c7f45159c6848c75a197638",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2151c5c73c7f45159c6848c75a197638?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fa9c95e1960e948ca952fd48306f4c174?alt=media",
+                                    "lid": "978f3a233009537d",
+                                    "id": "18873",
+                                    "name": "a9c95e1960e948ca952fd48306f4c174"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F809fd6d4e6e24bcca0d3aa39a34be59b?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "lid": "978f3a233009537d",
+                                    "name": "809fd6d4e6e24bcca0d3aa39a34be59b"
+                                },
+                                {
+                                    "lid": "978f3a233009537d",
+                                    "name": "e5fd9992c4bb40aaa39bf0fb77afafb9",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe5fd9992c4bb40aaa39bf0fb77afafb9?alt=media",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "ROOF - FLASHING SYSTEMS",
+            "items": [
+                {
+                    "name": "ROOF",
+                    "comments": [
+                        {
+                            "name": "AGE OF ROOF IN YEARS",
+                            "text": "Unknown",
+                            "media": []
+                        },
+                        {
+                            "name": "STYLE",
+                            "text": "Gable",
+                            "media": []
+                        },
+                        {
+                            "name": "TYPE",
+                            "text": "Composition Shingles",
+                            "media": []
+                        },
+                        {
+                            "name": "ROOF ACCESS",
+                            "text": "Walked on roof",
+                            "media": []
+                        },
+                        {
+                            "name": "ROOF COVERING STATUS",
+                            "text": "General condition appears serviceable with signs of weathering and aging. Regular maintenance and inspections are advised. Maintenance will help ensure the weather tightness of the building and should be performed on a regular basis.\nThe following concerns were noted at the roof:\nGranule loss and cupping of shingles noted. These are usually the result of weathering and aging of roof covering. Repair as needed.\nDeflection noted at the roof decking in several areas. Repair as needed.\nOrganic growth noted on the shingles. Recommend soft washing.\nNails/Fasteners are sticking through the shingles. Recommend evaluation by a qualified licensed roofer and repair/replace.\nNon-professional repairs noted\nDamaged shingles noted at the left side and rear right edge of roof. Recommend evaluation by a qualified licensed roofer and repair/replace.\nRoof appears to be near the end of its life. Recommend evaluation by a qualified licensed roofer and repair/replace.",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1eb1b807a8584df1b063b6709ca2ca35?alt=media",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "1eb1b807a8584df1b063b6709ca2ca35"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1ed731ee39de49a48a4b6647219464f1?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "name": "1ed731ee39de49a48a4b6647219464f1",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "93d10f7cf4154844aa1ddb1f8615ffd7",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F93d10f7cf4154844aa1ddb1f8615ffd7?alt=media",
+                                    "summary": true,
+                                    "lid": "e10f86d4950fa20e"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F89f0f6c251134d5eb312e99b2740f7af?alt=media",
+                                    "uid": "1191",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "89f0f6c251134d5eb312e99b2740f7af",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F52ce3cc8f1df46a5a4c8973265e82d0a?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "name": "52ce3cc8f1df46a5a4c8973265e82d0a",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "name": "e900d198924a49e8a5d6aacdd20f71f9",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe900d198924a49e8a5d6aacdd20f71f9?alt=media",
+                                    "lid": "e10f86d4950fa20e"
+                                },
+                                {
+                                    "lid": "e10f86d4950fa20e",
+                                    "uid": "1191",
+                                    "name": "4a66266787274d6785eddd95dcd0e336",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4a66266787274d6785eddd95dcd0e336?alt=media",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fdded6b828f054e7394a2f089b7e2ed46?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "dded6b828f054e7394a2f089b7e2ed46",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "id": "18873"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "830bcb81f06b4159a59ced284bd04f4c",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F830bcb81f06b4159a59ced284bd04f4c?alt=media",
+                                    "id": "18873"
+                                },
+                                {
+                                    "name": "605a34f92547405994012d57eb0c27db",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F605a34f92547405994012d57eb0c27db?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "0aedde8d3495491bbaf6dea4007e60b6",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0aedde8d3495491bbaf6dea4007e60b6?alt=media",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fff3a582572324dbcbee12c3434e64f65?alt=media",
+                                    "id": "18873",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "ff3a582572324dbcbee12c3434e64f65"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "e825fda1db1a44838774aef550338058",
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe825fda1db1a44838774aef550338058?alt=media"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F74303962bdef4d52a21454741f782e77?alt=media",
+                                    "uid": "1191",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "74303962bdef4d52a21454741f782e77",
+                                    "summary": true,
+                                    "id": "18873"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "name": "2cda603424434bfe898c977979a148d8",
+                                    "lid": "e10f86d4950fa20e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2cda603424434bfe898c977979a148d8?alt=media"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7df08ec3916c46d8b3154d3535206c15?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "uploaded": 1,
+                                    "name": "7df08ec3916c46d8b3154d3535206c15",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "summary": true
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7ddde38acf5241dea3e0f67f70fcfbb3?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "summary": true,
+                                    "name": "7ddde38acf5241dea3e0f67f70fcfbb3",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "name": "46a865cd95c344958936544867e415a0",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F46a865cd95c344958936544867e415a0?alt=media",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F087fe729242b4789a80c497588f3c810?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "uid": "1191",
+                                    "name": "087fe729242b4789a80c497588f3c810",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "EXPOSED FLASHINGS",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Metal\nRubber\nPlastic",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the flashings:\nRusty flashing is noted. Replace as needed.\nLifted flashing noted on rear right side stationary vent, recommend securing to roof surface.",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "name": "bc18e8f61fb1422b91a4189116a174f3",
+                                    "lid": "e42963a4ac50e87e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fbc18e8f61fb1422b91a4189116a174f3?alt=media",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2ed89bec2e7d4d6da251ad864d8a9ceb?alt=media",
+                                    "id": "18873",
+                                    "lid": "e42963a4ac50e87e",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "2ed89bec2e7d4d6da251ad864d8a9ceb",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F68fd97fb0b504136b6cfe6b313a02d77?alt=media",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "lid": "e42963a4ac50e87e",
+                                    "name": "68fd97fb0b504136b6cfe6b313a02d77",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "name": "06565beb72ea476bac0b6b4f48dd3172",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F06565beb72ea476bac0b6b4f48dd3172?alt=media",
+                                    "type": "image/jpeg",
+                                    "lid": "e42963a4ac50e87e",
+                                    "id": "18873"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "name": "f7a05decadeb42deae42bf6b33043434",
+                                    "lid": "e42963a4ac50e87e",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff7a05decadeb42deae42bf6b33043434?alt=media"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F219862625af44151874babf36a35a30a?alt=media",
+                                    "name": "219862625af44151874babf36a35a30a",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "e42963a4ac50e87e"
+                                },
+                                {
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "lid": "e42963a4ac50e87e",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff22d993e6c42438b869815e86c0d3cca?alt=media",
+                                    "name": "f22d993e6c42438b869815e86c0d3cca",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "GUTTERS & DOWNSPOUTS",
+                    "comments": [
+                        {
+                            "name": "TYPE & CONDITION",
+                            "text": "None.  Consider installing gutters and downspouts to help with site drainage",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "CHIMNEY",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "Metal",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nRain cap noted\nThe following concerns were noted at the chimney:\nUnable to see spark arrester. Repair as needed.",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "lid": "033e5e7ee67fa86f",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc86d3b21753346858cbcb3edfdbde311?alt=media",
+                                    "name": "c86d3b21753346858cbcb3edfdbde311"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "PLUMBING",
+            "items": [
+                {
+                    "name": "MAIN LINE",
+                    "comments": [
+                        {
+                            "name": "MATERIAL AND SIZE",
+                            "text": "Main line is 3/4 inch diameter \nCopper",
+                            "media": []
+                        },
+                        {
+                            "name": "LOCATION",
+                            "text": "Main water shut off valve is located at the right side of the building",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb24da7c65bb04fa9b0472e96642c8618?alt=media",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "lid": "ae95c44ddba335f1",
+                                    "name": "b24da7c65bb04fa9b0472e96642c8618",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable, valve not tested, water pressure appears adequate.",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "25154453372dce38",
+                                    "name": "bb8a6ebd9c414e79af9f7675510635ab",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fbb8a6ebd9c414e79af9f7675510635ab?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "SUPPLY LINES",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "Copper",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc4f68c6bfff14562bebdd4cce9f9e5c7?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "b5cfad6d48c35cdf",
+                                    "name": "c4f68c6bfff14562bebdd4cce9f9e5c7"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "WASTE LINES",
+                    "comments": [
+                        {
+                            "name": "MATERIAL",
+                            "text": "PVC\nABS",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nPlumbing vents appear serviceable\nThe following concerns were noted at the waste lines:\nSome piping appears to be an older type system. We recommend having a video pipe inspection performed to determine the condition of the piping. Recommend evaluation by a qualified licensed plumber and repair as needed.\nABS to PVC contact noted. Glue may not properly adhere and openings may result, monitor for problems. ",
+                            "media": [
+                                {
+                                    "lid": "7210088ed419483e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff5dbdc2e301442069f233a0eac988325?alt=media",
+                                    "uid": "1191",
+                                    "name": "f5dbdc2e301442069f233a0eac988325",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "name": "798aa859fd284175bbc900e8fa8403e2",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "lid": "7210088ed419483e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F798aa859fd284175bbc900e8fa8403e2?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "HOSE FAUCETS",
+                    "comments": [
+                        {
+                            "name": "OPERATION",
+                            "text": "Sample operated appeared serviceable",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "name": "d0d4eea4a4704bbc9043f8ff94a5ae63",
+                                    "uid": "1191",
+                                    "lid": "e0fd1cb993fd8dc7",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd0d4eea4a4704bbc9043f8ff94a5ae63?alt=media",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "WATER HEATER",
+                    "comments": [
+                        {
+                            "name": "LOCATION",
+                            "text": "Garage",
+                            "media": []
+                        },
+                        {
+                            "name": "TYPE",
+                            "text": "Electric",
+                            "media": []
+                        },
+                        {
+                            "name": "MANUFACTURER",
+                            "text": "Not visible ",
+                            "media": []
+                        },
+                        {
+                            "name": "CAPACITY",
+                            "text": "Not visible ",
+                            "media": []
+                        },
+                        {
+                            "name": "YEAR OF MANUFACTURE",
+                            "text": "Unable to determine age",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nPressure relief valve noted not tested\nA water shutoff valve is installed\nThe following concerns were noted at the water heater:\nThermal blanket installed - unable to fully view tank",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "name": "de1dea34594b4f94bdb4d4e5cc5ad133",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fde1dea34594b4f94bdb4d4e5cc5ad133?alt=media",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "lid": "c4f5ac61d174ddc3",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "name": "1f60bd00146a4228b6e7a6ead5c19703",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1f60bd00146a4228b6e7a6ead5c19703?alt=media",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "lid": "c4f5ac61d174ddc3"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "lid": "c4f5ac61d174ddc3",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd124e8e7c2684bcb8f4b100c38c6535a?alt=media",
+                                    "name": "d124e8e7c2684bcb8f4b100c38c6535a"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "ELECTRICAL",
+            "items": [
+                {
+                    "name": "SERVICE",
+                    "comments": [
+                        {
+                            "name": "INCOMING SERVICE",
+                            "text": "Overhead",
+                            "media": []
+                        },
+                        {
+                            "name": "VOLTAGE",
+                            "text": "120/240 Volt",
+                            "media": []
+                        },
+                        {
+                            "name": "OVERCURRENT PROTECTION TYPE",
+                            "text": "Circuit breakers",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the incoming service:\nToo close to roof (should be at least 18 over roof), recommend repair. ",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F703eaf1399234ddca2b6459f24e8f1f5?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "703eaf1399234ddca2b6459f24e8f1f5",
+                                    "summary": true,
+                                    "lid": "d3e037c8e9ba7142",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "id": "18873"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "name": "4459b679270442ca92b4b625aea05f52",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4459b679270442ca92b4b625aea05f52?alt=media",
+                                    "lid": "d3e037c8e9ba7142",
+                                    "id": "18873"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "SERVICE CAPACITY",
+                            "text": "200 Amps",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "MAIN ELECTRICAL PANEL",
+                    "comments": [
+                        {
+                            "name": "MAIN PANEL LOCATION",
+                            "text": "Garage",
+                            "media": []
+                        },
+                        {
+                            "name": "MAIN PANEL CONDITION",
+                            "text": "Circuit and wire sizing correct so far as visible\nGrounding system is present",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ffecb1e0dd18f4b4eb34a0d10a43c5cef?alt=media",
+                                    "lid": "a0d9745207ccde95",
+                                    "uploaded": 1,
+                                    "name": "fecb1e0dd18f4b4eb34a0d10a43c5cef"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "34ea5bbf71e842a88fe0f8bdd5f08ee4",
+                                    "lid": "a0d9745207ccde95",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F34ea5bbf71e842a88fe0f8bdd5f08ee4?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "CONDUCTORS",
+                    "comments": [
+                        {
+                            "name": "ENTRANCE CABLE TYPE",
+                            "text": "Copper",
+                            "media": []
+                        },
+                        {
+                            "name": "BRANCH WIRING TYPE",
+                            "text": "Copper",
+                            "media": []
+                        },
+                        {
+                            "name": "BRANCH WIRING CIRCUIT CONDUCTORS",
+                            "text": "Type of conductor noted:\nNon-Metallic cable with Metal/Plastic conduit",
+                            "media": []
+                        },
+                        {
+                            "name": "BRANCH WIRING CIRCUIT CONDITIONS",
+                            "text": "Appears serviceable\nThe following concerns were noted at the branch wiring circuits:\nOpen junction boxes are noted- Covers are needed in the following area(s):\nattic",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "lid": "b4aeb1824416e486",
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "name": "f15a5d075ae947bdb0d8f57fdc2936bf",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff15a5d075ae947bdb0d8f57fdc2936bf?alt=media",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "CEILING FANS",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "SWITCHES & OUTLETS",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Accessible switches and receptacles were tested.  As a whole receptacles and switches throughout the building are in serviceable condition.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "LIGHTING",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Accessible lights were tested.  As a whole lighting throughout the building is in serviceable condition.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "BATHROOMS",
+            "items": [
+                {
+                    "name": "MASTER BATHROOM",
+                    "comments": [
+                        {
+                            "name": "CONDITION OF SINK",
+                            "text": "Sink appears serviceable\nFixtures appear serviceable\nDrain appear serviceable\nCounters/cabinets appear serviceable.",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc82fdabb762b4c06b1590449fdfe5034?alt=media",
+                                    "name": "c82fdabb762b4c06b1590449fdfe5034",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "lid": "25c597aeadfcc5d7",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CONDITION OF TOILET",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "name": "edcba44f9b9246b594a67020858194a0",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fedcba44f9b9246b594a67020858194a0?alt=media",
+                                    "lid": "f584c45960b470ac",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "TUB/SHOWER PLUMBING FIXTURES",
+                            "text": "Fixtures appear serviceable\nDrain appears serviceable\nShower head appears serviceable",
+                            "media": [
+                                {
+                                    "name": "785fcd5ca504499b82575bac50386a4a",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "lid": "567edcd8eeacffdd",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F785fcd5ca504499b82575bac50386a4a?alt=media",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "name": "dcfbd82b467e4654ba672fa4d639bdbf",
+                                    "uploaded": 1,
+                                    "lid": "567edcd8eeacffdd",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fdcfbd82b467e4654ba672fa4d639bdbf?alt=media",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "TUB/SHOWER AND WALLS",
+                            "text": "Shower area appears serviceable",
+                            "media": [
+                                {
+                                    "name": "4b0ed662312a42339b24242e815bae62",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4b0ed662312a42339b24242e815bae62?alt=media",
+                                    "type": "image/jpeg",
+                                    "lid": "a1d5d95d62e88ac4"
+                                },
+                                {
+                                    "lid": "a1d5d95d62e88ac4",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fa1803ebf3fb646338e7f4d54469b83f4?alt=media",
+                                    "name": "a1803ebf3fb646338e7f4d54469b83f4",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "BATH HEAT/VENTILATION",
+                            "text": "Appears serviceable\nNo heat source provided",
+                            "media": [
+                                {
+                                    "lid": "aeb50bc3ce603d41",
+                                    "name": "31cd84b13f6e46ce8f0ca304a30f6f99",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F31cd84b13f6e46ce8f0ca304a30f6f99?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "HALL BATHROOM",
+                    "comments": [
+                        {
+                            "name": "CONDITION OF SINK",
+                            "text": "Sink appears serviceable\nFixtures appear serviceable\nDrain appear serviceable\nCounters/cabinets appear serviceable.",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "name": "c66ee1984dec4450bc15eb30de7a153c",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc66ee1984dec4450bc15eb30de7a153c?alt=media",
+                                    "lid": "8f7accdef0f223dc"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CONDITION OF TOILET",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Feedd644ae1db424f988656a44b2454e4?alt=media",
+                                    "lid": "d9ef2d3a8431d7ae",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "eedd644ae1db424f988656a44b2454e4"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "TUB/SHOWER PLUMBING FIXTURES",
+                            "text": "Fixtures appear serviceable\nDrain appears serviceable\nShower head appears serviceable",
+                            "media": [
+                                {
+                                    "lid": "f71f161350144756",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F58b01216b02447b6b61323b650d330a6?alt=media",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "name": "58b01216b02447b6b61323b650d330a6",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7af365f4f9e544d59096525ca93a1171?alt=media",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "lid": "f71f161350144756",
+                                    "type": "image/jpeg",
+                                    "name": "7af365f4f9e544d59096525ca93a1171"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "TUB/SHOWER AND WALLS",
+                            "text": "Tub and shower areas appear serviceable\nThe following concerns were noted at the tub/shower:\nDamage noted at tub, repair as needed. ",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1cd275a55a8845afb95b40062a03024e?alt=media",
+                                    "lid": "3819eb63d0189cfe",
+                                    "name": "1cd275a55a8845afb95b40062a03024e",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fec51991294754e7990577a560d60aedb?alt=media",
+                                    "lid": "3819eb63d0189cfe",
+                                    "name": "ec51991294754e7990577a560d60aedb",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "BATH HEAT/VENTILATION",
+                            "text": "Appears serviceable\nNo heat source provided",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "name": "2a06c43a3c164546b88d216037288d38",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2a06c43a3c164546b88d216037288d38?alt=media",
+                                    "lid": "15853a4a235e3231",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "GARAGE - CARPORT",
+            "items": [
+                {
+                    "name": "TYPE",
+                    "comments": [
+                        {
+                            "name": "LOCATION",
+                            "text": "Attached two car garage",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F5af2ba93622640adbeabe8c50d3cf519?alt=media",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "lid": "f2f7c5852baa3b8c",
+                                    "id": "18873",
+                                    "name": "5af2ba93622640adbeabe8c50d3cf519",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "ROOF",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Same as building, see building roof report",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FLOOR",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted with the slab/floor:\nCracks noted.  Some cracking is to be expected as the property settles with age. Recommend monitoring for any future changes.",
+                            "media": [
+                                {
+                                    "name": "6b6c6bd023f24725a8051c94374a1b9d",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6b6c6bd023f24725a8051c94374a1b9d?alt=media",
+                                    "type": "image/jpeg",
+                                    "lid": "8f53e614c1cfe8ea"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FIRE WALL",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "No fire wall provided.  Recommend adding a fire separation wall.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "VEHICLE DOOR(S)",
+                    "comments": [
+                        {
+                            "name": "TYPE OF OPERATION",
+                            "text": "Automatic",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nAutomatic door opener(s)- operational\nElectric eye automatic reverse feature is operational\nPressure sensitive safety reverse feature was not tested as part of this inspection due to the risk of damage to the garage door in the event of an inoperable/not installed pressure sensitive device.\nThe following concerns were noted with the vehicle door:\nAutomatic reverse sensors are installed too high. Recommend installing it no more than 6 inches off the ground.",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F00a05da1b3fa4b04bef114174db5d770?alt=media",
+                                    "uid": "1191",
+                                    "lid": "af87e7c7ff91d8a9",
+                                    "name": "00a05da1b3fa4b04bef114174db5d770"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F3ef4e3d54e444c9e96d8165936a6b4d9?alt=media",
+                                    "uid": "1191",
+                                    "lid": "af87e7c7ff91d8a9",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "name": "3ef4e3d54e444c9e96d8165936a6b4d9"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "0212586d6428437fa2aa6feda51cf2b2",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0212586d6428437fa2aa6feda51cf2b2?alt=media",
+                                    "lid": "af87e7c7ff91d8a9",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "BUILDING ENTRY DOOR",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "name": "1c66c37b05fb4dc897fc29ea4126d36c",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1c66c37b05fb4dc897fc29ea4126d36c?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "3d36c63ebf42f2ff"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "WALLS-CEILING",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appear serviceable\nThe following concerns were noted at the walls/ceiling:\nSeparating tape/seams on the ceiling. Recommend repairing.\nMoisture stains/damage noted above garage door, recommend repair. ",
+                            "media": [
+                                {
+                                    "name": "a824fe3114dd41e7beb9b01f88fefe32",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fa824fe3114dd41e7beb9b01f88fefe32?alt=media",
+                                    "uid": "1191",
+                                    "lid": "26f93e1691997b66",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                },
+                                {
+                                    "id": "18873",
+                                    "lid": "26f93e1691997b66",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "name": "c401e17e1f9d4ec6ab3e904443818da4",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc401e17e1f9d4ec6ab3e904443818da4?alt=media"
+                                },
+                                {
+                                    "lid": "26f93e1691997b66",
+                                    "type": "image/jpeg",
+                                    "name": "d703c0e5e4104c22bb755f2500201b5a",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd703c0e5e4104c22bb755f2500201b5a?alt=media"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F55b6c64d2dcb4db68e14ed2a0460b869?alt=media",
+                                    "name": "55b6c64d2dcb4db68e14ed2a0460b869",
+                                    "lid": "26f93e1691997b66",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4dcc7176436640aa831682f3ffdaa5a6?alt=media",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "lid": "26f93e1691997b66",
+                                    "name": "4dcc7176436640aa831682f3ffdaa5a6"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "65218b858f424ce9b6cf9aebd0dd782e",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "26f93e1691997b66",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F65218b858f424ce9b6cf9aebd0dd782e?alt=media"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "lid": "26f93e1691997b66",
+                                    "type": "image/jpeg",
+                                    "name": "b2e2b9ae352b471baccd362bc1499c7b",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb2e2b9ae352b471baccd362bc1499c7b?alt=media"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F431898f41b534ea7bd7c4929f998dea8?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "431898f41b534ea7bd7c4929f998dea8",
+                                    "lid": "26f93e1691997b66",
+                                    "uploaded": 1,
+                                    "summary": true,
+                                    "id": "18873"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe2984d7e122f4b4e9053b025fb7858df?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "e2984d7e122f4b4e9053b025fb7858df",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "lid": "26f93e1691997b66",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "lid": "26f93e1691997b66",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fcacccbc004ed4e55a90df245500e3208?alt=media",
+                                    "name": "cacccbc004ed4e55a90df245500e3208",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "INTERIOR - ATTIC",
+            "items": [
+                {
+                    "name": "DOORS",
+                    "comments": [
+                        {
+                            "name": "MAIN ENTRY DOOR",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "d7404c7e1cb313f0",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F8529d761b0bd48fcbae13e4cb646f894?alt=media",
+                                    "id": "18873",
+                                    "name": "8529d761b0bd48fcbae13e4cb646f894",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "OTHER EXTERIOR DOORS",
+                            "text": "Standard rear door\nAppears serviceable",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "f2180bfc35518f0e",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1eb9da5936574259a1ab7447a950e678?alt=media",
+                                    "name": "1eb9da5936574259a1ab7447a950e678"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "INTERIOR DOORS",
+                            "text": "Appears serviceable",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "WINDOWS",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Single hung\nAluminum\n\nCasement\nAluminum",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Accessible windows were inspected.  Windows as a grouping are generally operational and appear serviceable but signs of wear and aging noted. Monitor for problems.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "INTERIOR WALLS",
+                    "comments": [
+                        {
+                            "name": "MATERIALS",
+                            "text": "Drywall",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "General condition appears serviceable\nThe following concerns were noted at the interior walls:\nTypical cracks noted.  Some cracking is to be expected in all interior surfaces as the property settles with age. Recommend monitoring for any future changes.",
+                            "media": [
+                                {
+                                    "name": "d17b0d7273ab4d5c961dafb0f17175f1",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd17b0d7273ab4d5c961dafb0f17175f1?alt=media",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "lid": "76947336b09508ea"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "CEILINGS",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Drywall",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "General condition appears serviceable\nThe following concerns were noted at the ceilings:\nTypical cracks noted.  Some cracking is to be expected in all interior surfaces as the property settles with age. Recommend monitoring for any future changes.\nMoisture stains/damage noted in front left bedroom closet and formal dining area, recommend repair. \n",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "name": "355d73ae87a14ebe9484299b4669b282",
+                                    "lid": "21fcaea98d868d7d",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F355d73ae87a14ebe9484299b4669b282?alt=media",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F61f45cf0383e4e598329533657337469?alt=media",
+                                    "id": "18873",
+                                    "name": "61f45cf0383e4e598329533657337469",
+                                    "summary": true,
+                                    "lid": "21fcaea98d868d7d",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "21fcaea98d868d7d",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F25bb22f67a8c4a1a967ecfa4710897f0?alt=media",
+                                    "name": "25bb22f67a8c4a1a967ecfa4710897f0",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FLOORS",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Tile\nCarpet\nVinyl\nLaminate",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "General condition appears serviceable\nThe following concerns were noted with the floors:\nCarpet is wrinkled. Recommend stretching.\nChipped/cracked tiles noted, repair as needed. \nMinor damage noted in formal dining room, repair as needed. ",
+                            "media": [
+                                {
+                                    "lid": "99583064047e0da3",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7c9a24a80ec64981a9f32cfa89f1abf0?alt=media",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "name": "7c9a24a80ec64981a9f32cfa89f1abf0"
+                                },
+                                {
+                                    "id": "18873",
+                                    "lid": "99583064047e0da3",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff2c91ba8392c46a2af520ecd0be849e1?alt=media",
+                                    "name": "f2c91ba8392c46a2af520ecd0be849e1",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0ec56e719e294f8ebcc5984945cf721d?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "99583064047e0da3",
+                                    "name": "0ec56e719e294f8ebcc5984945cf721d",
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "FIREPLACE/WOOD BURNING DEVICES",
+                    "comments": [
+                        {
+                            "name": "LOCATION - TYPE - CONDITION",
+                            "text": "Location: Living room\nType: Prefabricated metal\nFuel source: Wood burning\nFireplace appears serviceable.\nThe following concerns were noted at the fireplace:\nDamper is not operational, recommend repair. ",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "lid": "4e05bc6f3bc5ade1",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F996841095b294a54b02b0bdfb138adbf?alt=media",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "name": "996841095b294a54b02b0bdfb138adbf"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "name": "6ac78e01bc694baab08f4de0f69b5bc6",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6ac78e01bc694baab08f4de0f69b5bc6?alt=media",
+                                    "id": "18873",
+                                    "lid": "4e05bc6f3bc5ade1",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fbfdec26346074fe4af0c1348f73e842e?alt=media",
+                                    "name": "bfdec26346074fe4af0c1348f73e842e",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "lid": "4e05bc6f3bc5ade1",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "ATTIC AND INSULATION",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Attic is full size",
+                            "media": []
+                        },
+                        {
+                            "name": "FRAMING",
+                            "text": "Conventional framing",
+                            "media": []
+                        },
+                        {
+                            "name": "ACCESSIBILITY",
+                            "text": "Attic is mostly accessible/was entered for inspection. However due to the inherent design of attic spaces some areas are not conducive to inspection.",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F8960fcbfdae44fa9b9b08816ac59eb15?alt=media",
+                                    "name": "8960fcbfdae44fa9b9b08816ac59eb15",
+                                    "uploaded": 1,
+                                    "lid": "02f62954e4f5cbc9",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "name": "77b1a0778ef64643984699e489140765",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F77b1a0778ef64643984699e489140765?alt=media",
+                                    "type": "image/jpeg",
+                                    "lid": "02f62954e4f5cbc9",
+                                    "id": "18873"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "lid": "02f62954e4f5cbc9",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb641d06a76234fc2977d3c3fbc37f1e2?alt=media",
+                                    "id": "18873",
+                                    "name": "b641d06a76234fc2977d3c3fbc37f1e2"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the attic:\nStaining noted at the roof decking and framing in several areas. Verify status and repairs with seller. Leaks not active at the time of the inspection. Repair as needed. \nDamaged decking noted at front left side of attic, recommend repair. \nPossible Microbial growth has been observed during the inspection.  No mold sampling has been performed, this information is being provided as a courtesy for our client.  Further evaluation by a qualified licensed contractor is recommended prior to closing.",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0b0b5c983e124ae6a0b83e9c2a482ae9?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "id": "18873",
+                                    "name": "0b0b5c983e124ae6a0b83e9c2a482ae9",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F95572088436346e1a7c2a7c6e97510f6?alt=media",
+                                    "name": "95572088436346e1a7c2a7c6e97510f6",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "summary": true
+                                },
+                                {
+                                    "id": "18873",
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "950dc273c9104210b44cb8786fe03b98",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F950dc273c9104210b44cb8786fe03b98?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe281f619c0da4beeba6353976153f495?alt=media",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "id": "18873",
+                                    "name": "e281f619c0da4beeba6353976153f495"
+                                },
+                                {
+                                    "name": "6c491af7363a42ef95ebab1776c8cf02",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6c491af7363a42ef95ebab1776c8cf02?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "summary": true
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "name": "0663e830147248db9197f714b22ff7d4",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0663e830147248db9197f714b22ff7d4?alt=media"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "name": "32c8c1aa216d43e588f0a92f10f9e725",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "id": "18873",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F32c8c1aa216d43e588f0a92f10f9e725?alt=media"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fabaca682f0bb4503a017de0b15dbd474?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "name": "abaca682f0bb4503a017de0b15dbd474",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "ATTIC ACCESS",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "26251606c597cd5e",
+                                    "name": "58d599a2481e4738856fb800189c79d5",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F58d599a2481e4738856fb800189c79d5?alt=media",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "lid": "26251606c597cd5e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb4a89d3d8bbc4436967db179bad7d4a9?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "name": "b4a89d3d8bbc4436967db179bad7d4a9"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "VENTILATION",
+                            "text": "Attic ventilation is provided by Soffit vents, Gable end vents, and Stationary vents",
+                            "media": []
+                        },
+                        {
+                            "name": "INSULATION TYPE",
+                            "text": "Fiberglass blown\nFiberglass batts",
+                            "media": []
+                        },
+                        {
+                            "name": "INSULATION CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the attic insulation:\nSome insulation has been moved/disturbed.  Recommend replacing insulation to previous condition.\nAdd additional insulation as needed.",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F44c8e1e724fa4d34a4602ffaf616fc26?alt=media",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "df977f892b261141",
+                                    "name": "44c8e1e724fa4d34a4602ffaf616fc26"
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "name": "4f9fe475a89242319c4e8ef1185efca4",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "lid": "df977f892b261141",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4f9fe475a89242319c4e8ef1185efca4?alt=media"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F19c986b0c486404ebe18977ed410b7bb?alt=media",
+                                    "name": "19c986b0c486404ebe18977ed410b7bb",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "lid": "df977f892b261141",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "lid": "df977f892b261141",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff641faa17daf40cd82f9a2be33d6254c?alt=media",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "name": "f641faa17daf40cd82f9a2be33d6254c",
+                                    "id": "18873",
+                                    "uid": "1191"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DEPTH",
+                            "text": "0-12 inches",
+                            "media": []
+                        },
+                        {
+                            "name": "VAPOR BARRIER CONDITION",
+                            "text": "Vapor barrier was not visible during inspection.",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "SMOKE/FIRE DETECTOR",
+                    "comments": [
+                        {
+                            "name": "COMMENTS",
+                            "text": "Smoke detectors are present and were not tested.",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb76fb60b6ca44804abda635416b4976c?alt=media",
+                                    "lid": "404647c7c289668f",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "b76fb60b6ca44804abda635416b4976c"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "KITCHEN - APPLIANCES - LAUNDRY - WETBAR",
+            "items": [
+                {
+                    "name": "KITCHEN SINK",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Faucet appears serviceable\nHand sprayer appears serviceable\nDrain appears serviceable",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F60b9140ba663427db67c7f82ac7179c6?alt=media",
+                                    "lid": "20a8ba4610352027",
+                                    "name": "60b9140ba663427db67c7f82ac7179c6"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "KITCHEN CABINETS/COUNTERTOPS",
+                            "text": "Cabinets and counter tops appear serviceable",
+                            "media": [
+                                {
+                                    "name": "d458bad62c944063843e05e989b7bd56",
+                                    "lid": "9d55aa968ec94183",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd458bad62c944063843e05e989b7bd56?alt=media",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1d34b35bd6a54339ae0f224639007c81?alt=media",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "name": "1d34b35bd6a54339ae0f224639007c81",
+                                    "lid": "9d55aa968ec94183",
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "RANGE/COOK TOP AND OVEN",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Electric Cooktop and Oven",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable\nThe following concerns were noted at the range/cook top and oven:\nUnit is not level, recommend leveling. ",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Feb876fa5f51b4cf78cad2f4da3b5659c?alt=media",
+                                    "lid": "9ba2bf06794f8d74",
+                                    "name": "eb876fa5f51b4cf78cad2f4da3b5659c"
+                                },
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "f99dc00e636541da8c579fa27904445c",
+                                    "lid": "9ba2bf06794f8d74",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff99dc00e636541da8c579fa27904445c?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "VENTILATION",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Recirculating type hood. Recommend regular cleaning of filters for proper operation.",
+                            "media": []
+                        },
+                        {
+                            "name": "CONDITION",
+                            "text": "Fan/Hood operational",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb25cd5ed253340a49a26a19dc9e2277b?alt=media",
+                                    "id": "18873",
+                                    "lid": "e830b9a6460d31f2",
+                                    "type": "image/jpeg",
+                                    "name": "b25cd5ed253340a49a26a19dc9e2277b",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "DISHWASHER",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable. A normal/quick/rinse wash cycle was run at the time of the inspection. No leaking noted. No other cycles were tested at the time of the inspection. ",
+                            "media": [
+                                {
+                                    "lid": "7ef9f0ab9c0c638d",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff04804d339014e70be8efccbe2250f37?alt=media",
+                                    "uid": "1191",
+                                    "name": "f04804d339014e70be8efccbe2250f37",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "id": "18873"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "a84121e35f104eb183f02d0047c4486e",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fa84121e35f104eb183f02d0047c4486e?alt=media",
+                                    "uploaded": 1,
+                                    "lid": "7ef9f0ab9c0c638d",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "GARBAGE DISPOSAL",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd0fe7e4a9ee047cf9c9bed7d365d276b?alt=media",
+                                    "name": "d0fe7e4a9ee047cf9c9bed7d365d276b",
+                                    "lid": "5f2cb9cdbb0db7fc",
+                                    "id": "18873",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "MICROWAVE",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "None installed",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "TRASH COMPACTOR",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "None installed",
+                            "media": []
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "LAUNDRY",
+                    "comments": [
+                        {
+                            "name": "LOCATION",
+                            "text": "Service area main floor",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "lid": "928844abc5fa6b50",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F9f9990c7992c44bfaad980f14c2ae3e7?alt=media",
+                                    "name": "9f9990c7992c44bfaad980f14c2ae3e7"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "WATER AND WASTE CONDITION",
+                            "text": "No washing machine installed. Laundry plumbing was not tested. Inspector is not allowed to operate valves. We Highly recommend verifying proper operation of plumbing before close of transaction.",
+                            "media": [
+                                {
+                                    "lid": "ea8e6a23ede3c845",
+                                    "name": "cacb9bb0b4c841fd97e2470700e5596f",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fcacb9bb0b4c841fd97e2470700e5596f?alt=media",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "ELECTRICAL AND GAS CONDITION",
+                            "text": "240V Service-operational and the electrical outlet is grounded\n3 prong outlet provided.  Recommend upgrading to a 4 prong outlet if possible.",
+                            "media": [
+                                {
+                                    "lid": "aa58a0467830aab4",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb037bc47fad14777893f5411a9818dbf?alt=media",
+                                    "uid": "1191",
+                                    "name": "b037bc47fad14777893f5411a9818dbf",
+                                    "id": "18873"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "DRYER VENTING CONDITION",
+                            "text": "Dryer venting is provided\nThe following concerns were noted at the dryer vent:\nDryer vent exhaust flapper is dirty/blocked. Recommend cleaning. ",
+                            "media": [
+                                {
+                                    "lid": "246037324323ee36",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "name": "b12748a4c87646c8b753afe298fe4e4c",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb12748a4c87646c8b753afe298fe4e4c?alt=media"
+                                },
+                                {
+                                    "lid": "246037324323ee36",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F047f25daf9b6465da0864dd77f006a42?alt=media",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "name": "047f25daf9b6465da0864dd77f006a42",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "LAUNDRY CABINETS/COUNTERTOPS",
+                            "text": "Cabinets appear serviceable",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "3dd2db2995803174",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6de7961e05ff4ecf81781ee50b47449c?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "6de7961e05ff4ecf81781ee50b47449c"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        },
+        {
+            "name": "HEATING - AIR CONDITIONING",
+            "items": [
+                {
+                    "name": "DUCTWORK",
+                    "comments": [
+                        {
+                            "name": "TYPE",
+                            "text": "Flexible Round",
+                            "media": []
+                        },
+                        {
+                            "name": "DUCTS/AIR SUPPLY",
+                            "text": "Appears serviceable\nThe following concerns were noted at the ducts/air supply system:\nFlex duct is resting on the attic floor. Monitor for sweating and condensation build-up and relocate as needed.\nGray vinyl covered ducts noted. Some manufacturers of these ducts have experienced product failure in residential use. Recommend monitoring for future problems.",
+                            "media": [
+                                {
+                                    "name": "5170af1d2b604108b40cacdf21e38a2f",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F5170af1d2b604108b40cacdf21e38a2f?alt=media",
+                                    "lid": "037f796f10cd4915",
+                                    "type": "image/jpeg",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "name": "69e9f73dce53464fbd16eeeec19f548c",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F69e9f73dce53464fbd16eeeec19f548c?alt=media",
+                                    "lid": "037f796f10cd4915"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "2e00bed3516e4f5fa41aeaa2790506e5",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2e00bed3516e4f5fa41aeaa2790506e5?alt=media",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "lid": "037f796f10cd4915"
+                                },
+                                {
+                                    "name": "da977a37fe7e433dbaf635b3b32c604c",
+                                    "id": "18873",
+                                    "lid": "037f796f10cd4915",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fda977a37fe7e433dbaf635b3b32c604c?alt=media",
+                                    "uid": "1191",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "name": "299c145646e8454991e6ba2961a9ac31",
+                                    "uploaded": 1,
+                                    "lid": "037f796f10cd4915",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F299c145646e8454991e6ba2961a9ac31?alt=media",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                },
+                {
+                    "name": "HVAC SYSTEM",
+                    "comments": [
+                        {
+                            "name": "LOCATION OF CONDENSER - COMPRESSOR",
+                            "text": "Exterior Rear compressor",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7ee378fcb1ef44f99e9bcc7c9630a5da?alt=media",
+                                    "name": "7ee378fcb1ef44f99e9bcc7c9630a5da",
+                                    "id": "18873",
+                                    "lid": "ab03b0879996a10b",
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "CONDENSER - COMPRESSOR TYPE",
+                            "text": "Central (Split system)",
+                            "media": []
+                        },
+                        {
+                            "name": "MANUFACTURER OF CONDENSER - COMPRESSOR",
+                            "text": "Rheem",
+                            "media": []
+                        },
+                        {
+                            "name": "CAPACITY OF CONDENSER - COMPRESSOR",
+                            "text": "3 1/2 Tons",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "a59e5119604148b7",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "name": "861e50f847d845038755eb1a862b3923",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F861e50f847d845038755eb1a862b3923?alt=media"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "YEAR OF MANUFACTURE",
+                            "text": "2017",
+                            "media": []
+                        },
+                        {
+                            "name": "POWER SOURCE",
+                            "text": "240 Volt\nElectrical disconnect present",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2261da1c29c84ec9be412d6760bbb874?alt=media",
+                                    "uid": "1191",
+                                    "lid": "4b3c7a078f5601d8",
+                                    "uploaded": 1,
+                                    "name": "2261da1c29c84ec9be412d6760bbb874",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "name": "6fd08990e9a34be5af8e6535e7eea5a0",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6fd08990e9a34be5af8e6535e7eea5a0?alt=media",
+                                    "lid": "4b3c7a078f5601d8",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "MAXIMUM RECOMMENDED BREAKER SIZE",
+                            "text": "40 Amps",
+                            "media": []
+                        },
+                        {
+                            "name": "GENERAL CONDITION OF CONDENSER - COMPRESSOR",
+                            "text": "Appears operational\nThe following concerns were noted with the air conditioning condenser/compressor:\nCoils are dirty. Recommend cleaning and servicing the system. Make any recommended repairs.\nMissing/damaged insulation noted on refrigerant line in the attic. Recommend repair. ",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fd1a3a2e9607c405381971c53e4f19a0e?alt=media",
+                                    "name": "d1a3a2e9607c405381971c53e4f19a0e",
+                                    "uid": "1191",
+                                    "lid": "a219fc60c4d9a527",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F90ee3ea770e94be09751e2041a3403df?alt=media",
+                                    "lid": "a219fc60c4d9a527",
+                                    "uid": "1191",
+                                    "name": "90ee3ea770e94be09751e2041a3403df",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "id": "18873"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "lid": "a219fc60c4d9a527",
+                                    "name": "c717da323fbe45bca54cb7c2fb109b1e",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fc717da323fbe45bca54cb7c2fb109b1e?alt=media",
+                                    "id": "18873",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "id": "18873",
+                                    "lid": "a219fc60c4d9a527",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fde3375680bc54b36b78adff684e1b681?alt=media",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "name": "de3375680bc54b36b78adff684e1b681"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EVAPORATOR COIL LOCATION",
+                            "text": "Attic",
+                            "media": [
+                                {
+                                    "lid": "269a64e75ddf6752",
+                                    "uid": "1191",
+                                    "name": "46d57f955b484afcac967cc304064d96",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F46d57f955b484afcac967cc304064d96?alt=media",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EVAPORATOR MANUFACTURER",
+                            "text": "ADP",
+                            "media": []
+                        },
+                        {
+                            "name": "EVAPORATOR CAPACITY",
+                            "text": "4 Tons",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ffab74c43c21a4dca9a04a53882643312?alt=media",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "645d8640f536cc7a",
+                                    "name": "fab74c43c21a4dca9a04a53882643312"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EVAPORATOR AGE",
+                            "text": "2017",
+                            "media": []
+                        },
+                        {
+                            "name": "INTERIOR AIR TEMPERATURE DROP",
+                            "text": "12-14 degrees F.  Considered marginal operation",
+                            "media": [
+                                {
+                                    "lid": "a928f40b355649a9",
+                                    "name": "b8265ff53c874c838fa4a3857b594b42",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fb8265ff53c874c838fa4a3857b594b42?alt=media",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F088b859a8c2547019f7f87b48b3018e9?alt=media",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "lid": "a928f40b355649a9",
+                                    "name": "088b859a8c2547019f7f87b48b3018e9"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "EVAPORATOR COIL CONDITION",
+                            "text": "Not visible ",
+                            "media": []
+                        },
+                        {
+                            "name": "EVAPORATOR CONDENSATE LINE AND/PAN",
+                            "text": "Condensate line installed.\nFloat switch noted/not tested\nThe following concerns were noted with overflow drain pan:\nDamage/rusting noted at pan. Monitor for problems.",
+                            "media": [
+                                {
+                                    "lid": "de06bcc3d4bee61b",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F23c30f95645d483e95336158345df30e?alt=media",
+                                    "name": "23c30f95645d483e95336158345df30e",
+                                    "id": "18873"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "HVAC CONTROLS",
+                            "text": "Appear serviceable",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATING SYSTEM LOCATION",
+                            "text": "Attic",
+                            "media": [
+                                {
+                                    "name": "65638cb2ccdc4a74bad582062b8f8717",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F65638cb2ccdc4a74bad582062b8f8717?alt=media",
+                                    "lid": "15ec0f1e3cb8de06",
+                                    "uid": "1191"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "HEATING SYSTEM TYPE",
+                            "text": "Forced Air",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATING FUEL TYPE",
+                            "text": "Electric",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATING SYSTEM MANUFACTURER",
+                            "text": "ADP",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATING SYSTEM YEAR OF MANUFACTURE",
+                            "text": "2017",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATING SYSTEM CONDITION",
+                            "text": "Appears operational",
+                            "media": []
+                        },
+                        {
+                            "name": "HEATER TEMPERATURE INCREASE",
+                            "media": [
+                                {
+                                    "name": "52f5ef0ab76048258a7e270071ad85ea",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F52f5ef0ab76048258a7e270071ad85ea?alt=media",
+                                    "lid": "6bac8c6d9a1db116",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                },
+                                {
+                                    "name": "4e453017c6904998b3dd9eabd5bd4e74",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "6bac8c6d9a1db116",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4e453017c6904998b3dd9eabd5bd4e74?alt=media"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "AIR PLENUM",
+                            "text": "Appears serviceable",
+                            "media": [
+                                {
+                                    "type": "image/jpeg",
+                                    "lid": "1aff08db0169549a",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F2bb220462e374a43b92f380ce53f601d?alt=media",
+                                    "name": "2bb220462e374a43b92f380ce53f601d",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "uid": "1191"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "AIR FILTERS",
+                            "text": "Appear serviceable",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0ab276253a2744b0ad409ccba48135bf?alt=media",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "lid": "d3f33793abb01865",
+                                    "name": "0ab276253a2744b0ad409ccba48135bf",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "RETURN AIR SHAFT",
+                            "text": "Appears serviceable but signs of wear and aging noted. Monitor for problems.\nThe following concerns were noted at the return air shaft:\nPrevious repairs noted. Verify reason with seller and monitor for on-going or future problems. ",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "lid": "13963137654ef560",
+                                    "id": "18873",
+                                    "name": "aa76f6f5ee764d96998abd50510795a1",
+                                    "type": "image/jpeg",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Faa76f6f5ee764d96998abd50510795a1?alt=media"
+                                }
+                            ]
+                        }
+                    ],
+                    "media": []
+                }
+            ]
+        }
+    ],
+    "conditions": [
+        {
+            "name": "CLIMATIC CONDITIONS",
+            "comments": [
+                {
+                    "name": "WEATHER",
+                    "text": "Clear"
+                },
+                {
+                    "name": "SOIL CONDITIONS",
+                    "text": "Damp"
+                },
+                {
+                    "name": "APPROXIMATE OUTSIDE TEMPERATURE in °F",
+                    "text": "80-90"
+                }
+            ]
+        },
+        {
+            "name": "UTILITY SERVICES",
+            "comments": [
+                {
+                    "name": "WATER SOURCE",
+                    "text": "Public"
+                },
+                {
+                    "name": "SEWAGE DISPOSAL",
+                    "text": "Public"
+                },
+                {
+                    "name": "UTILITIES STATUS",
+                    "text": "All utilities on"
+                }
+            ]
+        },
+        {
+            "name": "BUILDING CHARACTERISTICS",
+            "comments": [
+                {
+                    "name": "ESTIMATED AGE OF STRUCTURE",
+                    "text": "39 (Per MLS)"
+                },
+                {
+                    "name": "BUILDING TYPE",
+                    "text": "1 family"
+                },
+                {
+                    "name": "STORIES",
+                    "text": "1"
+                },
+                {
+                    "name": "SQUARE FOOTAGE OF BUILDING",
+                    "text": "2240 (Per MLS)"
+                },
+                {
+                    "name": "SPACE BELOW GRADE",
+                    "text": "Ground floor living area"
+                }
+            ]
+        },
+        {
+            "name": "OTHER INFORMATION",
+            "comments": [
+                {
+                    "name": "AREA",
+                    "text": "Suburb"
+                },
+                {
+                    "name": "BUILDING OCCUPIED?",
+                    "text": "No, unfurnished."
+                },
+                {
+                    "name": "PEOPLE PRESENT",
+                    "text": "Selling agent\nPurchaser"
+                },
+                {
+                    "name": "GENERAL PEST COMMENTS",
+                    "text": "According to the MLS, property is currently under a termite contract. Recommend ensuring transferability of contract and maintaining it throughout duration of occupancy."
+                }
+            ]
+        }
+    ],
+    "sectionSummary": [
+        {
+            "name": "ROOF - FLASHING SYSTEMS",
+            "items": [
+                {
+                    "name": "ROOF",
+                    "comments": [
+                        {
+                            "name": "ROOF COVERING STATUS",
+                            "text": "The following concerns were noted at the roof:\nOrganic growth noted on the shingles. Recommend soft washing.\nNails/Fasteners are sticking through the shingles. Recommend evaluation by a qualified licensed roofer and repair/replace.\nNon-professional repairs noted\nDamaged shingles noted at the left side and rear right edge of roof. Recommend evaluation by a qualified licensed roofer and repair/replace.\nRoof appears to be near the end of its life. Recommend evaluation by a qualified licensed roofer and repair/replace.",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "id": "18873",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F1eb1b807a8584df1b063b6709ca2ca35?alt=media",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "name": "1eb1b807a8584df1b063b6709ca2ca35"
+                                },
+                                {
+                                    "id": "18873",
+                                    "name": "93d10f7cf4154844aa1ddb1f8615ffd7",
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F93d10f7cf4154844aa1ddb1f8615ffd7?alt=media",
+                                    "summary": true,
+                                    "lid": "e10f86d4950fa20e"
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F74303962bdef4d52a21454741f782e77?alt=media",
+                                    "uid": "1191",
+                                    "lid": "e10f86d4950fa20e",
+                                    "name": "74303962bdef4d52a21454741f782e77",
+                                    "summary": true,
+                                    "id": "18873"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7df08ec3916c46d8b3154d3535206c15?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "uploaded": 1,
+                                    "name": "7df08ec3916c46d8b3154d3535206c15",
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "summary": true
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F7ddde38acf5241dea3e0f67f70fcfbb3?alt=media",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "summary": true,
+                                    "name": "7ddde38acf5241dea3e0f67f70fcfbb3",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "id": "18873",
+                                    "name": "46a865cd95c344958936544867e415a0",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F46a865cd95c344958936544867e415a0?alt=media",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "lid": "e10f86d4950fa20e"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F087fe729242b4789a80c497588f3c810?alt=media",
+                                    "lid": "e10f86d4950fa20e",
+                                    "uid": "1191",
+                                    "name": "087fe729242b4789a80c497588f3c810",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "EXPOSED FLASHINGS",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "The following concerns were noted at the flashings:\nLifted flashing noted on rear right side stationary vent, recommend securing to roof surface.",
+                            "media": [
+                                {
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F68fd97fb0b504136b6cfe6b313a02d77?alt=media",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "lid": "e42963a4ac50e87e",
+                                    "name": "68fd97fb0b504136b6cfe6b313a02d77",
+                                    "type": "image/jpeg"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "ELECTRICAL",
+            "items": [
+                {
+                    "name": "SERVICE",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "The following concerns were noted at the incoming service:\nToo close to roof (should be at least 18 over roof), recommend repair. ",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F703eaf1399234ddca2b6459f24e8f1f5?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "703eaf1399234ddca2b6459f24e8f1f5",
+                                    "summary": true,
+                                    "lid": "d3e037c8e9ba7142",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "id": "18873"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "name": "4459b679270442ca92b4b625aea05f52",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F4459b679270442ca92b4b625aea05f52?alt=media",
+                                    "lid": "d3e037c8e9ba7142",
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "CONDUCTORS",
+                    "comments": [
+                        {
+                            "name": "BRANCH WIRING CIRCUIT CONDITIONS",
+                            "text": "The following concerns were noted at the branch wiring circuits:\nOpen junction boxes are noted- Covers are needed in the following area(s):\nattic",
+                            "media": [
+                                {
+                                    "uid": "1191",
+                                    "lid": "b4aeb1824416e486",
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "name": "f15a5d075ae947bdb0d8f57fdc2936bf",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Ff15a5d075ae947bdb0d8f57fdc2936bf?alt=media",
+                                    "uploaded": 1,
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "GARAGE - CARPORT",
+            "items": [
+                {
+                    "name": "WALLS-CEILING",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "The following concerns were noted at the walls/ceiling:\nSeparating tape/seams on the ceiling. Recommend repairing.\nMoisture stains/damage noted above garage door, recommend repair. ",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F431898f41b534ea7bd7c4929f998dea8?alt=media",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "431898f41b534ea7bd7c4929f998dea8",
+                                    "lid": "26f93e1691997b66",
+                                    "uploaded": 1,
+                                    "summary": true,
+                                    "id": "18873"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe2984d7e122f4b4e9053b025fb7858df?alt=media",
+                                    "type": "image/jpeg",
+                                    "name": "e2984d7e122f4b4e9053b025fb7858df",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "lid": "26f93e1691997b66",
+                                    "uid": "1191"
+                                },
+                                {
+                                    "lid": "26f93e1691997b66",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fcacccbc004ed4e55a90df245500e3208?alt=media",
+                                    "name": "cacccbc004ed4e55a90df245500e3208",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "INTERIOR - ATTIC",
+            "items": [
+                {
+                    "name": "CEILINGS",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "The following concerns were noted at the ceilings:\nMoisture stains/damage noted in front left bedroom closet and formal dining area, recommend repair. \n",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F61f45cf0383e4e598329533657337469?alt=media",
+                                    "id": "18873",
+                                    "name": "61f45cf0383e4e598329533657337469",
+                                    "summary": true,
+                                    "lid": "21fcaea98d868d7d",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "uploaded": 1
+                                },
+                                {
+                                    "uploaded": 1,
+                                    "lid": "21fcaea98d868d7d",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F25bb22f67a8c4a1a967ecfa4710897f0?alt=media",
+                                    "name": "25bb22f67a8c4a1a967ecfa4710897f0",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "id": "18873"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "ATTIC AND INSULATION",
+                    "comments": [
+                        {
+                            "name": "CONDITION",
+                            "text": "The following concerns were noted at the attic:\nStaining noted at the roof decking and framing in several areas. Verify status and repairs with seller. Leaks not active at the time of the inspection. Repair as needed. \nDamaged decking noted at front left side of attic, recommend repair. \nPossible Microbial growth has been observed during the inspection.  No mold sampling has been performed, this information is being provided as a courtesy for our client.  Further evaluation by a qualified licensed contractor is recommended prior to closing.",
+                            "media": [
+                                {
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0b0b5c983e124ae6a0b83e9c2a482ae9?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "id": "18873",
+                                    "name": "0b0b5c983e124ae6a0b83e9c2a482ae9",
+                                    "type": "image/jpeg"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F95572088436346e1a7c2a7c6e97510f6?alt=media",
+                                    "name": "95572088436346e1a7c2a7c6e97510f6",
+                                    "id": "18873",
+                                    "uploaded": 1,
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "summary": true
+                                },
+                                {
+                                    "id": "18873",
+                                    "summary": true,
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "name": "950dc273c9104210b44cb8786fe03b98",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F950dc273c9104210b44cb8786fe03b98?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fe281f619c0da4beeba6353976153f495?alt=media",
+                                    "uploaded": 1,
+                                    "uid": "1191",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "id": "18873",
+                                    "name": "e281f619c0da4beeba6353976153f495"
+                                },
+                                {
+                                    "name": "6c491af7363a42ef95ebab1776c8cf02",
+                                    "type": "image/jpeg",
+                                    "id": "18873",
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F6c491af7363a42ef95ebab1776c8cf02?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "summary": true
+                                },
+                                {
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "id": "18873",
+                                    "name": "0663e830147248db9197f714b22ff7d4",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F0663e830147248db9197f714b22ff7d4?alt=media"
+                                },
+                                {
+                                    "uid": "1191",
+                                    "name": "32c8c1aa216d43e588f0a92f10f9e725",
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "id": "18873",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F32c8c1aa216d43e588f0a92f10f9e725?alt=media"
+                                },
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fabaca682f0bb4503a017de0b15dbd474?alt=media",
+                                    "lid": "e7aa25a5ce3dafaf",
+                                    "name": "abaca682f0bb4503a017de0b15dbd474",
+                                    "id": "18873",
+                                    "type": "image/jpeg",
+                                    "uid": "1191",
+                                    "summary": true,
+                                    "uploaded": 1
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "HEATING - AIR CONDITIONING",
+            "items": [
+                {
+                    "name": "HVAC SYSTEM",
+                    "comments": [
+                        {
+                            "name": "GENERAL CONDITION OF CONDENSER - COMPRESSOR",
+                            "text": "The following concerns were noted with the air conditioning condenser/compressor:\nCoils are dirty. Recommend cleaning and servicing the system. Make any recommended repairs.\nMissing/damaged insulation noted on refrigerant line in the attic. Recommend repair. ",
+                            "media": [
+                                {
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2F90ee3ea770e94be09751e2041a3403df?alt=media",
+                                    "lid": "a219fc60c4d9a527",
+                                    "uid": "1191",
+                                    "name": "90ee3ea770e94be09751e2041a3403df",
+                                    "summary": true,
+                                    "uploaded": 1,
+                                    "type": "image/jpeg",
+                                    "id": "18873"
+                                },
+                                {
+                                    "id": "18873",
+                                    "lid": "a219fc60c4d9a527",
+                                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1191%2F18873%2Fde3375680bc54b36b78adff684e1b681?alt=media",
+                                    "type": "image/jpeg",
+                                    "summary": true,
+                                    "uid": "1191",
+                                    "uploaded": 1,
+                                    "name": "de3375680bc54b36b78adff684e1b681"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "conditionsSummary": []
+}

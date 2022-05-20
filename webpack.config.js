@@ -23,6 +23,9 @@ module.exports = {
       fs: false,
     },
   },
+  module: {
+    rules: [{ test: /\.hbs$/, loader: "handlebars-loader" }],
+  },
   performance: {
     hints: false,
     maxEntrypointSize: 512000,

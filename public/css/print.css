@@ -1,0 +1,20 @@
+@page {
+  size: A4;
+  margin: 2mm;
+}
+@media print {
+  /* body {
+      counter-reset: page_number;
+    }
+    header::after {
+      counter-increment: page_number;
+      content: "Page " counter(page_number);
+    } */
+  /* section {
+      display: table;
+      border-collapse: separate;
+      border-spacing: 2px;
+      border-color: gray;
+      page-break-after: always;
+    } */
+}
