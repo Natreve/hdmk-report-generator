@@ -1,8 +1,40 @@
 header {
-  position: fixed;
   width: 100%;
-  margin: 0;
 }
 .logo {
   width: 200px;
+}
+.cover-image {
+  /* position: relative; */
+  /* overflow: hidden; */
+  width: 512px;
+  /* display: flex;
+  justify-content: center; */
+}
+.cover-image img {
+  /* position: absolute; */
+  width: auto;
+  /* height: 100%; */
+  /* left: 50%; */
+  /* top: 50%; */
+  /* transform: translate(-50%, -50%); */
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 128px));
+  grid-gap: 1rem;
+}
+.image {
+  position: relative;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+}
+.image img {
+  position: absolute;
+  width: auto;
+  /* height: 100%; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }

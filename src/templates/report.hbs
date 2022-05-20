@@ -1,83 +1,213 @@
+<header>
+    <div class="logo">
+        <img src="./images/HDMK.png" alt="logo" />
+    </div>
+</header>
+<!-- Cover Page -->
 <section>
-    <div class="cover">
+    <div class="cover-image">
         <img src="{{inspection.cover}}" alt="cover" />
         <h1>Inspection Report</h1>
     </div>
-    <div>
-        <article>
-            {{#with inspection}}
-            <h4>Client</h4>
-            <p>{{client.name}}</p>
-            {{#with address}}
-            <p>{{street}}</p>
-            <p>{{city}}, {{state}} {{zipcode}} </p>
-            {{/with}}
-            {{/with}}
-        </article>
-        <article>
-            {{#with inspector}}
-            <h4>Inspector</h4>
-            <p>{{fname}} {{lname}}, LHI # {{licence_number}}</p>
-            <p>{{phone}}</p>
-            <p>{{email}}</p>
-            {{/with}}
-        </article>
-        <article>
-            <h4>Date</h4>
-            <p>12/01/2021</p>
-        </article>
-    </div>
+    <article>
+        {{#with inspection}}
+        <h4>Client</h4>
+        <p>{{client.name}}</p>
+        {{#with address}}
+        <p>{{street}}</p>
+        <p>{{city}}, {{state}} {{zipcode}} </p>
+        {{/with}}
+        {{/with}}
+    </article>
+    <article>
+        {{#with inspector}}
+        <h4>Inspector</h4>
+        <p>{{fname}} {{lname}}, LHI # {{licence_number}}</p>
+        <p><a href="tel:{{phone}}">{{phone}}</a></p>
+        <p><a href="mailto:{{email}}">{{email}}</a></p>
+        {{/with}}
+    </article>
+    <article>
+        <h4>Date</h4>
+        <p>{{#date inspection.date.started}}{{/date}}</p>
+    </article>
 </section>
-{{!-- <section>
+<!-- Table of Content -->
+<section>
+    <h1>Inspection Report Index</h1>
+    <ol>
+        <li><a href="conditions">conditions</a></li>
+        <li><a href="limitations">limitations</a></li>
+        <li><a href="summary">summary</a></li>
+        {{#each sections}}
+        <li><a href="#{{name}}">{{name}}</a> </li>
+        {{/each}}
+    </ol>
+</section>
+<!-- Conditions -->
+<section>
+    <h1>inspection conditions</h1>
+    <article>
+        <h2>client & site information</h2>
+        {{#with inspection}}
+        <table>
+            <tr>
+                <td>date of inspection:</td>
+                <td>{{#date date.started}}{{/date}}</td>
+            </tr>
+            <tr>
+                <td>start time:</td>
+                <td>{{#time date.started}}{{/time}}</td>
+            </tr>
+            <tr>
+                <td>end time:</td>
+                <td>{{#time date.ended}}{{/time}}</td>
+            </tr>
+            <tr>
+                <td>city & state:</td>
+                <td>{{address.city}} {{address.state}}</td>
+            </tr>
+        </table>
+        {{/with}}
+    </article>
+    <article>
+        <h2>payment information</h2>
+        <table>
+            <tr>
+                <td>total fee:</td>
+                <td>${{inspection.fee}}</td>
+            </tr>
+        </table>
+    </article>
+    {{#each conditions}}
+    <article>
+        <h2>{{this.name}}</h2>
+        {{#each this.comments}}
+        <table>
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.text}}</td>
+            </tr>
+        </table>
+        {{/each}}
+    </article>
+    {{/each}}
+</section>
+<!-- Limitations -->
+<section>
+    <h1>report limitations</h1>
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt
-        metus eu consectetur rutrum. Praesent tempor facilisis dapibus. Aliquam
-        cursus diam ac vehicula pulvinar. Integer lacinia non odio et
-        condimentum. Aenean faucibus cursus mi, sed interdum turpis sagittis a.
-        Quisque quis pellentesque mi. Ut erat eros, posuere sed scelerisque ut,
-        pharetra vitae tellus. Suspendisse ligula sapien, laoreet ac hendrerit
-        sit amet, viverra vel mi. Pellentesque faucibus nisl et dolor pharetra,
-        vel mattis massa venenatis. Integer congue condimentum nisi, sed
-        tincidunt velit tincidunt non. Nulla sagittis sed lorem pretium aliquam.
-        Praesent consectetur volutpat nibh, quis pulvinar est volutpat id. Cras
-        maximus odio posuere suscipit venenatis. Donec rhoncus scelerisque
-        metus, in tempus erat rhoncus sed. Morbi massa sapien, porttitor id urna
-        vel, volutpat blandit velit. Cras sit amet sem eros. Quisque commodo
-        facilisis tristique. Proin pellentesque sodales rutrum. Vestibulum purus
-        neque, congue vel dapibus in, venenatis ut felis. Donec et ligula enim.
-        Sed sapien sapien, tincidunt vitae lectus quis, ultricies rhoncus mi.
-        Nunc dapibus nulla tempus nunc interdum, sed facilisis ex pellentesque.
-        Nunc vel lorem leo. Cras pharetra sodales metus. Cras lacus ex,
-        consequat at consequat vel, laoreet ac dui. Curabitur aliquam, sapien
-        quis congue feugiat, nisi nisl feugiat diam, sed vehicula velit nulla ac
-        nisl. Aliquam quis nisi euismod massa blandit pharetra nec eget nunc.
-        Etiam eros ante, auctor sit amet quam vel, fringilla faucibus leo. Morbi
-        a pulvinar nulla. Praesent sed vulputate nisl. Orci varius natoque
-        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-        Aenean commodo mollis iaculis. Maecenas consectetur enim vitae mollis
-        venenatis. Ut scelerisque pretium orci id laoreet. In sit amet pharetra
-        diam. Vestibulum in molestie lorem. Nunc gravida, eros non consequat
-        fermentum, ex orci vestibulum orci, non accumsan sem velit ac lectus.
-        Vivamus malesuada lacus nec velit dignissim, ac fermentum nulla pretium.
-        Aenean mi nisi, convallis sed tempor in, porttitor eu libero. Praesent
-        et molestie ante. Duis suscipit vitae purus sit amet aliquam. Vestibulum
-        lectus justo, lobortis a purus a, dapibus efficitur metus. Suspendisse
-        potenti. Duis dictum ex lorem. Suspendisse nec ligula consectetur magna
-        hendrerit ullamcorper et eget mauris. Etiam vestibulum sodales diam,
-        eget venenatis nunc luctus quis. Ut fermentum placerat neque nec
-        elementum. Praesent orci erat, rhoncus vitae est eu, dictum molestie
-        metus. Cras et fermentum elit. Aenean eget augue lacinia, varius ante
-        in, ullamcorper dolor. Cras viverra purus non egestas consectetur. Nulla
-        nec dolor ac lectus convallis aliquet sed a metus. Suspendisse eu
-        imperdiet nunc, id pulvinar risus. Maecenas varius sagittis est, vel
-        fermentum risus accumsan at. Vestibulum sollicitudin dui pharetra sapien
-        volutpat, id convallis mi vestibulum. Phasellus commodo sit amet lorem
-        quis imperdiet. Proin nec diam sed urna euismod ultricies at sed urna.
-        Quisque ornare, nulla et vehicula ultrices, massa purus vehicula urna,
-        ac sodales lacus leo vitae mi. Sed congue placerat justo at placerat.
-        Aenean suscipit fringilla vehicula. Quisque iaculis orci vitae arcu
-        commodo maximus. Maecenas nec nunc rutrum, cursus elit quis, porttitor
-        sapien. Sed ac hendrerit ipsum, lacinia fringilla velit. Donec ultricies
-        feugiat dictum.
+        This inspection report is the intellectual property of HDMK Home Inspection and is
+        intended for the exclusive use of the client for whom it was prepared. It is not to be copied or disseminated to
+        any other party without the expressed written consent of HDMK Home Inspection. Neither the inspector nor HDMK
+        Home Inspection company shall have any liability whatsoever to any third party using or relying on its contents.
+        Any third party using this report agrees thereby to defend, indemnify and hold the inspector and HDMK Home
+        Inspection company harmless from any claims of any person relying on the report. This inspection report also
+        includes a copy of the Building Inspection Authorization and Agreement.
+        <br /> <br />
+        HDMK Home Inspection and HDMK are registered trademarks of HDMK Franchising LLC. The HDMK logo encompasses two
+        separately owned and operated companies (HDMK Home Inspection and HDMK Pest control LLC) and may be used by
+        either of these companies. HDMK Home Inspection refers to an independently operated franchise. This report
+        (and/or documents accompanying it) may contain privileged communications and confidential business information
+        that is intended for use only by the individual or company to whom it is addressed. Disclosure, interception,
+        copying or any other use of this report by anyone other than any intended recipient is prohibited. Any party
+        using this report agrees thereby to defend, indemnify and hold the parent HDMK Home Inspection company, HDMK
+        Pest control, HDMK, or HDMK Franchising LLC harmless from any claims of any person relying on the report.
+        <br /> <br />
+        This report is intended only as a general guide to help the client(s) make their own evaluation of the overall
+        condition of the building, and is not intended to reflect the value of the premises, nor make any representation
+        as to the advisability of purchase. The report expresses the personal opinions of the inspector, based upon his
+        visual impressions of the conditions that existed at the time of the inspection only. The inspection process
+        includes a limited, visual, performance based inspection of the property, subject to the limitations described
+        herein and in the attached "Building Inspection Authorization and Agreement." The inspection and report are not
+        intended to be technically exhaustive, or to imply that every component was inspected, or that every possible
+        defect was discovered. It is recommended that proper installation of any equipment on the property be verified
+        by consulting the manufacturer's instructions. While the inspector may mention an item that is suspected of
+        being involved in a recall, every item in the home is not checked for recall status by the inspector. It is
+        recommended that all devices in the home be checked for recalls at www.CPSC.gov. No disassembly of equipment,
+        opening of walls, moving of furniture or floor coverings, appliances or stored items, or excavation was
+        performed. All components and conditions which by the nature of their location are concealed, camouflaged or
+        difficult to inspect are excluded from the report. If some areas are concealed by furniture or other personal
+        property, it is highly recommended that the purchaser do a thorough inspection during their final walk through.
+        If any problems or questionable conditions are reported on by the inspector, or if the purchaser is concerned
+        with any property conditions, it is recommended that a qualified professional be retained to further investigate
+        the situation, and make necessary upgrades as needed before the act of sale occurs.
+        <br /> <br />
+        Systems and conditions which are not within the normal scope of the building inspection (unless previously
+        contracted) include, but are not limited to: formaldehyde, lead paint, asbestos, radon, carbon monoxide, fuel
+        gas leaks, toxic or flammable materials, mold, contaminated drywall, carcinogens, or other environmental
+        hazards, whether in the building, soil, water or air; pest infestation; playground equipment; efficiency
+        measurement of insulation or heating and cooling equipment; internal or underground drainage or plumbing;
+        sprinkler systems; pool and spa equipment; any systems which are shut down or otherwise secured; water wells
+        (water quality and quantity); septic systems; zoning ordinances; intercoms; security systems; heat sensors;
+        cosmetics or building code conformity. Any general comments about these systems and conditions are informational
+        only and do not represent an inspection. If any potential problem is suspected regarding the above systems or
+        conditions, it is recommended that a qualified professional be retained to further investigate the situation,
+        and make necessary upgrades as needed before the act of sale occurs.
+        <br /> <br />
+        The inspection report should not be construed as a compliance inspection of any governmental or non governmental
+        codes or regulations. The report is not intended to be a warranty or guarantee of the present or future adequacy
+        or performance of the structure, its systems, or their component parts. This report does not constitute any
+        express or implied warranty of merchantability or fitness for use regarding the condition of the property and it
+        should not be relied upon as such. Any opinions herein expressed regarding adequacy, capacity, or expected life
+        of components are general estimates based on information about similar components and occasional wide variations
+        are to be expected between such estimates and actual experience.
+        <br /> <br />
+        We certify that our inspectors have no interest, present or contemplated, in this property or its improvement
+        and no involvement with tradespeople or benefits derived from any sales or improvements. To the best of our
+        knowledge and belief, all statements and information in this report are true and correct.
+        <br /> <br />
+        Should any disagreement or dispute arise as a result of this inspection or report, it shall be decided by
+        arbitration and shall be submitted for binding, non-appealable arbitration in accordance with applicable laws
+        and regulations of the State in which the inspection was performed, unless the parties mutually agree otherwise.
+        In the event of a claim, the Client will allow the Inspection Company to inspect the claim prior to any repairs
+        or waive the right to make the claim. Client agrees not to disturb or repair or have repaired anything which may
+        constitute evidence relating to the complaint, except in the case of an emergency.
+        <br /> <br />
+        This report includes an estimation of the age of the principal structure, some components, and its roof. This
+        estimation is based on information provided to the inspector by the seller, purchaser, real estate agent, or
+        property disclosure report, and is only an approximation.
+        <br /> <br />
+        Items inspected for this report are deemed "appears serviceable" if, at the time of inspection, they are
+        considered to be in a functional and operable condition. These items may be at any point in their service life,
+        from brand new to approaching end of life expectancy. As they are mechanical systems, it should be expected that
+        they will, at some point, break down and need repair or replacement. This report is not intended to predict
+        these events, it is simply an overview of the functionality of the items and systems inspected as they existed
+        at the time of inspection. If there are any concerns about the life expectancy of any items in this report, it
+        is recommended that additional evaluation by qualified licensed contractors be performed prior to closing.
+        <br /> <br />
+        The name of the inspector, contact information, and license number at the top of each page of the report shall
+        be considered a suitable substitute for the inspectors hand written signature on the report.
     </p>
-</section> --}}
+</section>
+<!-- Summary -->
+<section>
+    <h1>report summary</h1>
+    {{#each sectionSummary}}
+    <article>
+        <h2>{{this.name}}</h2>
+        {{#each this.items}}
+        <h3>{{this.name}}</h3>
+        {{#each this.comments}}
+        <h4>{{this.name}}</h4>
+        <p>{{this.text}}</p>
+        {{#gallery this.media}}{{/gallery}}
+        {{/each}}
+        {{/each}}
+    </article>
+    {{/each}}
+</section>
+<!-- Report Sections -->
+{{!-- {{#each sections}}
+<section>
+    <h1>{{this.name}}</h1>
+    {{#each this.items}}
+    <h2>{{this.name}}</h2>
+    {{#each this.comments}}
+    <h3>{{this.name}}</h3>
+    <p>{{this.text}}</p>
+    {{#gallery this.media}}{{/gallery}}
+    {{/each}}
+    {{/each}}
+</section>
+{{/each}} --}}

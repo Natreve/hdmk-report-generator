@@ -22,9 +22,27 @@ module.exports = {
       http: require.resolve("stream-http"),
       fs: false,
     },
+    alias: {
+      handlebars: "handlebars/runtime.js",
+    },
   },
   module: {
-    rules: [{ test: /\.hbs$/, loader: "handlebars-loader" }],
+    rules: [
+      {
+        test: /\.hbs$/,
+        use: [
+          {
+            loader: "handlebars-loader",
+            options: {
+              helperDirs: path.join(__dirname, "src/helpers"),
+              precompileOptions: {
+                knownHelpersOnly: false,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
   performance: {
     hints: false,
