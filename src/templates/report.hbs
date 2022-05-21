@@ -5,10 +5,10 @@
 </header>
 <!-- Cover Page -->
 <section>
-    <div class="cover-image">
+    {{!-- <div class="cover-image">
         <img src="{{inspection.cover}}" alt="cover" />
         <h1>Inspection Report</h1>
-    </div>
+    </div> --}}
     <article>
         {{#with inspection}}
         <h4>Client</h4>
@@ -181,6 +181,7 @@
     </p>
 </section>
 <!-- Summary -->
+
 <section>
     <h1>report summary</h1>
     {{#each sectionSummary}}
@@ -191,7 +192,10 @@
         {{#each this.comments}}
         <h4>{{this.name}}</h4>
         <p>{{this.text}}</p>
-        {{#gallery this.media}}{{/gallery}}
+
+        {{#images this.media 228}}{{/images}}
+
+        {{!-- {{#gallery this.media "128" "128"}}{{/gallery}} --}}
         {{/each}}
         {{/each}}
     </article>

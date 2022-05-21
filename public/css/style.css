@@ -20,21 +20,34 @@ header {
   /* transform: translate(-50%, -50%); */
 }
 .gallery {
+  /* list-style: none;
+  margin: 0 auto;
+  padding: 0; */
+  max-width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(128px, 128px));
-  grid-gap: 1rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(128px, 128px)); */
+  grid-template-columns: repeat(auto-fit, 228px);
+  /* grid-gap: 1em; */
 }
-.image {
-  position: relative;
+.gallery .image {
+  width: 228px;
+  height: 228px;
+  padding: 5px 5px 0;
+  /* padding: 0 10px 10px; */
+  /* margin: 0 10px 10px; */
   overflow: hidden;
-  width: 128px;
-  height: 128px;
 }
-.image img {
-  position: absolute;
-  width: auto;
-  /* height: 100%; */
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
+/* .image { */
+/* position: relative; */
+/* overflow: hidden; */
+/* width: 128px; */
+/* height: 128px; */
+/* } */
+/* .image img { */
+/* position: absolute; */
+/* width: auto; */
+/* height: 100%; */
+/* left: 50%; */
+/* top: 50%; */
+/* transform: translate(-50%, -50%);  */
+/* } */
