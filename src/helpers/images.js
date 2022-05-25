@@ -1,31 +1,31 @@
 const imageResize = require("../utils/imageResize.js");
 const hbs = require("handlebars");
-
+const uuid = require("uuid");
 module.exports = function (context, options) {
-  const [, dimension] = Array.prototype.slice.call(
+  let images = [];
+  const [, width, height] = Array.prototype.slice.call(
     arguments,
     0,
     arguments.length - 1
   );
-  let images = "<div ";
-  // const gallery = document.createElement("div");
-  // gallery.classList.add("gallery");
 
   for (let i = 0; i < context.length; i++) {
     const { type, url, uploaded } = context[i];
+
     if (type === "image/jpeg" && uploaded) {
-      imageResize(url, dimension).then((image) => {
-        // gallery.appendChild(image);
+      const image = document.createElement("img");
+      const id = uuid.v4().split("-").join("");
+      image.src = url;
+      image.crossOrigin = "anonymous";
+
+      image.addEventListener("load", () => {
+        imageResize(image, width, height);
+        let target = document.getElementById(id);
+        target.src = image.src;
       });
-      // images.push(
-      //   `<div class="image"><img src="${context[i].url}" alt="${context[i].name}" /></div>`
-      // );
-      //     gallery += `<div class="image"><img src="${context[i].url}" alt="${context[i].name}" /></div>`;
-      //     // gallery += `<div class="image" id="${context[i].name}"></div>`;
-      //     // imageResize(context[i].url, context[i].name, { width, height });
+      images.push(`<li class="image"><img id="${id}" crossOrigin/></li>`);
     }
   }
-  console.log(context);
-  return;
-  //  return new hbs.SafeString(images.join(""));
+
+  return new hbs.SafeString(images.join(""));
 };
