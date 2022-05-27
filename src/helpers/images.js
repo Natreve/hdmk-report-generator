@@ -1,7 +1,7 @@
 const imageResize = require("../utils/imageResize.js");
 const hbs = require("handlebars");
 const uuid = require("uuid");
-module.exports = function (context, options) {
+module.exports = function (context) {
   let images = [];
   const [, width, height] = Array.prototype.slice.call(
     arguments,
@@ -10,6 +10,7 @@ module.exports = function (context, options) {
   );
 
   for (let i = 0; i < context.length; i++) {
+    if (!context[i]) continue;
     const { type, url, uploaded } = context[i];
 
     if (type === "image/jpeg" && uploaded) {

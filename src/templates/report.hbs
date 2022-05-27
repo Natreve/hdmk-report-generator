@@ -278,7 +278,9 @@
 
                                 <tr>
                                     <td>{{capitalize this.name}}</td>
-                                    <td style="white-space:pre-wrap;">{{this.text}}</td>
+                                    <td>
+                                        <p style="white-space:pre-wrap;"></p> {{this.text}}
+                                    </td>
                                 </tr>
 
                                 {{/each}}
@@ -496,8 +498,8 @@
                                             this.name}}
                                         </p>
                                     </td>
-                                    <td style="width: 80%; white-space:pre-wrap;">
-                                        <p>{{this.text}}</p>
+                                    <td style="width: 80%;">
+                                        <p style="white-space:pre-wrap;">{{this.text}}</p>
                                     </td>
                                 </tr>
                             </table>
@@ -523,8 +525,8 @@
                                 <td style="width: 30%; vertical-align:baseline;">
                                     <p>{{capitalize this.name}}</p>
                                 </td>
-                                <td style="width: 80%;  white-space:pre-wrap;">
-                                    <p>{{this.text}}</p>
+                                <td style="width: 80%;">
+                                    <p style="white-space:pre-wrap;">{{this.text}}</p>
                                 </td>
                             </tr>
                         </table>
