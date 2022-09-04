@@ -1,178 +1,190 @@
 :root {
-  --margin: 80%;
+  --margin: 90%;
+  --brand-color: #ffc905;
 }
-span {
-  display: inline-block;
-  padding: 3px 6px;
-  border-radius: 30px;
-  background: #111;
-  font-size: 8px;
-  color: #fff;
-  margin-right: 5px;
-  width: 33.19px;
-  height: 18px;
-  text-align: center;
-}
-span.ghost {
-  opacity: 0;
-}
-header,
-footer {
-  position: fixed;
-  left: 80px;
-}
-header {
-  top: 48px;
-}
-footer {
-  bottom: 0;
-  height: 50px;
-}
-.header-spacer {
-  height: 148px;
-}
-.footer-spaceer {
-  height: 50px;
+@import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Mulish:wght@400;700&display=swap");
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-header,
-.header {
-  display: flex;
-  width: var(--margin);
-  display: flex;
-  justify-content: space-between;
-  height: 50px;
-}
-
-#cover-page {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#cover-page .header {
-  position: absolute;
-  top: 48px;
-}
-#cover-page .header h1 {
-  color: hsl(0, 0%, 100%);
-}
-#cover-page .background {
-  background: hsl(60, 5%, 8%);
-  width: 100%;
-  height: 430px;
-}
-#cover-page .details {
-  width: var(--margin);
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between;
-  padding-top: 260px;
-}
-
-.cover-image {
-  position: absolute;
-  top: 150px;
-}
-
-.cover-image img {
-  /* position: absolute; */
-  border-radius: 40px 0px 40px;
-  /* width: auto; */
-}
-
-.images {
-  list-style: none;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0;
-  /* list-style: none;*/
-  /* margin: 0 auto; */
-  /* padding: 0;  */
-  /* max-width: 100%; */
-  /* display: grid; */
-  /* grid-template-columns: repeat(auto-fit, minmax(128px, 128px)); */
-  /* grid-template-columns: repeat(auto-fit, 1fr); */
-  /* grid-gap: 1em; */
-}
-
-.images .image {
-  display: inline-block;
-  padding: 10px 10px 0 0;
-  overflow: hidden;
-}
-.page {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  page-break-after: always;
-}
-.page .content {
-  width: var(--margin);
-}
-
-#toc {
-  text-transform: uppercase;
-  /* margin-block-start: 40px;
-  margin-block-end: 0;
-  padding-inline-start: 15px; */
-}
-#toc div {
-  padding-bottom: 20px;
-}
-#toc div a {
-  font-family: "Mulish", sans-serif;
-  font-size: 12px;
-  text-decoration: none;
-  color: hsla(180, 6%, 6%, 80%);
-}
-
-h1 {
-  font-size: 32px;
-  font-family: "Aldrich", sans-serif;
-  margin-bottom: 40px;
-}
-h2 {
-  font-size: 16px;
-  font-weight: 700;
-}
+/* Remove default margin and set font*/
+body,
 h1,
 h2,
-h3 {
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Mulish", sans-serif;
+  font-size: 8px;
+  margin: 2mm;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@page {
+  /* size: A4; */
+  margin: 0;
+  margin-bottom: 10mm;
+}
+@media print {
+  thead {
+    display: table-header-group;
+  }
+  tfoot {
+    display: table-footer-group;
+  }
+  @page: first {
+    @bottom-right {
+      content: normal;
+    }
+
+    @bottom-center {
+      content: normal;
+    }
+
+    @bottom-left {
+      content: normal;
+    }
+  }
+}
+
+header {
+  position: fixed;
   display: flex;
   align-items: center;
-  text-transform: capitalize;
+  align-content: center;
+  width: calc(100% - 5mm);
+  justify-content: space-between;
+  justify-items: center;
+  height: 50px;
+  background: hsl(60, 5%, 8%);
+  padding: 3em;
 }
-p {
+.header-spacer {
+  /* height: calc(72px + 1em); */
+  height: 55px;
+}
+h1 {
+  font-size: 20px;
+  font-family: "Aldrich", sans-serif;
+  color: #fff;
+  width: 100%;
+  text-transform: uppercase;
   display: flex;
-  font-size: 12px;
+}
+h1 span {
+  display: inline-block;
+  padding: 0 6px;
+  font-size: inherit;
+  margin-right: 5px;
+  width: auto;
+  text-align: center;
+  color: var(--brand-color);
 }
 table {
   border-spacing: unset;
   margin-bottom: 5px;
 }
-.page article {
-  margin-bottom: 40px;
+table.bordered {
+  border: 1px solid;
+  border-spacing: 0;
 }
-.page article h2 {
-  text-transform: uppercase;
+table.bordered tr td {
+  padding: 0 0px 6px 6px;
 }
-.page article table {
-  margin-top: 12.9px;
-  width: 100%;
+table.bordered tr:not(:last-child) td {
+  border-bottom: 1px solid;
+  border-spacing: 0;
 }
-.page article table tr {
-  vertical-align: baseline;
+table.bordered td:not(:last-child) {
+  border-right: 1px solid;
+  border-spacing: 0;
 }
-.page article table tr td {
-  width: 50%;
+ol {
+  padding: 0;
 }
-.page article table tr td:first-child {
-  font-weight: 700;
-  text-transform: capitalize;
+ol.bold li {
+  margin: 1em 0;
+  margin-left: 1.5em;
 }
+ol.bold li ol {
+  padding-left: 1em;
+}
+ol.bold li ol li {
+  margin: 0;
+  padding: 0.1em 0;
+}
+p {
+  font-size: 8px;
+}
+
 a {
   text-decoration: none;
   color: hsla(180, 6%, 6%, 80%);
+}
+
+.page {
+  page-break-after: always;
+  /* margin-top: 1em; */
 }

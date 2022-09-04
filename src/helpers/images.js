@@ -11,6 +11,20 @@ module.exports = function (context) {
 
   for (let i = 0; i < context.length; i++) {
     if (!context[i]) continue;
+    if (typeof context[i] === "string") {
+      const image = document.createElement("img");
+      const id = uuid.v4().split("-").join("");
+      image.src = context[i];
+      image.crossOrigin = "anonymous";
+
+      image.addEventListener("load", () => {
+        imageResize(image, width, height);
+        let target = document.getElementById(id);
+        target.src = image.src;
+      });
+      images.push(`<li class="image"><img id="${id}" crossOrigin/></li>`);
+      continue;
+    }
     const { type, url, uploaded } = context[i];
 
     if (type === "image/jpeg" && uploaded) {

@@ -32,15 +32,14 @@ html:focus-within {
 }
 
 /* Set core body defaults */
-html {
-  width: 210mm;
-}
+
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   font-family: "Mulish", sans-serif;
   font-size: 12px;
+  margin: 2mm;
 }
 
 /* A elements that don't have a class get default styles */

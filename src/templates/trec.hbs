@@ -1,0 +1,394 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TREC PROPERTY INSPECTION REPORT</title>
+    <style>
+        :root {
+            --margin: 90%;
+            --margin-top: 40px;
+            --brand-color: #ffc905;
+            --pfont: 13px
+        }
+
+        /* Box sizing rules */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /* Remove default margin and set font*/
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        figure,
+        blockquote,
+        dl,
+        dd {
+            margin: 0;
+        }
+
+        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+        ul[role="list"],
+        ol[role="list"] {
+            list-style: none;
+        }
+
+        /* Set core root defaults */
+        html:focus-within {
+            scroll-behavior: smooth;
+        }
+
+        /* Set core body defaults */
+
+        body,
+        html {
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+            line-height: 1.5;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            font-size: var(--pfont);
+            /*display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            */
+
+
+        }
+
+        /* A elements that don't have a class get default styles */
+        a:not([class]) {
+            text-decoration-skip-ink: auto;
+        }
+
+        /* Make images easier to work with */
+        img,
+        picture {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Inherit fonts for inputs and buttons */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            align-content: center;
+
+        }
+
+
+        h1 {
+            font-size: 22.02px;
+            font-family: "Times New Roman", sans-serif;
+            text-transform: uppercase;
+            padding-top: 24px;
+
+        }
+
+        h3 {
+            text-transform: uppercase;
+        }
+
+        table.borded {
+            width: 100%;
+            border: 2px solid;
+            margin-top: 10px;
+            margin-bottom: 7px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            font-size: var(--pfont);
+        }
+
+        a {
+            text-decoration: none;
+            color: hsla(180, 6%, 6%, 80%);
+        }
+
+        .page {
+            page-break-after: always;
+            /* margin: 26.5px 30px;*/
+
+        }
+
+        hr {
+            margin: 0;
+            width: 98%;
+
+        }
+
+        ul {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <section class="page">
+                    <header>
+                        <img src="./images/trec.png" width="73.1px" height="60.37px" style="margin-right: 24.2px;">
+                        <h1>PROPERTY INSPECTION REPORT FORM</h1>
+                    </header>
+                    <table class="borded">
+                        <tr>
+                            <td>
+                                <span><strong>{{client.name}}</strong></span>
+                                <hr>
+                                <em>Name of Client</em>
+                            </td>
+                            <td>
+                                <span><strong>{{date date}}</strong></span>
+                                <hr>
+                                <em>Date of Inspection</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <span>
+                                    <strong>
+                                        {{address.street}}, {{address.city}}, {{address.state}} {{address.zip}}
+                                    </strong>
+                                </span>
+                                <hr>
+                                <em>Address of Inspected Property</em>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>
+                                    <strong>{{inspector.name}}</strong>
+                                </span>
+                                <hr>
+                                <em>Name of Inspector</em>
+                            </td>
+                            <td>
+                                <span>
+                                    <strong>{{inspector.ln}}</strong>
+                                </span>
+                                <hr>
+                                <em>TREC License #</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <hr>
+                                <em>Name of Sponsor (if applicable)</em>
+                            </td>
+                            <td>
+                                <hr>
+                                <em>TREC License #</em>
+                            </td>
+                        </tr>
+                    </table>
+                    <h3>PURPOSE OF INSPECTION</h3>
+                    <p>
+                        A real estate inspection is a visual survey of a structure and a basic performance
+                        evaluation of
+                        the systems and components of a building. It provides information regarding the general
+                        condition of a residence at the time the inspection was conducted. It is important that you
+                        carefully read ALL of this information. Ask the inspector to clarify any items or comments
+                        that
+                        are unclear.
+                    </p>
+                    <h3>RESPONSIBILITY OF THE INSPECTOR</h3>
+                    <p>
+                        This inspection is governed by the Texas Real Estate Commission (TREC) Standards of Practice
+                        (SOPs), which dictates the minimum requirements for a real estate inspection.
+                    </p>
+                    <span>The inspector IS required to:</span>
+                    <ul>
+                        <li>use this Property Inspection Report form for the inspection;</li>
+                        <li>
+                            inspect only those components and conditions that are present, visible, and accessible
+                            at
+                            the time of the inspection;
+                        </li>
+                        <li>indicate whether each item was inspected, not inspected, or not present;</li>
+                        <li>
+                            indicate an item as Deficient (D) if a condition exists that adversely and materially
+                            affects the performance of a system or component OR constitutes a hazard to life, limb
+                            or
+                            property as specified by the SOPs; and
+                        </li>
+                        <li>
+                            explain the inspector’s findings in the corresponding section in the body of the report
+                            form.
+                        </li>
+                    </ul>
+                    <span>The inspector IS NOT required to:</span>
+                    <ul>
+                        <li>identify all potential hazards;</li>
+                        <li>
+                            turn on decommissioned equipment, systems, utilities, or apply an open flame or light a
+                            pilot to operate any appliance;
+                        </li>
+                        <li>climb over obstacles, move furnishings or stored items;</li>
+                        <li>prioritize or emphasize the importance of one deficiency over another;</li>
+                        <li>provide follow-up services to verify that proper repairs have been made; or</li>
+                        <li>
+                            inspect system or component listed under the optional section of the SOPs (22 TAC
+                            535.233).
+                        </li>
+                    </ul>
+                    <h3>Responsibility of the client</h3>
+                    <p>
+                        While items identified as Deficient (D) in an inspection report DO NOT obligate any party to
+                        make repairs or take other actions, in the event that any further evaluations are needed, it
+                        is
+                        the responsibility of the client to obtain further evaluations and/or cost estimates from
+                        qualified service professionals regarding any items reported as Deficient (D). It is
+                        recommended
+                        that any further evaluations and/or cost estimates take place prior to the expiration of any
+                        contractual time limitations, such as option periods.
+                    </p>
+                    <p>
+                        <strong>Please Note:</strong> Evaluations performed by service professionals in response to
+                        items reported as Deficient (D) on the report may lead to the discovery of additional
+                        deficiencies that were not present, visible, or accessible at the time of the inspection.
+                        Any
+                        repairs made after the date of the inspection may render information contained in this
+                        report
+                        obsolete or invalid.
+                    </p>
+                    <h3>Report Limitations</h3>
+                    <p>
+                        This report is provided for the benefit of the named client and is based on observations
+                        made by
+                        the named inspector on the date the inspection was performed (indicated above).
+                    </p>
+                    <p>ONLY those items specifically noted as being inspected on the report were inspected.</p>
+                    <span>The inspection IS NOT:</span>
+                    <ul>
+                        <li>
+                            a technically exhaustive inspection of the structure, its systems, or its components and
+                            may
+                            not reveal all deficiencies;
+                        </li>
+                        <li>an inspection to verify compliance with any building codes;</li>
+                        <li>
+                            an inspection to verify compliance with manufacturer’s installation instructions for any
+                            system or component and DOES NOT imply insurability or warrantability of the structure
+                            or
+                            its components.
+                        </li>
+                    </ul>
+                </section>
+                <section class="page">
+                    <h3><u>NOTICE CONCERNING HAZARDOUS CONDITIONS, DEFICIENCIES, AND CONTRACTUAL AGREEMENTS</u></h3>
+                    <p>
+                        <strong>
+                            <u>
+                                Conditions may be present in your home that did not violate building codes or common
+                                practices in effect when the home was constructed but are considered hazardous by
+                                today’s standards. Such conditions that were part of the home prior to the adoption
+                                of
+                                any current codes prohibiting them may not be required to be updated to meet current
+                                code requirements. However, if it can be reasonably determined that they are present
+                                at
+                                the time of the inspection, the potential for injury or property loss from these
+                                conditions is significant enough to require inspectors to report them as Deficient
+                                (D).
+                                Examples of such hazardous conditions include:
+                            </u>
+                        </strong>
+
+                    </p>
+                    <ul>
+                        <li>malfunctioning, improperly installed, or missing ground fault circuit protection (GFCI)
+                            devices and arc-fault (AFCI) devices;</li>
+                        <li>ordinary glass in locations where modern construction techniques call for safety glass;
+                        </li>
+                        <li>malfunctioning or lack of fire safety features such as smoke alarms, fire-rated doors in
+                            certain locations, and functional emergency escape and rescue openings in bedrooms;</li>
+                        <li>malfunctioning carbon monoxide alarms;</li>
+                        <li>excessive spacing between balusters on stairways and porches;</li>
+                        <li>improperly installed appliances;</li>
+                        <li>improperly installed or defective safety devices;</li>
+                        <li>lack of electrical bonding and grounding; and</li>
+                        <li>lack of bonding on gas piping, including corrugated stainless steel tubing (CSST).</li>
+                    </ul>
+                    <p>
+                        <strong>Please Note:</strong> Items identified as Deficient (D) in an inspection report DO
+                        NOT
+                        obligate any party to make repairs or take other actions. The decision to correct a hazard
+                        or
+                        any deficiency identified in an inspection report is left up to the parties to the contract
+                        for
+                        the sale or purchase of the home.
+                    </p>
+                    <p>
+                        This property inspection report may include an inspection agreement (contract), addenda, and
+                        other information related to property conditions.
+                    </p>
+
+                    <p>
+                        INFORMATION INCLUDED UNDER “ADDITIONAL INFORMATION PROVIDED BY INSPECTOR”, OR PROVIDED AS AN
+                        ATTACHMENT WITH THE STANDARD FORM, IS NOT REQUIRED BY THE COMMISSION AND MAY CONTAIN
+                        CONTRACTUAL
+                        TERMS BETWEEN THE INSPECTOR AND YOU, AS THE CLIENT. THE COMMISSION DOES NOT REGULATE
+                        CONTRACTUAL
+                        TERMS BETWEEN PARTIES. IF YOU DO NOT UNDERSTAND THE EFFECT OF ANY CONTRACTUAL TERM CONTAINED
+                        IN
+                        THIS SECTION OR ANY ATTACHMENTS, CONSULT AN ATTORNEY.
+                    </p>
+                    <hr>
+                    <hr>
+                    <h2 style="text-align: center;">ADDITIONAL INFORMATION PROVIDED BY INSPECTOR</h2>
+                    {{additionalComments}}
+                    <hr>
+                </section>
+                <section class="page">
+                    <p>Report Identification: </p> <u>{{identification}}</u>
+                    <div>
+                        <span style="margin-right: 2em;"><strong>I=Inspected</strong></span>
+                        <span style="margin-right: 2em;"><strong>NI=Not Inspected</strong></span>
+                        <span style="margin-right: 2em;"><strong>NP=Not Present</strong></span>
+                        <span><strong>D=Deficient</strong></span>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><strong>I</strong></td>
+                                <td><strong>NI</strong></td>
+                                <td><strong>NP</strong></td>
+                                <td><strong>D</strong></td>
+                            </tr>
+                        </thead>
+                    </table>
+                </section>
+            </td>
+        </tr>
+    </tbody>
+</table>
