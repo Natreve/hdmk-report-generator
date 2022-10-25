@@ -208,6 +208,10 @@
             flex-direction: row;
             align-items: center;
         }
+
+        td span {
+            display: flex;
+        }
     </style>
 </head>
 
@@ -284,8 +288,18 @@
                                 <td>
                                     <strong>WOOD DESTROYING INSECT INFORMATION EXISTING CONSTRUCTION </strong>
                                 </td>
-                                <td>1. HUD/FHNVA CASE NUMBER</td>
-                                <td>2. DATE OF INSPECTION</td>
+                                <td>
+                                    <p> 1. HUD/FHNVA CASE NUMBER</p>
+                                    <strong>{{wdir.caseNumber}}</strong>
+
+                                </td>
+                                <td>
+                                    <p>2. DATE OF INSPECTION</p>
+
+                                    <strong>{{wdir.date}}</strong>
+
+
+                                </td>
                             </tr>
                             <tr>
                                 <td colspan="3">
@@ -324,18 +338,20 @@
                             <tr>
                                 <td>
                                     <p>5A. NAME OF PROPERTY OWNER/SELLER</p>
-                                    <strong>{{client.name}}</strong>
+                                    <strong>{{inspection.client.name}}</strong>
                                 </td>
                                 <td>
                                     <p>5B. ADDRESS OF PROPERTY INSPECTED</p>
+                                    {{#with inspection}}
                                     <strong>
                                         {{address.street}}, {{address.city}}, {{address.state}} {{address.zip}}
                                     </strong>
+                                    {{/with}}
                                 </td>
                                 <td>
                                     <p>5C. STRUCTURE(S) INSPECTED ON PROPERTY</p>
 
-                                    <strong>{{structures}}</strong>
+                                    <strong>{{wdir.structuresInspected}}</strong>
                                 </td>
                             </tr>
                             <tr>
@@ -354,6 +370,7 @@
                                 <td>
                                     <p>6. WERE ANY AREAS OF THE STRUCTURE(S) OBSTRUCTED OR INACCESSIBLE?</p>
                                     <div style="display: flex; align-items: center;">
+
                                         <label for="yes">
                                             <input id="yes" name="obstructed" value="YES" type="checkbox" checked />
                                             <span>YES</span>
@@ -368,14 +385,8 @@
                                 <td>
                                     <p>7. TYPE OF CONSTRUCTION</p>
                                     <div style="display: flex; align-items: center;">
-                                        <label for="yes">
-                                            <input id="slab" name="construction" value="Slab" type="checkbox" checked />
-                                            <span>Slab</span>
-                                        </label>
-                                        <label for="raised-pier">
-                                            <input id="no" name="construction" value="Raised Pier" type="checkbox" />
-                                            <span>Raised Pier</span>
-                                        </label>
+                                        <label>{{checkbox wdir.slabConstruction}} <span>Slab</span></label>
+                                        <label>{{checkbox wdir.raisedPierConstruction}} <span>Raised Pier</span></label>
                                     </div>
                                 </td>
                             </tr>
@@ -386,41 +397,189 @@
                                         STRUCTURE(S) ON THE DATE INSPECTED
                                     </p>
                                     <div>
-                                        <label for="a">
-                                            <input id="a" name="accessible" type="checkbox" />
+                                        {{#if (eq wdir.carefulVisualInspection "a")}}
+                                        <label>
+                                            <input type="checkbox" checked />
                                             <span>A. No visible evidence of wood destroying insects was observed.</span>
                                         </label>
-                                        <label for="b">
-                                            <input id="b" name="accessible" type="checkbox" />
-                                            <span>
-                                                B. Visible evidence of wood destroying insects was observed. Evidence
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>B. Visible evidence of wood destroying insects was observed. Evidence
                                                 found and has been observed in the following area(s)
-                                                ___________________________
-                                            </span>
+                                                ___________________________</span>
                                         </label>
-                                        <label for="c">
-                                            <input id="c" name="accessible" type="checkbox" />
-                                            <span>
-                                                C. Visible evidence of damage due to ___________________________ has
-                                                been observed in the following area(s) ___________________________
-                                            </span>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>C. Visible evidence of damage due to ___________________________ has
+                                                been observed in the following area(s)
+                                                ___________________________</span>
                                         </label>
-                                        <div style="display: flex; align-items: center;">
-                                            <label for="d">
-                                                <input id="d" name="accessible" type="checkbox" checked />
-                                                <span>D. Treatment was or will be performed by inspection company</span>
-                                            </label>
+                                        <label>
+
                                             <div style="display: flex; align-items: center;">
-                                                <label for="d.no">
-                                                    <input id="d.no" name="d" type="checkbox" checked />
-                                                    <span>NO</span>
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>D. Treatment was or will be performed by inspection
+                                                        company</span>
                                                 </label>
-                                                <label for="d..yes">
-                                                    <input id="d.yes" name="d" type="checkbox" />
-                                                    <span>YES If yes. explain ___________________________</span>
-                                                </label>
+                                                <div style="display: flex; align-items: center;">
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>NO</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>YES If yes. explain ___________________________</span>
+                                                    </label>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </label>
+
+                                        {{else}}
+                                        {{#if (eq wdir.carefulVisualInspection "b")}}
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>A. No visible evidence of wood destroying insects was observed.</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked />
+                                            <p>
+                                                B. Visible evidence of wood destroying insects was observed. Evidence
+                                                found and has been observed in the following
+                                                area(s) <strong>{{wdir.carefulVisualInspectionB}}</strong>
+                                            </p>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>C. Visible evidence of damage due to ___________________________ has
+                                                been observed in the following area(s)
+                                                ___________________________</span>
+                                        </label>
+                                        <label>
+
+                                            <div style="display: flex; align-items: center;">
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>D. Treatment was or will be performed by inspection
+                                                        company</span>
+                                                </label>
+                                                <div style="display: flex; align-items: center;">
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>NO</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>YES If yes. explain ___________________________</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        {{else}}
+                                        {{#if (eq wdir.carefulVisualInspection "c")}}
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>A. No visible evidence of wood destroying insects was observed.</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <p>
+                                                B. Visible evidence of wood destroying insects was observed. Evidence
+                                                found and has been observed in the following
+                                                area(s) ___________________________</strong>
+                                            </p>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked />
+                                            <p>
+                                                C. Visible evidence of damage due to
+                                                <strong>{{wdir.carefulVisualInspectionC}}</strong> has
+                                                been observed in the following area(s)
+                                                <strong>{{wdir.carefulVisualInspectionC2}}</strong>
+                                            </p>
+                                        </label>
+                                        <label>
+
+                                            <div style="display: flex; align-items: center;">
+                                                <label>
+                                                    <input type="checkbox" />
+                                                    <span>D. Treatment was or will be performed by inspection
+                                                        company</span>
+                                                </label>
+                                                <div style="display: flex; align-items: center;">
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>NO</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>YES If yes. explain ___________________________</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </label>
+                                        {{else}}
+                                        {{/if}}
+                                        {{#if (eq wdir.carefulVisualInspection "d")}}
+                                        <label>
+                                            <input type="checkbox" />
+                                            <span>A. No visible evidence of wood destroying insects was observed.</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <p>
+                                                B. Visible evidence of wood destroying insects was observed. Evidence
+                                                found and has been observed in the following
+                                                area(s) ___________________________</strong>
+                                            </p>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" />
+                                            <p>
+                                                C. Visible evidence of damage due to
+                                                <strong>{{wdir.carefulVisualInspectionC}}</strong> has
+                                                been observed in the following area(s)
+                                                <strong>{{wdir.carefulVisualInspectionC2}}</strong>
+                                            </p>
+                                        </label>
+                                        <label>
+
+                                            <div style="display: flex; align-items: center;">
+                                                <label>
+                                                    <input type="checkbox" checked />
+                                                    <p>D. Treatment was or will be performed by inspection
+                                                        company</p>
+                                                </label>
+                                                <div style="display: flex; align-items: center;">
+                                                    {{#if wdir.carefulVisualInspectionD}}
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>NO</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" checked />
+                                                        <span>YES If yes. explain
+                                                            <strong>{{wdir.carefulVisualInspectionD}}</strong></span>
+                                                    </label>
+                                                    {{else}}
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>NO</span>
+                                                    </label>
+                                                    <label>
+                                                        <input type="checkbox" />
+                                                        <span>YES If yes. explain ___________________________</span>
+                                                    </label>
+                                                    {{/if}}
+                                                </div>
+                                            </div>
+                                        </label>
+                                        {{else}}
+                                        {{/if}}
+                                        {{/if}}
+                                        {{/if}}
+                                        {{!--
+                                        --}}
 
                                     </div>
                                 </td>
@@ -428,7 +587,7 @@
                             <tr>
                                 <td colspan="2">
                                     9. ADDITIONAL COMMENTS (If additional space is required, continue on reverse)
-                                    {{additionalComments}}
+                                    <p><strong>{{wdir.additionalComments}}</strong></p>
                                 </td>
                             </tr>
                             <tr>
@@ -506,21 +665,22 @@
                             </tr>
                             <tr>
                                 <td colspan="2">
-                                    12. SIGNATURE AND NUMBER OF INSPECTOR {{signature}}
-                                    <strong>{{lni}}</strong>
+                                    12. SIGNATURE AND NUMBER OF INSPECTOR
+                                    <img src="{{inspector.signature}}" width="80" height="80">
+                                    <strong>{{inspector.licence_number}}</strong>
                                 </td>
-                                <td>12. DATE <strong>{{date date}}</strong> </td>
+                                <td>12. DATE <strong>{{date inspection.date.started}}</strong> </td>
                             </tr>
                             <tr>
                                 <td rowspan="2">
                                     <p>14. REPORT REQUESTED BY</p>
-                                    <strong>{{client.name}}</strong>
+                                    <strong>{{inspection.client.name}}</strong>
                                 </td>
                                 <td colspan="2">15. REPORT RECEIVED BY</td>
                             </tr>
                             <tr>
-                                <td>16. TITLE <strong>{{title}}</strong> </td>
-                                <td>17. DATE <strong>{{date date}}</strong> </td>
+                                <td>16. TITLE</td>
+                                <td>17. DATE</td>
                             </tr>
                             <tr>
                                 <td colspan="3">

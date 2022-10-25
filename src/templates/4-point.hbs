@@ -8,7 +8,7 @@
             --margin: 90%;
             --margin-top: 36px;
             --brand-color: #ffc905;
-            --pfont: 10px
+            --pfont: .8em;
         }
 
         /* Box sizing rules */
@@ -219,10 +219,15 @@
             border: none;
         }
 
-        label input[type="checkbox"] {
+        input[type="checkbox"],
+        input[type="radio"] {
             margin: 0 8px;
-            background-color: transparent;
+
+            accent-color: rgb(93, 93, 93);
+
         }
+
+
 
         .centered {
             display: flex;
@@ -262,6 +267,11 @@
             overflow: hidden;
             width: 165px;
             height: 165px;
+        }
+    </style>
+    <style>
+        td.s50 {
+            width: 50%;
         }
     </style>
 </head>
@@ -375,7 +385,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <td style="border-right: 2px solid;">
+                                <td style="border-right: 2px solid;" class="s50">
                                     <h4>Main Panel</h4>
                                     <label>
                                         <span>Type:</span>
@@ -400,24 +410,27 @@
                                     </label>
 
                                     <label>
-                                        <span>Total Amps: </span> <input type="text" value="{{totalAmps}}">
+                                        <span>Total Amps: </span> <input type="text" value="{{mainPanelTotalAmps}}">
                                     </label>
 
                                     <label>
                                         <span>Is amperage sufficient for current usage?</span>
-                                        {{amperageSufficient}}
-                                        {{#if (eq amperageSufficient "yes")}}
+                                        {{mainPanelAmperageSufficient}}
+                                        {{#if (eq mainPanelAmperageSufficient "yes")}}
                                         <input type="radio" checked /> <span>Yes</span>
                                         <input type="radio" /> <span>No (Explain)</span>
                                         {{/if}}
-                                        {{#if (eq amperageSufficient "no") }}
+                                        {{#if (eq mainPanelAmperageSufficient "no") }}
                                         <input type="radio" /> <span>Yes</span>
                                         <input type="radio" checked /> <span>No (Explain)</span>
                                         {{/if}}
                                     </label>
-                                    <label class="fluid" style="margin-right:20px; margin-bottom:5px;">
-                                        <input type="text" value="{{amperageSufficientExplained}}">
-                                    </label>
+                                    {{!-- <label class="fluid" style="margin-right:20px; margin-bottom:5px;">
+                                        <input type="text" value="{{mainPanelAmperageSufficientExplained}}">
+                                    </label> --}}
+
+                                    <p>{{mainPanelAmperageSufficientExplained}}</p>
+
 
                                 </td>
                                 <td>
@@ -461,9 +474,10 @@
                                         <input type="radio" checked /> <span>No (Explain)</span>
                                         {{/if}}
                                     </label>
-                                    <label class="fluid" style="margin-right:20px; margin-bottom:5px;">
-                                        <input type="text" value="{{secondaryAmperageSufficientExplained}}">
-                                    </label>
+
+                                    <p>{{secondaryAmperageSufficientExplained}}</p>
+                                    {{!-- <input type="text" value="{{secondaryAmperageSufficientExplained}}"> --}}
+
                                 </td>
                             </tr>
                             <tr>
@@ -544,9 +558,9 @@
                                         <input type="checkbox" /><span>Other (explain)</span>
                                         {{/if}}
                                     </label>
-                                    <label class="fluid">
-                                        <input type="text" value="{{hazards}}">
-                                    </label>
+
+                                    <p>{{hazards}}</p>
+
 
                                 </td>
                             </tr>
@@ -570,9 +584,10 @@
                                         {{/if}}
 
                                     </label>
-                                    <label class="fluid" style="padding-bottom: 10px;">
-                                        <input type="text" value="{{unsatisfactoryExplained}}">
-                                    </label>
+
+                                    <p>{{unsatisfactoryExplain}}</p>
+                                    {{!-- <input type="text" value="{{unsatisfactoryExplained}}"> --}}
+
                                 </td>
                             </tr>
                         </tbody>
@@ -598,7 +613,7 @@
                                                         <input type="text" value="{{mainPanelYearLastUpdated}}"></label>
                                                     <label>
                                                         <span>Brand/Model:</span>
-                                                        <input type="text" value="{{mainPanelBrand}}">
+                                                        <input type="text" value="{{mainPanelBrandModel}}">
                                                     </label>
                                                 </td>
                                                 <td style="border-right: 2px solid; padding-bottom:30px">
@@ -613,22 +628,23 @@
                                                     </label>
                                                     <label>
                                                         <span>Brand/Model: </span>
-                                                        <input type="text" value="{{secondaryPanelBrand}}">
+                                                        <input type="text" value="{{secondaryPanelBrandModel}}">
                                                     </label>
                                                 </td>
                                                 <td style="padding-bottom:30px">
                                                     <h4>Wiring Type</h4>
 
-                                                    {{#if (eq wiringType "copper")}}
+                                                    {{!-- {{#if (eq wiringType "copper")}} --}}
                                                     <label>
-                                                        <input type="checkbox" checked>
+                                                        {{!-- <input type="checkbox" checked> --}}
+                                                        {{checkbox wiringTypeCopper}}
                                                         <span>Copper</span>
                                                     </label>
                                                     <label>
-                                                        <input type="checkbox">
+                                                        {{checkbox wiringTypeConduit}}
                                                         <span>NM, BX or Conduit</span>
                                                     </label>
-                                                    {{else}}
+                                                    {{!-- {{else}}
                                                     {{#if (eq wiringType "nm, bx or conduit")}}
                                                     <label>
                                                         <input type="checkbox">
@@ -648,7 +664,7 @@
                                                         <span>NM, BX or Conduit</span>
                                                     </label>
                                                     {{/if}}
-                                                    {{/if}}
+                                                    {{/if}} --}}
 
                                                     {{!-- {{#if (eq wiringType "Copper")}}
 
@@ -749,9 +765,9 @@
                                         {{/if}}
                                         {{/if}}
                                     </label>
-                                    <label class="fluid">
-                                        <input type="text" value="{{conditonExplained}}">
-                                    </label>
+
+                                    <p>{{conditionExplained}}</p>
+
                                     <label class="fluid">
                                         <span>Date of last HVAC servicing/inspection:</span>
                                         <input type="text" value="{{serviceInspectionDate}}">
@@ -1232,8 +1248,9 @@
                                     <label><input type="text" value="{{completelyRepiped}}"> Completely re-piped</label>
                                     <label><input type="text" value="{{partiallyRepiped}}"> Partially re-piped</label>
                                     <p>(Provide year and extent of renovation in the comments below)</p>
-                                    <label class="fluid"><input type="text"
-                                            value="{{plumbingRenovationComment}}"></label>
+                                    <label class="fluid">
+                                        <p>{{renovationComment}}</p>
+                                    </label>
                                 </td>
                                 <td>
                                     <h4>Type of pipes (check all that apply)</h4>
@@ -1281,7 +1298,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <td style="border-right: 2px solid;">
+                                <td style="border-right: 2px solid;" class="s50">
                                     <h4>Predominant Roof</h4>
                                     <label class="fluid">Covering material: <input type="text"
                                             value="{{coveringMaterial}}"></label>
@@ -1331,9 +1348,7 @@
                                     {{/if}}
                                     {{/if}}
 
-                                    <label class="fluid">
-                                        <input type="text" value="{{conditionExplained}}">
-                                    </label>
+                                    <p>{{conditionExplained}}</p>
                                     <h4>Any visible signs of damage / deterioration?</h4>
                                     <p>(check all that apply and explain below)</p>
                                     <label>
@@ -1458,9 +1473,8 @@
                                     </label>
                                     {{/if}}
                                     {{/if}}
-                                    <label class="fluid">
-                                        <input type="text" value="{{secondaryConditionExplained}}">
-                                    </label>
+
+                                    <p>{{secondaryConditionExplained}}</p>
                                     <h4>Any visible signs of damage / deterioration?</h4>
                                     <p>(check all that apply and explain below)</p>
                                     <label>
@@ -1542,8 +1556,7 @@
                         <tr>
                             <td>
                                 <h4>Additional Comments/Observations <span>(use additional pages if needed):</span></h4>
-                                <label class="fluid"><textarea
-                                        rows="10">{{fourPoint.additionalComments}}</textarea></label>
+                                <p>{{fourPoint.additionalComments}}</p>
                             </td>
                         </tr>
                         <tr>
@@ -1730,7 +1743,7 @@
                     <ul class="images">
                         {{#each fourPoint.plumbing.images}}
                         <li class="image">
-                            <img src="{{this}}" alt="">
+                            <img src="{{this.url}}" alt="">
                         </li>
                         {{/each}}
                         {{!-- {{images fourPoint.roof.image 165 165}} --}}
@@ -1754,7 +1767,7 @@
                     <ul class="images">
                         {{#each fourPoint.dwelling.images}}
                         <li class="image">
-                            <img src="{{this}}" alt="">
+                            <img src="{{this.url}}" alt="">
                         </li>
                         {{/each}}
                         {{!-- {{images fourPoint.roof.image 165 165}} --}}
@@ -1766,7 +1779,7 @@
                     <ul class="images">
                         {{#each fourPoint.roof.images}}
                         <li class="image">
-                            <img src="{{this}}" alt="">
+                            <img src="{{this.url}}" alt="">
                         </li>
                         {{/each}}
                         {{!-- {{images fourPoint.roof.image 165 165}} --}}
@@ -1777,7 +1790,7 @@
                     <ul class="images">
                         {{#each fourPoint.other.images}}
                         <li class="image">
-                            <img src="{{this}}" alt="">
+                            <img src="{{this.url}}" alt="">
                         </li>
                         {{/each}}
                         {{!-- {{images fourPoint.roof.image 165 165}} --}}
