@@ -762,7 +762,7 @@
     <!-- Report Sections -->
     {{#if sections.length}}
     {{#each sections}}
-    {{#if (eq this.name "GROUNDS")}}
+    {{!-- {{#if (eq this.name "GROUNDS")}} --}}
     <section>
         <h1 id="{{this.name}}"><a href="#toc">{{this.name}}</a> </h1>
 
@@ -814,7 +814,7 @@
 
         {{/each}}
     </section>
-    {{/if}}
+    {{!-- {{/if}} --}}
     {{!-- <section>
         <h1 id="{{this.name}}"><a href="#toc">{{this.name}}</a> </h1>
 

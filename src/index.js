@@ -365,9 +365,9 @@ window.addEventListener("load", async function () {
         continue;
       }
 
-      if (element.children.length) {
-        fn(element, doc, contentHeight - height);
-      }
+      // if (element.children.length) {
+      //   fn(element, doc, contentHeight - height);
+      // }
 
       // if (type === "grid") {
       //   contentHeight += grid(element, contentHeight, doc);
@@ -379,33 +379,33 @@ window.addEventListener("load", async function () {
       //   continue;
       // }
 
-      // if (element.children.length > 1) {
-      //   contentHeight -= nodeHeight(element);
-      //   let parent = cloneNode(element, false);
-      //   let children = element.children;
+      if (element.children.length > 1) {
+        contentHeight -= nodeHeight(element);
+        let parent = cloneNode(element, false);
+        let children = element.children;
 
-      //   for (let i = 0; i < children.length; i++) {
-      //     const child = children[i];
-      //     contentHeight += nodeHeight(child);
+        for (let i = 0; i < children.length; i++) {
+          const child = children[i];
+          contentHeight += nodeHeight(child);
 
-      //     if (contentHeight < pageHeight) {
-      //       parent.append(cloneNode(child));
-      //       continue;
-      //     }
+          if (contentHeight < pageHeight) {
+            parent.append(cloneNode(child));
+            continue;
+          }
 
-      //     if (parent.children.length) doc.activePage.push(parent);
+          if (parent.children.length) doc.activePage.push(parent);
 
-      //     if (nodeHeight(child) < pageHeight) {
-      //       parent = cloneNode(parent, false);
-      //       parent.append(cloneNode(child));
-      //       doc.addPage([parent]);
-      //       contentHeight = nodeHeight(child);
-      //       continue;
-      //     }
+          if (nodeHeight(child) < pageHeight) {
+            parent = cloneNode(parent, false);
+            parent.append(cloneNode(child));
+            doc.addPage([parent]);
+            contentHeight = nodeHeight(child);
+            continue;
+          }
 
-      //     break;
-      //   }
-      // }
+          break;
+        }
+      }
     }
   }
   // a promise that resolves when all images have completely loaded and have been optimazed
