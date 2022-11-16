@@ -8,7 +8,7 @@
             --margin: 90%;
             --margin-top: 36px;
             --brand-color: #ffc905;
-            --pfont: .8em;
+            --pfont: 10px;
         }
 
         /* Box sizing rules */
@@ -30,6 +30,7 @@
         dl,
         dd {
             margin: 0;
+
         }
 
         /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -227,8 +228,6 @@
 
         }
 
-
-
         .centered {
             display: flex;
             justify-content: center;
@@ -237,7 +236,7 @@
 
         .page {
             page-break-after: always;
-
+            margin-top: calc(36px + var(--margin-top));
         }
 
 
@@ -268,6 +267,12 @@
             width: 165px;
             height: 165px;
         }
+
+        p,
+        span,
+        table {
+            font-size: var(--pfont);
+        }
     </style>
     <style>
         td.s50 {
@@ -278,1526 +283,1531 @@
 <header>
     <h1>4-Point Inspection Form</h1>
 </header>
-<table>
-    <thead>
-        <tr>
-            <td>
-                <div class="header-spacer"></div>
-            </td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <section class="page">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <label class="fluid">
-                                        <span>Insured / Applicant Name: </span>
-                                        <input type="text" value="{{inspection.client.name}}">
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="fluid">
-                                        <span style="margin:0 20px;">Application / Policy #: </span>
-                                        <input type="text" value="{{fourPoint.applicationPolicy}}">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <label class="fluid">
-                                        <span>Address Inspected: </span>
-                                        <input type="text"
-                                            value="{{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}} {{inspection.address.zipcode}}">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="fluid">
-                                        <span>Actual Year Built: </span>
-                                        <input type="text" value="{{fourPoint.yearBuilt}}">
-                                    </label>
-                                </td>
-                                <td>
-                                    <label class="fluid">
-                                        <span style="margin:0 20px;">Date Inspected: </span>
-                                        <input type="text" value="{{#date inspection.date.started}}{{/date}}">
-                                    </label>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <article>
-                        <h4>Minimum Photo Requirements:</h4>
-                        <div>
-                            <label>
-                                <input type="checkbox" checked />
-                                <span>Dwelling: Each Side</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" checked />
-                                <span>Roof: Each Slope</span>
-                            </label>
-                            <label>
-                                <input type="checkbox" checked />
-                                <span>Plumbing: Water heater, under cabinet plumbing/drains, exposed valves</span>
-                            </label>
-                        </div>
-                        <label>
-                            <input type="checkbox" checked />
-                            <span>Main electrical service panel with interior door label</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" checked />
-                            <span>Electrical box with panel off</span>
-                        </label>
-                        <label>
-                            <input type="checkbox" checked />
-                            <span>All hazards or deficiencies noted in this report</span>
-                        </label>
-                        <p class="centered">
-                            <strong>A State-licensed inspector must complete, sign and date this form.</strong>
-                        </p>
 
-                    </article>
-                    <article>
+<body>
+
+    <section class="page">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <label class="fluid">
+                            <span>Insured / Applicant Name: </span>
+                            <input type="text" value="{{inspection.client.name}}">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="fluid">
+                            <span style="margin:0 20px;">Application / Policy #: </span>
+                            <input type="text" value="{{fourPoint.applicationPolicy}}">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="fluid">
+                            <span>Address Inspected: </span>
+                            <input type="text"
+                                value="{{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}} {{inspection.address.zipcode}}">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="fluid">
+                            <span>Actual Year Built: </span>
+                            <input type="text" value="{{fourPoint.yearBuilt}}">
+                        </label>
+                    </td>
+                    <td>
+                        <label class="fluid">
+                            <span style="margin:0 20px;">Date Inspected: </span>
+                            <input type="text" value="{{#date inspection.date.started}}{{/date}}">
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <article>
+            <h4>Minimum Photo Requirements:</h4>
+            <div>
+                <label>
+                    <input type="checkbox" checked />
+                    <span>Dwelling: Each Side</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked />
+                    <span>Roof: Each Slope</span>
+                </label>
+                <label>
+                    <input type="checkbox" checked />
+                    <span>Plumbing: Water heater, under cabinet plumbing/drains, exposed valves</span>
+                </label>
+            </div>
+            <label>
+                <input type="checkbox" checked />
+                <span>Main electrical service panel with interior door label</span>
+            </label>
+            <label>
+                <input type="checkbox" checked />
+                <span>Electrical box with panel off</span>
+            </label>
+            <label>
+                <input type="checkbox" checked />
+                <span>All hazards or deficiencies noted in this report</span>
+            </label>
+            <p class="centered">
+                <strong>A State-licensed inspector must complete, sign and date this form.</strong>
+            </p>
+
+        </article>
+        <article>
+            <p>
+                Be advised that Underwriting will rely on the information in this sample form, or a similar
+                form, that is obtained from the State licensed professional of your choice. This
+                information only is used to determine insurability and is not a warranty or assurance of the
+                suitability, fitness or longevity of any of the systems inspected.
+            </p>
+        </article>
+        {{#with fourPoint.electrical}}
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h2>Electrical System</h2>
                         <p>
-                            Be advised that Underwriting will rely on the information in this sample form, or a similar
-                            form, that is obtained from the State licensed professional of your choice. This
-                            information only is used to determine insurability and is not a warranty or assurance of the
-                            suitability, fitness or longevity of any of the systems inspected.
+                            Separate documentation of any aluminum wiring remediation must be provided
+                            and certified by a licensed electrician.
                         </p>
-                    </article>
-                    {{#with fourPoint.electrical}}
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th colspan="2">
-                                    <h2>Electrical System</h2>
-                                    <p>
-                                        Separate documentation of any aluminum wiring remediation must be provided
-                                        and certified by a licensed electrician.
-                                    </p>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td style="border-right: 2px solid;" class="s50">
-                                    <h4>Main Panel</h4>
-                                    <label>
-                                        <span>Type:</span>
-                                        {{#if (eq mainPanel "circuitBreaker")}}
-                                        <input type="checkbox" checked>
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox">
-                                        <span>Fuse</span>
+                    </th>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid;" class="s50">
+                        <h4>Main Panel</h4>
+                        <label>
+                            <span>Type:</span>
+                            {{#if (eq mainPanel "circuitBreaker")}}
+                            <input type="checkbox" checked>
+                            <span>Circuit breaker</span>
+                            <input type="checkbox">
+                            <span>Fuse</span>
+                            {{else}}
+                            {{#if (eq mainPanel "fuse")}}
+                            <input type="checkbox">
+                            <span>Circuit breaker</span>
+                            <input type="checkbox" checked>
+                            <span>Fuse</span>
+                            {{else}}
+                            <input type="checkbox">
+                            <span>Circuit breaker</span>
+                            <input type="checkbox">
+                            <span>Fuse</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+
+                        <label>
+                            <span>Total Amps: </span> <input type="text" value="{{mainPanelTotalAmps}}">
+                        </label>
+
+                        <label>
+                            <span>Is amperage sufficient for current usage?</span>
+
+                            {{#if (eq mainPanelamperageSufficient "yes")}}
+                            <input type="radio" checked /> <span>Yes</span>
+                            <input type="radio" /> <span>No (Explain)</span>
+                            {{else}}
+                            {{#if (eq mainPanelamperageSufficient "no") }}
+                            <input type="radio" /> <span>Yes</span>
+                            <input type="radio" checked /> <span>No (Explain)</span>
+                            {{else}}
+                            <input type="radio" /> <span>Yes</span>
+                            <input type="radio" /> <span>No (Explain)</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        {{!-- <label class="fluid" style="margin-right:20px; margin-bottom:5px;">
+                            <input type="text" value="{{mainPanelAmperageSufficientExplained}}">
+                        </label> --}}
+
+                        <p>{{mainPanelAmperageSufficientExplained}}</p>
+
+
+                    </td>
+                    <td>
+                        <h4>Second Panel</h4>
+
+                        <label>
+                            <span>Type:</span>
+
+                            {{#if (eq secondaryPanel "circuitBreaker")}}
+                            <input type="checkbox" checked>
+                            <span>Circuit breaker</span>
+                            <input type="checkbox">
+                            <span>Fuse</span>
+                            {{else}}
+                            {{#if (eq secondaryPanel "fuse")}}
+                            <input type="checkbox">
+                            <span>Circuit breaker</span>
+                            <input type="checkbox" checked>
+                            <span>Fuse</span>
+                            {{else}}
+                            <input type="checkbox">
+                            <span>Circuit breaker</span>
+                            <input type="checkbox">
+                            <span>Fuse</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Total Amps: </span>
+                            <input type="text" value="{{secondaryPanelTotalAmps}}">
+                        </label>
+
+                        <label>
+                            <span>Is amperage sufficient for current usage?</span>
+                            {{#if (eq secondaryPanelAmperageSufficient "yes")}}
+                            <input type="radio" checked /> <span>Yes</span>
+                            <input type="radio" /> <span>No (Explain)</span>
+                            {{else}}
+                            {{#if (eq secondaryPanelAmperageSufficient "no")}}
+                            <input type="radio" /> <span>Yes</span>
+                            <input type="radio" checked /> <span>No (Explain)</span>
+                            {{else}}
+                            <input type="radio" /> <span>Yes</span>
+                            <input type="radio" /> <span>No (Explain)</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+
+                        <p>{{secondaryAmperageSufficientExplained}}</p>
+                        {{!-- <input type="text" value="{{secondaryAmperageSufficientExplained}}"> --}}
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4>Indicate presence of any of the following:</h4>
+                        <label>
+                            {{checkbox clothWiring}}<span>Cloth wiring</span>
+                        </label>
+                        <label>
+                            {{checkbox activeKnobTube}}<span>Active knob and tube</span>
+                        </label>
+
+                        <label>
+                            {{checkbox branchCircuit}}
+                            <span>Branch circuit aluminum wiring (If present,
+                                describe the usage of all aluminum wiring):</span>
+
+                        </label>
+                        <p style="padding-left: 10px;">* If single strand (aluminum branch) wiring, provide
+                            details of all
+                            remediation. Separate documentation of all work must be provided.</p>
+
+                        <label>
+                            {{checkbox copalum}}<span>Connections repaired via COPALUM crimp</span>
+                        </label>
+                        <label>
+                            {{checkbox alumiConn}}<span>Connections repaired via AlumiConn</span>
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid;">
+                        <h4>Hazards Present</h4>
+                        <label>
+                            {{checkbox blowingFuses}}<span>Blowing fuses</span>
+                        </label>
+                        <label>
+                            {{checkbox trippingBreakers}}<span>Tripping breakers</span>
+                        </label>
+                        <label>
+                            {{checkbox emptySockets}}<span>Empty sockets</span>
+                        </label>
+                        <label>
+                            {{checkbox looseWiring}}<span>Loose wiring</span>
+                        </label>
+                        <label>
+                            {{checkbox improperGrounding}}
+                            <span>Improper grounding</span>
+                        </label>
+                        <label>
+                            {{checkbox corrosion}}<span>Corrosion</span>
+                        </label>
+                        <label>
+                            {{checkbox overFusing}}<span>Over fusing</span>
+                        </label>
+                    </td>
+                    <td>
+                        <h4></h4>
+                        <label>
+                            {{checkbox doubleTaps}}<span>Double taps</span>
+                        </label>
+                        <label>
+                            {{checkbox exposedWiring}}<span>Exposed wiring</span>
+                        </label>
+                        <label>
+                            {{checkbox unsafeWiring}}<span>Unsafe wiring</span>
+                        </label>
+                        <label>
+                            {{checkbox improperBreakerSize}}<span>Improper breaker size</span>
+                        </label>
+                        <label>
+                            {{checkbox scorching}}<span>Scorching</span>
+                        </label>
+                        <label>
+                            {{#if hazards}}
+                            <input type="checkbox" checked /><span>Other (explain)</span>
+                            {{else}}
+                            <input type="checkbox" /><span>Other (explain)</span>
+                            {{/if}}
+                        </label>
+
+                        <p>{{hazards}}</p>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>
+                            <h4>General condition of the electrical system:</h4>
+
+                            {{#if (eq condition "satisfactory")}}
+                            <input type="checkbox" checked> <span>Satisfactory</span>
+                            <input type="checkbox"> <span>Unsatisfactory <strong>(explain)</strong></span>
+                            {{else}}
+                            {{#if (eq condition "unsatisfactory")}}
+                            <input type="checkbox"> <span>Satisfactory</span>
+                            <input type="checkbox" checked>
+                            <span>Unsatisfactory<strong>(explain)</strong></span>
+                            {{else}}
+                            <input type="checkbox"> <span>Satisfactory</span>
+                            <input type="checkbox"> <span>Unsatisfactory<strong>(explain)</strong></span>
+                            {{/if}}
+                            {{/if}}
+
+                        </label>
+
+                        <p>{{unsatisfactoryExplain}}</p>
+                        {{!-- <input type="text" value="{{unsatisfactoryExplained}}"> --}}
+
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <h2 style="font-weight: 300;">Supplemental Information</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 0;">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="border-right: 2px solid; padding-bottom:30px">
+                                        <h4>Main Panel</h4>
+                                        <label>
+                                            <span>Panel age: </span>
+                                            <input type="text" value="{{mainPanelAge}}">
+                                        </label>
+                                        <label>
+                                            <span>Year last updated: </span>
+                                            <input type="text" value="{{mainPanelYearLastUpdated}}"></label>
+                                        <label>
+                                            <span>Brand/Model:</span>
+                                            <input type="text" value="{{mainPanelBrandModel}}">
+                                        </label>
+                                    </td>
+                                    <td style="border-right: 2px solid; padding-bottom:30px">
+                                        <h4>Second Panel</h4>
+                                        <label>
+                                            <span>Panel age: </span>
+                                            <input type="text" value="{{secondaryPanelAge}}">
+                                        </label>
+                                        <label>
+                                            <span>Year last updated: </span>
+                                            <input type="text" value="{{secondaryPanelYearLastUpdated}}">
+                                        </label>
+                                        <label>
+                                            <span>Brand/Model: </span>
+                                            <input type="text" value="{{secondaryPanelBrandModel}}">
+                                        </label>
+                                    </td>
+                                    <td style="padding-bottom:30px">
+                                        <h4>Wiring Type</h4>
+
+                                        {{!-- {{#if (eq wiringType "copper")}} --}}
+                                        <label>
+                                            {{!-- <input type="checkbox" checked> --}}
+                                            {{checkbox wiringTypeCopper}}
+                                            <span>Copper</span>
+                                        </label>
+                                        <label>
+                                            {{checkbox wiringTypeConduit}}
+                                            <span>NM, BX or Conduit</span>
+                                        </label>
+                                        {{!-- {{else}}
+                                        {{#if (eq wiringType "nm, bx or conduit")}}
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Copper</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked>
+                                            <span>NM, BX or Conduit</span>
+                                        </label>
                                         {{else}}
-                                        {{#if (eq mainPanel "fuse")}}
-                                        <input type="checkbox">
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox" checked>
-                                        <span>Fuse</span>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>Copper</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox">
+                                            <span>NM, BX or Conduit</span>
+                                        </label>
+                                        {{/if}}
+                                        {{/if}} --}}
+
+                                        {{!-- {{#if (eq wiringType "Copper")}}
+
+                                        <label>
+                                            <input type="checkbox" checked><span>Copper</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox"><span>NM, BX or Conduit</span>
+                                        </label>
                                         {{else}}
-                                        <input type="checkbox">
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox">
-                                        <span>Fuse</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
+                                        <label>
+                                            <input type="checkbox"><span>Copper</span>
+                                        </label>
+                                        <label>
+                                            <input type="checkbox" checked><span>NM, BX or Conduit</span>
+                                        </label>
+                                        {{/if}} --}}
 
-                                    <label>
-                                        <span>Total Amps: </span> <input type="text" value="{{mainPanelTotalAmps}}">
-                                    </label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        {{!-- <ul class="images">
+            {{#each images}}
+            <li class="image">
+                <img src="{{this}}" alt="">
+            </li>
+            {{/each}}
+        </ul> --}}
+        {{/with}}
+    </section>
+    <section class="page">
 
-                                    <label>
-                                        <span>Is amperage sufficient for current usage?</span>
-                                        {{mainPanelAmperageSufficient}}
-                                        {{#if (eq mainPanelAmperageSufficient "yes")}}
-                                        <input type="radio" checked /> <span>Yes</span>
-                                        <input type="radio" /> <span>No (Explain)</span>
-                                        {{/if}}
-                                        {{#if (eq mainPanelAmperageSufficient "no") }}
-                                        <input type="radio" /> <span>Yes</span>
-                                        <input type="radio" checked /> <span>No (Explain)</span>
-                                        {{/if}}
-                                    </label>
-                                    {{!-- <label class="fluid" style="margin-right:20px; margin-bottom:5px;">
-                                        <input type="text" value="{{mainPanelAmperageSufficientExplained}}">
-                                    </label> --}}
+        {{#with fourPoint.hvac}}
+        <table class="bordered">
 
-                                    <p>{{mainPanelAmperageSufficientExplained}}</p>
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>HVAC System</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <span>Central AC:</span>
+                            {{#if (eq centralAC "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq centralAC "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Central heat:</span>
+                            {{#if (eq centralHeat "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq centralHeat "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label class="fluid">
+                            <span>If not central heat, indicate primary heat source and fuel type: </span>
+                            <input type="text" value="{{primaryHeatSource}}">
+                        </label>
+                        <label>
+                            <span>
+                                Are the heating, ventilation and air conditioning systems in good working
+                                order?
+                            </span>
+                            {{#if (eq condition "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No (Explain)</span>
+                            {{else}}
+                            {{#if (eq condition "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No (Explain)</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No (Explain)</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
 
+                        <p>{{conditionExplained}}</p>
 
-                                </td>
-                                <td>
-                                    <h4>Second Panel</h4>
+                        <label class="fluid">
+                            <span>Date of last HVAC servicing/inspection:</span>
+                            <input type="text" value="{{serviceInspectionDate}}">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Hazards Present</h4>
+                        <label>
+                            <span>
+                                Wood-burning stove or central gas fireplace not professionally
+                                installed?
+                            </span>
 
-                                    <label>
-                                        <span>Type:</span>
+                            {{#if (eq stoveProfessionallyInstall "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq stoveProfessionallyInstall "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Space heater used as primary heat source?</span>
 
-                                        {{#if (eq secondaryPanel "circuitBreaker")}}
-                                        <input type="checkbox" checked>
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox">
-                                        <span>Fuse</span>
-                                        {{else}}
-                                        {{#if (eq secondaryPanel "fuse")}}
-                                        <input type="checkbox">
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox" checked>
-                                        <span>Fuse</span>
-                                        {{else}}
-                                        <input type="checkbox">
-                                        <span>Circuit breaker</span>
-                                        <input type="checkbox">
-                                        <span>Fuse</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Total Amps: </span>
-                                        <input type="text" value="{{secondaryPanelTotalAmps}}">
-                                    </label>
+                            {{#if (eq spaceHeater "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq spaceHeater "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Is the source portable?</span>
+                            {{#if (eq heatSourcePortable "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq heatSourcePortable "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>
+                                Does the air handler/condensate line or drain pan show any signs of
+                                blockage or leakage, including water damage to the surrounding area?
+                            </span>
 
-                                    <label>
-                                        <span>Is amperage sufficient for current usage?</span>
-                                        {{#if (eq secondaryAmperageSufficient "yes")}}
-                                        <input type="radio" checked /> <span>Yes</span>
-                                        <input type="radio" /> <span>No (Explain)</span>
-                                        {{/if}}
-                                        {{#if (eq secondaryAmperageSufficient "no")}}
-                                        <input type="radio" /> <span>Yes</span>
-                                        <input type="radio" checked /> <span>No (Explain)</span>
-                                        {{/if}}
-                                    </label>
+                            {{#if (eq condensateDamage "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq condensateDamage "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>
+                        <h2 style="font-weight: 300;">Supplemental Information</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h4>Main Panel</h4>
+                        <label>Age of system: <input type="text" value="{{age}}"></label>
+                        <label>Year last updated:<input type="text" value="{{yearLastUpdated}}"></label>
+                        <p>
+                            (Please attach photo(s) of HVAC equipment, including dated manufacturer’s plate)
+                        </p>
+                    </td>
+                </tr>
+            </tfoot>
 
-                                    <p>{{secondaryAmperageSufficientExplained}}</p>
-                                    {{!-- <input type="text" value="{{secondaryAmperageSufficientExplained}}"> --}}
+        </table>
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <h4>Indicate presence of any of the following:</h4>
-                                    <label>
-                                        {{checkbox clothWiring}}<span>Cloth wiring</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox activeKnobTube}}<span>Active knob and tube</span>
-                                    </label>
+        {{/with}}
+        {{#with fourPoint.plumbing}}
+        <table class="bordered">
 
-                                    <label>
-                                        {{checkbox branchCircuit}}
-                                        <span>Branch circuit aluminum wiring (If present,
-                                            describe the usage of all aluminum wiring):</span>
+            <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h2>Plumbing System</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>
+                            <span>Is there a temperature pressure relief valve on the water heater?</span>
 
-                                    </label>
-                                    <p style="padding-left: 10px;">* If single strand (aluminum branch) wiring, provide
-                                        details of all
-                                        remediation. Separate documentation of all work must be provided.</p>
+                            {{#if (eq pressureReliefValve "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq pressureReliefValve "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
 
-                                    <label>
-                                        {{checkbox copalum}}<span>Connections repaired via COPALUM crimp</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox alumiConn}}<span>Connections repaired via AlumiConn</span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border-right: 2px solid;">
-                                    <h4>Hazards Present</h4>
-                                    <label>
-                                        {{checkbox blowingFuses}}<span>Blowing fuses</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox trippingBreakers}}<span>Tripping breakers</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox emptySockets}}<span>Empty sockets</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox looseWiring}}<span>Loose wiring</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox improperGrounding}}
-                                        <span>Improper grounding</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox corrosion}}<span>Corrosion</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox overFusing}}<span>Over fusing</span>
-                                    </label>
-                                </td>
-                                <td>
-                                    <h4></h4>
-                                    <label>
-                                        {{checkbox doubleTaps}}<span>Double taps</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox exposedWiring}}<span>Exposed wiring</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox unsafeWiring}}<span>Unsafe wiring</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox improperBreakerSize}}<span>Improper breaker size</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox scorching}}<span>Scorching</span>
-                                    </label>
-                                    <label>
-                                        {{#if hazards}}
-                                        <input type="checkbox" checked /><span>Other (explain)</span>
-                                        {{else}}
-                                        <input type="checkbox" /><span>Other (explain)</span>
-                                        {{/if}}
-                                    </label>
+                        </label>
+                        <label>
+                            <span>Is there any indication of an active leak?</span>
 
-                                    <p>{{hazards}}</p>
+                            {{#if (eq activeLeak "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq activeLeak "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Is there any indication of a prior leak?</span>
 
+                            {{#if (eq priorLeak "yes")}}
+                            <input type="checkbox" checked><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{else}}
+                            {{#if (eq priorLeak "no")}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox" checked><span>No</span>
+                            {{else}}
+                            <input type="checkbox"><span>Yes</span>
+                            <input type="checkbox"><span>No</span>
+                            {{/if}}
+                            {{/if}}
 
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <label>
-                                        <h4>General condition of the electrical system:</h4>
+                        </label>
+                        <label class="fluid">
+                            Water heater location: <input type="text" value="{{waterHeaterLocation}}">
+                        </label>
+                        <label class="fluid">
+                            Water heater age: <input type="text" value="{{waterHeaterAge}}">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="border-bottom: 0;">
+                        <h4>
+                            General condition of the following plumbing fixtures and connections to
+                            appliances:
+                        </h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid;" class="s50">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>Satisfactory</td>
+                                    <td>Unsatisfactory</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Dishwasher</td>
 
-                                        {{#if (eq condition "satisfactory")}}
-                                        <input type="checkbox" checked> <span>Satisfactory</span>
-                                        <input type="checkbox"> <span>Unsatisfactory <strong>(explain)</strong></span>
-                                        {{else}}
-                                        {{#if (eq condition "unsatisfactory")}}
-                                        <input type="checkbox"> <span>Satisfactory</span>
-                                        <input type="checkbox" checked>
-                                        <span>Unsatisfactory<strong>(explain)</strong></span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Satisfactory</span>
-                                        <input type="checkbox"> <span>Unsatisfactory<strong>(explain)</strong></span>
-                                        {{/if}}
-                                        {{/if}}
-
-                                    </label>
-
-                                    <p>{{unsatisfactoryExplain}}</p>
-                                    {{!-- <input type="text" value="{{unsatisfactoryExplained}}"> --}}
-
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">
-                                    <h2 style="font-weight: 300;">Supplemental Information</h2>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="padding: 0;">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td style="border-right: 2px solid; padding-bottom:30px">
-                                                    <h4>Main Panel</h4>
-                                                    <label>
-                                                        <span>Panel age: </span>
-                                                        <input type="text" value="{{mainPanelAge}}">
-                                                    </label>
-                                                    <label>
-                                                        <span>Year last updated: </span>
-                                                        <input type="text" value="{{mainPanelYearLastUpdated}}"></label>
-                                                    <label>
-                                                        <span>Brand/Model:</span>
-                                                        <input type="text" value="{{mainPanelBrandModel}}">
-                                                    </label>
-                                                </td>
-                                                <td style="border-right: 2px solid; padding-bottom:30px">
-                                                    <h4>Second Panel</h4>
-                                                    <label>
-                                                        <span>Panel age: </span>
-                                                        <input type="text" value="{{secondaryPanelAge}}">
-                                                    </label>
-                                                    <label>
-                                                        <span>Year last updated: </span>
-                                                        <input type="text" value="{{secondaryPanelYearLastUpdated}}">
-                                                    </label>
-                                                    <label>
-                                                        <span>Brand/Model: </span>
-                                                        <input type="text" value="{{secondaryPanelBrandModel}}">
-                                                    </label>
-                                                </td>
-                                                <td style="padding-bottom:30px">
-                                                    <h4>Wiring Type</h4>
-
-                                                    {{!-- {{#if (eq wiringType "copper")}} --}}
-                                                    <label>
-                                                        {{!-- <input type="checkbox" checked> --}}
-                                                        {{checkbox wiringTypeCopper}}
-                                                        <span>Copper</span>
-                                                    </label>
-                                                    <label>
-                                                        {{checkbox wiringTypeConduit}}
-                                                        <span>NM, BX or Conduit</span>
-                                                    </label>
-                                                    {{!-- {{else}}
-                                                    {{#if (eq wiringType "nm, bx or conduit")}}
-                                                    <label>
-                                                        <input type="checkbox">
-                                                        <span>Copper</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" checked>
-                                                        <span>NM, BX or Conduit</span>
-                                                    </label>
-                                                    {{else}}
-                                                    <label>
-                                                        <input type="checkbox">
-                                                        <span>Copper</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox">
-                                                        <span>NM, BX or Conduit</span>
-                                                    </label>
-                                                    {{/if}}
-                                                    {{/if}} --}}
-
-                                                    {{!-- {{#if (eq wiringType "Copper")}}
-
-                                                    <label>
-                                                        <input type="checkbox" checked><span>Copper</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox"><span>NM, BX or Conduit</span>
-                                                    </label>
-                                                    {{else}}
-                                                    <label>
-                                                        <input type="checkbox"><span>Copper</span>
-                                                    </label>
-                                                    <label>
-                                                        <input type="checkbox" checked><span>NM, BX or Conduit</span>
-                                                    </label>
-                                                    {{/if}} --}}
-
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    {{!-- <ul class="images">
-                        {{#each images}}
-                        <li class="image">
-                            <img src="{{this}}" alt="">
-                        </li>
-                        {{/each}}
-                    </ul> --}}
-                    {{/with}}
-                </section>
-                <section class="page">
-
-                    {{#with fourPoint.hvac}}
-                    <table class="bordered">
-
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>HVAC System</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label>
-                                        <span>Central AC:</span>
-                                        {{#if (eq centralAC "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq centralAC "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Central heat:</span>
-                                        {{#if (eq centralHeat "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq centralHeat "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label class="fluid">
-                                        <span>If not central heat, indicate primary heat source and fuel type: </span>
-                                        <input type="text" value="{{primaryHeatSource}}">
-                                    </label>
-                                    <label>
-                                        <span>
-                                            Are the heating, ventilation and air conditioning systems in good working
-                                            order?
-                                        </span>
-                                        {{#if (eq condition "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No (Explain)</span>
-                                        {{else}}
-                                        {{#if (eq condition "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No (Explain)</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No (Explain)</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-
-                                    <p>{{conditionExplained}}</p>
-
-                                    <label class="fluid">
-                                        <span>Date of last HVAC servicing/inspection:</span>
-                                        <input type="text" value="{{serviceInspectionDate}}">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Hazards Present</h4>
-                                    <label>
-                                        <span>
-                                            Wood-burning stove or central gas fireplace not professionally
-                                            installed?
-                                        </span>
-
-                                        {{#if (eq stoveProfessionallyInstall "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq stoveProfessionallyInstall "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Space heater used as primary heat source?</span>
-
-                                        {{#if (eq spaceHeater "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq spaceHeater "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Is the source portable?</span>
-                                        {{#if (eq heatSourcePortable "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq heatSourcePortable "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>
-                                            Does the air handler/condensate line or drain pan show any signs of
-                                            blockage or leakage, including water damage to the surrounding area?
-                                        </span>
-
-                                        {{#if (eq condensateDamage "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq condensateDamage "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td>
-                                    <h2 style="font-weight: 300;">Supplemental Information</h2>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <h4>Main Panel</h4>
-                                    <label>Age of system: <input type="text" value="{{age}}"></label>
-                                    <label>Year last updated:<input type="text" value="{{yearLastUpdated}}"></label>
-                                    <p>
-                                        (Please attach photo(s) of HVAC equipment, including dated manufacturer’s plate)
-                                    </p>
-                                </td>
-                            </tr>
-                        </tfoot>
-
-                    </table>
-                    {{!-- <ul class="images">
-                        {{#each images}}
-                        <li class="image">
-                            <img src="{{this}}" alt="">
-                        </li>
-                        {{/each}}
-                    </ul> --}}
-                    {{/with}}
-                    {{#with fourPoint.plumbing}}
-                    <table class="bordered">
-
-                        <tbody>
-                            <tr>
-                                <th colspan="2">
-                                    <h2>Plumbing System</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <label>
-                                        <span>Is there a temperature pressure relief valve on the water heater?</span>
-
-                                        {{#if (eq pressureReliefValve "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq pressureReliefValve "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-
-                                    </label>
-                                    <label>
-                                        <span>Is there any indication of an active leak?</span>
-
-                                        {{#if (eq activeLeak "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq activeLeak "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Is there any indication of a prior leak?</span>
-
-                                        {{#if (eq priorLeak "yes")}}
-                                        <input type="checkbox" checked><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{else}}
-                                        {{#if (eq priorLeak "no")}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox" checked><span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"><span>Yes</span>
-                                        <input type="checkbox"><span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-
-                                    </label>
-                                    <label class="fluid">
-                                        Water heater location: <input type="text" value="{{waterHeaterLocation}}">
-                                    </label>
-                                    <label class="fluid">
-                                        Water heater age: <input type="text" value="{{waterHeaterAge}}">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2" style="border-bottom: 0;">
-                                    <h4>
-                                        General condition of the following plumbing fixtures and connections to
-                                        appliances:
-                                    </h4>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border-right: 2px solid;">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>Satisfactory</td>
-                                                <td>Unsatisfactory</td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Dishwasher</td>
-
-                                                {{#if (eq dashwasher "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq dashwasher "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq dashwasher "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Refrigerator</td>
-
-                                                {{#if (eq refrigerator "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq refrigerator "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq refrigerator "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Washing machine</td>
-
-                                                {{#if (eq washingMachine "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq washingMachine "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq washingMachine "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Water heater</td>
-                                                {{#if (eq waterHeater "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq waterHeater "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq waterHeater "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Showers/Tubs</td>
-
-                                                {{#if (eq showerTubs "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq showerTubs "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq showerTubs "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                                <td>
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td>Satisfactory</td>
-                                                <td>Unsatisfactory</td>
-                                                <td>N/A</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Toilets</td>
-                                                {{#if (eq toilets "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq toilets "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq toilets "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Sinks</td>
-
-                                                {{#if (eq sinks "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq sinks "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq sinks "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Sump pump</td>
-
-                                                {{#if (eq sumppump "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq sumppump "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq sumppump "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>Main shut off valve</td>
-                                                {{#if (eq mainShutoffValve "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq mainShutoffValve "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq mainShutoffValve "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                            <tr>
-                                                <td>All other visible</td>
-                                                {{#if (eq allOtherVisible "satisfactory")}}
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq allOtherVisible "unsatisfactory")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                <td><input type="checkbox"></td>
-                                                {{else}}
-                                                {{#if (eq allOtherVisible "n/a")}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox" checked></td>
-                                                {{else}}
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                <td><input type="checkbox"></td>
-                                                {{/if}}
-                                                {{/if}}
-                                                {{/if}}
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <h4 style="padding-bottom: 28px;">
-                                        If unsatisfactory, please provide comments/details (leaks, wet/soft spots, mold,
-                                        corrosion, grout/caulk, etc.).
-                                    </h4>
-                                    <p>{{unsatisfactoryExplained}}</p>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2">
-                                    <h2 style="font-weight: 300;">Supplemental Information</h2>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="border-right: 2px solid;">
-                                    <h4>Age of Piping System:</h4>
-                                    <label><input type="text" value="{{originalHome}}"> Original to home</label>
-                                    <label><input type="text" value="{{completelyRepiped}}"> Completely re-piped</label>
-                                    <label><input type="text" value="{{partiallyRepiped}}"> Partially re-piped</label>
-                                    <p>(Provide year and extent of renovation in the comments below)</p>
-                                    <label class="fluid">
-                                        <p>{{renovationComment}}</p>
-                                    </label>
-                                </td>
-                                <td>
-                                    <h4>Type of pipes (check all that apply)</h4>
-                                    <label>{{checkbox copperPipe}}<span>Copper</span></label>
-                                    <label>{{checkbox pvcPipe}}<span>PVC/CPVC</span></label>
-                                    <label>{{checkbox galvanizedPipe}}<span>Galvanized</span></label>
-                                    <label>{{checkbox PEXPipe}}<span>PEX</span></label>
-                                    <label>{{checkbox polybutylenePipe}}<span>Polybutylene</span></label>
-                                    {{#if otherPipeType}}
-                                    <label><input type="checkbox" checked><span>Other (specify)</span></label>
+                                    {{#if (eq dashwasher "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
                                     {{else}}
-                                    <label><input type="checkbox"><span>Other (specify)</span></label>
-                                    {{/if}}
-                                    <label class="fluid">
-                                        <input type="text" value="{{otherPipeType}}">
-                                    </label>
-                                </td>
-                            </tr>
-                        </tfoot>
-
-                    </table>
-
-                    {{!-- <ul class="images">
-                        {{#each images}}
-                        <li class="image">
-                            <img src="{{this}}" alt="">
-                        </li>
-                        {{/each}}
-                    </ul> --}}
-                    {{/with}}
-                </section>
-                <section class="page">
-                    <table class="bordered">
-                        {{#with fourPoint.roof}}
-                        <tbody>
-                            <tr>
-                                <th colspan="2">
-                                    <h2>Roof
-                                        <span>
-                                            (With photos of each roof slope, this section can take the
-                                            place of the Roof Inspection Form.)
-                                        </span>
-                                    </h2>
-
-                                </th>
-                            </tr>
-                            <tr>
-                                <td style="border-right: 2px solid;" class="s50">
-                                    <h4>Predominant Roof</h4>
-                                    <label class="fluid">Covering material: <input type="text"
-                                            value="{{coveringMaterial}}"></label>
-                                    <label class="fluid">Roof age (years): <input type="text" value="{{age}}"></label>
-                                    <label class="fluid">Remaining useful life (years): <input type="text"
-                                            value="{{remainingLife}}"></label>
-                                    <label class="fluid">Date of last roofing permit: <input type="text"
-                                            value="{{lastPermit}}"></label>
-                                    <label class="fluid">Date of last update: <input type="text"
-                                            value="{{lastUpdate}}"></label>
-                                    <p>If updated (check one):</p>
-
-
-                                    <label>
-                                        {{checkbox fullReplacement}}
-                                        <span>Full replacement</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox partialReplacement}}
-                                        <span>Partial replacement</span>
-                                    </label>
-                                    <label class="fluid">% of replacement: <input type="text"
-                                            value="{{percentageReplacement}}"></label>
-                                    <p>Overall condition:</p>
-                                    {{#if (eq condition "satisfactory")}}
-                                    <label>
-                                        <input type="checkbox" checked><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    {{#if (eq dashwasher "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
                                     {{else}}
-                                    {{#if (eq condition "unsatisfactory")}}
-                                    <label>
-                                        <input type="checkbox"><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" checked> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    {{#if (eq dashwasher "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
                                     {{else}}
-                                    <label>
-                                        <input type="checkbox"><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
                                     {{/if}}
                                     {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Refrigerator</td>
 
-                                    <p>{{conditionExplained}}</p>
-                                    <h4>Any visible signs of damage / deterioration?</h4>
-                                    <p>(check all that apply and explain below)</p>
-                                    <label>
-                                        {{checkbox cracking}} <span>Cracking</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox CuppingCurling}} <span>Cupping/curling</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox granuleLoss}} <span>Excessive granule loss</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox exposedAsphalt}} <span>Exposed asphalt</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox exposedFelt}} <span>Exposed felt</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox crackedTabs}}
-                                        <span>Missing/loose/cracked tabs or tiles</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox softDecking}} <span>Soft spots in decking</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox hailDamage}} <span>Visible hail damage</span>
-                                    </label>
-                                    <label>
-                                        <span>Any visible signs of leaks?</span>
-                                        {{#if (eq signsOfLeaks "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq signsOfLeaks "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-
-                                    </label>
-                                    <label>
-                                        <span>Attic / underside of decking</span>
-                                        {{#if (eq atticDecking "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq atticDecking "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Interior ceilings</span>
-                                        {{#if (eq interiorCeilings "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq interiorCeilings "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                </td>
-                                <td>
-                                    <h4>Secondary Roof</h4>
-                                    <label class="fluid">Covering material: <input type="text"
-                                            value="{{secondaryCoveringMaterial}}"></label>
-                                    <label class="fluid">Roof age (years): <input type="text"
-                                            value="{{secondaryAge}}"></label>
-                                    <label class="fluid">Remaining useful life (years): <input type="text"
-                                            value="{{secondaryRemainingLife}}"></label>
-                                    <label class="fluid">Date of last roofing permit: <input type="text"
-                                            value="{{secondaryLastPermit}}"></label>
-                                    <label class="fluid">Date of last update: <input type="text"
-                                            value="{{secondaryLastUpdate}}"></label>
-                                    <p>If updated (check one):</p>
-
-
-                                    <label>
-                                        {{checkbox secondaryFullReplacement}}<span>Full replacement</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryPartialReplacement}} <span>Partial replacement</span>
-                                    </label>
-                                    <label class="fluid">% of replacement: <input type="text"
-                                            value="{{secondaryPercentageReplacement}}"></label>
-                                    <p>Overall condition:</p>
-
-
-                                    {{#if secondaryCondition}}
-                                    <label>
-                                        <input type="checkbox" checked><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    {{#if (eq refrigerator "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
                                     {{else}}
-                                    {{#if (eq secondaryCondition "unsatisfactory")}}
-                                    <label>
-                                        <input type="checkbox"><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox" checked> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    {{#if (eq refrigerator "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
                                     {{else}}
-                                    <label>
-                                        <input type="checkbox"><span>Satisfactory</span>
-                                    </label>
-                                    <label>
-                                        <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
-                                    </label>
+                                    {{#if (eq refrigerator "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
                                     {{/if}}
                                     {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Washing machine</td>
 
-                                    <p>{{secondaryConditionExplained}}</p>
-                                    <h4>Any visible signs of damage / deterioration?</h4>
-                                    <p>(check all that apply and explain below)</p>
-                                    <label>
-                                        {{checkbox secondaryCracking}} <span>Cracking</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryCuppingCurling}} <span>Cupping/curling</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryGranuleLoss}} <span>Excessive granule loss</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryExposedAsphalt}} <span>Exposed asphalt</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryExposedFelt}} <span>Exposed felt</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryCrackedTabs}}
-                                        <span>Missing/loose/cracked tabs or tiles</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondarySoftDecking}} <span>Soft spots in decking</span>
-                                    </label>
-                                    <label>
-                                        {{checkbox secondaryHailDamage}} <span>Visible hail damage</span>
-                                    </label>
-                                    <label>
-                                        <span>Any visible signs of leaks?</span>
-                                        {{#if (eq secondarySignsOfLeaks "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq secondarySignsOfLeaks "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Attic / underside of decking</span>
-                                        {{#if (eq secondaryAtticDecking "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq secondaryAtticDecking "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                    <label>
-                                        <span>Interior ceilings</span>
-                                        {{#if (eq secondaryInteriorCeilings "yes")}}
-                                        <input type="checkbox" checked> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{else}}
-                                        {{#if (eq secondaryInteriorCeilings "no")}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox" checked> <span>No</span>
-                                        {{else}}
-                                        <input type="checkbox"> <span>Yes</span>
-                                        <input type="checkbox"> <span>No</span>
-                                        {{/if}}
-                                        {{/if}}
-                                    </label>
-                                </td>
-                            </tr>
-                        </tbody>
-                        {{/with}}
-                    </table>
-                    <table class="bordered">
+                                    {{#if (eq washingMachine "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq washingMachine "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq washingMachine "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Water heater</td>
+                                    {{#if (eq waterHeater "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq waterHeater "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq waterHeater "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Showers/Tubs</td>
+
+                                    {{#if (eq showerTubs "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq showerTubs "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq showerTubs "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>Satisfactory</td>
+                                    <td>Unsatisfactory</td>
+                                    <td>N/A</td>
+                                </tr>
+                                <tr>
+                                    <td>Toilets</td>
+                                    {{#if (eq toilets "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq toilets "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq toilets "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Sinks</td>
+
+                                    {{#if (eq sinks "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq sinks "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq sinks "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Sump pump</td>
+
+                                    {{#if (eq sumppump "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq sumppump "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq sumppump "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>Main shut off valve</td>
+                                    {{#if (eq mainShutoffValve "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq mainShutoffValve "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq mainShutoffValve "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                                <tr>
+                                    <td>All other visible</td>
+                                    {{#if (eq allOtherVisible "satisfactory")}}
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq allOtherVisible "unsatisfactory")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    <td><input type="checkbox"></td>
+                                    {{else}}
+                                    {{#if (eq allOtherVisible "n/a")}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox" checked></td>
+                                    {{else}}
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    <td><input type="checkbox"></td>
+                                    {{/if}}
+                                    {{/if}}
+                                    {{/if}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <h4 style="padding-bottom: 28px;">
+                            If unsatisfactory, please provide comments/details (leaks, wet/soft spots, mold,
+                            corrosion, grout/caulk, etc.).
+                        </h4>
+                        <p>{{unsatisfactoryExplained}}</p>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">
+                        <h2 style="font-weight: 300;">Supplemental Information</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid;">
+                        <h4>Age of Piping System:</h4>
+                        <label><input type="text" value="{{originalHome}}"> Original to home</label>
+                        <label><input type="text" value="{{completelyRepiped}}"> Completely re-piped</label>
+                        <label><input type="text" value="{{partiallyRepiped}}"> Partially re-piped</label>
+                        <p>(Provide year and extent of renovation in the comments below)</p>
+                        <label class="fluid">
+                            <p>{{renovationComment}}</p>
+                        </label>
+                    </td>
+                    <td>
+                        <h4>Type of pipes (check all that apply)</h4>
+                        <label>{{checkbox copperPipe}}<span>Copper</span></label>
+                        <label>{{checkbox pvcPipe}}<span>PVC/CPVC</span></label>
+                        <label>{{checkbox galvanizedPipe}}<span>Galvanized</span></label>
+                        <label>{{checkbox PEXPipe}}<span>PEX</span></label>
+                        <label>{{checkbox polybutylenePipe}}<span>Polybutylene</span></label>
+                        {{#if otherPipeType}}
+                        <label><input type="checkbox" checked><span>Other (specify)</span></label>
+                        {{else}}
+                        <label><input type="checkbox"><span>Other (specify)</span></label>
+                        {{/if}}
+                        <label class="fluid">
+                            <input type="text" value="{{otherPipeType}}">
+                        </label>
+                    </td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+        {{!-- <ul class="images">
+            {{#each images}}
+            <li class="image">
+                <img src="{{this}}" alt="">
+            </li>
+            {{/each}}
+        </ul> --}}
+        {{/with}}
+    </section>
+    <section class="page">
+        <table class="bordered">
+            {{#with fourPoint.roof}}
+            <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h2>Roof
+                            <span>
+                                (With photos of each roof slope, this section can take the
+                                place of the Roof Inspection Form.)
+                            </span>
+                        </h2>
+
+                    </th>
+                </tr>
+                <tr>
+                    <td style="border-right: 2px solid;" class="s50">
+                        <h4>Predominant Roof</h4>
+                        <label class="fluid">Covering material: <input type="text" value="{{coveringMaterial}}"></label>
+                        <label class="fluid">Roof age (years): <input type="text" value="{{age}}"></label>
+                        <label class="fluid">Remaining useful life (years): <input type="text"
+                                value="{{remainingLife}}"></label>
+                        <label class="fluid">Date of last roofing permit: <input type="text"
+                                value="{{lastPermit}}"></label>
+                        <label class="fluid">Date of last update: <input type="text" value="{{lastUpdate}}"></label>
+                        <p>If updated (check one):</p>
+
+
+                        <label>
+                            {{checkbox fullReplacement}}
+                            <span>Full replacement</span>
+                        </label>
+                        <label>
+                            {{checkbox partialReplacement}}
+                            <span>Partial replacement</span>
+                        </label>
+                        <label class="fluid">% of replacement: <input type="text"
+                                value="{{percentageReplacement}}"></label>
+                        <p>Overall condition:</p>
+                        {{#if (eq condition "satisfactory")}}
+                        <label>
+                            <input type="checkbox" checked><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{else}}
+                        {{#if (eq condition "unsatisfactory")}}
+                        <label>
+                            <input type="checkbox"><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{else}}
+                        <label>
+                            <input type="checkbox"><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{/if}}
+                        {{/if}}
+
+                        <p>{{conditionExplained}}</p>
+                        <h4>Any visible signs of damage / deterioration?</h4>
+                        <p>(check all that apply and explain below)</p>
+                        <label>
+                            {{checkbox cracking}} <span>Cracking</span>
+                        </label>
+                        <label>
+                            {{checkbox CuppingCurling}} <span>Cupping/curling</span>
+                        </label>
+                        <label>
+                            {{checkbox granuleLoss}} <span>Excessive granule loss</span>
+                        </label>
+                        <label>
+                            {{checkbox exposedAsphalt}} <span>Exposed asphalt</span>
+                        </label>
+                        <label>
+                            {{checkbox exposedFelt}} <span>Exposed felt</span>
+                        </label>
+                        <label>
+                            {{checkbox crackedTabs}}
+                            <span>Missing/loose/cracked tabs or tiles</span>
+                        </label>
+                        <label>
+                            {{checkbox softDecking}} <span>Soft spots in decking</span>
+                        </label>
+                        <label>
+                            {{checkbox hailDamage}} <span>Visible hail damage</span>
+                        </label>
+                        <label>
+                            <span>Any visible signs of leaks?</span>
+                            {{#if (eq signsOfLeaks "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq signsOfLeaks "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+
+                        </label>
+                        <label>
+                            <span>Attic / underside of decking</span>
+                            {{#if (eq atticDecking "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq atticDecking "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Interior ceilings</span>
+                            {{#if (eq interiorCeilings "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq interiorCeilings "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                    </td>
+                    <td>
+                        <h4>Secondary Roof</h4>
+                        <label class="fluid">Covering material: <input type="text"
+                                value="{{secondaryCoveringMaterial}}"></label>
+                        <label class="fluid">Roof age (years): <input type="text" value="{{secondaryAge}}"></label>
+                        <label class="fluid">Remaining useful life (years): <input type="text"
+                                value="{{secondaryRemainingLife}}"></label>
+                        <label class="fluid">Date of last roofing permit: <input type="text"
+                                value="{{secondaryLastPermit}}"></label>
+                        <label class="fluid">Date of last update: <input type="text"
+                                value="{{secondaryLastUpdate}}"></label>
+                        <p>If updated (check one):</p>
+
+
+                        <label>
+                            {{checkbox secondaryFullReplacement}}<span>Full replacement</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryPartialReplacement}} <span>Partial replacement</span>
+                        </label>
+                        <label class="fluid">% of replacement: <input type="text"
+                                value="{{secondaryPercentageReplacement}}"></label>
+                        <p>Overall condition:</p>
+
+
+                        {{#if secondaryCondition}}
+                        <label>
+                            <input type="checkbox" checked><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{else}}
+                        {{#if (eq secondaryCondition "unsatisfactory")}}
+                        <label>
+                            <input type="checkbox"><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" checked> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{else}}
+                        <label>
+                            <input type="checkbox"><span>Satisfactory</span>
+                        </label>
+                        <label>
+                            <input type="checkbox"> <span>Unsatisfactory (explain below)</span>
+                        </label>
+                        {{/if}}
+                        {{/if}}
+
+                        <p>{{secondaryConditionExplained}}</p>
+                        <h4>Any visible signs of damage / deterioration?</h4>
+                        <p>(check all that apply and explain below)</p>
+                        <label>
+                            {{checkbox secondaryCracking}} <span>Cracking</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryCuppingCurling}} <span>Cupping/curling</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryGranuleLoss}} <span>Excessive granule loss</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryExposedAsphalt}} <span>Exposed asphalt</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryExposedFelt}} <span>Exposed felt</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryCrackedTabs}}
+                            <span>Missing/loose/cracked tabs or tiles</span>
+                        </label>
+                        <label>
+                            {{checkbox secondarySoftDecking}} <span>Soft spots in decking</span>
+                        </label>
+                        <label>
+                            {{checkbox secondaryHailDamage}} <span>Visible hail damage</span>
+                        </label>
+                        <label>
+                            <span>Any visible signs of leaks?</span>
+                            {{#if (eq secondarySignsOfLeaks "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq secondarySignsOfLeaks "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Attic / underside of decking</span>
+                            {{#if (eq secondaryAtticDecking "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq secondaryAtticDecking "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                        <label>
+                            <span>Interior ceilings</span>
+                            {{#if (eq secondaryInteriorCeilings "yes")}}
+                            <input type="checkbox" checked> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{else}}
+                            {{#if (eq secondaryInteriorCeilings "no")}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox" checked> <span>No</span>
+                            {{else}}
+                            <input type="checkbox"> <span>Yes</span>
+                            <input type="checkbox"> <span>No</span>
+                            {{/if}}
+                            {{/if}}
+                        </label>
+                    </td>
+                </tr>
+            </tbody>
+            {{/with}}
+        </table>
+        <table class="bordered">
+            <tr>
+                <td>
+                    <h4>Additional Comments/Observations <span>(use additional pages if needed):</span></h4>
+                    <p>{{fourPoint.additionalComments}}</p>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom: none;">
+                    <p style="padding-bottom: 70px;">
+                        All 4-Point Inspection Forms must be completed and signed by a verifiable
+                        State-licensed inspector. I certify that the above statements are true and
+                        correct.
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 0;">
+                    <table style="border:none;">
+
                         <tr>
                             <td>
-                                <h4>Additional Comments/Observations <span>(use additional pages if needed):</span></h4>
-                                <p>{{fourPoint.additionalComments}}</p>
+
+                                <img src="{{inspector.signature}}" width="80" height="80">
+                                <hr>
+
+                                <p style="padding-bottom: 36px;">Inspector Signature</p>
+                                <label class="fluid"><input type="text" value="HDMK"></label>
+
+                                <p>Company Name</p>
+                            </td>
+                            <td>
+                                <label class="fluid"> <input type="text" value="Home Inspector"></label>
+                                <p style="padding-bottom: 36px;">Title</p>
+                                <label class="fluid">
+                                    <input type="text" value="Home Inspector">
+                                </label>
+                                <p>License Type</p>
+                            </td>
+                            <td>
+                                <label class="fluid"> <input type="text" value="{{inspector.licence_number}}"></label>
+
+                                <p style="padding-bottom: 36px;">License Number</p>
+                                <label class="fluid">
+                                    <input type="text" value="{{inspector.phone}}"></label>
+                                <p>Work Phone</p>
+                            </td>
+                            <td>
+                                <label class="fluid">
+                                    <input type="text" value="{{date inspection.date.started}}">
+                                </label>
+
+                                <p>Date</p>
                             </td>
                         </tr>
-                        <tr>
-                            <td style="border-bottom: none;">
-                                <p style="padding-bottom: 70px;">
-                                    All 4-Point Inspection Forms must be completed and signed by a verifiable
-                                    State-licensed inspector. I certify that the above statements are true and
-                                    correct.
-                                </p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 0;">
-                                <table style="border:none;">
-
-                                    <tr>
-                                        <td>
-
-                                            <img src="{{inspector.signature}}" width="80" height="80">
-                                            <hr>
-
-                                            <p style="padding-bottom: 36px;">Inspector Signature</p>
-                                            <label class="fluid"><input type="text" value="HDMK"></label>
-
-                                            <p>Company Name</p>
-                                        </td>
-                                        <td>
-                                            <label class="fluid"> <input type="text" value="Home Inspector"></label>
-                                            <p style="padding-bottom: 36px;">Title</p>
-                                            <label class="fluid">
-                                                <input type="text" value="Home Inspector">
-                                            </label>
-                                            <p>License Type</p>
-                                        </td>
-                                        <td>
-                                            <label class="fluid"> <input type="text"
-                                                    value="{{inspector.licence_number}}"></label>
-
-                                            <p style="padding-bottom: 36px;">License Number</p>
-                                            <label class="fluid">
-                                                <input type="text" value="{{inspector.phone}}"></label>
-                                            <p>Work Phone</p>
-                                        </td>
-                                        <td>
-                                            <label class="fluid">
-                                                <input type="text" value="{{date inspection.date.started}}">
-                                            </label>
-
-                                            <p>Date</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </td>
-
-                        </tr>
                     </table>
-                </section>
-                <section class="page">
+                </td>
 
-                    <p style="padding-left: 10px;">
-                        <strong>Special Instructions:</strong> This sample 4-Point Inspection Form includes the minimum
-                        data needed for Underwriting to properly evaluate a property application. While this specific
-                        form is not required, any other inspection report submitted for consideration must include at
-                        least this level of detail to be acceptable.
-                    </p>
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>Photo Requirements</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        Photos must accompany each 4-Point Inspection Form. The minimum photo
-                                        requirements include:
-                                    </p>
-                                    <ul>
-                                        <li>Dwelling: Each side</li>
-                                        <li>Roof: Each slope</li>
-                                        <li>Plumbing: Water heater, under cabinet plumbing / drains, exposed valves</li>
-                                        <li>Open main electrical panel and interiordoor</li>
-                                        <li>Electrical box with the panel off</li>
-                                        <li>All hazards or deficiencies</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>Inspector Requirements</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        To be accepted, all inspection forms must be completed, signed and dated by a
-                                        verifiable State-licensed professional. Examples include:
-                                    </p>
-                                    <ul>
-                                        <li>A general, residential, or building contractor</li>
-                                        <li>A building code inspector</li>
-                                        <li>A home inspector</li>
-                                    </ul>
-                                    <p>
-                                        Note: A trade-specific, licensed professional may sign off only on the
-                                        inspection form section for their trade. (e.g., an electrician may sign off only
-                                        on the electrical section of the form.)
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>Documenting the Condition of Each System</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        The State-licensed inspector is required to certify the condition of the roof,
-                                        electrical, HVAC and plumbing systems. Acceptable Condition means that each
-                                        system is working as intended and there are no visible hazards or deficiencies.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>Additional Comments or Observations</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        This section of the 4-Point Inspection Form must be completed with full
-                                        details/descriptions if any of the following are noted on the inspection:
-                                    </p>
-                                    <ul>
-                                        <li>Updates: Identify the types of updates, dates completed and by whom</li>
-                                        <li>Any visible hazards or deficiencies</li>
-                                        <li>Any system determined not to be in good working order</li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table class="bordered">
-                        <tbody>
-                            <tr>
-                                <th>
-                                    <h2>Note to All Agents</h2>
-                                </th>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p>
-                                        The writing agent must review each 4-Point Inspection Form before it is
-                                        submitted with an application for coverage. It is the agent’s responsibility to
-                                        ensure that all rules and requirements are met before the application is bound.
-                                        Agents may not submit applications for properties with electrical, heating or
-                                        plumbing systems not in good working order or with existing
-                                        hazards/deficiencies.
-                                    </p>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-                <section class="page">
-                    {{#if fourPoint.plumbing.images}}
-                    <h1>Plumbing</h1>
+            </tr>
+        </table>
+    </section>
+    <section class="page">
 
-                    <ul class="images">
-                        {{#each fourPoint.plumbing.images}}
-                        <li class="image">
-                            <img src="{{this.url}}" alt="">
-                        </li>
-                        {{/each}}
-                        {{!-- {{images fourPoint.roof.image 165 165}} --}}
-                    </ul>
-                    {{/if}}
-                    {{#if fourPoint.electrical.images}}
-                    <h1>Electrical</h1>
+        <p style="padding-left: 10px;">
+            <strong>Special Instructions:</strong> This sample 4-Point Inspection Form includes the minimum
+            data needed for Underwriting to properly evaluate a property application. While this specific
+            form is not required, any other inspection report submitted for consideration must include at
+            least this level of detail to be acceptable.
+        </p>
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>Photo Requirements</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            Photos must accompany each 4-Point Inspection Form. The minimum photo
+                            requirements include:
+                        </p>
+                        <ul>
+                            <li>Dwelling: Each side</li>
+                            <li>Roof: Each slope</li>
+                            <li>Plumbing: Water heater, under cabinet plumbing / drains, exposed valves</li>
+                            <li>Open main electrical panel and interiordoor</li>
+                            <li>Electrical box with the panel off</li>
+                            <li>All hazards or deficiencies</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>Inspector Requirements</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            To be accepted, all inspection forms must be completed, signed and dated by a
+                            verifiable State-licensed professional. Examples include:
+                        </p>
+                        <ul>
+                            <li>A general, residential, or building contractor</li>
+                            <li>A building code inspector</li>
+                            <li>A home inspector</li>
+                        </ul>
+                        <p>
+                            Note: A trade-specific, licensed professional may sign off only on the
+                            inspection form section for their trade. (e.g., an electrician may sign off only
+                            on the electrical section of the form.)
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>Documenting the Condition of Each System</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            The State-licensed inspector is required to certify the condition of the roof,
+                            electrical, HVAC and plumbing systems. Acceptable Condition means that each
+                            system is working as intended and there are no visible hazards or deficiencies.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>Additional Comments or Observations</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            This section of the 4-Point Inspection Form must be completed with full
+                            details/descriptions if any of the following are noted on the inspection:
+                        </p>
+                        <ul>
+                            <li>Updates: Identify the types of updates, dates completed and by whom</li>
+                            <li>Any visible hazards or deficiencies</li>
+                            <li>Any system determined not to be in good working order</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <h2>Note to All Agents</h2>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <p>
+                            The writing agent must review each 4-Point Inspection Form before it is
+                            submitted with an application for coverage. It is the agent’s responsibility to
+                            ensure that all rules and requirements are met before the application is bound.
+                            Agents may not submit applications for properties with electrical, heating or
+                            plumbing systems not in good working order or with existing
+                            hazards/deficiencies.
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="page">
+        {{#if fourPoint.plumbing.images}}
+        <h1>Plumbing</h1>
 
-                    <ul class="images">
-                        {{#each fourPoint.electrical.images}}
-                        <li class="image">
-                            <img src="{{this.url}}" alt="">
-                        </li>
-                        {{/each}}
-                        {{!-- {{images fourPoint.roof.image 165 165}} --}}
-                    </ul>
-                    {{/if}}
-                    {{#if fourPoint.dwelling.images}}
-                    <h1>Dwelling</h1>
+        <ul class="images">
+            {{#each fourPoint.plumbing.images}}
+            <li class="image">
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+                {{image this.url 165 165}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+        {{#if fourPoint.hvac.images}}
+        <h1>Hvac</h1>
 
-                    <ul class="images">
-                        {{#each fourPoint.dwelling.images}}
-                        <li class="image">
-                            <img src="{{this.url}}" alt="">
-                        </li>
-                        {{/each}}
-                        {{!-- {{images fourPoint.roof.image 165 165}} --}}
-                    </ul>
-                    {{/if}}
-                    {{#if fourPoint.roof.images}}
-                    <h1>Roof</h1>
+        <ul class="images">
+            {{#each fourPoint.hvac.images}}
+            <li class="image">
+                {{image this.url 165 165}}
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+        {{#if fourPoint.electrical.images}}
+        <h1>Electrical</h1>
 
-                    <ul class="images">
-                        {{#each fourPoint.roof.images}}
-                        <li class="image">
-                            <img src="{{this.url}}" alt="">
-                        </li>
-                        {{/each}}
-                        {{!-- {{images fourPoint.roof.image 165 165}} --}}
-                    </ul>
-                    {{/if}}
-                    {{#if fourPoint.other.images}}
-                    <h1>Other</h1>
-                    <ul class="images">
-                        {{#each fourPoint.other.images}}
-                        <li class="image">
-                            <img src="{{this.url}}" alt="">
-                        </li>
-                        {{/each}}
-                        {{!-- {{images fourPoint.roof.image 165 165}} --}}
-                    </ul>
-                    {{/if}}
-                </section>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <ul class="images">
+            {{#each fourPoint.electrical.images}}
+            <li class="image">
+                {{image this.url 165 165}}
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+        {{#if fourPoint.dwelling.images}}
+        <h1>Dwelling</h1>
+
+        <ul class="images">
+            {{#each fourPoint.dwelling.images}}
+            <li class="image">
+                {{image this.url 165 165}}
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+        {{#if fourPoint.roof.images}}
+        <h1>Roof</h1>
+
+        <ul class="images">
+            {{#each fourPoint.roof.images}}
+            <li class="image">
+                {{image this.url 165 165}}
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+        {{#if fourPoint.other.images}}
+        <h1>Other</h1>
+        <ul class="images">
+            {{#each fourPoint.other.images}}
+            <li class="image">
+                {{image this.url 165 165}}
+                {{!-- <img src="{{this.url}}" alt=""> --}}
+            </li>
+            {{/each}}
+            {{!-- {{images fourPoint.roof.image 165 165}} --}}
+        </ul>
+        {{/if}}
+    </section>
+</body>

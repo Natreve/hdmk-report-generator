@@ -1,7 +1,10 @@
 window.addEventListener("load", async function () {
   const data = require("./data.json");
 
-  const template = require("./templates/doc.hbs");
+  const template = require("./templates/repair-request.hbs");
+  // const template = require("./templates/uniform-mitigation.hbs");
+  // const template = require("./templates/4-point.hbs");
+  // const template = require("./templates/wdir.hbs");
   const html = this.document.querySelector("html");
 
   html.innerHTML = template({ ...data, title: "Report" });
@@ -435,15 +438,15 @@ window.addEventListener("load", async function () {
   const pages = body.querySelectorAll("section");
   const doc = new Document();
 
-  await onImages();
+  // await onImages();
 
-  pages.forEach((page) => {
-    doc.addPage();
-    addContent(page, doc);
-  });
+  // pages.forEach((page) => {
+  //   doc.addPage();
+  //   addContent(page, doc);
+  // });
 
-  doc.render(body);
+  // doc.render(body);
 
-  window.onbeforeprint = () => addPageNumbers(doc.pageCount);
-  window.onafterprint = removePageNumbers;
+  // window.onbeforeprint = () => addPageNumbers(doc.pageCount);
+  // window.onafterprint = removePageNumbers;
 });
