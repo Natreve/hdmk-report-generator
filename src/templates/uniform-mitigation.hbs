@@ -1,973 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uniform Mitigation Verification Inspection Form</title>
+    <meta charset="utf-8">
+    <title>Wind Mitigation</title>
     <style>
-        :root {
-            --page-margin: 50px;
-            --page-width: 794px;
-            --page-height: 1123px;
-            --margin-top: 20px;
-            --pfont: 12px;
-            --header-top: 48px;
-            --footer: 40px;
-            --font-family: "Times New Roman", sans-serif;
+        @page {
+            margin: 0
         }
 
-        /* Box sizing rules */
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact !important;
+            /*Firefox*/
         }
 
-        /* Remove default margin and set font*/
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        figure,
-        blockquote,
-        dl,
-        dd {
+        body {
             margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .sheet,
+        .infinite-sheet {
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            page-break-after: always;
+        }
+
+
+
+        /** Paper sizes **/
+        body.A4 .sheet {
+            width: 210mm;
+            height: 296mm
+        }
+
+        body.A4 .infinite-sheet {
+            width: 210mm;
+            height: 100%;
+        }
+
+        body.A4.landscape .sheet {
+            width: 297mm;
+            height: 209mm
+        }
+
+        body.A4.landscape .infinite-sheet {
+            width: 297mm;
+            height: 100%;
+        }
+
+        .sheet.padding-5mm,
+        .infinite-sheet.padding-5mm {
+            padding: 4mm 10mm;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 3px;
+        }
+
+        /*h2,h3,h4{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }*/
+        /** For screen preview **/
+
+        .page-date {
+            font-size: 11.4pt;
+            text-align: right;
+            position: relative;
+            top: -20px;
+            padding-right: 49px;
+            font-family: Times New Roman;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+        }
+
+        @media screen {
+            body {
+                background: #e0e0e0
+            }
+
+            .sheet,
+            .infinite-sheet {
+                background: white;
+                box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+                margin: 5mm auto;
+            }
+        }
+
+        /** Fix for Chrome issue #273306 **/
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact !important;
+                /*Firefox*/
+            }
+
+            body.A4.landscape {
+                width: 297mm
+            }
+
+            body.A4,
+            body.A5.landscape {
+                width: 210mm
+            }
+
+
+            .sheet,
+            .infinite-sheet {
+                page-break-after: always;
+            }
 
         }
 
-        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-        ul[role="list"],
-        ol[role="list"] {
-            list-style: none;
+        .fix {
+            width: 100%;
+            overflow: hidden;
         }
 
-        /* Set core root defaults */
-        html:focus-within {
-            scroll-behavior: smooth;
+        p {
+            margin: 0;
         }
 
-        /* Set core body defaults */
-
-        body,
-        html {
-            min-height: 100vh;
-            text-rendering: optimizeSpeed;
-            line-height: 1.5;
-            font-family: 'Times New Roman', Times, serif Arial, Helvetica, Times, serif, sans-serif;
-            font-size: var(--pfont);
+        h4 {
+            margin: 0;
         }
 
-        /* A elements that don't have a class get default styles */
-        a:not([class]) {
-            text-decoration-skip-ink: auto;
-        }
-
-        /* Make images easier to work with */
-        img,
-        picture {
+        img {
             max-width: 100%;
-            display: block;
-        }
-
-        /* Inherit fonts for inputs and buttons */
-        input,
-        button,
-        textarea,
-        select {
-            font: inherit;
-        }
-
-        /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-        @media (prefers-reduced-motion: reduce) {
-            html:focus-within {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
         }
 
         @page {
-            size: A4;
-            margin: 0 10mm;
-
-            @bottom-left {
-                content: counter(page) ' of ' counter(pages);
-            }
-
+            size: A4
         }
 
-        @media print {
-            thead {
-                display: table-header-group;
-            }
-
-            tfoot {
-                display: table-footer-group;
-            }
-
-        }
-
-        h1 {
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        table {
-            border-spacing: unset;
+        .images {
+            list-style: none;
             width: 100%;
+            margin: 0 auto;
+            padding: 0;
         }
 
-        table.bordered {
-            /* margin-top: 1em;*/
-            border: 1px solid;
-            border-spacing: 0;
-        }
-
-        table.bordered td {
-            padding: 2px 6.5px;
-            border: 1px solid;
-        }
-
-        table.rc {
-            /*display: flex;
-            justify-content: center;
-            width: 70%;*/
-        }
-
-        table.rc tr td * {
-            
-        }
-
-        table.rc tr:first-child td p {
-            font-weight: bold;
-            text-align: center;
-        }
-
-        header {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            justify-items: center;
-            align-items: center;
-        }
-
-        section {
-            page-break-after: always;
-            margin-top: var(--margin-top);
-            /*margin-top: calc(36px + var(--margin-top));*/
-        }
-
-        label {
-            display: flex;
-            align-content: center;
-        }
-
-        p,
-        span,
-        table {
-            font-size: var(--pfont);
+        .images .image {
+            display: inline-block;
+            padding: 10px 10px 0 0;
+            overflow: hidden;
         }
     </style>
 </head>
 
-<body>
-    <section>
-        <header>
-            <h1>Uniform Mitigation Verification Inspection Form</h1>
-            <p>Maintain a copy of this form and any documentation provided with the insurance policy</p>
-        </header>
+<body class="A4">
+    <section class="sheet padding-5mm" style="position:relative;">
+        <!-- Main Start -->
+        <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
 
-        <table class="bordered">
-            <tbody>
-                <tr>
-                    <td colspan="3">Inspection Date:</td>
-                </tr>
-                <tr>
-                    <td colspan="3"><strong>Owner Information</strong></td>
-                </tr>
-                <tr>
-                    <td colspan="2">Owner Name:</td>
-                    <td>Contact Person:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Address:</td>
-                    <td>Home Phone:</td>
-                </tr>
-                <tr>
-                    <td>City:</td>
-                    <td>Zip:</td>
-                    <td>Work Phone:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">County:</td>
-                    <td>Cell Phone:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Insurance Company:</td>
-                    <td>Policy #:</td>
-                </tr>
-                <tr>
-                    <td>Year of Home:</td>
-                    <td># of Stories:</td>
-                    <td>Email:</td>
-                </tr>
-            </tbody>
-        </table>
 
-        <p style="padding-top: 9px;">
-            <strong>
+            <div class="fix" style="text-align:center;margin-top:10px;font-family: serif;">
+                <div style="font-size:24px;font-weight:bold;">Uniform Mitigation Verification Inspection Form</div>
+                <div style="font-size:12pt;">Maintain a copy of this form and any documentation provided with the
+                    insurance policy</div>
+            </div>
+
+
+            <!-- Table -->
+            <div class="fix box" style="margin-top:10px;">
+                <table border="1" style="width:100%;">
+                    <tr>
+                        <td colspan="3">Inspection Date: {{#date inspection.date.started}}{{/date}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3"><b>Owner Information: </b></td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Owner Name: {{inspection.client.name}}</td>
+                        <td>Contact Person:</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Address: {{inspection.address.street}}</td>
+                        <td>Home Phone: </td>
+                    </tr>
+                    <tr>
+                        <td>City: {{inspection.address.city}}</td>
+                        <td>Zip: {{inspection.address.zipcode}}</td>
+                        <td>Work Phone: </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">County: </td>
+
+                        <td>Cell Phone: {{inspection.client.contact.phone}}</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Insurance Company: </td>
+                        <td>Policy #: </td>
+                    </tr>
+
+                    <tr>
+                        <td>Year of Home: {{windmit.homeYear}}</td>
+                        <td># of Stories: {{windmit.stories}}</td>
+                        <td>Email: {{inspection.client.contact.email}}</td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="fix bold" style="margin-top:10px;font-weight:bold;">
                 NOTE: Any documentation used in validating the compliance or existence of each construction or
-                mitigation
-                attribute must accompany this form. At least one photograph must accompany this form to validate each
-                attribute marked in questions 3
-                though 7. The insurer may ask additional questions regarding the mitigated feature(s) verified on this
-                form.
-            </strong>
-        </p>
+                mitigation attribute must accompany this form. At least one photograph must accompany this form to
+                validate each attribute marked in questions 3 though 7. The insurer may ask additional questions
+                regarding the mitigated feature(s) verified on this form.
+            </div>
 
-        <p>
-            1. <strong> <u>Building Code:</u></strong> Was the structure built in compliance with the Florida Building
-            Code
-            (FBC 2001 or later) OR for homes located in the HVHZ (Miami-Dade or Broward counties), South Florida
-            Building
-            Code (SFBC-94)?
-        </p>
+            <!-- box -->
+            <div class="fix box" style="margin-top:5px;">
+                <div style="font-weight:bold;float:left;width:3%;">1.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Building Code:</b> Was the structure built
+                        in compliance with the Florida Building Code (FBC 2001 or later) OR for homes located in the
+                        HVHZ (Miami-Dade or Broward counties), South Florida Building Code (SFBC-94)?</div>
 
-        <label>
-            <input type="checkbox" />
-            <p>A. Built in compliance with the FBC: Year Built _________. For homes built in 2002/2003 provide a permit
-                application with a date after 3/1/2002: Building Permit Application Date (MM/DD/YYYY) ____/____/________
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>B. For the HVHZ Only: Built in compliance with the SFBC-94: Year Built ______. For homes built in 1994,
-                1995,
-                and 1996 provide a permit application with a date after 9/1/1994: Building Permit Application Date
-                (MM/DD/YYYY) ___/___/______</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>C. Unknown or does not meet the requirements of Answer “A” or “B”</p>
-        </label>
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.1a}}</div>
+                        <div style="float:left;width:96%;"> A. Built in compliance with the FBC: Year Built <span
+                                style="border-bottom:1px solid #000;width:50px;display: inline-block;">{{windmit.1a1}}
+                            </span>.
+                            For homes built in 2002/2003 provide a permit application with a date after 3/1/2002:
+                            Building Permit Application Date (MM/DD/YYYY)
+                            <span style="border-bottom:1px solid #000;display:inline-block;">{{#date
+                                windmit.1a2}}{{/date}}</span>
+                            {{!-- <span
+                                style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                style="border-bottom:1px solid #000;width:44px;display:inline-block;"></span> --}}
+                        </div>
+                    </div>
 
-        <p>
-            2.<strong> <u>Roof Covering:</u></strong> Select all roof covering types in use. Provide the permit
-            application
-            date OR FBC/MDC Product
-            Approval number OR Year of Original Installation/Replacement OR indicate that no information was available
-            to
-            verify compliance for each roof
-            covering identified.
-        </p>
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.1b}}</div>
+                        <div style="float:left;width:96%;"> B. For the HVHZ Only: Built in compliance with the SFBC-94:
+                            Year Built <span
+                                style="border-bottom:1px solid #000;width:50px;display: inline-block;">{{windmit.1b1}}</span>.
+                            For homes built in 1994, 1995, and 1996 provide a permit application with a date after
+                            9/1/1994: Building Permit Application Date (MM/DD/YYY)
 
-        <table class="rc">
-            <tbody>
-                <tr>
-                    <td>
-                        <p>2.1 Roof Covering Type:</p>
-                    </td>
-                    <td>
-                        <p>Permit Application Date</p>
-                    </td>
-                    <td>
-                        <p>FBC/MDC Product Approval #</p>
-                    </td>
-                    <td>
-                        <p>Year of Original <br> Installation/Replacement</p>
-                    </td>
-                    <td>
-                        <p>No Information Provided <br> for Compliance</p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" />
-                            <p>1. Asphalt/Fiberglass Shingle</p>
-                        </label>
-                    </td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <input type="checkbox" />
-                            <p>2. Concrete/Clay Tile</p>
-                        </label></td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <input type="checkbox" />
-                            <p>3. Metal</p>
-                        </label></td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <input type="checkbox" />
-                            <p>4. Built Up</p>
-                        </label></td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <input type="checkbox" />
-                            <p>5. Membrane</p>
-                        </label></td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-                <tr>
-                    <td><label>
-                            <input type="checkbox" />
-                            <p>6. Other______________________</p>
-                        </label></td>
-                    <td>____/____/_______</td>
-                    <td></td>
-                    <td></td>
-                    <td> <input type="checkbox" /></td>
-                </tr>
-            </tbody>
-        </table>
-        <label>
-            <input type="checkbox" />
-            <p>A. All roof coverings listed above meet the FBC with a FBC or Miami-Dade Product Approval listing current
-                at
-                time of installation OR have a roofing permit application date on or after 3/1/02 OR the roof is
-                original
-                and built in 2004 or later.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>B. All roof coverings have a Miami-Dade Product Approval listing current at time of installation OR (for
-                the
-                HVHZ only) a roofing permit application after 9/1/1994 and before 3/1/2002 OR the roof is original and
-                built
-                in 1997 or later.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>C. One or more roof coverings do not meet the requirements of Answer “A” or “B”.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>D. No roof coverings meet the requirements of Answer “A” or “B”.</p>
-        </label>
-        <p>
-            3. <strong><u>Roof Deck Attachment:</u></strong> What is the <strong><u>weakest</u></strong> form of roof
-            deck
-            attachment?
-        </p>
-        <label>
-            <input type="checkbox" />
-            <p>A. Plywood/Oriented strand board (OSB) roof sheathing attached to the roof truss/rafter (spaced a maximum
-                of
-                24” inches o.c.) by staples or 6d nails spaced at 6” along the edge and 12” in the field. -OR- Batten
-                decking supporting wood shakes or wood shingles. -OR- Any system of screws, nails, adhesives, other deck
-                fastening system or truss/rafter spacing that has an equivalent mean uplift less than that required for
-                Options B or C below.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>B. Plywood/OSB roof sheathing with a minimum thickness of 7/16”inch attached to the roof truss/rafter
-                (spaced
-                a maximum of 24”inches o.c.) by 8d common nails spaced a maximum of 12” inches in the field.-OR- Any
-                system
-                of screws, nails, adhesives, other deck fastening system or truss/rafter spacing that is shown to have
-                an
-                equivalent or greater resistance 8d nails spaced a maximum of 12 inches in the field or has a mean
-                uplift
-                resistance of at least 103 psf.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>C. Plywood/OSB roof sheathing with a minimum thickness of 7/16”inch attached to the roof truss/rafter
-                (spaced
-                a maximum of 24”inches o.c.) by 8d common nails spaced a maximum of 6” inches in the field. -OR-
-                Dimensional
-                lumber/Tongue & Groove decking with a minimum of 2 nails per board (or 1 nail per board if each board is
-                equal to or less than 6 inches in width). -ORAny system of screws, nails, adhesives, other deck
-                fastening
-                system or truss/rafter spacing that is shown to have an equivalent</p>
-        </label>
+                            <span style="border-bottom:1px solid #000;display:inline-block;">{{#date
+                                windmit.1b2}}{{/date}}</span>
+                            {{!-- <span
+                                style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                style="border-bottom:1px solid #000;width:44px;display:inline-block;"></span> --}}
+                        </div>
+                    </div>
 
-        <p>
-            <strong>Inspectors Initials</strong> __________
-            <strong>Property Address</strong> __________________________________________________________________
-        </p>
-        <p>
-            <strong>
-                *This verification form is valid for up to five (5) years provided no material changes have been made to
-                the
-                structure. OIR-B1-1802 (Rev. 01/12) Adopted by Rule 69O-170.0155
-            </strong>
-        </p>
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.1c}}</div>
+                        <div style="float:left;width:96%;">C. Unknown or does not meet the requirements of Answer “A” or
+                            “B”</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- box -->
+            <div class="fix box" style="margin-top:5px;">
+                <div style="font-weight:bold;float:left;width:3%;">2.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Roof Covering:</b> Select all roof
+                        covering types in use. Provide the permit application date OR FBC/MDC Product Approval number OR
+                        Year of Original Installation/Replacement OR indicate that no information was available to
+                        verify compliance for each roof covering identified.</div>
+
+                    <div class="fix single-check" style="margin-left: 11px">
+                        <table style="font-size:10px;">
+                            <tr>
+                                <th>2.1 Roof Covering Type:</th>
+                                <th>Permit Application Date</th>
+                                <th>FBC or MDC<br />Product Approval#</th>
+                                <th>Year of Original Installation or Replaceme</th>
+                                <th>No Informatio Provided for Compliance</th>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    {{checkbox windmit.[2.1a]}} 1. Asphalt/Fiberglass Shingle
+                                </td>
+
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.1b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.1c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.1d]}}</span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.1e]}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>{{checkbox windmit.[2.2a]}} 2. Concrete/Clay </td>
+
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.2b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.2c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.2d]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.2e]}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>{{checkbox windmit.[2.3a]}} 3. Metal </td>
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.3b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.3c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.3d]}}</span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.3e]}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>{{checkbox windmit.[2.4a]}} 4. Built up</td>
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.4b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.4c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.4d]}}</span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.4e]}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>{{checkbox windmit.[2.5a]}} 5. Membrane</td>
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.5b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.5c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.5d]}}</span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.5e]}}</td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    {{checkbox windmit.[2.6a]}} 6. Other <span
+                                        style="border-bottom:1px solid #000;width:50px;display:inline-block;">
+                                    </span>
+                                </td>
+
+                                <td style="text-align: center;">
+                                    <span style="border-bottom:1px solid #000;width:60%;display:inline-block;">{{#date
+                                        windmit.[2.6b]}}{{/date}}</span>
+                                    {{!-- <span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>/<span
+                                        style="border-bottom:1px solid #000;width:25px;display:inline-block;"></span>
+                                    --}}
+                                </td>
+
+                                <td style="text-align:center;">
+                                    <span style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.6c]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:20%;"><span
+                                        style="border-bottom:1px solid #000;width:45px;display:inline-block;">
+                                        {{windmit.[2.6d]}}
+                                    </span>
+                                </td>
+                                <td style="text-align:center;width:15%;">{{checkbox windmit.[2.6e]}}</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.2a}}</div>
+                        <div style="float:left;width:96%;">A. All roof coverings listed above meet the FBC with a FBC or
+                            Miami-Dade Product Approval listing current at time of installation OR have a roofing permit
+                            application date on or after 3/1/02 OR the roof is original and built in 2004 or later</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.2b}}</div>
+                        <div style="float:left;width:96%;">B. All roof coverings have a Miami-Dade Product Approval
+                            listing current at time of installation OR (for the HVHZ only) a roofing permit application
+                            after 9/1/1994 and before 3/1/2002 OR the roof is original and built in 1997 or later.</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.2c}}</div>
+                        <div style="float:left;width:96%;">C. One or more roof coverings do not meet the requirements of
+                            Answer “A” or "B"</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.2d}}</div>
+                        <div style="float:left;width:96%;">D. No roof coverings meet the requirements of Answer "A" or
+                            "B"</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <!-- box -->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">3.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Roof Deck Attachment:</b> What is the
+                        <b>weakest</b> form of roof deck attachment?
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3a}}</div>
+                        <div style="float:left;width:96%;"> A. Plywood/Oriented strand board (OSB) roof sheathing
+                            attached to the roof truss/rafter (spaced a maximum of 24” inches o.c.) by staples or 6d
+                            nails spaced at 6” along the edge and 12” in the field. -OR- Batten decking supporting wood
+                            shakes or wood shingles. -OR- Any system of screws, nails, adhesives, other deck fastening
+                            system or truss/rafter spacing that has an equivalent mean uplift less than that required
+                            for Options B or C below.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3b}}</div>
+                        <div style="float:left;width:96%;"> B. Plywood/OSB roof sheathing with a minimum thickness of
+                            7/16”inch attached to the roof truss/rafter (spaced a maximum of 24”inches o.c.) by 8d
+                            common nails spaced a maximum of 12” inches in the field.-OR- Any system of screws, nails,
+                            adhesives, other deck fastening system or truss/rafter spacing that is shown to have an
+                            equivalent or greater resistance 8d nails spaced a maximum of 12 inches in the field or has
+                            a mean uplift resistance of at least 103 psf.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3c}}</div>
+                        <div style="float:left;width:96%;"> C. Plywood/OSB roof sheathing with a minimum thickness of
+                            7/16”inch attached to the roof truss/rafter (spaced a maximum of 24”inches o.c.) by 8d
+                            common nails spaced a maximum of 6” inches in the field. -OR- Dimensional lumber/Tongue &
+                            Groove decking with a minimum of 2 nails per board (or 1 nail per board if each board is
+                            equal to or less than 6 inches in width). -OR-Any system of screws, nails, adhesives, other
+                            deck fastening system or truss/rafter spacing that is shown to have an
+                            equivalent or greater resistance than 8d common nails spaced a maximum of 6 inches in the
+                            field or has a mean uplift resistance of at least 182 psf.
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="footer">
+                <div class="fix box" style="margin-top:10px;font-weight:bold;">
+                    <div style="width:100%;float:left;">
+                        <div style="width:35%;float: left;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Inspectors Initials :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:48%;">&nbsp;
+                                {{inspector.fname.[0]}} {{inspector.lname.[0]}}
+                            </div>
+                        </div>
+                        <div style="width:64%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Property Address :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                {{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}}
+                                {{inspection.address.zipcode}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fix box"
+                    style="margin-top:15px;font-weight:bold; font-size: 9.96pt;padding-right: 30px;font-family:Times New Roman Bold;">
+                    *This verification form is valid for up to five (5) years provided no material changes have been
+                    made to the structure or inaccuracies found on the form.<br /> OIR-B1-1802 (Rev. 01/12) Adopted by
+                    Rule 69O-170.0155 </div>
+                <div class="page-date">Page 1 of 4</div>
+
+            </div>
+
+
+
+        </div><!-- Main End -->
+    </section>
+    <!-- Page 2 -->
+    <section class="sheet padding-5mm" style="position:relative;">
+        <!-- Main Start -->
+        <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
+
+
+
+            <!-- box -->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">&nbsp;</div>
+                <div style="float:left;width:97%;">
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3d}}</div>
+                        <div style="float:left;width:96%;"> D. Reinforced Concrete Roof Deck.</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        {{#if (eq windmit.3e "")}}
+                        <div style="font-weight:bold;float:left;width:4%;">
+                            <input type="checkbox">
+                        </div>
+
+                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span> E. Other : </span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                            &nbsp;</div>
+                        </div>
+                        {{else}}
+                        <div style="font-weight:bold;float:left;width:4%;">
+                            <input type="checkbox" checked>
+                        </div>
+
+                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
+
+
+                            <div style="font-size: 13px;float:left;"><span> E. Other : </span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                &nbsp;{{windmit.3e}}
+                            </div>
+                        </div>
+
+                        {{/if}}
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3f}}</div>
+                        <div style="float:left;width:96%;"> F. Unknown or unidentified.</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.3g}}</div>
+                        <div style="float:left;width:96%;"> G. No attic access.</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- box 4-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">4.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;"> Roof to Wall Attachment:</b> What is the
+                        <b>WEAKEST</b> roof to wall connection? (Do not include attachment of hip/valley jacks within 5
+                        feet of the inside or outside corner of the roof in determination of WEAKEST type)
+                    </div>
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4a}}</div>
+                        <div style="float:left;width:96%;"> A. Toe Nails
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4a1}}</div>
+                        <div style="float:left;width:96%;"> Truss/rafter anchored to top plate of wall using nails
+                            driven at an angle through the truss/rafter and attached to the top plate of the wall, or
+                        </div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4a2}}</div>
+                        <div style="float:left;width:96%;"> Metal connectors that do not meet the minimal conditions or
+                            requirements of B, C, or D.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;">Minimal conditions to qualify for categories B, C, or D. All
+                            visible metal connectors are:</div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4a3}}</div>
+                        <div style="float:left;width:96%;"> Secured to truss/rafter with a minimum of three (3) nail,
+                            <b>and</b>
+                        </div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4a4}}</div>
+                        <div style="float:left;width:96%;"> Attached to the wall top plate of the wall framing, or
+                            embedded in the bond beam, with less than a ½" gap from the blocking or truss/rafter
+                            <b>and</b> blocked no more than 1.5” of the truss/rafter, <b>and</b> free of visible severe
+                            corrosion.
+                        </div>
+                    </div>
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4b}}</div>
+                        <div style="float:left;width:96%;"> B. Clips
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4b1}}</div>
+                        <div style="float:left;width:96%;"> Metal connectors that do not wrap over the top of the
+                            truss/rafter, <b>or</b>
+                        </div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4b2}}</div>
+                        <div style="float:left;width:96%;"> Metal connectors with a minimum of 1 strap that wraps over
+                            the top of the truss/rafter and does not meet the nail position requirements of C or D, but
+                            is secured with a minimum of 3 nails.
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4c}}</div>
+                        <div style="float:left;width:96%;"> C. Single Wraps
+                        </div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="width:96%;"> Metal connectors consisting of a single strap that wraps over the top
+                            of the truss/rafter and is secured with a minimum of 2 nails on the front side and a minimum
+                            of 1 nail on the opposing side.
+                        </div>
+                    </div>
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4d}}</div>
+                        <div style="float:left;width:96%;"> D. Double Wraps
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4d1}}</div>
+                        <div style="float:left;width:96%;"> Metal Connectors consisting of 2 separate straps that are
+                            attached to the wall frame, or embedded in the bond beam, on either side of the truss/rafter
+                            where each strap wraps over the top of the truss/rafter and is secured with a minimum of 2
+                            nails on the front side, and a minimum of 1 nail on the opposing side, <b>or</b>
+                        </div>
+                    </div>
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4d2}}</div>
+                        <div style="float:left;width:96%;"> Metal connectors consisting of a single strap that wraps
+                            over the top of the truss/rafter, is secured to the wall on both sides, and is secured to
+                            the top plate with a minimum of three nails on each side.
+                        </div>
+                    </div>
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4e}}</div>
+                        <div style="float:left;width:96%;"> E. Structural Anchor bolts structurally connected or
+                            reinforced concrete roof.</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        {{#if (eq windmit.4f "")}}
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
+
+                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span> F. Other : </span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                &nbsp;{{windmit.4f}}
+                            </div>
+                        </div>
+                        {{else}}
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+
+                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span> F. Other : </span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                &nbsp;{{windmit.4f}}
+                            </div>
+                        </div>
+                        {{/if}}
+
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4g}}</div>
+                        <div style="float:left;width:96%;"> G. Unknown or unidentified</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4h}}</div>
+                        <div style="float:left;width:96%;"> H. No attic access</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Box 5 -->
+            <div class="fix box" style="margin-top:25px;">
+                <div style="font-weight:bold;float:left;width:3%;">5.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Roof Geometry:</b> What is the roof shape?
+                        (Do not consider roofs of porches or carports that are attached only to the fascia or wall of
+                        the host structure over unenclosed space in the determination of roof perimeter or roof area for
+                        roof geometry classification)</div>
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:20%;">{{checkbox windmit.5a}} A. Hip Roof </div>
+
+                        <div style="width:80%;float: right;display: inline-block;overflow:hidden;">Hip roof with no
+                            other roof shapes greater than 10% of the total roof system perimeter.<br />Total length of
+                            non-hip features:<span
+                                style="border-bottom:1px solid #000;width:55px;margin-left:5px;margin-right:5px;display:inline-block;">{{windmit.5a1}}</span>
+                            feet; Total roof system perimeter: <span
+                                style="border-bottom:1px solid #000;margin-left:5px;margin-right:5px;width:55px;display:inline-block;">{{windmit.5a2}}</span>
+                            feet.
+                        </div>
+                    </div>
+
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:20%;">{{checkbox windmit.5b}}B. Flat Roof </div>
+
+                        <div style="width:80%;float: right;display: inline-block;overflow:hidden;">Roof on a building
+                            with 5 or more units where at least 90% of the main roof area has a roof slope of less than
+                            2:12. Roof area with slope less than 2:12 <span
+                                style="border-bottom:1px solid #000;margin-left:5px;margin-right:5px;width:55px;display:inline-block;">{{windmit.5b1}}</span>
+                            sq ft; Total roof area <span
+                                style="border-bottom:1px solid #000;margin-left:5px;margin-right:5px;width:55px;display:inline-block;">{{windmit.5b2}}</span>
+                            sq ft
+
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:20%;">{{checkbox windmit.5c}}C. Other Roof </div>
+                        <div style="width:80%;float: right;display: inline-block;overflow:hidden;">Any roof that does
+                            not qualify as either (A) or (B) above.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Box 6 -->
+            <div class="fix box" style="margin-top:25px;">
+                <div style="font-weight:bold;float:left;width:3%;">6.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Secondary Water Resistance (SWR):</b>
+                        (standard underlayments or hot-mopped felts do not qualify as an SWR)</div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.6a}}</div>
+                        <div style="float:left;width:96%;"> A. SWR (also called Sealed Roof Deck) Self-adhering polymer
+                            modified-bitumen roofing underlayment applied directly to the sheathing or foam adhesive SWR
+                            barrier (not foamed-on insulation) applied as a supplemental means to protect the
+                            dwelling from water intrusion in the event of roof covering loss.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.6b}}</div>
+                        <div style="float:left;width:96%;"> B. No SWR.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.6c}}</div>
+                        <div style="float:left;width:96%;"> C. Unknown or undetermined.
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="footer">
+                <div class="fix box" style="margin-top:10px;font-weight:bold;">
+                    <div style="width:100%;float:left;">
+                        <div style="width:35%;float: left;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Inspectors Initials :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:48%;">&nbsp;
+                                {{inspector.fname.[0]}} {{inspector.lname.[0]}}
+                            </div>
+                        </div>
+                        <div style="width:64%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Property Address :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                {{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}}
+                                {{inspection.address.zipcode}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fix box"
+                    style="margin-top:15px;font-weight:bold; font-size: 9.96pt;padding-right: 30px;font-family:Times New Roman Bold;">
+                    *This verification form is valid for up to five (5) years provided no material changes have been
+                    made to the structure or inaccuracies found on the form.<br /> OIR-B1-1802 (Rev. 01/12) Adopted by
+                    Rule 69O-170.0155 </div>
+                <div class="page-date">Page 2 of 4</div>
+
+            </div>
+
+
+
+
+        </div><!-- Main End -->
+    </section>
+    <!-- Page 3 -->
+    <section class="sheet padding-5mm" style="position:relative;">
+        <!-- Main Start -->
+        <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
+
+            <!-- box 7-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">7.</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">Opening Protection:</b> What is the <b
+                            style="text-decoration:underline;">weakest</b> form of wind borne debris protection
+                        installed on the structure? <b>First</b>, use the table to
+                        determine the weakest form of protection for each category of opening. <b>Second,</b> (a) check
+                        one answer below (A, B, C, N, or X)
+                        based upon the lowest protection level for ALL Glazed openings <b>and</b> (b) check the
+                        protection level for all Non-Glazed openings (.1,
+                        .2, or .3) as applicable.</div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="fix box" style="margin-top:10px;border:3px solid #000;padding: 0px;overflow: hidden;">
+
+                <div class="f1" style="float:left;width: 49%;">
+                    <div style="padding: 5px;">
+                        <div style="font-size:18px;font-weight:bold;margin-bottom: 6px;">Opening Protection Level Chart
+                        </div>
+                        Place an “X” in each row to identify all forms of protection in use for each
+                        opening type. Check only one answer below (A thru X), based on the weakest
+                        form of protection (lowest row) for any of the Glazed openings and indicate
+                        the weakest form of protection (lowest row) for Non‐Glazed openings.
+                    </div>
+                </div>
+
+                <div class="f1"
+                    style="float:left;width: 29%;text-align:center;border-left: 3px solid #000;border-right: 3px solid #000;font-size: 10px;/* margin-right: 2px; */">
+                    <div
+                        style="text-align:center;padding: 0px 0;border-bottom: 1px solid #000;/* margin-bottom: 8px; */font-size: 12px;font-weight: bold;padding-top: 7px;padding-bottom: 8px;">
+                        Glazed Openings</div>
+                    <div class="fix" style="font-weight: bold;/* height: 92px; */">
+                        <div
+                            style="float:left;width:25%;border-right: 1px solid #000;padding: 2px;padding-top: 17px;height: 80px;">
+                            Windows or Entry Doors</div>
+                        <div
+                            style="float:left;width:25%;border-right: 1px solid #000;padding: 5px;padding-top: 24px;height: 80px;">
+                            Garage Doors</div>
+                        <div
+                            style="float:left;width:25%;border-right: 1px solid #000;padding: 5px;padding-top: 30px;height: 80px;">
+                            Skylights </div>
+                        <div style="float:left;width:25%;padding: 5px;padding-top: 25px;height: 80px;">Glass Block</div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="f1"
+                    style="float:left;width: 22%;text-align:center;/* padding-left: 2%; *//* border-left: 3px solid #000; */">
+
+
+                    <div
+                        style="text-align:center;padding: 0px 0;border-bottom: 1px solid #000;/* margin-bottom: 8px; */font-size: 12px;font-weight: bold;padding-top: 7px;padding-bottom: 8px;">
+                        Non-Glazed Openings</div>
+                    <div class="fix" style="font-weight: bold;height: 80px;">
+                        <div
+                            style="float:left;width: 53%;border-right: 1px solid #000;padding: 7px;padding-top: 17px;height: 80px;">
+                            Entry Doors</div>
+                        <div style="float:left;width: 47%;padding: 5px;padding-top: 17px;">Garage Doors</div>
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+            <!-- Table -->
+            <div class="fix box" style="padding: 0px;font-size: 10px;">
+                <table border="1" style="width:100%;">
+                    <tbody>
+                        <!-- row1 -->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">N/A</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Not Applicable- there
+                                are no openings of this type on the structure</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gna1] "on")}} X {{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gna2] "on")}} X {{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gna3] "on")}} X {{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7gna4] "on")}} X {{else}}{{/if}}</td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">{{#if (eq windmit.[7gnn1] "on")}} X
+                                {{else}}{{/if}}</td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">{{#if (eq windmit.[7gnn2] "on")}} X
+                                {{else}}{{/if}}</td>
+                        </tr>
+
+                        <!-- row 2 -->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">A</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Verified cyclic pressure
+                                & large missile (9‐lb for windows doors/4.5 lb for skylights)</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7ga1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7ga2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7ga3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">{{#if (eq windmit.[7ga4]
+                                "on")}}X{{else}}{{/if}}</td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">{{#if (eq windmit.[7na1]
+                                "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">{{#if (eq windmit.[7na2]
+                                "on")}}X{{else}}{{/if}}</td>
+                        </tr>
+
+                        <!-- row 3 -->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">B</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Verified cyclic pressure
+                                & large missile (4-8 lb for windows doors/2 lb for skylights)</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gb1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gb2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gb3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">{{#if (eq windmit.[7gb4]
+                                "on")}}X{{else}}{{/if}}</td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nb1] "on")}}X{{else}}{{/if}}
+                            </td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nb2] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+                        <!-- row 4 -->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">C</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Verified plywood/OSB
+                                meeting Table 1609.1.2 of the FBC 2007</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gc1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gc2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gc3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7gc4] "on")}}X{{else}}{{/if}}
+                            </td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nc1] "on")}}X{{else}}{{/if}}
+                            </td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nc2] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+                        <!-- row 5-->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">D</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Verified Non-Glazed
+                                Entry or Garage doors indicating compliance with ASTM E 330, ANSI/DASMA 108, or PA/TAS
+                                202 for wind pressure resistance</td>
+
+
+                            <td style="width: 7.10%;background:#e0e0e0;"></td>
+                            <td style="width: 7.10%;background:#e0e0e0;"></td>
+                            <td style="width: 7.10%;background:#e0e0e0;"></td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;background:#e0e0e0;"></td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nd1] "on")}}X{{else}}{{/if}}
+                            </td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nd2] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+                        <!-- row 6-->
+                        <tr>
+                            <td rowspan="2" align="center" width="5%" style="border-left: 3px solid #000;">N</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Opening Protection
+                                products that appear to be A or B but are not verified </td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gn1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gn2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gn3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">{{#if (eq windmit.[7gn4]
+                                "on")}}X{{else}}{{/if}}</td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nn1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nn2] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+                        <!-- row 7-->
+                        <tr>
+                            <!-- <td rowspan="2" align="center" width="5%" style="border-left: 3px solid #000;">N</td> -->
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">Other protective
+                                coverings that cannot be identified as A, B, or C</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gnn1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gnn2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gnn3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7gnn4] "on")}}X{{else}}{{/if}}
+                            </td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nnn1] "on")}}X{{else}}{{/if}}
+                            </td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nnn1] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+
+                        <!-- row 8 -->
+                        <tr>
+                            <td align="center" width="5%" style="border-left: 3px solid #000;">X</td>
+                            <td width="45%" style="border-right: 3px solid #000;width: 44.33%;">No Windborne Debris
+                                Protection</td>
+
+
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gx1] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gx2] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.10%;">{{#if (eq windmit.[7gx3] "on")}}X{{else}}{{/if}}</td>
+                            <td style="width: 7.1%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7gx4] "on")}}X{{else}}{{/if}}
+                            </td>
+
+                            <td style="width: 11.70%;border-left: 3px solid #000;">
+                                {{#if (eq windmit.[7nx1] "on")}}X{{else}}{{/if}}
+                            </td>
+                            <td style="width: 12.33%;border-right: 3px solid #000;">
+                                {{#if (eq windmit.[7nx2] "on")}}X{{else}}{{/if}}
+                            </td>
+                        </tr>
+
+
+
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
+
+
+
+
+
+
+            <!-- box 7 - A-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">{{checkbox windmit.7a}}</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">A. Exterior Openings Cyclic Pressure and
+                            9-lb Large Missile (4.5 lb for skylights only)</b> All Glazed openings are protected at a
+                        minimum, with impact resistant coverings or products listed as wind borne debris protection
+                        devices in the product approval system of the State of Florida or Miami-Dade County and meet the
+                        requirements of one of the following for “Cyclic Pressure and Large Missile Impact” (Level A in
+                        the table above).</div>
+
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;line-height:20px;">
+                        <div><span style="margin-right:10px;">●</span>Miami-Dade County PA 201, 202, <b
+                                style="text-decoration:underline;">and</b> 203</div>
+                        <div><span style="margin-right:10px;">●</span>Florida Building Code Testing Application Standard
+                            (TAS) 201, 202, <b style="text-decoration:underline;">and</b> 203</div>
+                        <div><span style="margin-right:10px;">●</span>American Society for Testing and Materials (ASTM)
+                            E 1886 <b style="text-decoration:underline;">and</b> ASTM E 1996</div>
+                        <div><span style="margin-right:10px;">●</span>Southern Standards Technical Document (SSTD) 12
+                        </div>
+                        <div><span style="margin-right:10px;">●</span>For Skylights Only: ASTM E 1886 <b
+                                style="text-decoration:underline;">and</b> ASTM E 1996</div>
+                        <div><span style="margin-right:10px;">●</span>For Garage Doors Only: ANSI/DASMA 115</div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7a1}}</div>
+                        <div style="float:left;width:96%;"> A.1 All Non-Glazed openings classified as A in the table
+                            above, or no Non-Glazed openings exist
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7a2}}</div>
+                        <div style="float:left;width:96%;"> A.2 One or More Non-Glazed openings classified as Level D in
+                            the table above, and no Non-Glazed openings classified as Level B, C, N, or X in the table
+                            above.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7a3}}</div>
+                        <div style="float:left;width:96%;"> A.3 One or More Non-Glazed Openings is classified as Level
+                            B, C, N, or X in the table above
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- box 7 - B-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">{{checkbox windmit.7b}}</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">B. Exterior Opening Protection- Cyclic
+                            Pressure and 4 to 8-lb Large Missile (2-4.5 lb for skylights only)</b> All Glazed openings
+                        are protected, at a minimum, with impact resistant coverings or products listed as windborne
+                        debris protection devices in the product approval system of the State of Florida or Miami-Dade
+                        County and meet the requirements of one of the following for “Cyclic Pressure and Large Missile
+                        Impact” (Level B in the table above)</div>
+
+                    <div class="fix single-check" style="margin-top:5px;margin-left:50px;line-height:20px;">
+                        <div><span style="margin-right:10px;">●</span>ASTM E 1886 <b
+                                style="text-decoration:underline;">and</b> ASTM E 1996 (Large Missile – 4.5lb.)</div>
+                        <div><span style="margin-right:10px;">●</span>SSTD 12 (Large Missile – 4 lb. to 8 lb.</div>
+                        <div><span style="margin-right:10px;">●</span>For Skylights Only: ASTM E 1886 <b
+                                style="text-decoration:underline;">and</b> ASTM E 1996 (Large Missile - 2 to 4.5 lb.)
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7b1}}</div>
+                        <div style="float:left;width:96%;">B.1 All Non-Glazed openings classified as A or B in the table
+                            above, or no Non-Glazed openings exists.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7b2}}</div>
+                        <div style="float:left;width:96%;">B.2 One or More Non-Glazed openings classified as Level D in
+                            the table above, and no Non-Glazed openings classified as Level C, N, or X in the table
+                            above.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7b3}}</div>
+                        <div style="float:left;width:96%;">B.3 One or More Non-Glazed openings is classified as Level C,
+                            N, or X in the table above.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- box 7 -C-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">{{checkbox windmit.7c}}</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">C. Exterior Opening Protection- Wood
+                            Structural Panels meeting FBC 2007</b> All Glazed openings are covered with plywood/OSB
+                        meeting the requirements of Table 1609.1.2 of the FBC 2007 (Level C in the table above).</div>
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7c1}}</div>
+                        <div style="float:left;width:96%;">C.1 All Non-Glazed openings classified as A, B, or C in the
+                            table above, or no Non-Glazed openings exist.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7c2}}</div>
+                        <div style="float:left;width:96%;">C.2 One or More Non-Glazed openings classified as Level D in
+                            the table above, and no Non-Glazed openings classified as Level N or X in the table above
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7c3}}</div>
+                        <div style="float:left;width:96%;">C.3 One or More Non-Glazed openings is classified as Level N
+                            or X in the above.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="footer">
+                <div class="fix box" style="margin-top:10px;font-weight:bold;">
+                    <div style="width:100%;float:left;">
+                        <div style="width:35%;float: left;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Inspectors Initials :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:48%;">&nbsp;
+                                {{inspector.fname.[0]}} {{inspector.lname.[0]}}
+                            </div>
+                        </div>
+                        <div style="width:64%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Property Address :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                {{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}}
+                                {{inspection.address.zipcode}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fix box"
+                    style="margin-top:15px;font-weight:bold; font-size: 9.96pt;padding-right: 30px;font-family:Times New Roman Bold;">
+                    *This verification form is valid for up to five (5) years provided no material changes have been
+                    made to the structure or inaccuracies found on the form.<br /> OIR-B1-1802 (Rev. 01/12) Adopted by
+                    Rule 69O-170.0155 </div>
+                <div class="page-date">Page 3 of 4</div>
+
+            </div>
+
+
+
+
+        </div><!-- Main End -->
+    </section>
+    <!-- Page 4 -->
+    <section class="sheet padding-5mm" style="position:relative;">
+        <!-- Main Start -->
+        <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
+
+
+            <!-- box 7 -N-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">{{checkbox windmit.7n}}</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">N. Exterior Opening Protection (unverified
+                            shutter systems with no documentation)</b> All Glazed openings are protected with protective
+                        coverings not meeting the requirements of Answer “A”, “B”, or C” or systems that appear to meet
+                        Answer “A” or “B” with no documentation of compliance (Level N in the table above).</div>
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7n1}}</div>
+                        <div style="float:left;width:96%;">N.1 All Non-Glazed openings classified as Level A, B, C, or N
+                            in the table above, or no Non-Glazed openings exist
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7n2}}</div>
+                        <div style="float:left;width:96%;">N.2 One or More Non-Glazed openings classified as Level D in
+                            the table above, and no Non-Glazed openings classified as Level X in the table above
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.7n3}}</div>
+                        <div style="float:left;width:96%;">N.3 One or More Non-Glazed openings is classified as Level X
+                            in the table above
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- box 7 -X-->
+            <div class="fix box" style="margin-top:10px;">
+                <div style="font-weight:bold;float:left;width:3%;">{{checkbox windmit.7x}}</div>
+                <div style="float:left;width:97%;">
+                    <div class="single"><b style="text-decoration:underline;">X. None or Some Glazed Openings</b> One or
+                        more Glazed openings classified and Level X in the table above.</div>
+                </div>
+            </div>
+
+
+            <!-- Table -->
+            <div class="fix box" style="margin-top:10px;">
+                <table border="1" style="width:100%;">
+                    <tr>
+                        <td colspan="3" align="center" style="font-style:italic;">
+                            <div style="font-size:15px;font-weight:bold;">MITIGATION INSPECTIONS MUST BE CERTIFIED BY A
+                                QUALIFIED INSPECTOR.</div>
+                            <b>Section 627.711(2), Florida Statutes, provides a listing of individuals who may sign this
+                                form.</b>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Qualified Inspector Name: {{inspector.fname}} {{inspector.lname}}</td>
+                        <td>License Type: </td>
+                        <td>License or Certificate #: {{inspector.licence_number}}</td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">Inspection Company: HDMK Home Inspection and Pest Control</td>
+                        <td>Phone: {{inspector.phone}}</td>
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <!-- box 7 -N-->
+            <div class="fix box" style="margin-top:10px;">
+
+                <div style="width:100%;">
+                    <div class="single" style="font-size:18px;font-weight:bold;">Qualified Inspector – I hold an active
+                        license as a: (check one)</div>
+
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;"> Home inspector licensed under Section 468.8314, Florida
+                            Statutes who has completed the statutory number of hours of hurricane mitigation training
+                            approved by the Construction Industry Licensing Board and completion of a proficiency exam.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;">Building code inspector certified under Section 468.607,
+                            Florida Statutes.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;">General, building or residential contractor licensed under
+                            Section 489.111, Florida Statutes.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;">Professional engineer licensed under Section 471.015, Florida
+                            Statutes.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;">Professional architect licensed under Section 481.213,
+                            Florida Statutes.
+                        </div>
+                    </div>
+
+                    <div class="fix single-check" style="margin-top:5px;">
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="float:left;width:96%;">Any other individual or entity recognized by the insurer as
+                            possessing the necessary qualifications to properly complete a uniform mitigation
+                            verification form pursuant to Section 627.711(2), Florida Statutes.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <!-- box 7 -N-->
+            <div class="fix box" style="margin-top:10px;border:1px solid #000;padding:5px; font-weight:bold;">
+                <div style="font-size:12px;text-decoration:underline;">Individuals other than licensed contractors
+                    licensed under Section 489.111, Florida Statutes, or professional engineer licensed
+                    under Section 471.015, Florida Statutes, must inspect the structures personally and not through
+                    employees or other persons.
+                    Licensees under s.471.015 or s.489.111 may authorize a direct employee who possesses the requisite
+                    skill, knowledge, and
+                    experience to conduct a mitigation verification inspection.</div>
+
+
+
+                <div>
+                    <div style="display:inline-block;width:100%;margin-top:10px;">
+                        <div style="float: left;"><span style=" float: left;">I, </span></div>
+                        <div style="width:27%;float: left;margin-left:3px;margin-right:3px;">
+                            <div style="margin-top: 0px; margin-bottom: 0px;"><strong>{{inspector.fname}}
+                                    {{inspector.lname}}</strong></div>
+                            <div style="font-size:10px;border-top: solid 1px black;margin-top: 0px;text-align:center;">
+                                (print name)</div>
+                        </div>
+                        <div style="float: left;"><span style=" float: left;"> am a qualified inspector and I personally
+                                performed the inspection or (licensed </span></div>
+                    </div>
+
+                    <div style="display:inline-block;width:100%;margin-top:10px;">
+                        <div style="float: left;"><span style=" float: left;">contractors and professional engineers
+                                only) I had my employee </span></div>
+                        <div style="width:27%;float: left;margin-left:3px;margin-right:3px;">
+                            <div style="margin-top: 0px; margin-bottom: 0px;"><strong>&nbsp;</strong></div>
+                            <div style="font-size:10px;border-top: solid 1px black;margin-top: 0px;text-align:center;">
+                                (print name of inspector)</div>
+                        </div>
+                        <div style="float: left;"><span style=" float: left;"> perform the inspection </span></div>
+                    </div>
+
+                    <div> and I agree to be responsible for his/her work.</div>
+
+
+                    <div class="fix box" style="margin-top:10px;font-weight:bold;">
+                        <div style="width:100%;float:left;">
+                            <div
+                                style="width:63%;float: left;display: inline-block;overflow:hidden; position:relative; padding-top:20px">
+                                <div style="font-size: 13px;float:left;"><span>Qualified Inspector Signature:</span>
+                                </div>
+                                <img src="{{inspector.signature}}" width="100px" style="position:absolute; top:0px;">
+                                <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:56%;">
+                                    &nbsp; </div>
+                            </div>
+                            <div style="width:35%;float: right;display: inline-block;overflow:hidden; padding-top:20px">
+                                <div style="font-size: 13px;float:left;"><span>Date:</span></div>
+                                <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                    {{date inspection.date.started}} </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div style="font-size:12px;margin-top:10px;text-decoration:underline;">An individual or entity who
+                        knowingly or through gross negligence provides a false or fraudulent mitigation verification
+                        form is subject to investigation by the Florida Division of Insurance Fraud and may be subject
+                        to administrative action by the
+                        appropriate licensing agency or to criminal prosecution. (Section 627.711(4)-(7), Florida
+                        Statutes) The Qualified Inspector who
+                        certifies this form shall be directly liable for the misconduct of employees as if the
+                        authorized mitigation inspector personally
+                        performed the inspection.</div>
+                </div>
+
+
+                <div class="fix" style="margin-top:25px;font-weight:400;">
+                    <b style="font-weight:bold;text-decoration:underline;">Homeowner to complete:</b> I certify that the
+                    named Qualified Inspector or his or her employee did perform an inspection of the residence
+                    identified on this form and that proof of identification was provided to me or my Authorized
+                    Representative.
+                </div>
+
+
+                <div class="fix box" style="margin-top:20px;font-weight:bold;">
+                    <div style="width:100%;float:left;">
+                        <div
+                            style="width:63%;float: left;display: inline-block;overflow:hidden; position:relative; padding-top:20px">
+                            <div style="font-size: 13px;float:left;"><span>Qualified Inspector Signature:</span>
+                            </div>
+                            <img src="{{inspector.signature}}" width="100px" style="position:absolute; top:0px;">
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:56%;">
+                                &nbsp; </div>
+                        </div>
+                        <div style="width:35%;float: right;display: inline-block;overflow:hidden; padding-top:20px">
+                            <div style="font-size: 13px;float:left;"><span>Date:</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                {{date inspection.date.started}} </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fix" style="border-top:1px solid #000;margin-top:25px;padding-top:10px;font-weight:bold;">
+                    An individual or entity who knowingly provides or utters a false or fraudulent mitigation
+                    verification form with the intent to
+                    obtain or receive a discount on an insurance premium to which the individual or entity is not
+                    entitled commits a misdemeanor
+                    of the first degree. (Section 627.711(7), Florida Statutes)
+                </div>
+            </div>
+
+
+            <!-- box 7 -N-->
+
+            <div class="fix box" style="margin-top:14px;font-weight:bold;font-size:13px;">The definitions on this form
+                are for inspection purposes only and cannot be used to certify any product or construction feature as
+                offering protection from hurricanes.
+            </div>
+
+
+
+            <div class="footer">
+                <div class="fix box" style="margin-top:10px;font-weight:bold;">
+                    <div style="width:100%;float:left;">
+                        <div style="width:35%;float: left;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Inspectors Initials :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:48%;">
+                                &nbsp;
+                                {{inspector.fname.[0]}} {{inspector.lname.[0]}}
+                            </div>
+                        </div>
+                        <div style="width:64%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span>Property Address :</span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                {{inspection.address.street}}, {{inspection.address.city}} {{inspection.address.state}}
+                                {{inspection.address.zipcode}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fix box"
+                    style="margin-top:15px;font-weight:bold; font-size: 9.96pt;padding-right: 30px;font-family:Times New Roman Bold;">
+                    *This verification form is valid for up to five (5) years provided no material changes have been
+                    made to the structure or inaccuracies found on the form.<br /> OIR-B1-1802 (Rev. 01/12) Adopted by
+                    Rule 69O-170.0155 </div>
+                <div class="page-date">Page 4 of 4</div>
+
+            </div>
+
+
+
+        </div><!-- Main End -->
+    </section>
+    <section class="infinite-sheet padding-5mm" style="position:relative;">
+        <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
+
+            {{#if windmit?.roofDeckAttachment}}
+            <h1>Roof Deck Attachment</h1>
+            <ul class="images">{{images windmit.roofDeckAttachment.images 165 165}}</ul>
+            {{/if}}
+
+            {{#if windmit?.roofWallAttachment}}
+            <h1>Roof to Wall Attachments</h1>
+            <ul class="images">{{images windmit.roofWallAttachment.images 165 165}}</ul>
+            {{/if}}
+
+            {{#if windmit?.roofGeometry}}
+            <h1>Roof Geometry</h1>
+            <ul class="images">{{images windmit.roofGeometry.images 165 165}}</ul>
+            {{/if}}
+
+            {{#if windmit?.secondaryWaterResistance}}
+            <h1>Secondary Water Resistance (SWR)</h1>
+            <ul class="images">{{images windmit.secondaryWaterResistance.images 165 165}}</ul>
+            {{/if}}
+
+            {{#if windmit.gazedOpening}}
+            <h1>Opening Protection: (Gazed Opening) Level Chart</h1>
+            <ul class="images">{{images windmit.gazedOpening.images 165 165}}</ul>
+
+            {{/if}}
+
+
+            {{#if windmit.nonGazedOpening}}
+            <h1>Opening Protection: (Non-Gazed Opening) Level Chart</h1>
+            <ul class="images">{{images windmit.nonGazedOpening.images 165 165}}</ul>
+            {{/if}}
+
+            {{#if windmit.openProtection}}
+            <h1>Opening Protection Cont.</h1>
+            <ul class="images">{{images windmit.openProtection.images 165 165}}</ul>
+            {{/if}}
+
+        </div>
     </section>
 
-    <section>
-        <p>or greater resistance than 8d common nails spaced a maximum of 6 inches in the field or has a mean uplift
-            resistance of at least 182 psf.</p>
-        <label>
-            <input type="checkbox" />
-            <p>D. Reinforced Concrete Roof Deck.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>E. Other: _____________________________________________</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>F. Unknown or unidentified.</p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>G. No attic access.</p>
-        </label>
-        <p>4. <strong><u>Roof to Wall Attachment:</u></strong> What is the <strong>WEAKEST</strong> roof to wall
-            connection? (Do not include attachment of hip/valley jacks within 5 feet of the inside or outside corner of
-            the roof in determination of WEAKEST type)
-        </p>
-        <label>
-            <input type="checkbox" />
-            <p>A. Toe Nails</p>
-            <label>
-                <input type="checkbox" />
-                <p>Truss/rafter anchored to top plate of wall using nails driven at an angle through the truss/rafter
-                    and attached to the top plate of the wall, or</p>
-            </label>
-            <label>
-                <input type="checkbox" />
-                <p>Metal connectors that do not meet the minimal conditions or requirements of B, C, or D</p>
-            </label>
-            <p>
-                <strong>
-                    <u>Minimal conditions to qualify for categories B, C, or D. All visible metal connectors are:</u>
-                </strong>
-            </p>
-            <label>
-                <input type="checkbox" />
-                <p>Secured to truss/rafter with a minimum of three (3) nails, and</p>
-            </label>
-            <label>
-                <input type="checkbox" />
-                <p>Attached to the wall top plate of the wall framing, or embedded in the bond beam, with less than a ½”
-                    gap from the blocking or truss/rafter and blocked no more than 1.5” of the truss/rafter, and free of
-                    visible severe corrosion.</p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>B. Clips</p>
-            <label>
-                <input type="checkbox" />
-                <p>Metal connectors that do not wrap over the top of the truss/rafter, or</p>
-            </label>
-            <label>
-                <input type="checkbox" />
-                <p>Metal connectors with a minimum of 1 strap that wraps over the top of the truss/rafter and does not
-                    meet the nail position requirements of C or D, but is secured with a minimum of 3 nails.</p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>C. Single Wraps</p>
-            <label>
-                <input type="checkbox" />
-                <p>Metal connectors consisting of a single strap that wraps over the top of the truss/rafter and is
-                    secured with a minimum of 2 nails on the front side and a minimum of 1 nail on the opposing side.
-                </p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>D. Double Wraps</p>
-            <label>
-                <input type="checkbox" />
-                <p>Metal Connectors consisting of 2 separate straps that are attached to the wall frame, or embedded in
-                    the bond beam, on either side of the truss/rafter where each strap wraps over the top of the
-                    truss/rafter and is secured with a minimum of 2 nails on the front side, and a minimum of 1 nail on
-                    the opposing side, or
-                </p>
-            </label>
-            <label>
-                <input type="checkbox" />
-                <p>
-                    Metal connectors consisting of a single strap that wraps over the top of the truss/rafter, is
-                    secured to the wall on both sides, and is secured to the top plate with a minimum of three nails on
-                    each side.
-                </p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                E. Structural Anchor bolts structurally connected or reinforced concrete roof.
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                F. Other: _______________________________________________
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                G. Unknown or unidentified
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                H. No attic access
-            </p>
-        </label>
-        <p>5. <strong><u>Roof Geometry:</u></strong> What is the roof shape? (Do not consider roofs of porches or
-            carports that are attached only to the fascia or wall of the host structure over unenclosed space in the
-            determination of roof perimeter or roof area for roof geometry classification).</p>
 
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" />
-                            <p>
-                                A. Hip Roof
-                            </p>
-                        </label>
-                    </td>
-                    <td>Hip roof with no other roof shapes greater than 10% of the total roof system perimeter.
-                        Total length of non-hip features: ______ feet; Total roof system perimeter: _______ feet</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" />
-                            <p>
-                                B. Flat Roof
-                            </p>
-                        </label>
-                    </td>
-                    <td>
-                        Roof on a building with 5 or more units where at least 90% of the main roof area has a roof
-                        slope of less than 2:12. Roof area with slope less than 2:12 ________ sq ft; Total roof area
-                        __________sq ft
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input type="checkbox" />
-                            <p>
-                                C. Other Roof
-                            </p>
-                        </label>
-                    </td>
-                    <td>Any roof that does not qualify as either (A) or (B) above.</td>
-                </tr>
-            </tbody>
-        </table>
-        <p>6. <strong><u>Secondary Water Resistance (SWR):</u></strong> (standard underlayments or hot-mopped felts do
-            not qualify as an SWR)</p>
-        <label>
-            <input type="checkbox" />
-            <p>
-                A. SWR (also called Sealed Roof Deck) Self-adhering polymer modified-bitumen roofing underlayment
-                applied directly to the sheathing or foam adhesive SWR barrier (not foamed-on insulation) applied as a
-                supplemental means to protect the dwelling from water intrusion in the event of roof covering loss.
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                B. No SWR.
-            </p>
-        </label>
-        <label>
-            <input type="checkbox" />
-            <p>
-                C. Unknown or undetermined.
-            </p>
-        </label>
-        <p>
-            <strong>Inspectors Initials</strong> __________
-            <strong>Property Address</strong>__________________________________________________________________
 
-        </p>
-        <p><strong>*This verification form is valid for up to five (5) years provided no material changes have been made
-                to the structure or inaccuracies found on the form.
-                OIR-B1-1802 (Rev. 01/12) Adopted by Rule 69O-170.0155</strong></p>
-    </section>
-    <section>
-        <p>7. <strong><u>Opening Protection:</u></strong> What is the weakest form of wind borne debris protection
-            installed on the structure?
-            First, use the table to determine the weakest form of protection for each category of opening. Second, (a)
-            check one answer below (A, B, C, N, or X) based upon the lowest protection level for ALL Glazed openings and
-            (b) check the protection level for all Non-Glazed openings (.1, .2, or .3) as applicable.</p>
-
-        <table>
-            <tbody>
-                <tr>
-                    <td rowspan="2" colspan="2">
-                        <strong>Opening Protection Level Chart</strong>
-                        <p>Place an “X” in each row to identify all forms of protection in use for each opening type.
-                            Check only one answer below (A thru X), based on the weakest form of protection (lowest row)
-                            for any of the Glazed openings and indicate the weakest form of protection (lowest row) for
-                            Non-Glazed openings.</p>
-                    </td>
-                    <td colspan="4">Glazed Openings</td>
-                    <td colspan="2">Non-Glazed Openings</td>
-                </tr>
-                <tr>
-                    <td>Windows / Entry Doors</td>
-                    <td>Garage Doors</td>
-                    <td>Skylights</td>
-                    <td>Glass Block</td>
-                    <td>Entry Doors</td>
-                    <td>Garage Doors</td>
-                </tr>
-                <tr>
-                    <td>N/A</td>
-                    <td>Not Applicable- there are no openings of this type on the structure</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>A</td>
-                    <td>Verified cyclic pressure & large missile (9-lb for windows doors/4.5 lb for skylights)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>B</td>
-                    <td>Verified cyclic pressure & large missile (4-8 lb for windows doors/2 lb for skylights)</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>C</td>
-                    <td>Verified plywood/OSB meeting Table 1609.1.2 of the FBC 2007</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>D</td>
-                    <td>Verified Non-Glazed Entry or Garage doors indicating compliance with ASTM E 330,
-                        ANSI/DASMA 108, or PA/TAS 202 for wind pressure resistance</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td rowspan="2">N</td>
-                    <td>Opening Protection products that appear to be A or B but are not verified</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Other protective coverings that cannot be identified as A, B, or C</td>
-                </tr>
-                <tr>
-                    <td>X</td>
-                    <td>No Windborne Debris Protection</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <label>
-            <input type="checkbox">
-            <p>
-                <strong>
-                    <u>
-                        A. Exterior Openings Cyclic Pressure and 9-lb Large Missile (4.5 lb for skylights
-                        only)
-                    </u>
-                </strong> All Glazed openings are protected at a minimum, with impact resistant coverings or products
-                listed as wind borne debris protection devices in the product approval system of the State of Florida or
-                Miami-Dade County and meet the requirements of one of the following for “Cyclic Pressure and Large
-                Missile Impact” (Level A in the table above).
-            <ul>
-                <li>Miami-Dade County PA 201, 202, and 203</li>
-                <li>Florida Building Code Testing Application Standard (TAS) 201, 202, and 203</li>
-                <li>American Society for Testing and Materials (ASTM) E 1886 and ASTM E 1996</li>
-                <li>Southern Standards Technical Document (SSTD) 12</li>
-                <li>For Skylights Only: ASTM E 1886 and ASTM E 1996</li>
-                <li>For Garage Doors Only: ANSI/DASMA 115</li>
-            </ul>
-            </p>
-            <label>
-                <input type="checkbox">
-                <p>A.1 All Non-Glazed openings classified as A in the table above, or no Non-Glazed openings exist</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>A.2 One or More Non-Glazed openings classified as Level D in the table above, and no Non-Glazed
-                    openings classified as Level B, C, N, or X in the table above</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>A.3 One or More Non-Glazed Openings is classified as Level B, C, N, or X in the table above</p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>
-                <strong>
-                    <u>
-                        B. Exterior Opening Protection- Cyclic Pressure and 4 to 8-lb Large Missile (2-4.5 lb for
-                        skylights
-                        only)
-                    </u>
-                </strong> All Glazed openings are protected, at a minimum, with impact resistant coverings or products
-                listed as windborne debris protection devices in the product approval system of the State of Florida or
-                Miami-Dade County and meet the requirements of one of the following for “Cyclic Pressure and Large
-                Missile Impact” (Level B in the table above):
-            <ul>
-                <li>ASTM E 1886 and ASTM E 1996 (Large Missile – 4.5 lb.)</li>
-                <li>SSTD 12 (Large Missile – 4 lb. to 8 lb.)</li>
-                <li>For Skylights Only: ASTM E 1886 and ASTM E 1996 (Large Missile - 2 to 4.5 lb.)</li>
-            </ul>
-            </p>
-            <label>
-                <input type="checkbox">
-                <p>B.1 All Non-Glazed openings classified as A or B in the table above, or no Non-Glazed openings exist
-                </p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>B.2 One or More Non-Glazed openings classified as Level D in the table above, and no Non-Glazed
-                    openings classified as Level C, N, or X in the table above</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>B.3 One or More Non-Glazed openings is classified as Level C, N, or X in the table above</p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p><strong><u>C. Exterior Opening Protection- Wood Structural Panels meeting FBC 2007</u></strong> All
-                Glazed openings are covered with plywood/OSB meeting the requirements of Table 1609.1.2 of the FBC 2007
-                (Level C in the table above).</p>
-            <label>
-                <input type="checkbox">
-                <p>C.1 All Non-Glazed openings classified as A, B, or C in the table above, or no Non-Glazed openings
-                    exist</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>C.2 One or More Non-Glazed openings classified as Level D in the table above, and no Non-Glazed
-                    openings classified as Level N or X in the table above</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>C.3 One or More Non-Glazed openings is classified as Level N or X in the table above</p>
-            </label>
-        </label>
-        <p>
-            <strong>Inspectors Initials</strong> __________
-            <strong>Property Address</strong>__________________________________________________________________
-
-        </p>
-        <p><strong>*This verification form is valid for up to five (5) years provided no material changes have been made
-                to the structure or inaccuracies found on the form.
-                OIR-B1-1802 (Rev. 01/12) Adopted by Rule 69O-170.0155</strong></p>
-    </section>
-    <section>
-        <label>
-            <input type="checkbox">
-            <p>
-                <strong><u>N. Exterior Opening Protection (unverified shutter systems with no
-                        documentation)</u></strong> All Glazed openings are protected with protective coverings not
-                meeting the requirements
-                of Answer “A”, “B”, or C” or systems that appear to meet Answer “A” or “B” with no documentation of
-                compliance (Level N in the table above).
-            </p>
-            <label>
-                <input type="checkbox">
-                <p>N.1 All Non-Glazed openings classified as Level A, B, C, or N in the table above, or no Non-Glazed
-                    openings exist</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>N.2 One or More Non-Glazed openings classified as Level D in the table above, and no Non-Glazed
-                    openings classified as
-                    Level X in the table above</p>
-            </label>
-            <label>
-                <input type="checkbox">
-                <p>N.3 One or More Non-Glazed openings is classified as Level X in the table above
-                </p>
-            </label>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p><strong><u>X. None or Some Glazed Openings</u></strong> One or more Glazed openings classified and Level
-                X in the table above.
-            </p>
-        </label>
-        <table>
-            <tbody>
-                <tr>
-                    <td colspan="3">MITIGATION INSPECTIONS MUST BE CERTIFIED BY A QUALIFIED INSPECTOR. Section
-                        627.711(2), Florida Statutes, provides a listing of individuals who may sign this form.</td>
-                </tr>
-                <tr>
-                    <td>Qualified Inspector Name:</td>
-                    <td>License Type:</td>
-                    <td>License or Certificate #:</td>
-                </tr>
-                <tr>
-                    <td colspan="2">Inspection Company:</td>
-                    <td>Phone:</td>
-                </tr>
-            </tbody>
-        </table>
-        <p><strong><u>Qualified Inspector – I hold an active license as a:</u></strong> (check one)</p>
-        <label>
-            <input type="checkbox">
-            <p>Home inspector licensed under Section 468.8314, Florida Statutes who has completed the statutory number
-                of hours of hurricane mitigation training approved by the Construction Industry Licensing Board and
-                completion of a proficiency exam.</p>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>Building code inspector certified under Section 468.607, Florida Statutes.</p>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>General, building or residential contractor licensed under Section 489.111, Florida Statutes.</p>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>Professional engineer licensed under Section 471.015, Florida Statutes.</p>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>Professional architect licensed under Section 481.213, Florida Statutes.</p>
-        </label>
-        <label>
-            <input type="checkbox">
-            <p>Any other individual or entity recognized by the insurer as possessing the necessary qualifications to
-                properly complete a uniform mitigation verification form pursuant to Section 627.711(2), Florida
-                Statutes.</p>
-        </label>
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <strong>
-                            <p><u>Individuals other than licensed contractors licensed under Section 489.111, Florida
-                                    Statutes, or professional engineer licensed under Section 471.015, Florida Statutes,
-                                    must inspect the structures personally and not through employees or other persons.
-                                    Licensees under s.471.015 or s.489.111 may authorize a direct employee who possesses
-                                    the
-                                    requisite skill, knowledge, and experience to conduct a mitigation verification
-                                    inspection.</u></p>
-                            <p>I, __________________________ am a qualified inspector and I personally performed the
-                                inspection or (licensed)</p>
-                            <p>contractors and professional engineers only) I had my employee (_____________________)
-                                perform the inspection</p>
-                            <p>
-                                and I agree to be responsible for his/her work.
-                            </p>
-                            <p>Qualified Inspector Signature: ___________________________________________________ Date:
-                                ______________________</p>
-                            <p><u>An individual or entity who knowingly or through gross negligence provides a false or
-                                    fraudulent mitigation verification form is subject to investigation by the Florida
-                                    Division of Insurance Fraud and may be subject to administrative action by the
-                                    appropriate licensing agency or to criminal prosecution. (Section 627.711(4)-(7),
-                                    Florida Statutes) The Qualified Inspector who certifies this form shall be directly
-                                    liable for the misconduct of employees as if the authorized mitigation inspector
-                                    personally performed the inspection.</u></p>
-                        </strong>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><strong>
-                                <u>Homeowner to complete: </u>
-                            </strong> I certify that the named Qualified Inspector or his or her employee did perform an
-                            inspection of the residence identified on this form and that proof of identification was
-                            provided to me or my Authorized Representative.</p>
-                        <p><strong>Qualified Inspector Signature: ___________________________________________________
-                                Date: ______________________</strong></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p><strong> An individual or entity who knowingly provides or utters a false or fraudulent
-                                mitigation
-                                verification form with the intent to obtain or receive a discount on an insurance
-                                premium to
-                                which the individual or entity is not entitled commits a misdemeanor of the first
-                                degree.
-                                (Section 627.711(7), Florida Statutes)</strong></p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p><strong>The definitions on this form are for inspection purposes only and cannot be used to certify any
-                product or construction feature as offering protection from hurricanes.</strong></p>
-
-        <strong>Inspectors Initials</strong> __________
-        <strong>Property Address</strong>__________________________________________________________________
-
-        </p>
-        <p><strong>*This verification form is valid for up to five (5) years provided no material changes have been made
-                to the structure or inaccuracies found on the form.
-                OIR-B1-1802 (Rev. 01/12) Adopted by Rule 69O-170.0155</strong></p>
-    </section>
 </body>
+
+</html>

@@ -1,8 +1,8 @@
 window.addEventListener("load", async function () {
   const data = require("./data.json");
 
-  const template = require("./templates/repair-request.hbs");
-  // const template = require("./templates/uniform-mitigation.hbs");
+  // const template = require("./templates/repair-request.hbs");
+  const template = require("./templates/uniform-mitigation.hbs");
   // const template = require("./templates/4-point.hbs");
   // const template = require("./templates/wdir.hbs");
   const html = this.document.querySelector("html");

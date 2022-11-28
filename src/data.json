@@ -3323,5 +3323,47 @@
             ]
         }
     ],
-    "conditionsSummary": []
+    "conditionsSummary": [],
+    "windmit": {
+        "1a": "on",
+        "1a1": "2008",
+        "1a2": "2008-11-26",
+        "2.1a": "on",
+        "2.1e": "on",
+        "2a": "on",
+        "3c": "on",
+        "4a3": "on",
+        "4a4": "on",
+        "4b": "on",
+        "4b1": "on",
+        "4b2": "on",
+        "5c": "on",
+        "6b": "on",
+        "7gna2": "on",
+        "7gna3": "on",
+        "7gna4": "on",
+        "7gx1": "on",
+        "7nd2": "on",
+        "7nna1": "on",
+        "7x": "on",
+        "homeYear": "2005",
+        "id": "22597",
+        "modified": "November 26, 2022 at 4:24:34 PM UTC-6",
+        "stories": "1"
+    },
+    "wdir": {
+        "8a": "on",
+        "8b": "on",
+        "8b2": "Option B",
+        "8c": "on",
+        "8c2": "Option C",
+        "8c3": "Option C2",
+        "8d": "Option D",
+        "additionalComments": "Conducive Conditions visible at the time of the inspection and increase the likelihood of an infestation: High soil Vegetation overgrowth Cold joints in the slab at the Items blocking the views of the slab Add on portions of the house blocking views of the slab No bath trap accesses cut Describe the conducive conditions and specific areas Conducive Conditions visible at the time of the inspection and increase the likelihood of an infestation: High soil Vegetation overgrowth Cold joints in the slab at the Addition/Porch/Carport/Garage Items blocking the views of the slab Add on portions of the house blocking views of the slab No bath trap accesses cut",
+        "date": "2022-11-26",
+        "id": "22597",
+        "modified": "November 26, 2022 at 4:17:20 PM UTC-6",
+        "raisedPierConstruction": "on",
+        "structuresInspected": "Home only maybe fence"
+    }
 }

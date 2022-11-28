@@ -8,7 +8,8 @@ const hbs = require("handlebars");
 // });
 
 module.exports = (context) => {
-  console.log(context);
+  if (!context) return;
   let date = DateTime.fromJSDate(new Date(context));
-  return new hbs.SafeString(date.toLocaleString(DateTime.DATE_SHORT));
+
+  return new hbs.SafeString(date.toFormat("LL/dd/yyyy"));
 };
