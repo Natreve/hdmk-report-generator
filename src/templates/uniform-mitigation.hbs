@@ -143,6 +143,14 @@
             size: A4
         }
 
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin: 0 8px;
+
+            accent-color: rgb(93, 93, 93);
+
+        }
+
         .images {
             list-style: none;
             width: 100%;
@@ -154,6 +162,8 @@
             display: inline-block;
             padding: 10px 10px 0 0;
             overflow: hidden;
+            width: 165px;
+            height: 165px;
         }
     </style>
 </head>
@@ -578,27 +588,27 @@
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        {{#if (eq windmit.3e "")}}
-                        <div style="font-weight:bold;float:left;width:4%;">
-                            <input type="checkbox">
-                        </div>
-
-                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
-                            <div style="font-size: 13px;float:left;"><span> E. Other : </span></div>
-                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
-                            &nbsp;</div>
-                        </div>
-                        {{else}}
+                        {{#if windmit.3e}}
                         <div style="font-weight:bold;float:left;width:4%;">
                             <input type="checkbox" checked>
                         </div>
 
                         <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
+                            <div style="font-size: 13px;float:left;"><span> E. Other : </span></div>
+                            <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
+                                &nbsp;{{windmit.3e}}</div>
+                        </div>
+                        {{else}}
+                        <div style="font-weight:bold;float:left;width:4%;">
+                            <input type="checkbox">
+                        </div>
+
+                        <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
 
 
                             <div style="font-size: 13px;float:left;"><span> E. Other : </span></div>
                             <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
-                                &nbsp;{{windmit.3e}}
+                                &nbsp;
                             </div>
                         </div>
 
@@ -691,8 +701,6 @@
                     </div>
 
 
-
-
                     <div class="fix single-check" style="margin-top:5px;">
                         <div style="font-weight:bold;float:left;width:4%;">{{checkbox windmit.4c}}</div>
                         <div style="float:left;width:96%;"> C. Single Wraps
@@ -737,8 +745,10 @@
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        {{#if (eq windmit.4f "")}}
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
+                        {{#if windmit.4f}}
+                        <div style="font-weight:bold;float:left;width:4%;">
+                            <input type="checkbox" checked>
+                        </div>
 
                         <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
                             <div style="font-size: 13px;float:left;"><span> F. Other : </span></div>
@@ -747,7 +757,9 @@
                             </div>
                         </div>
                         {{else}}
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;">
+                            <input type="checkbox">
+                        </div>
 
                         <div style="width:96%;float: right;display: inline-block;overflow:hidden;">
                             <div style="font-size: 13px;float:left;"><span> F. Other : </span></div>
@@ -1419,35 +1431,35 @@
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
                         <div style="float:left;width:96%;">Building code inspector certified under Section 468.607,
                             Florida Statutes.
                         </div>
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
                         <div style="float:left;width:96%;">General, building or residential contractor licensed under
                             Section 489.111, Florida Statutes.
                         </div>
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
                         <div style="float:left;width:96%;">Professional engineer licensed under Section 471.015, Florida
                             Statutes.
                         </div>
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
                         <div style="float:left;width:96%;">Professional architect licensed under Section 481.213,
                             Florida Statutes.
                         </div>
                     </div>
 
                     <div class="fix single-check" style="margin-top:5px;">
-                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox" checked></div>
+                        <div style="font-weight:bold;float:left;width:4%;"><input type="checkbox"></div>
                         <div style="float:left;width:96%;">Any other individual or entity recognized by the insurer as
                             possessing the necessary qualifications to properly complete a uniform mitigation
                             verification form pursuant to Section 627.711(2), Florida Statutes.
@@ -1541,16 +1553,16 @@
                     <div style="width:100%;float:left;">
                         <div
                             style="width:63%;float: left;display: inline-block;overflow:hidden; position:relative; padding-top:20px">
-                            <div style="font-size: 13px;float:left;"><span>Qualified Inspector Signature:</span>
+                            <div style="font-size: 13px;float:left;"><span>Signature:</span>
                             </div>
-                            <img src="{{inspector.signature}}" width="100px" style="position:absolute; top:0px;">
+
                             <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width:56%;">
                                 &nbsp; </div>
                         </div>
                         <div style="width:35%;float: right;display: inline-block;overflow:hidden; padding-top:20px">
                             <div style="font-size: 13px;float:left;"><span>Date:</span></div>
                             <div style="border-bottom: solid 2px #b3acac;font-weight:bold;float:left;width: 70%;">
-                                {{date inspection.date.started}} </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1609,42 +1621,82 @@
     </section>
     <section class="infinite-sheet padding-5mm" style="position:relative;">
         <div class="main" style="font-family: sans-serif;font-size: 12px;overflow:hidden;width:100%;">
-
-            {{#if windmit?.roofDeckAttachment}}
+            {{#if windmit.roofDeckAttachment}}
             <h1>Roof Deck Attachment</h1>
-            <ul class="images">{{images windmit.roofDeckAttachment.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.roofDeckAttachment.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
-            {{#if windmit?.roofWallAttachment}}
+            {{#if windmit.roofWallAttachment}}
             <h1>Roof to Wall Attachments</h1>
-            <ul class="images">{{images windmit.roofWallAttachment.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.roofWallAttachment.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
-            {{#if windmit?.roofGeometry}}
+            {{#if windmit.roofGeometry}}
             <h1>Roof Geometry</h1>
-            <ul class="images">{{images windmit.roofGeometry.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.roofGeometry.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
-            {{#if windmit?.secondaryWaterResistance}}
+            {{#if windmit.secondaryWaterResistance}}
             <h1>Secondary Water Resistance (SWR)</h1>
-            <ul class="images">{{images windmit.secondaryWaterResistance.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.secondaryWaterResistance.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
             {{#if windmit.gazedOpening}}
             <h1>Opening Protection: (Gazed Opening) Level Chart</h1>
-            <ul class="images">{{images windmit.gazedOpening.images 165 165}}</ul>
-
+            <ul class="images">
+                {{#each windmit.gazedOpening.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
 
             {{#if windmit.nonGazedOpening}}
             <h1>Opening Protection: (Non-Gazed Opening) Level Chart</h1>
-            <ul class="images">{{images windmit.nonGazedOpening.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.nonGazedOpening.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
             {{#if windmit.openProtection}}
             <h1>Opening Protection Cont.</h1>
-            <ul class="images">{{images windmit.openProtection.images 165 165}}</ul>
+            <ul class="images">
+                {{#each windmit.openProtection.images}}
+                <li class="image">
+                    {{image this.url 165 165}}
+                </li>
+                {{/each}}
+            </ul>
             {{/if}}
 
         </div>

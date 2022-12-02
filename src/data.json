@@ -13,41 +13,6 @@
         "headshot": "https://api.hdmk.net//images/inspector/headshot/1632169395HDMK_Headshots-Print-07_PROFILE.jpg",
         "lname": "Wright"
     },
-    "inspection": {
-        "status": "completed",
-        "id": "15820",
-        "client": {
-            "name": "Lawrence Lucero",
-            "contact": {
-                "email": "jgreg1932@gmail.com",
-                "phone": "7197443001"
-            }
-        },
-        "downloadURL": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F1100%20S%209th%20St%20Canon%20City%20CO%2081212.pdf?generation=1655215138874060&alt=media",
-        "summaryURL": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F1100%20S%209th%20St%20Canon%20City%20CO%2081212%20-%20summary.pdf?generation=1657877762885877&alt=media",
-        "agent": {
-            "name": "Sarah Wetherbee",
-            "contact": {
-                "phone": "7193710999",
-                "email": "sarah@gatzkehomes.com"
-            }
-        },
-        "started": "2022-01-03T14:00:00.000Z",
-        "payment": "Check",
-        "uid": "1279",
-        "fee": "345",
-        "address": {
-            "zipcode": "81212",
-            "state": "CO",
-            "street": "1100 S 9th St",
-            "city": "Canon City"
-        },
-        "cover": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/1279%2F15820%2F71179b44c2c249368e1ac3585415204b?alt=media",
-        "date": {
-            "ended": "2022-01-03T16:52:00.000Z",
-            "started": "2022-01-03T14:00:00.000Z"
-        }
-    },
     "sections": [
         {
             "index": 0,
@@ -3325,45 +3290,235 @@
     ],
     "conditionsSummary": [],
     "windmit": {
-        "1a": "on",
-        "1a1": "2008",
-        "1a2": "2008-11-26",
-        "2.1a": "on",
-        "2.1e": "on",
-        "2a": "on",
-        "3c": "on",
-        "4a3": "on",
-        "4a4": "on",
-        "4b": "on",
-        "4b1": "on",
-        "4b2": "on",
-        "5c": "on",
-        "6b": "on",
-        "7gna2": "on",
-        "7gna3": "on",
-        "7gna4": "on",
+        "id": "22698",
         "7gx1": "on",
-        "7nd2": "on",
-        "7nna1": "on",
+        "2.1e": "on",
+        "2d": "on",
+        "1c": "on",
+        "stories": "1",
+        "7nx2": "on",
+        "6b": "on",
+        "4b": "on",
+        "roofDeckAttachment": {
+            "images": [
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F2424fc36bbc447dc8c2736701622830e?alt=media",
+                    "name": "2424fc36bbc447dc8c2736701622830e"
+                }
+            ]
+        },
+        "5c": "on",
+        "modified": {
+            "_seconds": 1669999562,
+            "_nanoseconds": 456000000
+        },
+        "7gna4": "on",
+        "2.1a": "on",
+        "3a": "on",
+        "4a4": "on",
+        "4a3": "on",
+        "7gna2": "on",
         "7x": "on",
-        "homeYear": "2005",
-        "id": "22597",
-        "modified": "November 26, 2022 at 4:24:34 PM UTC-6",
-        "stories": "1"
+        "7gna3": "on",
+        "7nx1": "on",
+        "homeYear": "1973"
     },
     "wdir": {
-        "8a": "on",
         "8b": "on",
-        "8b2": "Option B",
+        "8b2": "See box 9 ",
         "8c": "on",
-        "8c2": "Option C",
-        "8c3": "Option C2",
-        "8d": "Option D",
-        "additionalComments": "Conducive Conditions visible at the time of the inspection and increase the likelihood of an infestation: High soil Vegetation overgrowth Cold joints in the slab at the Items blocking the views of the slab Add on portions of the house blocking views of the slab No bath trap accesses cut Describe the conducive conditions and specific areas Conducive Conditions visible at the time of the inspection and increase the likelihood of an infestation: High soil Vegetation overgrowth Cold joints in the slab at the Addition/Porch/Carport/Garage Items blocking the views of the slab Add on portions of the house blocking views of the slab No bath trap accesses cut",
-        "date": "2022-11-26",
+        "8c2": "Subterranean Termites",
+        "8c3": "See box 29",
+        "additionalComments": "Conducive Conditions visible at the time of the inspection and increase the likelihood of an infestation: High soil Vegetation overgrowth Cold joints in the slab at the Addition/Porch/Carport/Garage Items blocking the views of the slab Add on portions of the house blocking views of the slab No bath trap accesses cut Describe the type of wood destroying insect observed and the location spotted We recommend the property be treated and a termite contract obtained/maintained by a LICENSED pest control company/OperatorDescribe the type and location of damage ONLY INCLUDE THIS IF YOU’RE 1000000000% SURE IT HAS BEEN TREATED RECENTLY OR IS UNDER CONTRACT CURRENTLY Inquire with sellers as to any history of known termite activity/damage and status of termite contract. No visible infestation was observed at time of inspection using only limited visual, non-invasive inspection techniques; this determination excludes hidden portions of the structure that were not readily visible such as but not limited to areas concealed by vegetation overgrowth, wall coverings, floor coverings, inaccessible areas of the crawl space and bath traps. WRITE THIS IF there are NO visible TERMITES, BUT there is DAMAGE AND there is NO TERMITE CONTRACT OR record of RECENT TREATMENT Inquire with sellers as to any history of known termite activity/damage and status of termite contract. If there is no contract or record of recent treatment, We recommend the property be treated and a termite contract obtained/maintained by a LICENSED pest control company/Operator",
+        "date": "2022-11-28",
         "id": "22597",
-        "modified": "November 26, 2022 at 4:17:20 PM UTC-6",
-        "raisedPierConstruction": "on",
-        "structuresInspected": "Home only maybe fence"
+        "modified": "November 28, 2022 at 12:12:44 PM UTC-6",
+        "slabConstruction": "on",
+        "structuresInspected": "Home only"
+    },
+    "fourPoint": {
+        "modified": "2022-12-01T18:12:25.000-05:00",
+        "yearBuilt": "1973",
+        "roof": {
+            "images": [
+                {
+                    "name": "d14a7a497d0c4d2bb81955404796afd6",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Fd14a7a497d0c4d2bb81955404796afd6?alt=media"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F56a84d07894d44848122e73dac022784?alt=media",
+                    "name": "56a84d07894d44848122e73dac022784"
+                },
+                {
+                    "name": "fb27ffe70e14467fa5901174668520fc",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Ffb27ffe70e14467fa5901174668520fc?alt=media"
+                },
+                {
+                    "name": "177df5f6040a4004a80c10b9150d66bc",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F177df5f6040a4004a80c10b9150d66bc?alt=media"
+                },
+                {
+                    "name": "33d580701c4f4192b6a235b0262f35c9",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F33d580701c4f4192b6a235b0262f35c9?alt=media"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Fc31890d1936a47b3a905626bcaedd6fc?alt=media",
+                    "name": "c31890d1936a47b3a905626bcaedd6fc"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F30f5c0cc2f324bb8b3ca71110586bcb1?alt=media",
+                    "name": "30f5c0cc2f324bb8b3ca71110586bcb1"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Fc48fe4ed559d45bc9ee7f9bfb0d7ca6a?alt=media",
+                    "name": "c48fe4ed559d45bc9ee7f9bfb0d7ca6a"
+                },
+                {
+                    "name": "9ea59c95a8734639ae59f5c38c891527",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F9ea59c95a8734639ae59f5c38c891527?alt=media"
+                }
+            ],
+            "age": "Unknown",
+            "condition": "satisfactory",
+            "coveringMaterial": "Asphalt shingles ",
+            "interiorCeilings": "no",
+            "granuleLoss": "on",
+            "softDecking": "on",
+            "atticDecking": "yes",
+            "exposedFelt": "on",
+            "signsOfLeaks": "no",
+            "remainingLife": "6+"
+        },
+        "plumbing": {
+            "priorLeak": "no",
+            "sumppump": "n/a",
+            "mainShutoffValve": "satisfactory",
+            "allOtherVisible": "satisfactory",
+            "toilets": "unsatisfactory",
+            "pvcPipe": "on",
+            "unsatisfactoryExplained": "Leak at the master bathroom sink. \nHall bathroom toilet runs continuously\nWater heater needs the TPR drain line and pan drain line extended outside. \nWashing machine waste line is clogged and backs up onto the floor. ",
+            "waterHeaterAge": "2017",
+            "waterHeaterLocation": "Laundry room ",
+            "refrigerator": "satisfactory",
+            "PEXPipe": "on",
+            "showerTubs": "satisfactory",
+            "partiallyRepiped": "X",
+            "pressureReliefValve": "yes",
+            "copperPipe": "on",
+            "sinks": "unsatisfactory",
+            "activeLeak": "yes",
+            "renovationComment": "Date of plumbing repairs unknown ",
+            "otherPipeType": "Polybutylene ",
+            "dashwasher": "unsatisfactory",
+            "waterHeater": "unsatisfactory",
+            "washingMachine": "unsatisfactory"
+        },
+        "electrical": {
+            "images": [
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F7ddf10e87d8e4269bedd0c1cd1a8f928?alt=media",
+                    "name": "7ddf10e87d8e4269bedd0c1cd1a8f928"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F60d61e69d43143e5945db5e1e20bde51?alt=media",
+                    "name": "60d61e69d43143e5945db5e1e20bde51"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F27258dc3ce2c4bde840824cd22d7c7c1?alt=media",
+                    "name": "27258dc3ce2c4bde840824cd22d7c7c1"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Fd5b7e2103de14c3d83197f969e5edea5?alt=media",
+                    "name": "d5b7e2103de14c3d83197f969e5edea5"
+                },
+                {
+                    "name": "2ce3e994fdc24cf7a5bb8bd7d2fc3dee",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F2ce3e994fdc24cf7a5bb8bd7d2fc3dee?alt=media"
+                },
+                {
+                    "name": "17fd1a887968481eafb953f96bd979d8",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F17fd1a887968481eafb953f96bd979d8?alt=media"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F1bab65c302e8490793a284bfe890a3e6?alt=media",
+                    "name": "1bab65c302e8490793a284bfe890a3e6"
+                },
+                {
+                    "name": "2274173d6c7b46ce9cd613024ec13f6d",
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F2274173d6c7b46ce9cd613024ec13f6d?alt=media"
+                },
+                {
+                    "url": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2F3dcfc99a0235435ca48f53089b464287?alt=media",
+                    "name": "3dcfc99a0235435ca48f53089b464287"
+                }
+            ],
+            "overFusing": "on",
+            "mainPanelamperageSufficient": "yes",
+            "secondaryPanelAmperageSufficient": "yes",
+            "secondaryPanel": "circuitBreaker",
+            "secondaryPanelTotalAmps": "100",
+            "mainPanel": "circuitBreaker",
+            "wiringTypeCopper": "on",
+            "hazards": "The 100amp breaker to the sub-panel inside is too big for the wire provided. ",
+            "mainPanelAge": "Unknown",
+            "mainPanelTotalAmps": "200",
+            "condition": "satisfactory",
+            "wiringTypeConduit": "on",
+            "secondaryPanelAge": "Unknown "
+        },
+        "id": "22698",
+        "hvac": {
+            "age": "2012",
+            "yearLastUpdated": "Unknown ",
+            "heatSourcePortable": "no",
+            "condensateDamage": "no",
+            "centralHeat": "yes",
+            "stoveProfessionallyInstall": "no",
+            "condition": "yes",
+            "spaceHeater": "no",
+            "centralAC": "yes"
+        }
+    },
+    "inspection": {
+        "downloadURL": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F6017%20Old%20Pasco%20Rd%20Wesley%20Chapel%20FL%2033544.pdf?generation=1669963430024969&alt=media",
+        "cover": "https://firebasestorage.googleapis.com/v0/b/hdmk-inspection.appspot.com/o/24%2F22698%2Fcover?alt=media",
+        "agent": {
+            "name": "Ana Henriquez",
+            "contact": {
+                "phone": "(786) 878-4474",
+                "email": "ana.henriquez@kw.com"
+            }
+        },
+        "is_signed": "0",
+        "status": "completed",
+        "id": "22698",
+        "date": {
+            "started": "2022-11-30T08:00:00.000-05:00",
+            "ended": "2022-12-02T12:50:00.000-05:00"
+        },
+        "started": "2022-11-30T07:56:24.000-05:00",
+        "client": {
+            "contact": {
+                "phone": "(518) 986-2101",
+                "email": "maldonadodora51@gmail.com"
+            },
+            "name": "Jorge Portillo J-Dora Maldonado Portillo"
+        },
+        "fourPoint": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F6017%20Old%20Pasco%20Rd%20Wesley%20Chapel%20FL%2033544%20-%204%20point.pdf?generation=1669963891048775&alt=media",
+        "address": {
+            "city": "Wesley Chapel",
+            "zipcode": "33544",
+            "state": "FL",
+            "street": "6017 Old Pasco Rd"
+        },
+        "fee": "595",
+        "payment": {
+            "payment_status": "sucessful",
+            "actual_amount_paid": "595",
+            "payment_mode": "Check"
+        },
+        "windmit": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F6017%20Old%20Pasco%20Rd%20Wesley%20Chapel%20FL%2033544%20-%20wind%20mitigation.pdf?generation=1669962982017319&alt=media",
+        "uid": "24",
+        "summaryURL": "https://storage.googleapis.com/download/storage/v1/b/hdmk-inspection.appspot.com/o/reports%2F6017%20Old%20Pasco%20Rd%20Wesley%20Chapel%20FL%2033544%20summary.pdf?generation=1669963434024170&alt=media"
     }
 }

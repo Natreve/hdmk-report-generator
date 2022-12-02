@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>WOOD DESTROYING INSECT REPORT</title>
+	<link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Mulish:wght@500;700&display=swap"
+		rel="stylesheet">
+	<style>
+		@page {
+			margin: 0
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			box-sizing: border-box;
+			-webkit-print-color-adjust: exact;
+			print-color-adjust: exact !important;
+		}
+
+		body {
+			margin: 0 auto;
+			font-family: 'Mulish', sans-serif;
+			font-size: 8pt;
+			color: #000;
+			line-height: 10.25pt;
+			font-weight: 500;
+			font-family: Arial, sans-serif;
+			font-size: 8.25pt;
+		}
+
+		.sheet {
+			margin: 0;
+			overflow: hidden;
+			position: relative;
+			box-sizing: border-box;
+			page-break-after: always;
+		}
+
+		/** Paper sizes **/
+		/*body.A4 .sheet { width: 210mm; height: 296mm }*/
+		body.A4 .sheet {
+			width: 8.5in;
+			height: 14in
+		}
+
+		/** Padding area **/
+		.sheet.padding-7mm {
+			padding: 6mm
+		}
+
+		.fix {
+			overflow: hidden;
+			width: 100%;
+		}
+
+		span {
+			display: inline-block;
+		}
+
+		input {
+			outline: none;
+		}
+
+		/* page */
+		.tc {
+			text-align: center;
+		}
+
+		.tr {
+			text-align: right;
+		}
+
+		.tl {
+			text-align: left;
+		}
+
+		.fr {
+			float: right;
+		}
+
+		.fl {
+			float: left;
+		}
+
+		.mb10 {
+			margin-bottom: 10px;
+		}
+
+		.mb15 {
+			margin-bottom: 15px;
+		}
+
+		.mt10 {
+			margin-top: 10px;
+		}
+
+		.mt15 {
+			margin-top: 15px;
+		}
+
+		table {
+			margin: auto;
+			border: 1px solid #000;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		th {
+			background: rgb(255, 234, 245);
+			font-weight: 700;
+			display: table-cell;
+		}
+
+		td,
+		th {
+			padding: 3px;
+			border: 1px solid #000000;
+		}
+
+		table.header {
+			border: 0;
+		}
+
+		table.header tr td {
+			border: 0;
+			padding: 2px 0;
+		}
+
+		.no-border,
+		.no-border tr td {
+			border: 0;
+		}
+
+		::-webkit-input-placeholder {
+			color: #000000;
+		}
+
+		:-ms-input-placeholder {
+			color: #000000;
+			;
+		}
+
+		::placeholder {
+			color: #000000;
+			;
+		}
+
+
+
+		.header {
+			background: #252526;
+			font-family: 'Aldrich', sans-serif;
+			font-size: 18pt;
+			font-weight: 400;
+			color: #fff;
+			height: 63px;
+			box-sizing: border-box;
+			overflow: hidden;
+			padding: 0 20px;
+		}
+
+		.header-left {
+			float: left;
+			padding-top: 27px;
+		}
+
+		.header-left span {
+			color: #FEC90B;
+		}
+
+		.header-right {
+			float: right;
+			padding-top: 9px;
+		}
+
+		.single-box {
+			margin-top: 20px;
+			border: 1px solid #999;
+			padding: 3px;
+		}
+
+		.single-check {
+			margin-left: 16px;
+		}
+
+
+
+		table.table_one td {
+			width: 33.33%;
+			vertical-align: baseline;
+		}
+
+
+		.info-details {
+			margin-left: 15px;
+		}
+
+		.single-info {
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 4px;
+		}
+
+		.single-left {
+			float: left;
+			width: 2%;
+		}
+
+		.single-right {
+			float: left;
+			width: 98%;
+		}
+
+		.single-warning {
+			overflow: hidden;
+			position: relative;
+			margin-bottom: 2px;
+		}
+
+		.warning-left {
+			float: left;
+			width: 30%;
+		}
+
+		.warning-right {
+			float: left;
+			width: 65%;
+		}
+
+
+		/** For screen preview **/
+		@media screen {
+			body {
+				background: #e0e0e0
+			}
+
+			.sheet {
+				background: white;
+				box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+				margin: 5mm auto;
+			}
+		}
+
+		/** Fix for Chrome issue #273306 **/
+		@media print {
+			* {
+				-webkit-print-color-adjust: exact;
+				print-color-adjust: exact !important;
+			}
+
+		}
+	</style>
+
+	<style>
+		@page {
+			size: Legal
+		}
+	</style>
+</head>
+
+<body class="A4">
+
+	<section class="sheet padding-7mm">
+		<!-- Write HTML just like a web page -->
+		<div class="header mb15">
+			<div class="header-left">WOOD DESTROYING <span>INSECT REPORT</span></div>
+			<div class="header-right"><img src="https://i.postimg.cc/Y2xhGLDW/logo.png" alt="logo" /></div>
+		</div>
+
+
+		<div class="header-box mb10">
+			<div class="mb10"><b>THIS REPORT IS MADE IN ACCORDANCE WITH AND SUBJECT TO THE CONDITIONS ON REVERSE SIDE OF
+					THIS PAGE </b></div>
+			<div class="mb10">For and in consideration of the Price and Sum of$ ____ and State Fee$ ____ for a Total of$
+				_____ </div>
+			<div class="mb10">A qualiﬁed inspector employed by this company has carefully inspected all accessible areas
+				of the structure(s) on the property located at the address below for termites and other wood destroying
+				insects. This report speciﬁcally excludes hidden and/or inaccessible areas of damage and the pest
+				control
+				company assumes no legal responsibility for repairs to such damaged areas.</div>
+			<div><b>WARNING:</b> The inspection described herein has been made on the basis of visible evidence in
+				readily accessible areas and this report is submitted
+				without warranty, guarantee or representation as to concealed evidence of infestation or damage or as to
+				future infestation. If there is any evidence of
+				wood destroying insects in the structure(s) inspected, it must be assumed that there is some damage.
+				<b><u>THIS IS NOT A TERMITE-FREE CERTIFICATE.</u></b>
+			</div>
+		</div>
+
+
+
+		<table class="table_one">
+			<tr>
+				<td><b>WOOD DESTROYING INSECT INFORMATION EXISTING CONSTRUCTION </b></td>
+				<td>
+					<p>1. HUD/FHNVA CASE NUMBER</p> <b>{{wdir.caseNumber}}</b>
+				</td>
+				<td>
+					<p>2. DATE OF INSPECTION</p> <b>{{date inspection.date.started}}</b>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">PRIVACY ACT INFORMATION - The information requested on this form will be used in
+					evaluating the property for a VA or HUD insured loan and all other real estate sales. Although you
+					are not required by law to provide this information, failure to provide it can result in rejection
+					of the property as security for your loan. The information collected will not be disclosed outside
+					VA or HUD except as permitted by law. VA and HUD are authorized to request this information by
+					statute (38 U.S.C., 1804(a) and 12 U.S.C. 1701 et. seq.)</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">3A. NAME OF INSPECTION COMPANY<br><b>HDMK Pest Control</b></td>
+				<td>3C. TELEPHONE NUMBER (Include Area Code)<br><b>1-888-401-HDMK (4365)</b></td>
+			</tr>
+
+			<tr>
+				<td colspan="2">3B. ADDRESS OF INSPECTION COMPANY (Include Street, City, State and Zip Code)<br>
+					<b>15171 S. Harrells Ferry Rd, Baton Rouge, LA 70816</b>
+				</td>
+				<td>4. PEST CONTROL OPERATOR LICENSE NUMBER</td>
+			</tr>
+
+			<tr>
+				<td>5A. NAME OF PROPERTY OWNER/SELLER</td>
+				<td>
+					<p>5B. ADDRESS OF PROPERTY INSPECTED (Include Street, City, State and Zip Code)</p>
+					{{#with inspection}}
+					<b>{{address.street}}, {{address.city}}, {{address.state}} {{address.zip}}</b>
+					{{/with}}
+				</td>
+				<td>
+					<p>5C. STRUCTURE(S) INSPECTED ON PROPERTY</p>
+					<b>{{wdir.structuresInspected}}</b>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="3">5D. Only structure(s) listed in 5(C) were inspected and are included in this report.
+					Detached garages, sheds, lean-tos, fences or other buildings on the
+					property will not be included in this inspection report unless speciﬁcally noted. </td>
+			</tr>
+
+
+		</table>
+
+		<div class="sep-title mb10 mt10"><b>FINDINGS</b></div>
+
+
+		<table width="100%" class="mb10">
+			<tr>
+				<td colspan="2">6. WERE ANY AREAS OF THE STRUCTURE(S) OBSTRUCTED OR INACCESSIBLE?<br>
+					<div class="fix single-check">
+						<input type="checkbox" checked> Yes
+						<input type="checkbox"> No
+						<span>(If "Yes" see section IV on the reverse side) </span>
+					</div>
+
+				</td>
+				<td>
+					7. TYPE OF CONSTRUCTION<br>
+					<div class="fix single-check">
+						{{checkbox wdir.slabConstruction}} Slab
+						{{checkbox wdir.raisedPierConstruction}} Raised Pier
+					</div>
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="3">
+					8. BASED ON CAREFUL VISUAL INSPECTION OF THE READILY ACCESSIBLE AREAS OF THE STRUCTURE(S) ON THE
+					DATE INSPECTED
+					<div class="fix single-check">
+						{{checkbox wdir.8a}}
+						A. No visible evidence of wood destroying insects was observed
+					</div>
+					<div class="fix single-check">
+						{{checkbox wdir.8b}} B. Visible evidence of wood destroying insects was observed.
+					</div>
+
+					<div class="fix" style="display: inline-block;">
+						<div style="float:left;margin-left: 42px;">Evidence found and has been observed in the following
+							area(s)</div>
+						<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:51%;">
+							&nbsp;{{wdir.8b2}} </div>
+					</div>
+
+
+					<div class="fix single-check">
+						<div style="width:51%;float: left;display: inline-block;overflow:hidden;">
+							<div style="float:left;">
+								{{checkbox wdir.8c}} C. Visible evidence of damage due to</div>
+							<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:46%;">
+								&nbsp;{{wdir.8c2}}
+							</div>
+						</div>
+						<div style="width:48%;float: right;display: inline-block;overflow:hidden;">
+							<div style="float:left;"><span>has been observed in the following area(s) :</span></div>
+							<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:32%;">
+								&nbsp;{{wdir.8c3}}
+							</div>
+						</div>
+					</div>
+
+					<div class="fix single-check">
+						<div style="width:100%;display: inline-block;overflow:hidden;margin-left:20px;">
+							<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:90%;">&nbsp;
+							</div>
+						</div>
+					</div>
+
+					<div class="fix single-check">
+						<div style="float: left;display: inline-block;overflow:hidden;">
+							<input type="checkbox" checked /> D. Treatment was or will be performed by inspection
+							company
+						</div>
+						{{#if wdir.8d}}
+						<div style="width:51%;float: left;display: inline-block;overflow:hidden;margin-left:20px;">
+							<div style="float:left;">
+								<input type="checkbox" checked> Yes
+								<input type="checkbox"> No <span>(If "Yes", explain)
+							</div>
+							<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:59%;">
+								&nbsp;{{wdir.8d}}
+							</div>
+						</div>
+						{{else}}
+						<div style="width:51%;float: left;display: inline-block;overflow:hidden;margin-left:20px;">
+							<div style="float:left;">
+								<input type="checkbox"> Yes
+								<input type="checkbox" checked> No <span>(If "Yes", explain)
+							</div>
+							<div style="border-bottom: solid 1px #000;font-weight:bold;float:left;width:59%;">&nbsp;
+							</div>
+						</div>
+						{{/if}}
+					</div>
+
+
+				</td>
+			</tr>
+
+
+			<tr>
+				<td colspan="3">9. ADDITIONAL COMMENTS (If additional space is required, continue on reverse)
+					<p>{{wdir.additionalComments}}</p>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">10. All parties should be aware of certain conditions that increase the possibility of
+					undetected live wood destroying insects. These conditions include
+					wood to ground contact, slab below grade, vegetation or vines growing on exterior walls, bath traps
+					without visual access and live wood destroying
+					insects under or within 12 inches of the structure(s) inspected, and if found, shall be listed in
+					Section 9.</td>
+			</tr>
+
+
+		</table>
+
+
+
+
+		<table class="table_one">
+			<tr>
+				<td colspan="3">11. STATEMENT OF PEST CONTROL OPERATOR </td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<div style="margin-bottom: 5px;">A. The inspection covered the readily visually accessible areas of
+						the structure(s) only. Attention was given to those visually accessible areas which
+						have been shown to be particularly susceptible to attack by wood destroying insects. Probing of
+						visually infested and/or damaged wood members
+						was performed.</div>
+					<div style="margin-bottom: 5px;">B. The inspection did not include areas which were obstructed or
+						inaccessible at the time of inspection.</div>
+					<div style="margin-bottom: 5px;">C. This is not a structural damage report.</div>
+					<div style="margin-bottom: 5px;">D. Neither I nor the company for which I am acting have had,
+						presently have, or contemplate having any interest in the structure(s) inspected. I do
+						further state that neither I nor the company for which I am acting is associated in any way with
+						any party to this transaction.</div>
+
+				</td>
+			</tr>
+
+			<tr>
+				<td colspan="2">
+					<p>12. SIGNATURE AND NUMBER OF INSPECTOR</p>
+					<div style="display: flex; align-items:center;">
+						<img src="{{inspector.signature}}" width="100px" style="max-height:25px">
+						<strong>{{inspector.licence_number}}</strong>
+					</div>
+				</td>
+				<td>13. DATE <b>{{date inspection.date.started}}</b></td>
+			</tr>
+
+
+			<tr>
+				<td rowspan="2">
+					<p>14. REPORT REQUESTED BY</p>
+					<strong>{{inspection.client.name}}</strong>
+				</td>
+				<td colspan="2">15. REPORT RECEIVED BY</td>
+			</tr>
+			<tr>
+				<td>16. TITLE</td>
+				<td>17. DATE</td>
+			</tr>
+			<tr>
+				<td colspan="3"><b>RECEIPT</b> (Signatures below not the responsibility of inspecting company)</td>
+			</tr>
+			<tr>
+				<td colspan="3"><i>I have received the original or a legible copy of the front and reverse sides of this
+						form and I agree to the terms and conditions therein.</i></td>
+			</tr>
+
+			<tr>
+				<td colspan="2">SIGNATURE OF OWNER/AGENT OF PROPERTY INSPECTED<br><br></td>
+				<td>DATE</td>
+			</tr>
+			<tr>
+				<td colspan="2">SIGNATURE OF PURCHASER OF PROPERTY INSPECTED<br><br></td>
+				<td>DATE</td>
+			</tr>
+
+
+		</table>
+
+
+
+
+	</section>
+
+
+
+
+
+	<!--====== PAGE 02 ======-->
+
+
+	<section class="sheet padding-7mm">
+		<!-- Write HTML just like a web page -->
+		<div class="header mb15">
+			<div class="header-left">WOOD DESTROYING <span>INSECT REPORT</span></div>
+			<div class="header-right"><img src="https://i.postimg.cc/Y2xhGLDW/logo.png" alt="logo" /></div>
+		</div>
+
+
+		<div class="header-box mb15">
+			<div class="mb10"><b>I. GENERAL INFORMATION AND CONDITIONS GOVERNING THIS REPORT</b></div>
+
+			<div class="info-details">
+
+
+				<div class="single-info">
+					<div class="single-left">1.</div>
+					<div class="single-right">This report is based on observations and opinions of a qualiﬁed inspector.
+						It must be noted that all buildings have structural members which are not visible or accessible
+						for inspection. It is not always possible to determine the presence of infestation and/or damage
+						without dismantling parts of the structure being inspected.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">2.</div>
+					<div class="single-right">All inspections are made for wood destroying insects only and not leaks,
+						rot or any other structural problems. Wood destroying organisms, including but not limited to
+						any type of mold, mildew or fungus and any conditions that cause these organisms, are not part
+						of this report and will not be documented.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">3.</div>
+					<div class="single-right">In the event the inspector reports no evidence of termites or other wood
+						destroying insects in any portion of the building inspected, the inspector does not assume any
+						responsibility for a condition that might exist or may be starting and was not visible to the
+						representative at the time of the inspection. This disclaimer is necessary due to the fact that
+						the inspections have been made only on accessible areas of the building and the possibility of
+						infestation and/or damage exists in areas that are inaccessible for inspection. Due to the
+						biology and habits of termites and other wood destroying insects it is possible that infestation
+						and/or damage may become visible at any time subsequent to the inspection.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">4.</div>
+					<div class="single-right">All inspections and reports will be made on the basis of what is visible
+						and the qualified inspector will not render opinions covering areas that are enclosed or
+						inaccessible areas of finished rooms, areas concealed by wall coverings, floor coverings,
+						furniture, equipment, stored articles, attics or any portion of the structure in which
+						inspection should necessitate tearing out or marring of finished work. The qualified inspector
+						does not move furniture, appliances, equipment, carpet, tile, insulation, interior or exterior
+						wall coverings, or wood under or within 12 inches of the structure(s) inspected (see definition
+						for "wood" in Section ll).</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">5.</div>
+					<div class="single-right">If any visible evidence of damage has been reported, the qualified
+						inspector does not intend for this inspection to determine whether or not this damage should be
+						replaced. A qualified individual should be consulted to ascertain the soundness of these damaged
+						members of the building.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">6.</div>
+					<div class="single-right">This instrument shall carry a guarantee that the entire structure(s) will
+						be treated to state minimum standards without charge should an infestation of live subterranean
+						termites covered by this report be found in any readily accessible areas in or on the inspected
+						structure(s) within 90 days of the date of inspection as required by LAC Title 7, Part XXV,
+						Chapter 1, Section 121 of the Structural Pest Control Regulations. A copy of the regulations
+						governing completion of this report may be found at the Structural Pest Control Commission
+						webpage: <a style="color:#000;"
+							href="https://www.ldaf.state.la.us/consumers/structural-pest-control-programs/">https://www.ldaf.state.la.us/consumers/
+							structural-pest-control-programs/</a></div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">7.</div>
+					<div class="single-right">No arbitration, other cause for action, or claim for damages shall be
+						filed by any party until an inspection of the property has been made by an inspector of the
+						Louisiana Structural Pest Control Commission.</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="header-box mb15">
+			<div class="mb10"><b>II. TERMS AND DEFINITIONS</b></div>
+
+			<div class="info-details">
+				<div class="single-info">
+					<div class="single-left">1.</div>
+					<div class="single-right"> "Qualified Inspector" is a licensed or registered person who has been
+						trained in wood destroying insect inspection procedures (being a Qualified Inspector does not
+						indicate nor include the ability to detect damage beyond that which is visible to the human
+						eye).</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">2.</div>
+					<div class="single-right"> "Readily Accessible Area" areas that are unobstructed and that are able
+						to be reached and entered for visible examination at the time of the inspection. Readily
+						accessible areas do not include areas that are concealed by walls, ceilings, floor coverings,
+						furniture, appliances, equipment, or stored articles; and crawl spaces and attics inaccessible
+						due to openings too small to enter or without permanent ladders or staircases or due to undecked
+						areas. </div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">3.</div>
+					<div class="single-right"> "Hidden Damage" is damage that cannot be seen without defacing a surface
+						to reveal such damage.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">4.</div>
+					<div class="single-right"> "Visual Inspection" applies to an area that an individual can physically
+						see..</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">5.</div>
+					<div class="single-right"> "Defacing" is the removal of any surface to determine a condition that is
+						not visible on the surface to the naked eye. (Since the qualified inspector is not an owner of
+						the surface under inspection, no defacing will be done except with written instructions from the
+						proper authority).</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">6.</div>
+					<div class="single-right"> "Wood" is defined as, but not limited to, milled lumber, firewood, cross
+						ties, landscape timbers, tree stumps or roots, but excludes bedding materials such as mulch,
+						pine bark or pine straw.</div>
+				</div>
+
+				<div class="single-info">
+					<div class="single-left">7.</div>
+					<div class="single-right"> "Evidence" includes, but is not limited to: live or dead wood destroying
+						insects, wood destroying insect parts, shelter tubes, shelter tube stains, frass,exit holes or
+						damaged wood due to wood destroying insects. </div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="header-box mb15">
+			<div class="mb10"><b>III. WOOD DESTROYING INSECTS INCLUDE: SUBTERRANEAN TERMITES, DRY-WOOD TERMITES, POWDER
+					POST BEETLES, OLD HOUSE BORERS,
+					CARPENTER ANTS, AND CARPENTER BEES.</b></div>
+		</div>
+
+
+
+		<div class="header-box mt10 mb15">
+			<div class="mb10"><b>IV. WARNING - COMMON OBSTRUCTIONS AND/OR INACCESSIBLE AREAS INCLUDE BUT ARE NOT LIMITED
+					TO</b></div>
+
+			<div class="info-details">
+
+				<div class="single-warning">
+					<div class="warning-left">A. JOISTS HIDDEN</div>
+					<div class="warning-right">(a) suspended ceiling (b) fixed_ceiling (c) insulation (d) floor over
+						joists</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">B. WALL COVERINGS</div>
+					<div class="warning-right">(a) paneling (b) dry wall (c) plaster (d) tile (e) cabinets (f) shelving
+						(g) wallpaper (h) bath trap</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">C. FLOOR COVERINGS</div>
+					<div class="warning-right">(a) tile (b) carpet (c) rugs (d) linoleum (e) built-ins</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">D. PERSONAL POSSESSIONS</div>
+					<div class="warning-right">(a) stored material (b) boxes (c) pictures (d) clothing (e) furniture (f)
+						appliances</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">E. ROOF RAFTERS HIDDEN</div>
+					<div class="warning-right">(a) suspended ceiling (b) fixed ceiling (c) insulation</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">F. RAISED FLOORING</div>
+					<div class="warning-right">(a) flooring elevated with sleepers beneath</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">G. EXTERIOR</div>
+					<div class="warning-right">(a )dense shrubbery (b) siding (c) window well covers (d) planters</div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">H. PORCH</div>
+					<div class="warning-right">(a) no access or entry beneath floor surface (b) debris </div>
+				</div>
+
+				<div class="single-warning">
+					<div class="warning-left">I. ADDITIONAL ITEMS</div>
+					<div class="warning-right">(a) standing water (b) debris (c) firewood (d) no access or entry (e)
+						absence of safe or stable access to attic (f)
+						leaking roof (g) faulty plumbing (h) earth-wood contact (i) wooden decks (j) hidden expansion
+						joints</div>
+				</div>
+
+			</div>
+		</div>
+
+
+		<div class="header-box mt10 mb15">
+			<div class="mb10"><b>V. ADDITIONAL COMMENTS CONTINUED.</b></div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</section>
+</body>
+
+</html>

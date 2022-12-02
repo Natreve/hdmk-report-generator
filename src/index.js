@@ -5,6 +5,7 @@ window.addEventListener("load", async function () {
   const template = require("./templates/uniform-mitigation.hbs");
   // const template = require("./templates/4-point.hbs");
   // const template = require("./templates/wdir.hbs");
+  // const template = require("./templates/all.hbs");
   const html = this.document.querySelector("html");
 
   html.innerHTML = template({ ...data, title: "Report" });
