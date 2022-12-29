@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,148 +7,237 @@
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Aldrich&family=Mulish:wght@400;700&display=swap");
 
-        /* Box sizing rules */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-        }
+        /** 
+    https://pixelsconverter.com/millimeters-to-pixels 
+    1in = 25.4mm
+    1mm = 96px / 25.4 
 
-        /* Remove default margin and set font*/
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        p,
-        figure,
-        blockquote,
-        dl,
-        dd {
-            margin: 0;
-        }
-
-        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-        ul[role="list"],
-        ol[role="list"] {
-            list-style: none;
-        }
-
-        /* Set core root defaults */
-        html:focus-within {
-            scroll-behavior: smooth;
-        }
-
-        /* Set core body defaults */
-
-
-        body {
-            min-height: 100vh;
-            text-rendering: optimizeSpeed;
-            line-height: 1.5;
-            font-family: "Mulish", sans-serif;
-            font-size: 12px;
-        }
-
-        /* A elements that don't have a class get default styles */
-        a:not([class]) {
-            text-decoration-skip-ink: auto;
-        }
-
-        /* Make images easier to work with */
-        img,
-        picture {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* Inherit fonts for inputs and buttons */
-        input,
-        button,
-        textarea,
-        select {
-            font: inherit;
-        }
-
-        /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-        @media (prefers-reduced-motion: reduce) {
-            html:focus-within {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
-    </style>
-    <style>
-        @page {
-            size: A4;
-            margin: 0;
-            margin-bottom: 10mm;
-        }
-
-        @media print {
-            thead {
-                display: table-header-group;
-            }
-
-            tfoot {
-                display: table-footer-group;
-            }
-        }
-    </style>
-    <style>
+    px = mm * ( PPI / 25.4 )
+*/
         :root {
             --margin: 80%;
+            --page-width: 794px;
+            --page-height: 1123px;
+            --page-padding: 38px;
+            --header-height: 50px;
+            --header-top: 25px;
         }
 
-        span {
-            display: inline-block;
-            padding: 3px 6px;
-            border-radius: 30px;
-            background: #111;
-            font-size: 8px;
-            color: #fff;
-            margin-right: 5px;
-            width: 33.19px;
-            height: 18px;
-            text-align: center;
+        @page {
+            margin: 0
         }
 
-        span.ghost {
-            opacity: 0;
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            color-adjust: exact !important;
+            /*Firefox*/
         }
 
-        header,
-        footer {
-            position: fixed;
-            left: 80px;
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .sheet,
+        .infinite-sheet {
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            page-break-after: always;
+            padding: var(--page-padding);
+        }
+
+        /** Paper sizes **/
+        body.A4 .sheet {
+            width: var(--page-width);
+            height: var(--page-height);
+        }
+
+        body.A4 .infinite-sheet {
+            width: var(--page-width);
+            height: 100%;
+        }
+
+        body.A4.landscape .sheet {
+            width: var(--page-height);
+            height: var(--page-width)
+        }
+
+        body.A4.landscape .infinite-sheet {
+            width: 297mm;
+            height: 100%;
         }
 
         header {
-            top: 48px;
+            display: flex;
+            /*display: flex;*/
+            /* position: fixed;*/
+            justify-content: space-between;
+            /*margin-top: var(--header-top);*/
+            /*top: var(--header-top);*/
+            width: var(--page-width);
+            height: var(--header-height);
+            /*padding: var(--page-padding);*/
         }
 
-        footer {
+        .sheet,
+        .infinite-sheet {
+            padding: var(--page-padding);
+            /*padding-top: calc(var(--header-height) + var(--header-top));*/
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 3px;
+        }
+
+        /*h2,h3,h4{ font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }*/
+        /** For screen preview **/
+
+        .page-date {
+            font-size: 11.4pt;
+            text-align: right;
+            position: relative;
+            top: -20px;
+            padding-right: 49px;
+            font-family: Times New Roman;
+        }
+
+        .footer {
+            position: absolute;
             bottom: 0;
-            height: 50px;
         }
 
-        .header-spacer {
-            height: 148px;
+        @media screen {
+            body {
+                background: #e0e0e0
+            }
+
+            .sheet,
+            .infinite-sheet {
+                background: white;
+                box-shadow: 0 .5mm 2mm rgba(0, 0, 0, .3);
+                margin: 5mm auto;
+            }
         }
 
-        .footer-spaceer {
-            height: 50px;
+        /** Fix for Chrome issue #273306 **/
+        @media print {
+            * {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact !important;
+                /*Firefox*/
+            }
+
+            body.A4.landscape {
+                width: 297mm
+            }
+
+            body.A4,
+            body.A5.landscape {
+                width: var(--page-width)
+            }
+
+
+            .sheet,
+            .infinite-sheet {
+                page-break-after: always;
+            }
+
         }
 
-        header,
+        .fix {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        h4 {
+            margin: 0;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        @page {
+            size: A4
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin: 0 8px;
+
+            accent-color: rgb(93, 93, 93);
+
+        }
+
+        .images {
+            list-style: none;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .images .image {
+            display: inline-block;
+            padding: 10px 10px 0 0;
+            overflow: hidden;
+            width: 165px;
+            height: 165px;
+        }
+
+        .main {
+            display: contents;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-family: "Aldrich", sans-serif;
+        }
+
+        h2 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        h1,
+        h2,
+        h3 {
+            display: flex;
+            align-items: center;
+            text-transform: capitalize;
+        }
+
+        p {
+            font-size: 12px;
+            white-space: normal;
+            line-height: 1.25;
+        }
+
+        table {
+            border-spacing: unset;
+            margin-bottom: 5px;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: hsla(180, 6%, 6%, 80%);
+        }
+
         .header {
             display: flex;
             width: var(--margin);
@@ -159,29 +245,30 @@
             height: 50px;
         }
 
-        #cover-page {
+        .cover {
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 0 !important;
         }
 
-        #cover-page .header {
+        .cover .header {
             position: absolute;
             top: 48px;
         }
 
-        #cover-page .header h1 {
+        .cover .header h1 {
             color: hsl(0, 0%, 100%);
         }
 
-        #cover-page .background {
+        .cover .background {
             background: hsl(60, 5%, 8%);
             width: 100%;
             height: 430px;
         }
 
-        #cover-page .details {
+        .cover .details {
             width: var(--margin);
             display: flex;
             justify-content: space-between;
@@ -198,32 +285,6 @@
         .cover-image img {
             border-radius: 7px;
             clip-path: polygon(0 80.00px, 40px 40px, 80.00px 0, 100% 0, 100% calc(100% - 80.00px), calc(100% - 40px) calc(100% - 40px), calc(100% - 80.00px) 100%, 0 100%);
-
-        }
-
-        .images {
-            list-style: none;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .images .image {
-            display: inline-block;
-            padding: 10px 10px 0 0;
-            overflow: hidden;
-        }
-
-        .page {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            page-break-after: always;
-        }
-
-        .page .content {
-            width: var(--margin);
         }
 
         #toc {
@@ -241,155 +302,56 @@
             color: hsla(180, 6%, 6%, 80%);
         }
 
-        h1 {
-            font-size: 32px;
-            font-family: "Aldrich", sans-serif;
+        .sheet article {
             margin-bottom: 40px;
         }
 
-        h2 {
-            font-size: 16px;
-            font-weight: 700;
-        }
-
-        h1,
-        h2,
-        h3 {
-            display: flex;
-            align-items: center;
-            text-transform: capitalize;
-        }
-
-        p {
-            display: flex;
-            font-size: 12px;
-            white-space: normal;
-        }
-
-        table {
-            border-spacing: unset;
-            margin-bottom: 5px;
-            width: 100%;
-        }
-
-        .page article {
-            margin-bottom: 40px;
-        }
-
-        .page article h2 {
+        .sheet article h2 {
             text-transform: uppercase;
         }
 
-        .page article table {
+        .sheet article table {
             margin-top: 12.9px;
             width: 100%;
         }
 
-        .page article table tr {
+        .sheet article table tr {
             vertical-align: baseline;
         }
 
-        .page article table tr td {
+        .sheet article table tr td {
             width: 50%;
         }
 
-        .page article table tr td:first-child {
+        .sheet article table tr td:first-child {
             font-weight: 700;
             text-transform: capitalize;
         }
 
-        a {
-            text-decoration: none;
-            color: hsla(180, 6%, 6%, 80%);
+        /* span {
+            display: inline-block;
+            padding: 3px 6px;
+            border-radius: 30px;
+            background: #111;
+            font-size: 8px;
+            color: #fff;
+            margin-right: 5px;
+            width: 33.19px;
+            height: 18px;
+            text-align: center;
         }
+
+        span.ghost {
+            opacity: 0;
+        }*/
     </style>
 
 </head>
 
-<body>
+<body class="A4">
     <header>
         <div class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="132.731" height="50" viewBox="0 0 132.731 50">
-                <g id="Group_31" data-name="Group 31" transform="translate(-1944.797 -859.463)">
-                    <g id="Group_27" data-name="Group 27">
-                        <rect id="Rectangle_19" data-name="Rectangle 19" width="1.322" height="7.417"
-                            transform="translate(1944.797 902.046)" fill="#161614" />
-                        <path id="Path_54" data-name="Path 54"
-                            d="M1953.161,907.268l-4.048-5.223h-1.244v7.417h1.322V904.24l4.048,5.223h1.244v-7.417h-1.322Z"
-                            fill="#161614" />
-                        <path id="Path_55" data-name="Path 55"
-                            d="M1961.724,902.389a1.248,1.248,0,0,0-.37-.249,1.138,1.138,0,0,0-.456-.094h-3.452a1.142,1.142,0,0,0-.456.094,1.261,1.261,0,0,0-.37.249,1.156,1.156,0,0,0-.343.826v2.033a1.151,1.151,0,0,0,.343.826,1.247,1.247,0,0,0,.37.249,1.126,1.126,0,0,0,.456.1h3.3v1.724H1957.5v-.913h-1.321v1.065a1.143,1.143,0,0,0,.091.454,1.172,1.172,0,0,0,.624.624,1.162,1.162,0,0,0,.454.091h3.551a1.162,1.162,0,0,0,.454-.091,1.172,1.172,0,0,0,.624-.624,1.146,1.146,0,0,0,.091-.454v-2.029a1.147,1.147,0,0,0-.091-.454,1.193,1.193,0,0,0-.251-.373,1.164,1.164,0,0,0-.373-.25,1.145,1.145,0,0,0-.454-.092h-3.3v-1.729h3.148v.918h1.321v-1.07a1.156,1.156,0,0,0-.343-.826Z"
-                            fill="#161614" />
-                        <path id="Path_56" data-name="Path 56"
-                            d="M1967.86,902.046h-4.046v7.417h1.322v-2.639h2.724a1.682,1.682,0,0,0,1.879-1.883v-1.012A1.682,1.682,0,0,0,1967.86,902.046Zm-2.724,1.321h2.67a.506.506,0,0,1,.611.612v.912a.506.506,0,0,1-.611.612h-2.67Z"
-                            fill="#161614" />
-                        <path id="Path_57" data-name="Path 57"
-                            d="M1971.305,909.463h5.488v-1.322h-4.166v-1.724h3.556V905.1h-3.556v-1.729h4.166v-1.322h-5.488Z"
-                            fill="#161614" />
-                        <path id="Path_58" data-name="Path 58"
-                            d="M1984.261,902.389a1.266,1.266,0,0,0-.371-.249,1.137,1.137,0,0,0-.455-.094h-3.859a1.138,1.138,0,0,0-.456.094,1.248,1.248,0,0,0-.37.249,1.156,1.156,0,0,0-.343.826v5.079a1.143,1.143,0,0,0,.091.454,1.172,1.172,0,0,0,.624.624,1.162,1.162,0,0,0,.454.091h3.859a1.165,1.165,0,0,0,.454-.091,1.206,1.206,0,0,0,.373-.251,1.18,1.18,0,0,0,.25-.373,1.147,1.147,0,0,0,.092-.454v-1.065h-1.322v.913h-3.554v-4.775h3.554v.918h1.322v-1.07a1.166,1.166,0,0,0-.343-.826Z"
-                            fill="#161614" />
-                        <path id="Path_59" data-name="Path 59"
-                            d="M1985.984,903.367h2.336v6.1h1.322v-6.1h2.336v-1.322h-5.994Z" fill="#161614" />
-                        <rect id="Rectangle_20" data-name="Rectangle 20" width="1.322" height="7.417"
-                            transform="translate(1993.45 902.046)" fill="#161614" />
-                        <path id="Path_60" data-name="Path 60"
-                            d="M2002.577,902.389a1.262,1.262,0,0,0-.37-.249,1.138,1.138,0,0,0-.456-.094h-4.062a1.138,1.138,0,0,0-.456.094,1.248,1.248,0,0,0-.37.249,1.154,1.154,0,0,0-.343.826v5.079a1.162,1.162,0,0,0,.091.454,1.173,1.173,0,0,0,.624.624,1.161,1.161,0,0,0,.454.091h4.062a1.161,1.161,0,0,0,.454-.091,1.172,1.172,0,0,0,.624-.624,1.164,1.164,0,0,0,.091-.454v-5.079a1.16,1.16,0,0,0-.091-.454A1.173,1.173,0,0,0,2002.577,902.389Zm-.978.978v4.775h-3.758v-4.775Z"
-                            fill="#161614" />
-                        <path id="Path_61" data-name="Path 61"
-                            d="M2009.962,907.268l-4.048-5.223h-1.244v7.417h1.322V904.24l4.048,5.223h1.244v-7.417h-1.322Z"
-                            fill="#161614" />
-                        <path id="Path_62" data-name="Path 62"
-                            d="M2022.312,902.389a1.248,1.248,0,0,0-.37-.249,1.138,1.138,0,0,0-.456-.094h-3.452a1.141,1.141,0,0,0-.456.094,1.261,1.261,0,0,0-.37.249,1.166,1.166,0,0,0-.343.826v2.033a1.148,1.148,0,0,0,.092.455,1.137,1.137,0,0,0,.251.371,1.247,1.247,0,0,0,.37.249,1.126,1.126,0,0,0,.456.1h3.3v1.724h-3.247v-.913h-1.321v1.065a1.16,1.16,0,0,0,.091.454,1.172,1.172,0,0,0,.624.624,1.162,1.162,0,0,0,.454.091h3.551a1.161,1.161,0,0,0,.454-.091,1.172,1.172,0,0,0,.624-.624,1.146,1.146,0,0,0,.091-.454v-2.029a1.147,1.147,0,0,0-.091-.454,1.2,1.2,0,0,0-.251-.373,1.163,1.163,0,0,0-.373-.25,1.144,1.144,0,0,0-.454-.092h-3.3v-1.729h3.148v.918h1.321v-1.07a1.143,1.143,0,0,0-.091-.454A1.155,1.155,0,0,0,2022.312,902.389Z"
-                            fill="#161614" />
-                        <path id="Path_63" data-name="Path 63"
-                            d="M2024.4,909.463h5.488v-1.322h-4.166v-1.724h3.556V905.1h-3.556v-1.729h4.166v-1.322H2024.4Z"
-                            fill="#161614" />
-                        <path id="Path_64" data-name="Path 64"
-                            d="M2037.428,904.738v-.809a1.682,1.682,0,0,0-1.879-1.883H2031.5v7.417h1.322v-2.842h1.977l1.32,2.842h1.462l-1.359-2.919A1.624,1.624,0,0,0,2037.428,904.738Zm-4.6-1.371h2.67a.506.506,0,0,1,.611.612v.709a.505.505,0,0,1-.611.611h-2.67Z"
-                            fill="#161614" />
-                        <path id="Path_65" data-name="Path 65"
-                            d="M2042.077,907.62l-2.107-5.575h-1.418l2.86,7.417h1.33l2.86-7.417h-1.414Z"
-                            fill="#161614" />
-                        <rect id="Rectangle_21" data-name="Rectangle 21" width="1.322" height="7.417"
-                            transform="translate(2047.006 902.046)" fill="#161614" />
-                        <path id="Path_66" data-name="Path 66"
-                            d="M2055.93,902.389a1.262,1.262,0,0,0-.37-.249,1.139,1.139,0,0,0-.456-.094h-3.859a1.141,1.141,0,0,0-.456.094,1.26,1.26,0,0,0-.37.249,1.166,1.166,0,0,0-.343.826v5.079a1.143,1.143,0,0,0,.092.454,1.177,1.177,0,0,0,.25.373,1.194,1.194,0,0,0,.373.251,1.161,1.161,0,0,0,.454.091h3.859a1.162,1.162,0,0,0,.454-.091,1.2,1.2,0,0,0,.373-.251,1.176,1.176,0,0,0,.251-.373,1.164,1.164,0,0,0,.091-.454v-1.065h-1.321v.913H2051.4v-4.775h3.554v.918h1.321v-1.07a1.156,1.156,0,0,0-.343-.826Z"
-                            fill="#161614" />
-                        <path id="Path_67" data-name="Path 67"
-                            d="M2057.928,909.463h5.488v-1.322h-4.167v-1.724h3.556V905.1h-3.556v-1.729h4.167v-1.322h-5.488Z"
-                            fill="#161614" />
-                        <path id="Path_68" data-name="Path 68"
-                            d="M2070.87,904.285v-1.07a1.161,1.161,0,0,0-.344-.826,1.249,1.249,0,0,0-.37-.249,1.137,1.137,0,0,0-.455-.094h-3.453a1.138,1.138,0,0,0-.455.094,1.249,1.249,0,0,0-.37.249,1.159,1.159,0,0,0-.344.826v2.033a1.159,1.159,0,0,0,.343.826,1.253,1.253,0,0,0,.371.249,1.122,1.122,0,0,0,.455.1h3.3v1.724H2066.3v-.913h-1.322v1.065a1.143,1.143,0,0,0,.092.454,1.177,1.177,0,0,0,.25.373,1.194,1.194,0,0,0,.373.251,1.16,1.16,0,0,0,.454.091h3.552a1.161,1.161,0,0,0,.454-.091,1.2,1.2,0,0,0,.373-.251,1.182,1.182,0,0,0,.25-.373,1.147,1.147,0,0,0,.092-.454v-2.029a1.147,1.147,0,0,0-.092-.454,1.159,1.159,0,0,0-.623-.623,1.153,1.153,0,0,0-.454-.092h-3.3v-1.729h3.147v.918Z"
-                            fill="#161614" />
-                    </g>
-                    <g id="Group_30" data-name="Group 30">
-                        <g id="Group_28" data-name="Group 28">
-                            <path id="Path_69" data-name="Path 69"
-                                d="M2073.084,861.687a2.2,2.2,0,0,1,.3-1.109,2.165,2.165,0,0,1,.813-.816,2.224,2.224,0,0,1,3.038,3.038,2.221,2.221,0,0,1-.807.809,2.228,2.228,0,0,1-3.052-.825A2.2,2.2,0,0,1,2073.084,861.687Zm.485,0a1.734,1.734,0,1,0,.232-.871A1.712,1.712,0,0,0,2073.569,861.687Zm2.8-.553a.881.881,0,0,1-.1.433.69.69,0,0,1-.319.282l.574,1.074h-.858l-.431-.947h-.1v.947h-.828v-2.588h.861Q2076.372,860.335,2076.372,861.134Zm-1.236.322h.033a.491.491,0,0,0,.27-.064.247.247,0,0,0,.1-.226.224.224,0,0,0-.081-.2.5.5,0,0,0-.283-.058h-.038Z"
-                                fill="#161614" />
-                        </g>
-                        <path id="Path_70" data-name="Path 70"
-                            d="M2056.565,877.826l14.3-15.867h-11.2l-10.869,12.056V861.923h-8.3V893.78h8.3V881.69l10.849,12.053h11.227Z"
-                            fill="#161614" />
-                        <path id="Path_71" data-name="Path 71"
-                            d="M1964.409,873.279H1953.05V861.905H1944.8V893.78h8.254V881.532h11.359V893.78h8.254V861.905h-8.254Z"
-                            fill="#161614" />
-                        <path id="Path_72" data-name="Path 72"
-                            d="M1999.513,865.156a10.635,10.635,0,0,0-3.742-2.4,13.189,13.189,0,0,0-4.733-.819h-16.157V893.78h16.157a13.181,13.181,0,0,0,4.733-.819,10.381,10.381,0,0,0,6.143-6.154,13.211,13.211,0,0,0,.817-4.72v-8.456a13.2,13.2,0,0,0-.818-4.72A10.6,10.6,0,0,0,1999.513,865.156Zm-16.307,5.095h7.6a4.713,4.713,0,0,1,1.644.261,2.8,2.8,0,0,1,1.052.67,2.9,2.9,0,0,1,.651,1.081,5.127,5.127,0,0,1,.254,1.693v7.795a3.853,3.853,0,0,1-.879,2.8,3.614,3.614,0,0,1-2.722.9h-7.6Z"
-                            fill="#161614" />
-                        <g id="Group_29" data-name="Group 29">
-                            <path id="Path_73" data-name="Path 73"
-                                d="M2015.353,861.817l10.418,11.5V893.78h-8.324V876.544l-2.094-2.313-2.089,2.311V893.78h-8.324V873.336Z"
-                                fill="#ffbc00" />
-                            <path id="Path_74" data-name="Path 74"
-                                d="M2023.049,865.715l6.906,7.6v20.46h8.324V870.111l-9.6-10.62Z" fill="#ffbc00" />
-                            <path id="Path_75" data-name="Path 75" d="M2038.279,865.531v-6.04h-5.5Z" fill="#ffbc00" />
-                        </g>
-                    </g>
-                </g>
-            </svg>
-
+            <img src="./images/HDMK.svg" width="132.731" height="50">
         </div>
         <div>
             {{#with inspector}}
@@ -399,9 +361,7 @@
             {{/with}}
         </div>
     </header>
-    <!-- Cover Page -->
-
-    <section id="cover-page" class="page">
+    {{!-- <section class="cover sheet">
         <div class="header">
             <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" width="132.731px" height="50px" viewBox="0 0 132.731 50">
@@ -484,7 +444,6 @@
             </div>
             <h1>Inspection Report</h1>
         </div>
-
         <div class="cover-image">
             {{image inspection.cover}}
         </div>
@@ -514,296 +473,292 @@
                 <p>{{#date inspection.date.started}}{{/date}}</p>
             </article>
         </div>
-    </section>
+    </section> --}}
+    {{!-- TABLE OF CONTENT PAGE--}}
+    {{!-- <section class="sheet">
+        <div class="main">
+            <h1>Inspection Report Index</h1>
+            {{#if sectionSummary.length}}
+            <div id="toc">
+                <div><a href="#conditions">1. inspection conditions</a></div>
+                {{#if sections.length}}
+                <div><a href="#limitations">2. report limitations</a></div>
+                {{/if}}
+                <div><a href="#summary">3. inspection summary</a></div>
 
-    <table>
-        <thead>
-            <tr>
-                <td>
-                    <div class="header-spacer"></div>
-                </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                    <!-- Table of Content -->
-                    <section class="page">
-                        <div class="content">
-                            <h1>Inspection Report Index</h1>
-                            {{#if sectionSummary.length}}
-                            <div id="toc">
-                                <div><a href="#conditions">1. inspection conditions</a></div>
-                                {{#if sections.length}}
-                                <div><a href="#limitations">2. report limitations</a></div>
-                                {{/if}}
-                                <div><a href="#summary">3. inspection summary</a></div>
+                {{#if sections.length}}
+                {{#each sections}}
+                <div><a href="#{{name}}">{{inc @index "4"}}. {{name}}</a> </div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{else}}
+            <div id="toc">
+                <div><a href="#conditions">1. inspection conditions</a></div>
+                <div><a href="#limitations">2. report limitations</a></div>
+                {{#if sections.length}}
+                {{#each sections}}
+                <div><a href="#{{name}}">{{inc @index "3"}}. {{name}}</a> </div>
+                {{/each}}
+                {{/if}}
+            </div>
+            {{/if}}
+        </div>
+    </section> --}}
+    {{!-- CONDITIONS PAGE--}}
+    {{!-- <section class="sheet">
+        <div class="main">
+            <header>
+                <div class="logo">
+                    <img src="./images/HDMK.svg" width="132.731" height="50">
+                </div>
+                <div>
+                    {{#with inspector}}
+                    <p>{{fname}} {{lname}}, {{licence_number}}</p>
+                    <p><a href="tel:{{phone}}">{{phone}}</a></p>
+                    <p><a href="mailto:{{email}}">{{email}}</a></p>
+                    {{/with}}
+                </div>
+            </header>
+            <h1 id="conditions">inspection conditions</h1>
+            <!--Client & Site Information-->
+            <article>
+                <h2>client & site information</h2>
+                {{#with inspection}}
+                <table>
+                    <tr>
+                        <td>inspection date:</td>
+                        <td>{{#date date.started}}{{/date}}</td>
+                    </tr>
+                    <tr>
+                        <td>start time:</td>
+                        <td>{{#time date.started}}{{/time}}</td>
+                    </tr>
+                    <tr>
+                        <td>end time:</td>
+                        <td>{{#time date.ended}}{{/time}}</td>
+                    </tr>
+                    <tr>
+                        <td>city & state:</td>
+                        <td>{{address.city}} {{address.state}}</td>
+                    </tr>
+                </table>
+                {{/with}}
+            </article>
+            <!--Payment Information-->
+            <article>
+                <h2>payment information</h2>
+                <table>
+                    <tr>
+                        <td>total fee:</td>
+                        <td>${{inspection.fee}}</td>
+                    </tr>
+                </table>
+            </article>
+            <!--Conditions-->
+            {{#if conditions.length}}
+            {{#each conditions}}
+            <article>
+                <h2>{{this.name}}</h2>
+                <table>
+                    {{#each this.comments}}
 
-                                {{#if sections.length}}
-                                {{#each sections}}
-                                <div><a href="#{{name}}">{{inc @index "4"}}. {{name}}</a> </div>
-                                {{/each}}
-                                {{/if}}
-                            </div>
-                            {{else}}
-                            <div id="toc">
-                                <div><a href="#conditions">1. inspection conditions</a></div>
-                                <div><a href="#limitations">2. report limitations</a></div>
-                                {{#if sections.length}}
-                                {{#each sections}}
-                                <div><a href="#{{name}}">{{inc @index "3"}}. {{name}}</a> </div>
-                                {{/each}}
-                                {{/if}}
-                            </div>
-                            {{/if}}
-                        </div>
-                    </section>
+                    <tr>
+                        <td>{{capitalize this.name}}</td>
+                        <td>
+                            <p style="white-space:pre-wrap;">{{this.text}}</p>
+                        </td>
+                    </tr>
 
-
-                    <!-- Conditions -->
-                    <section class="page">
-                        <div class="content">
-                            <h1 id="conditions">inspection conditions</h1>
-                            <!--Client & Site Information-->
-                            <article>
-                                <h2>client & site information</h2>
-                                {{#with inspection}}
-                                <table>
-                                    <tr>
-                                        <td>inspection date:</td>
-                                        <td>{{#date date.started}}{{/date}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>start time:</td>
-                                        <td>{{#time date.started}}{{/time}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>end time:</td>
-                                        <td>{{#time date.ended}}{{/time}}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>city & state:</td>
-                                        <td>{{address.city}} {{address.state}}</td>
-                                    </tr>
-                                </table>
-                                {{/with}}
-                            </article>
-                            <!--Payment Information-->
-                            <article>
-                                <h2>payment information</h2>
-                                <table>
-                                    <tr>
-                                        <td>total fee:</td>
-                                        <td>${{inspection.fee}}</td>
-                                    </tr>
-                                </table>
-                            </article>
-                            <!--Conditions-->
-                            {{#if conditions.length}}
-                            {{#each conditions}}
-                            <article>
-                                <h2>{{this.name}}</h2>
-                                <table>
-                                    {{#each this.comments}}
-
-                                    <tr>
-                                        <td>{{capitalize this.name}}</td>
-                                        <td>
-                                            <p style="white-space:pre-wrap;">{{this.text}}</p>
-                                        </td>
-                                    </tr>
-
-                                    {{/each}}
-                                </table>
-                            </article>
-                            {{/each}}
-                            {{/if}}
-                        </div>
-                    </section>
-
-                    <!-- Limitations -->
-                    {{#if sections.length}}
-                    <section class="page">
-                        <div class="content">
-                            <h1 id="limitations">report limitations</h1>
-                            <p>
-                                This inspection report is the intellectual property of HDMK Home Inspection and is
-                                intended for the exclusive use of the client for whom it was prepared. It is not to be
-                                copied or disseminated to any other party without the expressed written consent of HDMK
-                                Home Inspection. Neither the inspector nor HDMK Home Inspection company shall have any
-                                liability whatsoever to any third party using or relying on its contents.
-                                Any third party using this report agrees thereby to defend, indemnify and hold the
-                                inspector and HDMK Home Inspection company harmless from any claims of any person
-                                relying on the report. This inspection report also includes a copy of the Building
-                                Inspection Authorization and Agreement.
-                                <br /> <br />
-                                HDMK Home Inspection and HDMK are registered trademarks of HDMK Franchising LLC. The
-                                HDMK logo encompasses two separately owned and operated companies (HDMK Home Inspection
-                                and HDMK Pest control LLC) and may be used by either of these companies. HDMK Home
-                                Inspection refers to an independently operated franchise. This report (and/or documents
-                                accompanying it) may contain privileged communications and confidential business
-                                information that is intended for use only by the individual or company to whom it is
-                                addressed. Disclosure, interception, copying or any other use of this report by anyone
-                                other than any intended recipient is prohibited. Any party using this report agrees
-                                thereby to defend, indemnify and hold the parent HDMK Home Inspection company, HDMK
-                                Pest control, HDMK, or HDMK Franchising LLC harmless from any claims of any person
-                                relying on the report.
-                                <br /> <br />
-                                This report is intended only as a general guide to help the client(s) make their own
-                                evaluation of the overall condition of the building, and is not intended to reflect the
-                                value of the premises, nor make any representation as to the advisability of purchase.
-                                The report expresses the personal opinions of the inspector, based upon his visual
-                                impressions of the conditions that existed at the time of the inspection only.
-                                The inspection process includes a limited, visual, performance based inspection of the
-                                property, subject to the limitations described herein and in the attached "Building
-                                Inspection Authorization and Agreement." The inspectionand report are not intended to be
-                                technically exhaustive, or to imply that every component was inspected, or that every
-                                possible defect was discovered. It is recommended that proper installation of any
-                                equipment on the property be verified by consulting the manufacturer's instructions.
-                                While the inspector may mention an item that is suspected of being involved in a recall,
-                                every item in the home is not checked for recall status by the inspector. It is
-                                recommended that all devices in the home be checked for recalls at www.CPSC.gov. No
-                                disassembly of equipment, opening of walls, moving of furniture or floor coverings,
-                                appliances or stored items, or excavation was performed. All components and conditions
-                                which by the nature of their location are concealed, camouflaged or difficult to inspect
-                                are excluded from the report. If some areas are concealed by furniture or other personal
-                                property, it is highly recommended that the purchaser do a thorough inspection during
-                                their final walk through. If any problems or questionable conditions are reported on by
-                                the inspector, or if the purchaser is concerned with any property conditions, it is
-                                recommended that a qualified professional be retained to further investigate the
-                                situation, and make necessary upgrades as needed before the act of sale occurs.
-                                <br /> <br />
-                                Systems and conditions which are not within the normal scope of the building inspection
-                                (unless previously contracted) include, but are not limited to: formaldehyde, lead
-                                paint, asbestos, radon, carbon monoxide, fuel gas leaks, toxic or flammable materials,
-                                mold, contaminated drywall, carcinogens, or other environmental hazards, whether in the
-                                building, soil, water or air; pest infestation; playground equipment; efficiency
-                                measurement of insulation or heating and cooling equipment; internal or underground
-                                drainage or plumbing; sprinkler systems; pool and spa equipment; any systems which are
-                                shut down or otherwise secured; water wells (water quality and quantity); septic
-                                systems; zoning ordinances; intercoms; security systems; heat sensors; cosmetics or
-                                building code conformity. Any general comments about these systems and conditions are
-                                informational only and do not represent an inspection. If any potential problem is
-                                suspected regarding the above systems or conditions, it is recommended that a qualified
-                                professional be retained to further investigate the situation, and make necessary
-                                upgrades as needed before the act of sale occurs.
-                                <br /> <br />
-                                The inspection report should not be construed as a compliance inspection of any
-                                governmental or non governmental codes or regulations. The report is not intended to be
-                                a warranty or guarantee of the present or future adequacy or performance of the
-                                structure, its systems, or their component parts. This report does not constitute any
-                                express or implied warranty of merchantability or fitness for use regarding the
-                                condition of the property and it should not be relied upon as such. Any opinions herein
-                                expressed regarding adequacy, capacity, or expected life of components are general
-                                estimates based on information about similar components and occasional wide variations
-                                are to be expected between such estimates and actual experience.
-                                <br /> <br />
-                                We certify that our inspectors have no interest, present or contemplated, in this
-                                property or its improvement and no involvement with tradespeople or benefits derived
-                                from any sales or improvements. To the best of our knowledge and belief, all statements
-                                and information in this report are true and correct.
-                                <br /> <br />
-                                Should any disagreement or dispute arise as a result of this inspection or report, it
-                                shall be decided by arbitration and shall be submitted for binding, non-appealable
-                                arbitration in accordance with applicable laws and regulations of the State in which the
-                                inspection was performed, unless the parties mutually agree otherwise. In the event of a
-                                claim, the Client will allow the Inspection Company to inspect the claim prior to any
-                                repairs or waive the right to make the claim. Client agrees not to disturb or repair or
-                                have repaired anything which may constitute evidence relating to the complaint, except
-                                in the case of an emergency.
-                                <br /> <br />
-                                This report includes an estimation of the age of the principal structure, some
-                                components, and its roof. This estimation is based on information provided to the
-                                inspector by the seller, purchaser, real estate agent, or property disclosure report,
-                                and is only an approximation.
-                                <br /> <br />
-                                Items inspected for this report are deemed "appears serviceable" if, at the time of
-                                inspection, they are considered to be in a functional and operable condition. These
-                                items may be at any point in their service life, from brand new to approaching end of
-                                life expectancy. As they are mechanical systems, it should be expected that they will,
-                                at some point, break down and need repair or replacement. This report is not intended to
-                                predict these events, it is simply an overview of the functionality of the items and
-                                systems inspected as they existed at the time of inspection. If there are any concerns
-                                about the life expectancy of any items in this report, it is recommended that additional
-                                evaluation by qualified licensed contractors be performed prior to closing.
-                                <br /> <br />
-                                The name of the inspector, contact information, and license number at the top of each
-                                page of the report shall be considered a suitable substitute for the inspectors hand
-                                written signature on the report.
-                            </p>
-                        </div>
-                    </section>
-                    {{/if}}
-
-                    <!-- Summary -->
-                    {{#if sectionSummary.length}}
-                    <section class="page">
-                        <div class="content">
-                            <h1 id="summary">report summary</h1>
-                            {{#each sectionSummary}}
-                            <article>
-                                <h2><span>{{inc this.index 4}}.0</span> <a href="#{{this.name}}">{{this.name}}</a>
-                                </h2>
-                                {{#each this.items}}
-                                <strong><span class="ghost"></span>{{capitalize this.name}}</strong>
-                                {{#each this.comments}}
-                                <table style="width: 100%;">
-                                    <tr>
-                                        <td style="width:30%;font-weight:400;">
-                                            <p>
-                                                <span>{{inc ../../index 4}}.{{inc this.index 1}}</span>{{capitalize
-                                                this.name}}
-                                            </p>
-                                        </td>
-                                        <td style="width: 80%;">
-                                            <p style="white-space:pre-wrap;">{{this.text}}</p>
-                                        </td>
-                                    </tr>
-                                </table>
-                                <ul class="images">{{images this.media 200 200}}</ul>
-
-                                {{/each}}
-                                {{/each}}
-                            </article>
-                            {{/each}}
-                        </div>
-                    </section>
-                    {{/if}}
-
-                    <!-- Report Sections -->
-                    {{#if sections.length}}
-                    {{#each sections}}
-                    <section class="page">
-                        <div class="content">
-                            <h1 id="{{this.name}}"><a href="#toc">{{this.name}}</a> </h1>
-
-                            {{#each this.items}}
-                            <p><strong>{{capitalize this.name}}</strong></p>
-                            {{#each this.comments}}
-                            <table style="width: 100%;">
-                                <tr>
-                                    <td style="width: 30%; vertical-align:baseline;">
-                                        <p>{{capitalize this.name}}</p>
-                                    </td>
-                                    <td style="width: 80%;">
-                                        <p style="white-space:pre-wrap;">{{this.text}}</p>
-                                    </td>
-                                </tr>
-                            </table>
-
-                            <ul class="images">{{images this.media 165 165}}</ul>
-                            <br>
-                            {{/each}}
-                            {{/each}}
-                        </div>
-
-                    </section>
                     {{/each}}
-                    {{/if}}
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</body>
+                </table>
+            </article>
+            {{/each}}
+            {{/if}}
+        </div>
+    </section> --}}
+    {{!-- LIMITATIONS PAGE--}}
+    <section class="sheet">
+        {{!-- <header>
+            <div class="logo">
+                <img src="./images/HDMK.svg" width="132.731" height="50">
+            </div>
+            <div>
+                {{#with inspector}}
+                <p>{{fname}} {{lname}}, {{licence_number}}</p>
+                <p><a href="tel:{{phone}}">{{phone}}</a></p>
+                <p><a href="mailto:{{email}}">{{email}}</a></p>
+                {{/with}}
+            </div>
+        </header> --}}
+        <h1 id="limitations">report limitations</h1>
+        <p>
+            This inspection report is the intellectual property of HDMK Home Inspection and is
+            intended for the exclusive use of the client for whom it was prepared. It is not to be
+            copied or disseminated to any other party without the expressed written consent of HDMK
+            Home Inspection. Neither the inspector nor HDMK Home Inspection company shall have any
+            liability whatsoever to any third party using or relying on its contents.
+            Any third party using this report agrees thereby to defend, indemnify and hold the
+            inspector and HDMK Home Inspection company harmless from any claims of any person
+            relying on the report. This inspection report also includes a copy of the Building
+            Inspection Authorization and Agreement.
+            <br /> <br />
+            HDMK Home Inspection and HDMK are registered trademarks of HDMK Franchising LLC. The
+            HDMK logo encompasses two separately owned and operated companies (HDMK Home Inspection
+            and HDMK Pest control LLC) and may be used by either of these companies. HDMK Home
+            Inspection refers to an independently operated franchise. This report (and/or documents
+            accompanying it) may contain privileged communications and confidential business
+            information that is intended for use only by the individual or company to whom it is
+            addressed. Disclosure, interception, copying or any other use of this report by anyone
+            other than any intended recipient is prohibited. Any party using this report agrees
+            thereby to defend, indemnify and hold the parent HDMK Home Inspection company, HDMK
+            Pest control, HDMK, or HDMK Franchising LLC harmless from any claims of any person
+            relying on the report.
+            <br /> <br />
+            This report is intended only as a general guide to help the client(s) make their own
+            evaluation of the overall condition of the building, and is not intended to reflect the
+            value of the premises, nor make any representation as to the advisability of purchase.
+            The report expresses the personal opinions of the inspector, based upon his visual
+            impressions of the conditions that existed at the time of the inspection only.
+            The inspection process includes a limited, visual, performance based inspection of the
+            property, subject to the limitations described herein and in the attached "Building
+            Inspection Authorization and Agreement." The inspectionand report are not intended to be
+            technically exhaustive, or to imply that every component was inspected, or that every
+            possible defect was discovered. It is recommended that proper installation of any
+            equipment on the property be verified by consulting the manufacturer's instructions.
+            While the inspector may mention an item that is suspected of being involved in a recall,
+            every item in the home is not checked for recall status by the inspector. It is
+            recommended that all devices in the home be checked for recalls at www.CPSC.gov. No
+            disassembly of equipment, opening of walls, moving of furniture or floor coverings,
+            appliances or stored items, or excavation was performed. All components and conditions
+            which by the nature of their location are concealed, camouflaged or difficult to inspect
+            are excluded from the report. If some areas are concealed by furniture or other personal
+            property, it is highly recommended that the purchaser do a thorough inspection during
+            their final walk through. If any problems or questionable conditions are reported on by
+            the inspector, or if the purchaser is concerned with any property conditions, it is
+            recommended that a qualified professional be retained to further investigate the
+            situation, and make necessary upgrades as needed before the act of sale occurs.
+            <br /> <br />
+            Systems and conditions which are not within the normal scope of the building inspection
+            (unless previously contracted) include, but are not limited to: formaldehyde, lead
+            paint, asbestos, radon, carbon monoxide, fuel gas leaks, toxic or flammable materials,
+            mold, contaminated drywall, carcinogens, or other environmental hazards, whether in the
+            building, soil, water or air; pest infestation; playground equipment; efficiency
+            measurement of insulation or heating and cooling equipment; internal or underground
+            drainage or plumbing; sprinkler systems; pool and spa equipment; any systems which are
+            shut down or otherwise secured; water wells (water quality and quantity); septic
+            systems; zoning ordinances; intercoms; security systems; heat sensors; cosmetics or
+            building code conformity. Any general comments about these systems and conditions are
+            informational only and do not represent an inspection. If any potential problem is
+            suspected regarding the above systems or conditions, it is recommended that a qualified
+            professional be retained to further investigate the situation, and make necessary
+            upgrades as needed before the act of sale occurs.
+            <br /> <br />
+            The inspection report should not be construed as a compliance inspection of any
+            governmental or non governmental codes or regulations. The report is not intended to be
+            a warranty or guarantee of the present or future adequacy or performance of the
+            structure, its systems, or their component parts. This report does not constitute any
+            express or implied warranty of merchantability or fitness for use regarding the
+            condition of the property and it should not be relied upon as such. Any opinions herein
+            expressed regarding adequacy, capacity, or expected life of components are general
+            estimates based on information about similar components and occasional wide variations
+            are to be expected between such estimates and actual experience.
+            <br /> <br />
+            We certify that our inspectors have no interest, present or contemplated, in this
+            property or its improvement and no involvement with tradespeople or benefits derived
+            from any sales or improvements. To the best of our knowledge and belief, all statements
+            and information in this report are true and correct.
+            <br /> <br />
+            Should any disagreement or dispute arise as a result of this inspection or report, it
+            shall be decided by arbitration and shall be submitted for binding, non-appealable
+            arbitration in accordance with applicable laws and regulations of the State in which the
+            inspection was performed, unless the parties mutually agree otherwise. In the event of a
+            claim, the Client will allow the Inspection Company to inspect the claim prior to any
+            repairs or waive the right to make the claim. Client agrees not to disturb or repair or
+            have repaired anything which may constitute evidence relating to the complaint, except
+            in the case of an emergency.
+            <br /> <br />
+            This report includes an estimation of the age of the principal structure, some
+            components, and its roof. This estimation is based on information provided to the
+            inspector by the seller, purchaser, real estate agent, or property disclosure report,
+            and is only an approximation.
+            <br /> <br />
+            Items inspected for this report are deemed "appears serviceable" if, at the time of
+            inspection, they are considered to be in a functional and operable condition. These
+            items may be at any point in their service life, from brand new to approaching end of
+            life expectancy. As they are mechanical systems, it should be expected that they will,
+            at some point, break down and need repair or replacement. This report is not intended to
+            predict these events, it is simply an overview of the functionality of the items and
+            systems inspected as they existed at the time of inspection. If there are any concerns
+            about the life expectancy of any items in this report, it is recommended that additional
+            evaluation by qualified licensed contractors be performed prior to closing.
+            <br /> <br />
+            The name of the inspector, contact information, and license number at the top of each
+            page of the report shall be considered a suitable substitute for the inspectors hand
+            written signature on the report.
+        </p>
+    </section>
+    {{!-- SUMMARY PAGE --}}
+    {{!-- {{#if sectionSummary.length}}
+    <section class="sheet">
+        <div class="main">
+            <h1 id="summary">report summary</h1>
+            {{#each sectionSummary}}
+            <article>
+                <h2><span>{{inc this.index 4}}.0</span> <a href="#{{this.name}}">{{this.name}}</a>
+                </h2>
+                {{#each this.items}}
+                <strong><span class="ghost"></span>{{capitalize this.name}}</strong>
+                {{#each this.comments}}
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width:30%;font-weight:400;">
+                            <p>
+                                <span>{{inc ../../index 4}}.{{inc this.index 1}}</span>{{capitalize
+                                this.name}}
+                            </p>
+                        </td>
+                        <td style="width: 80%;">
+                            <p style="white-space:pre-wrap;">{{this.text}}</p>
+                        </td>
+                    </tr>
+                </table>
+                <ul class="images">{{images this.media 200 200}}</ul>
 
-</html>
+                {{/each}}
+                {{/each}}
+            </article>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}} --}}
+    {{!-- REPORT SECTION PAGES --}}
+    {{!-- {{#if sections.length}}
+    {{#each sections}}
+    <section class="sheet">
+        <div class="main">
+            <h1 id="{{this.name}}"><a href="#toc">{{this.name}}</a> </h1>
+
+            {{#each this.items}}
+            <p><strong>{{capitalize this.name}}</strong></p>
+            {{#each this.comments}}
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 30%; vertical-align:baseline;">
+                        <p>{{capitalize this.name}}</p>
+                    </td>
+                    <td style="width: 80%;">
+                        <p style="white-space:pre-wrap;">{{this.text}}</p>
+                    </td>
+                </tr>
+            </table>
+
+            <ul class="images">{{images this.media 165 165}}</ul>
+            <br>
+            {{/each}}
+            {{/each}}
+        </div>
+    </section>
+    {{/each}}
+    {{/if}} --}}
+</body>
